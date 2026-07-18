@@ -1,0 +1,1 @@
+You chose two colors, the tail and the head, darker colors will gradient to the brighter ones

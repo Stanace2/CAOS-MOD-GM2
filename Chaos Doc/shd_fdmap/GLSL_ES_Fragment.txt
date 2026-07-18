@@ -1,0 +1,67 @@
+precision mediump float;
+#define LOWPREC lowp
+// Uniforms look like they're shared between vertex and fragment shaders in GLSL, so we have to be careful to avoid name clashes
+
+uniform sampler2D gm_BaseTexture;
+
+uniform bool gm_PS_FogEnabled;
+uniform vec4 gm_FogColour;
+uniform bool gm_AlphaTestEnabled;
+uniform float gm_AlphaRefValue;
+
+void DoAlphaTest(vec4 SrcColour)
+{
+	if (gm_AlphaTestEnabled)
+	{
+		if (SrcColour.a <= gm_AlphaRefValue)
+		{
+			discard;
+		}
+	}
+}
+
+void DoFog(inout vec4 SrcColour, float fogval)
+{
+	if (gm_PS_FogEnabled)
+	{
+		SrcColour = mix(SrcColour, gm_FogColour, clamp(fogval, 0.0, 1.0)); 
+	}
+}
+
+#define _YY_GLSLES_ 1
+//
+// Simple passthrough fragment shader
+//
+varying vec2 v_vTexcoord;
+varying vec4 v_vColour;
+
+uniform float tailR;
+uniform float tailG;
+uniform float tailB;
+
+uniform float noseR;
+uniform float noseG;
+uniform float noseB;
+
+void main()
+{
+    vec4 source = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord);
+	vec4 color = vec4(0, 0, 0, 0);
+	vec4 black = vec4(tailR, tailG, tailB, 255);
+	vec4 white = vec4(noseR, noseG, noseB, 255);
+	black = black / vec4(255, 255, 255, 255);
+	white = white / vec4(255, 255, 255, 255);
+	
+	black.a = source.a;
+	white.a = source.a;
+	
+	float grayscaleValue = dot(source.rgb, vec3(0.299, 0.587, 0.114));
+	
+	color = mix(black, white, grayscaleValue);
+	
+	gl_FragColor.rgb = vec3(color.r, color.g, color.b);
+	gl_FragColor.a = source.a;
+	
+	if (distance(vec4(0, 0, 0, source.a), vec4(0, 0, 0, 0)) <= 0.004)
+		gl_FragColor = source;
+}
