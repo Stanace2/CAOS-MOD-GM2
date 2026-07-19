@@ -205,44 +205,7 @@ function get_options()
 	var lang = ini_read_string("Option", "lang", "none");
 	if (lang == "none")
 	{
-		lang = "en";
-		var os_lan = os_get_language();
-		switch (os_lan)
-		{
-			case "zh":
-				var region = os_get_region();
-				if (region == "HK" || region == "MO" || region == "TW")
-				{
-					lang = "tc";
-				}
-				else
-				{
-					lang = "sc";
-				}
-				break;
-			case "ja": lang = "jp"; break;
-			case "fr": lang = "fr"; break;
-			case "de": lang = "gr"; break;
-			case "it": lang = "it"; break;
-			case "pt": lang = "br"; break;
-			case "ru": lang = "ru"; break;
-			case "es":
-				var region = os_get_region();
-				if (region == "ES" || region == "ESP")
-				{
-					lang = "spa";
-				}
-				else
-				{
-					lang = "latam";
-				}
-				break;
-		}
-		var region = os_get_region();
-		if (region == "KR" || region == "KOR")
-		{
-			lang = "kr";
-		}
+		lang = "en_ch";
 		global.option_lang = lang;
 	}
 	else
