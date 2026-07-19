@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "! CaosMod - Index !.md",
+                "file": "Bank reading system.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "! CaosMod - Index !"
+              "title": "Bank reading system"
             }
           }
         ]
@@ -186,6 +186,9 @@
   "active": "5df06aa28f949f22",
   "lastOpenFiles": [
     "! CaosMod - Index !.md",
+    "Fmod sound variables.md",
+    "Global sounds execution.md",
+    "Bank reading system.md",
     "WM - Changes to vainilla game.md",
     "Dos - Changes to vainilla game.md",
     "Dos - Moveset.md",
@@ -228,9 +231,6 @@
     "scr_chaosvomit().md",
     "obj_exitgate.md",
     "Cigar ocurrences and tracking spots.md",
-    "scr_ktoppingoal.md",
-    "scr_dragonsnap_destructibles.md",
-    "Addition of the Caos key.md",
     "Sin título.canvas",
     "Sin título 1.canvas"
   ]

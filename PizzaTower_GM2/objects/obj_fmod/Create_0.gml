@@ -1,8 +1,14 @@
 var maxChannels = 256;
 trace("Initializing FMOD: ", fmod_init(maxChannels));
 fmod_set_num_listeners(1);
-var plat = "Desktop";
-var banks = [concat("sound/", plat, "/Master.bank"), concat("sound/", plat, "/music.bank"), concat("sound/", plat, "/sfx.bank"), concat("sound/", plat, "/Master.strings.bank")];
+if file_exists(working_directory + "sound/Desktop/Chaos/chaos-sfx.bank")  
+{  
+    trace("Chaos found!");
+    var plat = "Desktop/Chaos";
+}  
+else  
+    plat = "Desktop";
+var banks = [concat("sound/", plat, "/Master.bank"), concat("sound/", plat, "/music.bank"), concat("sound/", plat, "/sfx.bank"), concat("sound/", plat, "/Master.strings.bank"), concat("sound/", plat, "/chaos-sfx.bank")];
 trace("Loading banks! Platform -> ", plat);
 for (var i = 0; i < array_length(banks); i++)
 {
