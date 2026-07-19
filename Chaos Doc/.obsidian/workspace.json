@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Read custom chaos.txt.md",
+                "file": "! CaosMod - Index !.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Read custom chaos.txt"
+              "title": "! CaosMod - Index !"
             }
           }
         ]
@@ -185,7 +185,9 @@
   },
   "active": "5df06aa28f949f22",
   "lastOpenFiles": [
+    "Read custom chaos.txt.md",
     "! CaosMod - Index !.md",
+    "Post mig changes.md",
     "Bank reading system.md",
     "Fmod sound variables.md",
     "Global sounds execution.md",
@@ -229,8 +231,6 @@
     "obj_hungrypillar.md",
     "Caos Chaser.md",
     "scr_chaosvomit().md",
-    "obj_exitgate.md",
-    "Cigar ocurrences and tracking spots.md",
     "Sin título.canvas",
     "Sin título 1.canvas"
   ]

@@ -1,3 +1,4 @@
+==OLDIE==
 This is not comprehensive for the whole game, dialog from granny and others are handled still by the default functions, the following script is to make chaos dialogs work
 Referenced in:
 - [[Talkers]]
