@@ -16,3 +16,16 @@ if (global.collect != global.lastcollect)
 		global.collect_player[player_index] += diff;
 	}
 }
+if key_shoot2 {
+	instance_create(x,y, obj_canonexplosion)
+}
+if keyboard_check_pressed(vk_f7)  
+    displaykeys = (!displaykeys)  
+if keyboard_check_pressed(vk_f6)  
+    displaydata = (!displaydata)
+if (key_shoot2 || input_buffer_chaos > 0)  
+    input_buffer_chaos++  
+else  
+    input_buffer_chaos = 0  
+if ((!key_shoot) || input_buffer_chaos == -1)  
+    input_buffer_chaos = 0

@@ -6,7 +6,8 @@ List of scripts that modify structure code, optimize the game, change main syste
 - [[Global sounds execution]]
 - [[Fmod sound variables]]
 ### Lang
-* [[Read custom chaos.txt]]
+* [[Read custom chaos.txt]] ==Oldie==
+* [[Post mig changes]]
 ### Binds
 * [[Addition of the Caos key]]
 ### Chaos Utils

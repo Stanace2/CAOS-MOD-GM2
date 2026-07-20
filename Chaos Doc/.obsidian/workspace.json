@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "! CaosMod - Index !.md",
+                "file": "PS - Gallery.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "! CaosMod - Index !"
+              "title": "PS - Gallery"
             }
           }
         ]
@@ -186,13 +186,26 @@
   "active": "5df06aa28f949f22",
   "lastOpenFiles": [
     "! CaosMod - Index !.md",
+    "PS - Code changes.md",
+    "PS - Gallery.md",
+    "Chaos vars within the player.md",
+    "Restart function.md",
+    "WM creation variables.md",
+    "Dos creation variables.md",
+    "Player create shenanigans.md",
+    "List of tool functions.md",
+    "Level garnish.md",
+    "Addition of the Caos key.md",
+    "Read custom chaos.txt.md",
+    "Post mig changes.md",
+    "Bank reading system.md",
+    "Fmod sound variables.md",
+    "Global sounds execution.md",
     "WM - Changes to vainilla game.md",
     "Dos - Changes to vainilla game.md",
     "Dos - Moveset.md",
     "WM - Moveset.md",
     "WM - Objects.md",
-    "WM creation variables.md",
-    "Level garnish.md",
     "Simple gradient shader.md",
     "Full gradient shader.md",
     "shd_sdmap/VertexShaderAttributes.txt",
@@ -208,11 +221,7 @@
     "scr_chaoschaser_berserk().md",
     "Fake Donisha.md",
     "scr_fakedos_chase().md",
-    "scr_fakedos_stalker().md",
-    "Tutorial - G&B.md",
-    "Tutorial - Donisha.md",
     "Pasted image 20260715180005.png",
-    "Door transition.md",
     "Pasted image 20260715174208.png",
     "Pasted image 20260715173225.png",
     "Pasted image 20260715173142.png",
@@ -222,15 +231,6 @@
     "Pasted image 20260715172628.png",
     "Pasted image 20260715172529.png",
     "Pasted image 20260715172400.png",
-    "Chaos UI.md",
-    "obj_hungrypillar.md",
-    "Caos Chaser.md",
-    "scr_chaosvomit().md",
-    "obj_exitgate.md",
-    "Cigar ocurrences and tracking spots.md",
-    "scr_ktoppingoal.md",
-    "scr_dragonsnap_destructibles.md",
-    "Addition of the Caos key.md",
     "Sin título.canvas",
     "Sin título 1.canvas"
   ]

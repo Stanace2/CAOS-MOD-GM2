@@ -25,6 +25,8 @@ function scr_get_languages()
 	var def = file_find_first("lang/*.def", 0);
 	while (def != "")
 	{
+		if (def == "chaos.def")
+			global.hascaostxt = true;
 		array_push(arr, def);
 		def = file_find_next();
 	}
@@ -41,8 +43,14 @@ function scr_get_languages()
 	global.credits_arr = scr_lang_get_credits();
 	global.noisecredits_arr = scr_lang_get_noise_credits();
 	global.lang_textures_to_load = ds_list_create();
-	ds_list_add(global.lang_loaded, "en");
-	lang_parse_file("english.txt");
+	if (global.hascaostxt) {
+		ds_list_add(global.lang_loaded, "en_ch");	
+		lang_parse_file("chaos.txt");
+	}
+	else {
+		ds_list_add(global.lang_loaded, "en");	
+		lang_parse_file("english.txt");
+	}
 }
 
 function lang_read_file(_file)
@@ -116,18 +124,23 @@ function scr_lang_get_noise_credits()
 
 function lang_get_value_raw(_language, _entry)
 {
-	var n = ds_map_find_value(ds_map_find_value(global.lang_map, _language), _entry);
-	if (is_undefined(n))
-	{
-		n = ds_map_find_value(ds_map_find_value(global.lang_map, "en"), _entry);
-	}
-	if (is_undefined(n))
-	{
-		n = "";
+	if global.hascaostxt
+		var n = ds_map_find_value(ds_map_find_value(global.lang_map, "en_ch"), _entry);
+	else {
+		var n = ds_map_find_value(ds_map_find_value(global.lang_map, "en"), _entry);
 		instance_create_unique(0, 0, obj_langerror);
 		with (obj_langerror)
 		{
-			text = concat("Error: Could not find lang value \"", _entry, "\"\nPlease restore your english.txt file");
+			text = concat("Error: Could not find the mod lang file \nInstall the chaos.txt file NOW (*lightning sound*)");
+		}
+		if (is_undefined(n))
+		{
+			n = "";
+			instance_create_unique(0, 0, obj_langerror);
+			with (obj_langerror)
+			{
+				text = concat("Error: Could not find lang value \"", _entry, "\"\nPlease restore your english.txt file");
+			}
 		}
 	}
 	return n;

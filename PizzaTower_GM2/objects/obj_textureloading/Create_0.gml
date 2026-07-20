@@ -1,3 +1,4 @@
+global.hascaostxt = false;
 scr_get_languages();
 global.texture_load_count = ds_list_create();
 tex_list = noone;

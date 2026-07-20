@@ -39,7 +39,7 @@ function scr_initinput(_openINI = true)
 	tdp_input_ini_read("player_jump", [tdp_action(tdp_input_actiontypes.keyboard, ord("Z"))]);
 	tdp_input_ini_read("player_slap", [tdp_action(tdp_input_actiontypes.keyboard, ord("X"))]);
 	tdp_input_ini_read("player_taunt", [tdp_action(tdp_input_actiontypes.keyboard, ord("C"))]);
-	tdp_input_ini_read("player_shoot", [tdp_action(tdp_input_actiontypes.keyboard, ord("A"))]);
+	tdp_input_ini_read("player_shoot", [tdp_action(tdp_input_actiontypes.keyboard, ord("D"))]);
 	tdp_input_ini_read("player_attack", [tdp_action(tdp_input_actiontypes.keyboard, vk_shift)]);
 	tdp_input_ini_read("player_groundpound", []);
 	tdp_input_ini_read("player_superjump", []);
@@ -64,7 +64,7 @@ function scr_initinput(_openINI = true)
 	global.key_jump = ini_read_string("ControlsKeys", "jump", ord("Z"));
 	global.key_slap = ini_read_string("ControlsKeys", "slap", ord("X"));
 	global.key_taunt = ini_read_string("ControlsKeys", "taunt", ord("C"));
-	global.key_shoot = ini_read_string("ControlsKeys", "shoot", ord("A"));
+	global.key_shoot = ini_read_string("ControlsKeys", "shoot", ord("D"));
 	global.key_attack = ini_read_string("ControlsKeys", "attack", vk_shift);
 	global.key_start = ini_read_string("ControlsKeys", "start", vk_escape);
 	global.key_chainsaw = ini_read_string("ControlsKeys", "chainsaw", ord("V"));

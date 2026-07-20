@@ -243,7 +243,6 @@ function get_options()
 		{
 			lang = "kr";
 		}
-		global.option_lang = lang;
 	}
 	else
 	{
