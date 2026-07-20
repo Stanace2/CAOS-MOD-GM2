@@ -8,7 +8,7 @@ function scr_chaos_varinit() {
 	displaykeys = 0  
 	displaydata = 0
 	input_buffer_chaos = 0
-	// 0 Donisha 1 WM 2 Stefano 3 Cezar 4 Clery 5 Acexby 9 fakeDonisha
+	// 0 Donisha 1 WM 2 Stefano 3 Cezar 4 Cleo 5 Acexby 9 fakeDonisha
 	// For playable pep and noise 10 Pep 12 Noise
 	characterID = 0
 	
@@ -98,6 +98,7 @@ function scr_chaos_varinit() {
 	// Used in obj_startgate_Collision_obj_player
 	global.chaosexception = 0
 	// For powerups colorshifting
+	chaoskolors = [[204, 20, 42, 81], [[0.9607843137254902, 0.12941176470588237, 1], [1, 0.5333333333333333, 0], [1, 0.9803921568627451, 0.34901960784313724], [0.6078431372549019, 1, 0]]]
 	kolorhexr = 0  
 	kolorhexg = 0  
 	kolorhexb = 0  

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PS - Gallery.md",
+                "file": "Chaos vars within the player.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PS - Gallery"
+              "title": "Chaos vars within the player"
             }
           }
         ]
@@ -186,8 +186,8 @@
   "active": "5df06aa28f949f22",
   "lastOpenFiles": [
     "! CaosMod - Index !.md",
-    "PS - Code changes.md",
     "PS - Gallery.md",
+    "PS - Code changes.md",
     "Chaos vars within the player.md",
     "Restart function.md",
     "WM creation variables.md",
