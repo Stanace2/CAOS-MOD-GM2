@@ -2,6 +2,7 @@ collectiblelist = ds_list_create();
 depth = 20;
 with (instance_nearest(obj_secretportal.x, obj_secretportal.y, obj_bigcollect))
 {
+	mask_index = spr_monster_mask
 	visible = false;
 	value = 150;
 	with (instance_create(x, y - 42, obj_pizzasonacollect))

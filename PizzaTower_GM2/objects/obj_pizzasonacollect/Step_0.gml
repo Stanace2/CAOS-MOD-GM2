@@ -19,28 +19,20 @@ switch (state)
 	case states.throwing:
 		if (ANIMATION_END)
 		{
-			image_index = image_number - 1;
-		}
-		if (floor(image_index) >= 3)
-		{
-			if (onebyoneID == noone)
-			{
-				global.collect -= 150;
-				onebyoneID = instance_create(x, y - 30, obj_pizzasona_points);
-			}
-			else if (!instance_exists(onebyoneID))
-			{
-				state = states.transitioncutscene;
-				sprite_index = transitionspr;
-				image_index = 0;
-			}
+			sprite_index = transitionspr  
+            if (onebyoneID == noone)  
+            {  
+                global.collect -= 150  
+                onebyoneID = instance_create(x, (y - 30), obj_pizzasona_points)  
+            }  
+            else if (!instance_exists(onebyoneID))  
+                state = states.transitioncutscene;
 		}
 		break;
 	case states.transitioncutscene:
 		if (ANIMATION_END)
 		{
 			state = states.jump;
-			sprite_index = idlespr;
 			movespeed = 4;
 			showtext = false;
 			scr_ghostcollectible(true);
