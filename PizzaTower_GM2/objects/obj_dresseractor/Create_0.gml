@@ -1,0 +1,14 @@
+palettespr = -4
+paletteindex = -1
+palettetexture = -4
+unlocked = 0
+depth = 101
+xbg = 0
+ybg = 0
+image_speed = 0.35
+relx = x
+rely = y
+blend = c_white
+alpha = 0
+die = 0
+amax = 1

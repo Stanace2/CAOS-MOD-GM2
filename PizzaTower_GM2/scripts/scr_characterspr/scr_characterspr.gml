@@ -2,6 +2,7 @@ function scr_characterspr()
 {
 	if (character == "P" && ispeppino)
 	{
+		spr_dressup = spr_player_idledance;
 		spr_idle = spr_player_idle;
 		spr_move = spr_player_move;
 		spr_crawl = spr_player_crawl;

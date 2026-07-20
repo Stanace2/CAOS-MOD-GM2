@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PS - Gallery.md",
+                "file": "! CaosMod - Index !.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PS - Gallery"
+              "title": "! CaosMod - Index !"
             }
           }
         ]
@@ -185,13 +185,17 @@
   },
   "active": "5df06aa28f949f22",
   "lastOpenFiles": [
+    "Palette dresser code changes.md",
     "! CaosMod - Index !.md",
-    "PS - Code changes.md",
     "PS - Gallery.md",
+    "scr_player_transitioncutscene().md",
+    "PS - Code changes.md",
+    "Dos - Gallery.md",
+    "Dos creation variables.md",
+    "Palettes visualizer.md",
     "Chaos vars within the player.md",
     "Restart function.md",
     "WM creation variables.md",
-    "Dos creation variables.md",
     "Player create shenanigans.md",
     "List of tool functions.md",
     "Level garnish.md",
@@ -207,7 +211,6 @@
     "WM - Moveset.md",
     "WM - Objects.md",
     "Simple gradient shader.md",
-    "Full gradient shader.md",
     "shd_sdmap/VertexShaderAttributes.txt",
     "shd_sdmap/Type.txt",
     "shd_sdmap/HLSL9_Vertex.txt",
@@ -218,9 +221,6 @@
     "shd_sdmap/GLSL_Fragment.txt",
     "shd_sdmap/GLSL_ES_Vertex.txt",
     "shd_sdmap/GLSL_ES_Fragment.txt",
-    "scr_chaoschaser_berserk().md",
-    "Fake Donisha.md",
-    "scr_fakedos_chase().md",
     "Pasted image 20260715180005.png",
     "Pasted image 20260715174208.png",
     "Pasted image 20260715173225.png",
