@@ -291,10 +291,11 @@ switch (scene)
 			peppino = instance_create(-130, 386, obj_playerprop);
 			peppino.alarm[0] = 1;
 			peppino.fake_hsp = 12;
-			peppino.sprite_index = spr_player_mach;
+			peppino.sprite_index = spr_dos_mach;
 			peppino.image_speed = 0.5;
 			
 			pizzaface = instance_create(-130, 200, obj_introprop);
+			pizzaface.visible = false;
 			pizzaface.sprite_index = spr_pizzaface;
 			pizzaface.image_speed = 0.35;
 			
@@ -354,10 +355,11 @@ switch (scene)
 			peppino = instance_create(200, 386, obj_playerprop);
 			peppino.fake_hsp = 12;
 			peppino.alarm[0] = 1;
-			peppino.sprite_index = spr_player_mach;
+			peppino.sprite_index = spr_dos_mach;
 			peppino.image_speed = 0.5;
 			
 			pizzaface = instance_create(400, 200, obj_introprop);
+			pizzaface.visible = false;
 			pizzaface.sprite_index = spr_pizzaface;
 			pizzaface.image_speed = 0.35;
 		}
@@ -368,7 +370,7 @@ switch (scene)
 		pizzaface.y = Wave(pizzaface.ystart - 30, pizzaface.ystart + 30, 3, 10);
 		if (_switch)
 		{
-			peppino.sprite_index = spr_player_mach4;
+			peppino.sprite_index = spr_dos_mach4;
 			peppino.fake_hsp = 12;
 			
 			scene++;
@@ -455,6 +457,11 @@ switch (scene)
 			gustavo.sprite_index = spr_intro_styleshot2;
 			gustavo.depth = -1;
 			
+			st = instance_create(0, 300, obj_playerprop)
+            st.sprite_index = spr_st_dance
+            st.depth = -1
+            st.visible = 0
+			
 			scenebuffer = 100;
 			scene++;
 		}
@@ -473,10 +480,11 @@ switch (scene)
 			
 			peppino = instance_create(-700, 386, obj_playerprop);
 			peppino.alarm[0] = 1;
-			peppino.sprite_index = spr_player_mach4;
+			peppino.sprite_index = spr_dos_mach4;
 			peppino.image_speed = 0.5;
 			
 			pizzaface = instance_create(-700, 200, obj_introprop);
+			pizzaface.visible = false;
 			pizzaface.sprite_index = spr_pizzaface;
 			pizzaface.image_speed = 0.35;
 			
@@ -484,7 +492,13 @@ switch (scene)
 			gustavo.spr_palette = spr_ratmountpalette;
 			gustavo.sprite_index = spr_intro_gustavomap;
 			
+			st = instance_create((room_width / 2 + 150), 386, obj_playerprop)
+            st.visible = 1;
+            st.spr_palette = spr_peppalette;
+            st.sprite_index = spr_st_dance;
+			
 			stick = instance_create(room_width * 0.55, 200, obj_introprop);
+			stick.visible = false;
 			stick.sprite_index = spr_intro_stick1;
 			stick.image_speed = 0.35;
 			
@@ -501,7 +515,7 @@ switch (scene)
 			{
 				instance_create(peppino.x + 16, peppino.y, obj_bangeffect);
 				
-				gustavo.sprite_index = spr_lonegustavo_hurt;
+				gustavo.sprite_index = spr_w_hurt;
 				gustavo.hsp = 8;
 				gustavo.vsp = -11;
 			}
@@ -518,30 +532,26 @@ switch (scene)
 				}
 			}
 		}
-		if (stick.sprite_index == spr_intro_stick1)
-		{
-			stick.x += 2;
-			stick.y = Wave(stick.ystart - 10, stick.ystart + 10, 1, 5);
-			if (pizzaface.x >= (stick.x - 25))
-			{
-				instance_create(pizzaface.x + 16, pizzaface.y, obj_bangeffect);
-				stick.sprite_index = spr_intro_stick2;
-				stick.hsp = 8;
-				stick.vsp = -11;
-			}
-		}
-		else
-		{
-			with (stick)
-			{
-				x += hsp;
-				y += vsp;
-				if (vsp < 20)
-				{
-					vsp += 0.5;
-				}
-			}
-		}
+		if (st.sprite_index == spr_st_dance)
+        {
+            if (peppino.x >= (st.x - 25))
+            {
+                instance_create((peppino.x + 16), peppino.y, obj_bangeffect)
+                st.sprite_index = spr_st_hurt
+                st.hsp = 11
+                st.vsp = -11
+            }
+        }
+        else
+        {
+            with (st)
+            {
+                x += hsp
+                y += vsp
+                if (vsp < 20)
+                    vsp += 0.5
+            }
+        }
 		if (peppino.x > (room_width + 200) && gustavo.y > (room_height + 300))
 		{
 			scene++;
@@ -563,15 +573,15 @@ switch (scene)
 			scene++;
 			scenebuffer = 115;
 			
-			peppinobg = instance_create(0, 0, obj_introprop);
-			peppinobg.sprite_index = spr_animeshot2;
-			peppinobg.depth = 2;
-			peppinobg.hspeed = -0.2;
-			
 			pizzaface = instance_create(0, 0, obj_introprop);
 			pizzaface.hspeed = -0.2;
 			pizzaface.sprite_index = spr_animeshot1;
-			pizzaface.depth = 1;
+			pizzaface.depth = 2;
+			
+			peppinobg = instance_create(0, 0, obj_introprop);
+			peppinobg.sprite_index = spr_animeshot2;
+			peppinobg.depth = 1;
+			peppinobg.hspeed = -0.2;
 			
 			bg2 = instance_create(0, 0, obj_tiledintroprop);
 			bg2.sprite_index = spr_animeshot3;
