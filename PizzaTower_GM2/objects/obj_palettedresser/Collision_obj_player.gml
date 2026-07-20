@@ -1,52 +1,60 @@
-if (other.key_up2 && other.ispeppino == ispeppino)
-{
-	with (other)
-	{
-		with (instance_create(x, y, obj_sausageman_dead))
-		{
-			fmod_event_one_shot_3d("event:/sfx/misc/clotheswitch", x, y);
-			hsp = irandom_range(-5, 5);
-			vsp = -irandom_range(6, 11);
-			usepalette = true;
-			sprite_index = spr_palettedresserdebris;
-			if (!obj_player1.ispeppino)
-			{
-				sprite_index = spr_palettedresserdebrisN;
-			}
-			spr_palette = obj_player1.spr_palette;
-			paletteselect = other.paletteselect;
-			oldpalettetexture = global.palettetexture;
-		}
-	}
-	paletteselect++;
-	if (paletteselect >= array_length(palettes))
-	{
-		paletteselect = 0;
-	}
-	while (palettes[paletteselect][1] == false)
-	{
-		paletteselect++;
-		if (paletteselect >= array_length(palettes))
-		{
-			paletteselect = 0;
-		}
-	}
-	var arr = palettes[paletteselect];
-	other.player_paletteselect[other.player_paletteindex] = arr[2];
-	var pattern = noone;
-	if (array_length(arr) > 3)
-	{
-		pattern = arr[3];
-	}
-	other.player_patterntexture[other.player_paletteindex] = pattern;
-	trace(other.player_paletteselect, " pal");
-	trace(other.player_patterntexture, " texture");
-	ini_open_from_string(obj_savesystem.ini_str);
-	ini_write_real("Game", "palette", other.player_paletteselect[0]);
-	ini_write_real("Game", "palette_player2", other.player_paletteselect[1]);
-	ini_write_string("Game", "palettetexture", scr_get_texture_name(other.player_patterntexture[0]));
-	ini_write_string("Game", "palettetexture_player2", scr_get_texture_name(other.player_patterntexture[1]));
-	obj_savesystem.ini_str = ini_close();
-	palettetitle = lang_get_value(concat("dresser_", palettes[paletteselect][0], "title"));
-	palettedesc = lang_get_value_newline(concat("dresser_", palettes[paletteselect][0]));
+if (other.key_up2 && (!display) && other.ispeppino == ispeppino && other.state == states.normal)  
+{  
+    obj_camera.chargecamera = 0  
+    usebuffer = 20  
+    display = 1  
+    // I hijacked this state to make a sort of "freeze" state
+    other.state = states.transitioncutscene 
+    other.sprite_index = other.spr_idle
+    other.hsp = 0  
+    other.movespeed = 0  
+    other.vsp = 0  
+    other.image_speed = 0.35  
+    // Creation of dresser GUI Background
+    instance_create(x - camera_get_view_x(view_camera[0]), y - camera_get_view_y(view_camera[0]), obj_dresserbg) 
+    // This is unsued vvv 
+    var _player = -2  
+    // Defines which actor to spawn
+    var pep = 0  
+    if (!ispeppino)  
+        pep = 1  
+    var actors = actor_array[pep]  
+    with (obj_player1)  
+        var pal = (ispeppino ? get_pep_palette_info() : get_noise_palette_info())  
+    var _relx = 0  
+    var _rely = 0  
+    for (var i = 0; i < array_length(actors); i++)  
+    {  
+        for (var j = 0; j < array_length(actors[i]); j++)  
+        {  
+	        // Create every actor
+            with (instance_create((obj_player1.x - camera_get_view_x(view_camera[0]) + _relx), (obj_player1.y - camera_get_view_y(view_camera[0]) + _rely), obj_dresseractor))  
+            {  
+                sprite_index = choose(obj_player1.spr_idle, obj_player1.spr_3hpidle, obj_player1.spr_rageidle, obj_player1.spr_idle1, obj_player1.spr_idle2, obj_player1.spr_idle3, obj_player1.spr_idle4)  
+                image_index = 0  
+                if actors[i][j][1]  
+                    unlocked = 1  
+                palettespr = pal.spr_palette  
+                paletteindex = actors[i][j][2]  
+                if (array_length(actors[i][j]) > 3)  
+                    palettetexture = actors[i][j][3]  
+            }  
+            // If the actor spawned has the same palette selected as the player, safe its position for later
+            if ((actors[i][j][2] == obj_player1.paletteselect && array_length(actors[i][j]) <= 3) || (array_length(actors[i][j]) > 3 && actors[i][j][3] == global.palettetexture))  
+            {  
+                fmod_event_one_shot_3d("event:/sfx/misc/clotheswitch", x, y)  
+                scolumn = i  
+                srow = j  
+            }  
+            _rely += 100  
+        }  
+        _rely = 0  
+        _relx += 100  
+    }  
+    // Move all actors to match the current player palette with the actor with the same palette
+    with (obj_dresseractor)  
+    {  
+        relx -= (100 * other.scolumn)  
+        rely -= (100 * other.srow)  
+    }  
 }

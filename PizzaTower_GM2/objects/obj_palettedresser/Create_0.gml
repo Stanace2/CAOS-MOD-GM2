@@ -1,6 +1,51 @@
 depth = 100;
+actor_array = [];
 player_palettes = [];
 player_palettes[0] = [
+	["classic", true, 1], 
+	["unfunny", false, 3], 
+	["money", false, 4], 
+	["sage", false, 5], 
+	["blood", false, 6], 
+	["tv", false, 7], 
+	["dark", false, 8], 
+	["shitty", false, 9], 
+	["golden", false, 10], 
+	["garish", false, 11], 
+	["mooney", false, 15], 
+	["funny", false, 17, spr_peppattern1],
+	["itchy", false, 12, spr_peppattern2],
+	["pizza", false, 12, spr_peppattern3],
+	["stripes", false, 12, spr_peppattern4],
+	["goldemanne", false, 16, spr_peppattern5],
+	["bones", false, 12, spr_peppattern6],
+	["pp", false, 18, spr_peppattern7],
+	["war", false, 19, spr_peppattern8],
+	["john", false, 20, spr_peppattern9],
+	["aqua", false, 24, spr_peppattern7], 
+	["shadow", false, 25], 
+	["goth", false, 26], 
+	["quetzal", false, 27, spr_peppattern7], 
+	["maguma", false, 28, spr_peppattern7], 
+	["demoness", false, 29, spr_peppattern7], 
+	["gloomy", false, 30, spr_peppattern7], 
+	["hero", false, 31], 
+	["cheese", false, 32, spr_peppattern7], 
+	["boiling", false, 33], 
+	["aldente", false, 34], 
+	["spectral", false, 35], 
+	["fun", false, 36], 
+	["sunset", false, 37], 
+	["party", false, 38], 
+	["goblin", false, 39], 
+	["goof", false, 40, spr_peppattern7], 
+	["space", false, 41], 
+	["italian", false, 42, spr_peppattern7], 
+	["donibot", false, 43, spr_peppattern7], 
+	["two", false, 44], 
+	["snow", false, 45], 
+	["varoness", false, 46]];
+player_palettes[1] = [
   ["classic", true, 1],
   ["unfunny", false, 3],
   ["money", false, 4],
@@ -22,7 +67,7 @@ player_palettes[0] = [
   ["war", false, 12, spr_peppattern8],
   ["john", false, 12, spr_peppattern9]
 ];
-player_palettes[1] = [
+player_palettes[2] = [
   ["classicN", true, 1],
   ["boise", false, 3],
   ["roise", false, 4],
@@ -65,6 +110,20 @@ for (var i = 0; i < array_length(player_palettes); i++)
 	}
 }
 ini_close();
+for (i = 0; i < array_length(player_palettes); i++)
+{
+    array_push(actor_array, [])
+    for (j = 0; j < array_length(player_palettes[i]); j += 3)
+    {
+        var dud = []
+        for (var w = 0; w < 3; w++)
+        {
+            if ((j + w) < array_length(player_palettes[i]))
+                array_push(dud, player_palettes[i][(j + w)])
+        }
+        array_push(actor_array[i], dud)
+    }
+}
 scr_create_uparrowhitbox();
 paletteselect = 0;
 ispeppino = -1;
@@ -72,3 +131,12 @@ showtext = false;
 alpha = 0;
 palettetitle = "";
 palettedesc = "";
+display = 0
+ad = 0
+drawn = 0
+bg_x = 0
+bg_y = 0
+usebuffer = 0
+scolumn = 0
+srow = 0
+scr_menu_getinput()

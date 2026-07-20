@@ -25,7 +25,7 @@ function scr_chaos_varinit() {
 	poundbuffer = 0
 	quickroll = 0
 	// Italian manners
-	dos = 1
+	dos = 1 // Going to be replaced for a more global option
 	
 	// ==========W&M's variables==========
 	global.wdodge_color1 = [109, 255, 243]
@@ -85,6 +85,7 @@ function scr_chaos_varinit() {
 	global.khaosb = 1  
 	global.khaosactives = [0, 0, 0, 0]  
 	// Customization
+	global.manners = 0
 	global.kpanic = 0  
 	global.kbells = 1  
 	global.kpowerups = 1  

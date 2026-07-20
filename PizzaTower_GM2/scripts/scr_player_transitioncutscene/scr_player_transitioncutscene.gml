@@ -60,6 +60,10 @@ function scr_player_transitioncutscene()
 			}
 		}
 	}
+	if (!visible)  
+		vsp = 0		
+	if (sprite_index == obj_player1.spr_dressup && ANIMATION_END)  
+		state = states.normal;
 	if (sprite_index == spr_player_givepizza && ANIMATION_END)
 	{
 		image_speed = 0;

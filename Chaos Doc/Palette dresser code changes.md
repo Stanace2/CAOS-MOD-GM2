@@ -1,6 +1,153 @@
 ## obj_palettedresser
 This object handles all the logic related to displaying all palettes on screen
 ### Create
+#### New
+Added the exception for peppino, in the future more will be added.
+~~~js
+depth = 100;
+actor_array = [];
+player_palettes = [];
+player_palettes[0] = [
+	["classic", true, 1], 
+	["unfunny", false, 3], 
+	["money", false, 4], 
+	["sage", false, 5], 
+	["blood", false, 6], 
+	["tv", false, 7], 
+	["dark", false, 8], 
+	["shitty", false, 9], 
+	["golden", false, 10], 
+	["garish", false, 11], 
+	["mooney", false, 15], 
+	["funny", false, 17, spr_peppattern1],
+	["itchy", false, 12, spr_peppattern2],
+	["pizza", false, 12, spr_peppattern3],
+	["stripes", false, 12, spr_peppattern4],
+	["goldemanne", false, 16, spr_peppattern5],
+	["bones", false, 12, spr_peppattern6],
+	["pp", false, 18, spr_peppattern7],
+	["war", false, 19, spr_peppattern8],
+	["john", false, 20, spr_peppattern9],
+	["aqua", false, 24, spr_peppattern7], 
+	["shadow", false, 25], 
+	["goth", false, 26], 
+	["quetzal", false, 27, spr_peppattern7], 
+	["maguma", false, 28, spr_peppattern7], 
+	["demoness", false, 29, spr_peppattern7], 
+	["gloomy", false, 30, spr_peppattern7], 
+	["hero", false, 31], 
+	["cheese", false, 32, spr_peppattern7], 
+	["boiling", false, 33], 
+	["aldente", false, 34], 
+	["spectral", false, 35], 
+	["fun", false, 36], 
+	["sunset", false, 37], 
+	["party", false, 38], 
+	["goblin", false, 39], 
+	["goof", false, 40, spr_peppattern7], 
+	["space", false, 41], 
+	["italian", false, 42, spr_peppattern7], 
+	["donibot", false, 43, spr_peppattern7], 
+	["two", false, 44], 
+	["snow", false, 45], 
+	["varoness", false, 46]];
+player_palettes[1] = [
+  ["classic", true, 1],
+  ["unfunny", false, 3],
+  ["money", false, 4],
+  ["sage", false, 5],
+  ["blood", false, 6],
+  ["tv", false, 7],
+  ["dark", false, 8],
+  ["shitty", false, 9],
+  ["golden", false, 10],
+  ["garish", false, 11],
+  ["mooney", false, 15],
+  ["funny", false, 12, spr_peppattern1],
+  ["itchy", false, 12, spr_peppattern2],
+  ["pizza", false, 12, spr_peppattern3],
+  ["stripes", false, 12, spr_peppattern4],
+  ["goldemanne", false, 12, spr_peppattern5],
+  ["bones", false, 12, spr_peppattern6],
+  ["pp", false, 12, spr_peppattern7],
+  ["war", false, 12, spr_peppattern8],
+  ["john", false, 12, spr_peppattern9]
+];
+player_palettes[2] = [
+  ["classicN", true, 1],
+  ["boise", false, 3],
+  ["roise", false, 4],
+  ["poise", false, 5],
+  ["reverse", false, 6],
+  ["critic", false, 7],
+  ["outlaw", false, 8],
+  ["antidoise", false, 9],
+  ["flesheater", false, 10],
+  ["super", false, 11],
+  ["porcupine", false, 15],
+  ["feminine", false, 16],
+  ["realdoise", false, 17],
+  ["forest", false, 18],
+  ["racer", false, 28, spr_noisepattern1],
+  ["comedian", false, 27, spr_noisepattern2],
+  ["banana", false, 26, spr_noisepattern3],
+  ["noiseTV", false, 25, spr_noisepattern4],
+  ["madman", false, 24, spr_noisepattern5],
+  ["bubbly", false, 23, spr_noisepattern6],
+  ["welldone", false, 22, spr_noisepattern7],
+  ["grannykisses", false, 21, spr_noisepattern8],
+  ["towerguy", false, 20, spr_noisepattern9]
+];
+ini_open_from_string(obj_savesystem.ini_str_options);
+for (var i = 0; i < array_length(player_palettes); i++)
+{
+	array_push(player_palettes[i], ["candy", false, 12, spr_peppattern10]);
+	array_push(player_palettes[i], ["bloodstained", false, 12, spr_peppattern11]);
+	array_push(player_palettes[i], ["bat", false, 12, spr_peppattern12]);
+	array_push(player_palettes[i], ["pumpkin", false, 12, spr_peppattern13]);
+	array_push(player_palettes[i], ["fur", false, 12, spr_peppattern14]);
+	array_push(player_palettes[i], ["flesh", false, 12, spr_peppattern15]);
+	for (var j = 1; j < array_length(player_palettes[i]); j++)
+	{
+		if (ini_read_real("Palettes", player_palettes[i][j][0], false))
+		{
+			player_palettes[i][j][1] = true;
+		}
+	}
+}
+ini_close();
+for (i = 0; i < array_length(player_palettes); i++)
+{
+    array_push(actor_array, [])
+    for (j = 0; j < array_length(player_palettes[i]); j += 3)
+    {
+        var dud = []
+        for (var w = 0; w < 3; w++)
+        {
+            if ((j + w) < array_length(player_palettes[i]))
+                array_push(dud, player_palettes[i][(j + w)])
+        }
+        array_push(actor_array[i], dud)
+    }
+}
+scr_create_uparrowhitbox();
+paletteselect = 0;
+ispeppino = -1;
+showtext = false;
+alpha = 0;
+palettetitle = "";
+palettedesc = "";
+display = 0
+ad = 0
+drawn = 0
+bg_x = 0
+bg_y = 0
+usebuffer = 0
+scolumn = 0
+srow = 0
+scr_menu_getinput()
+~~~
+#### Oldie
 Main changes are:
 - Distinction between Noise and pep ==(Probably will be obsolete later)==
 - More palettes
@@ -88,6 +235,173 @@ else
     alpha = Approach(alpha, 0, 0.1)
 ~~~
 ### EndStep
+#### New shyt
+Made the dresser function globally with sprite variables
+~~~js
+if display
+{
+    var pep = 0
+    if (!ispeppino)
+        pep = 1
+    var actors = actor_array[pep]
+    scr_menu_getinput()
+    ad = Approach(ad, 1, 0.1)
+    if key_back
+    {
+        obj_dresserbg.die = 1
+        obj_dresseractor.die = 1
+        display = 0
+        obj_player1.state = states.normal
+    }
+    if (key_jump && actors[scolumn][srow][1])
+    {
+        with (instance_create(x, y, obj_sausageman_dead))
+        {
+            fmod_event_one_shot_3d("event:/sfx/misc/clotheswitch", x, y)
+            hsp = irandom_range(-5, 5)
+            vsp = (-(irandom_range(6, 11)))
+            usepalette = 1
+            sprite_index = spr_palettedresserdebris
+            if (!obj_player1.ispeppino)
+                sprite_index = spr_palettedresserdebrisN
+            spr_palette = obj_player1.spr_palette
+            paletteselect = obj_player1.paletteselect
+            oldpalettetexture = global.palettetexture
+        }
+        obj_player1.player_paletteselect[obj_player1.player_paletteindex] = actors[scolumn][srow][2]
+        var pattern = noone
+        if (array_length(actors[scolumn][srow]) > 3)
+            pattern = actors[scolumn][srow][3]
+        obj_player1.player_patterntexture[obj_player1.player_paletteindex] = pattern
+        trace(obj_player1.player_paletteselect, " pal")
+        trace(obj_player1.player_patterntexture, " texture")
+        ini_open_from_string(obj_savesystem.ini_str)
+        ini_write_real("Game", "palette", obj_player1.player_paletteselect[0])
+        ini_write_real("Game", "palette_player2", obj_player1.player_paletteselect[1])
+        ini_write_string("Game", "palettetexture", scr_get_texture_name(obj_player1.player_patterntexture[0]))
+        ini_write_string("Game", "palettetexture_player2", scr_get_texture_name(obj_player1.player_patterntexture[1]))
+        obj_savesystem.ini_str = ini_close()
+        obj_dresserbg.die = true
+        obj_dresseractor.die = true
+        display = 0
+        obj_player1.image_index = 0
+        obj_player1.sprite_index = obj_player1.spr_dressup
+        obj_player1.jumpAnim = true
+        obj_player1.landAnim = false
+        with (obj_player1)
+        {
+			/*
+            if ispeppino
+            {
+                if (actors[other.scolumn][other.srow][0] == "pp")
+                {
+                    spr_suplexdash = spr_player_suplexdashALT
+                    spr_suplexdashjumpstart = spr_player_suplexgrabjumpstartALT
+                    spr_suplexdashjump = spr_player_suplexgrabjumpALT
+                    spr_longjump = spr_player_longjumpALT
+                    spr_longjumpend = spr_player_longjumpendALT
+                }
+                else if dos
+                {
+                    spr_suplexdash = spr_player_suplexdash
+                    spr_suplexdashjumpstart = spr_player_suplexgrabjumpstart
+                    spr_suplexdashjump = spr_player_suplexgrabjump
+                    spr_longjump = spr_player_longjump
+                    spr_longjumpend = spr_player_longjumpend
+                }
+            }
+			*/
+        }
+    }
+    if (key_jump && (!actors[scolumn][srow][1]))
+        fmod_event_one_shot_3d("event:/sfx/ui/switchchardown", x, y)
+    palettetitle = lang_get_value(concat("dresser_", actors[scolumn][srow][0], "title"))
+    palettedesc = lang_get_value_newline(concat("dresser_", actors[scolumn][srow][0]))
+}
+else
+    ad = Approach(ad, 0, 0.1)
+if (usebuffer < 1 && display)
+{
+    if (-key_left2)
+    {
+        if (scolumn != 0)
+        {
+            with (obj_dresseractor)
+                relx += 100
+            scolumn -= 1
+        }
+        else if (srow > ((array_length(actors[(array_length(actors) - 1)])) - 1))
+        {
+            with (obj_dresseractor)
+                relx -= (100 * (array_length(actors) - 2))
+            scolumn = array_length(actors) - 2
+        }
+        else
+        {
+            with (obj_dresseractor)
+                relx -= (100 * (array_length(actors) - 1))
+            scolumn = array_length(actors) - 1
+        }
+    }
+    if key_right2
+    {
+        if (scolumn != (array_length(actors) - 1))
+        {
+            if (srow > ((array_length(actors[(scolumn + 1)])) - 1))
+            {
+                with (obj_dresseractor)
+                    relx += (100 * (array_length(actors) - 2))
+                scolumn = 0
+            }
+            else
+            {
+                with (obj_dresseractor)
+                    relx -= 100
+                scolumn += 1
+            }
+        }
+        else
+        {
+            with (obj_dresseractor)
+                relx += (100 * (array_length(actors) - 1))
+            scolumn = 0
+        }
+    }
+    if key_up2
+    {
+        if (srow != 0)
+        {
+            with (obj_dresseractor)
+                rely += 100
+            srow -= 1
+        }
+        else
+        {
+            with (obj_dresseractor)
+                rely -= (100 * (array_length(actors[other.scolumn]) - 1))
+            srow = array_length(actors[scolumn]) - 1
+        }
+    }
+    if key_down2
+    {
+        if (srow != (array_length(actors[scolumn]) - 1))
+        {
+            with (obj_dresseractor)
+                rely -= 100
+            srow += 1
+        }
+        else
+        {
+            with (obj_dresseractor)
+                rely += (100 * (array_length(actors[other.scolumn]) - 1))
+            srow = 0
+        }
+    }
+}
+if (usebuffer > 0)
+    usebuffer--
+~~~
+#### Oldie
 #states
 All code is new additions
 Related objects:
