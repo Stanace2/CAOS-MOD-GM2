@@ -131,7 +131,7 @@ function lang_get_value_raw(_language, _entry)
 		instance_create_unique(0, 0, obj_langerror);
 		with (obj_langerror)
 		{
-			text = concat("Error: Could not find the mod lang file \nInstall the chaos.txt file");
+			text = concat("Error: Could not find the mod lang file \nInstall the chaos.txt file NOW (*lightning sound*)");
 		}
 		if (is_undefined(n))
 		{

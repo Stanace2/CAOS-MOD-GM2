@@ -50,8 +50,8 @@ function draw_sprite_line(argument0, argument1, argument2, argument3, argument4,
 [^9]: argument8 : *max range for gradient* | num
 
 **This is used in:
-	drawGUI | obj_dragonsnap_effect
-	draw | obj_mango_brickball_indicator**
+	drawGUI | [[Level garnish#PowerUps#obj_dragonsnap_effect#DrawGUI]]
+	draw | [[WM - Objects#obj_mango_brickball_indicator#Draw]]**
 ### clean_dragonexit()
 Used to clean the exit position of the player after doing a dragon snap
 ~~~js
@@ -78,7 +78,7 @@ function clean_dragonexit()
 ~~~
 
 **This is executed in:
-	step | obj_dragonsnap_effect**
+	step | [[Level garnish#PowerUps#obj_dragonsnap_effect#Step]]**
 ### scr_corrupt_door()
 Spawns the caoschaser if caos challenge is activated
 ~~~js

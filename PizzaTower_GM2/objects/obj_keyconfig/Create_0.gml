@@ -22,6 +22,7 @@ input =
 	["player_slap"],
 	["player_attack"],
 	["player_taunt"],
+	["player_shoot"],
 	["menu_start"],
 	["player_superjump"],
 	["player_groundpound"],
