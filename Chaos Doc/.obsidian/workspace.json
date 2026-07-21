@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "exitgate",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "Marcadores"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -186,12 +185,12 @@
   },
   "active": "5df06aa28f949f22",
   "lastOpenFiles": [
-    "Changes to vainilla game.md",
+    "PS - Gallery.md",
     "! CaosMod - Index !.md",
+    "Changes to vainilla game.md",
     "Moveset controllers.md",
     "Sprite initializer and changes.md",
     "Palette dresser code changes.md",
-    "PS - Gallery.md",
     "scr_player_transitioncutscene().md",
     "PS - Code changes.md",
     "Dos - Gallery.md",
