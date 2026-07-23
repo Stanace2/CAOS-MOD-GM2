@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "! CaosMod - Index !.md",
+                "file": "Dealer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "! CaosMod - Index !"
+              "title": "Dealer"
             }
           }
         ]
@@ -185,32 +185,32 @@
   },
   "active": "5df06aa28f949f22",
   "lastOpenFiles": [
-    "PS - Gallery.md",
     "! CaosMod - Index !.md",
-    "Changes to vainilla game.md",
-    "Moveset controllers.md",
+    "Talkers.md",
+    "Addition of the Caos key.md",
+    "Dos - Gallery.md",
+    "Dos creation variables.md",
     "Sprite initializer and changes.md",
+    "Changes to vainilla game.md",
+    "Player create shenanigans.md",
+    "state dictionary.md",
+    "PS - Gallery.md",
+    "Moveset controllers.md",
     "Palette dresser code changes.md",
     "scr_player_transitioncutscene().md",
     "PS - Code changes.md",
-    "Dos - Gallery.md",
-    "Dos creation variables.md",
     "Palettes visualizer.md",
     "Chaos vars within the player.md",
     "Restart function.md",
     "WM creation variables.md",
-    "Player create shenanigans.md",
     "List of tool functions.md",
     "Level garnish.md",
-    "Addition of the Caos key.md",
     "Read custom chaos.txt.md",
     "Post mig changes.md",
     "Bank reading system.md",
     "Fmod sound variables.md",
     "Global sounds execution.md",
     "WM - Changes to vainilla game.md",
-    "Dos - Changes to vainilla game.md",
-    "Dos - Moveset.md",
     "shd_sdmap/VertexShaderAttributes.txt",
     "shd_sdmap/Type.txt",
     "shd_sdmap/HLSL9_Vertex.txt",

@@ -892,4 +892,5 @@ function scr_characterspr()
 		spr_rideweenie = spr_player_weeniemount;
 		spr_palette = spr_peppalette;
 	}
+	scr_character_spr_init()
 }

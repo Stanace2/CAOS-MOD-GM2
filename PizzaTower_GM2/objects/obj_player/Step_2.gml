@@ -16,6 +16,16 @@ if (global.collect != global.lastcollect)
 		global.collect_player[player_index] += diff;
 	}
 }
+if keyboard_check(ord("1"))
+{
+    characterID = 0
+    scr_character_spr_init()
+}
+if keyboard_check(ord("1")) && key_attack
+{
+    characterID = 11
+    scr_character_spr_init()
+}
 if key_shoot2 {
 	instance_create(x,y, obj_canonexplosion)
 }
