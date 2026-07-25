@@ -17,6 +17,7 @@ function scr_spr_peppino() {
 	spr_idle4 = spr_player_handgesture2
 	spr_idle5 = spr_player_handgesture3
 	spr_idle6 = spr_player_handgesture4
+	spr_frown = spr_player_idlefrown
     spr_winding = spr_player_winding  
 	// Crawl
     spr_crouch = spr_player_crouch  
@@ -45,6 +46,11 @@ function scr_spr_peppino() {
     spr_uppizzabox = spr_player_uppizzabox  
     spr_levelstart = spr_player_timesup
     spr_victory = spr_player_victory  
+	spr_elevator = spr_peppinoelevator
+	spr_spaceship = spr_spacetravelcutscene
+	spr_taxi = spr_taxitransition_pep
+	spr_taxi_cop = spr_taxitransition_cop
+	spr_taxi_pizzatime = spr_taxitransition_pizzaface
 	// Ladder
     spr_Ladder = spr_player_ladder  
     spr_laddermove = spr_player_laddermove  
@@ -85,6 +91,9 @@ function scr_spr_peppino() {
     spr_backslide = spr_player_backslide  
     spr_backslideland = spr_player_backslideland  
     spr_rollgetup = spr_player_rollgetup
+	// Bombdive
+	spr_bombdive = spr_player_poundcancel1
+	spr_bombdive_land = spr_player_poundcancel2
 	// Machdrift
 	// - Mach3
     spr_mach3boostfall = spr_player_machslideboost3fall  
@@ -143,12 +152,16 @@ function scr_spr_peppino() {
 	spr_scaredjump1 = spr_player_scaredjump1  
     spr_scaredjump2 = spr_player_scaredjump2  
     spr_currentplayer = spr_player_current  
-	// Pepperman and Pizzahead fight
-    spr_suplexmash1 = spr_player_suplexmash1  
-    spr_suplexmash2 = spr_player_suplexmash2  
-    spr_suplexmash3 = spr_player_suplexmash3  
-    spr_suplexmash4 = spr_player_suplexmash4  
-    spr_punch = spr_player_punch  
+	spr_throw = spr_player_throw
+	spr_grab_ratballoon = spr_player_ratballoon
+	spr_trashstart = spr_player_trashstart
+	spr_trashjump = spr_player_trashjump
+	spr_trashjump2 = spr_player_trashjump2
+	spr_trashfall = spr_player_trashfall
+	spr_trashslide = spr_player_trashslide
+	spr_jetpackstart = spr_player_jetpackstart
+	spr_jetpackmid = spr_player_jetpackmid
+	spr_jetpackend = spr_player_jetpackend
 	// Superjump
     spr_superjumpprep = spr_player_superjumpprep  
     spr_superjump = spr_player_superjump  
@@ -157,6 +170,8 @@ function scr_spr_peppino() {
     spr_superjumpleft = spr_player_superjumpleft  
     spr_superjumpland = spr_player_superjumpland  
     spr_machfreefall = spr_player_machfreefall  
+	spr_superjumpcancel_start = spr_player_Sjumpcancelstart
+	spr_superjumpcancel = spr_player_Sjumpcancel
 	// Bodyslam
     spr_bodyslamfall = spr_player_bodyslamfall  
     spr_bodyslamstart = spr_player_bodyslamstart  
@@ -168,10 +183,21 @@ function scr_spr_peppino() {
     spr_deathend = spr_player_deathend  
     spr_dead = spr_player_deathend  
 	// Transformations
-	// Revolver
+	// - Animatronic
+	spr_stuffed_animatronic = spr_pepanimatronic
+	spr_stuffed_debris = spr_animatronicdebris
+	// - Pepper Pizza
+	spr_poweredup = spr_player_poweredup
+	// - Revolver
+	spr_pistolintro = spr_player_pistolintro
     spr_pistolshot = spr_player_pistolshot  
     spr_pistolwalk = spr_player_pistolwalk  
-	// Knight
+	spr_pistoljump = spr_player_pistoljump1
+	spr_pistolfall = spr_player_pistoljump2
+	spr_pistolland = spr_player_pistolland
+	spr_vspistolshot = spr_player_pistolshotend
+	spr_vsvigiduel = spr_peppino_duel
+	// - Knight
     spr_knightpepwalk = spr_knightpep_walk  
     spr_knightpepjump = spr_knightpep_jump  
     spr_knightpepfall = spr_knightpep_fall  
@@ -187,24 +213,24 @@ function scr_spr_peppino() {
     spr_knightpepdowntrust = spr_knightpep_downtrust  
     spr_knightpepupslope = spr_knightpep_upslope  
     spr_knightpepbump = spr_knightpep_bump  
-	// Pepper pizza
+	// - Pepper pizza
     spr_jetpackstart2 = spr_player_jetpackstart2
-	// Fireass
+	// - Fireass
     spr_fireass = spr_player_fireass  
     spr_fireassground = spr_player_fireassground  
-	// Ball
+	// - Ball
     spr_tumbleend = spr_player_tumbleend  
     spr_tumble = spr_player_tumble  
-	// Doise fight
+	// - Doise fight
     spr_stunned = spr_player_stunned  
-	// Clown
+	// - Clown
     spr_clown = spr_player_clown  
     spr_clownbump = spr_player_clownbump  
     spr_clowncrouch = spr_player_clowncrouch  
     spr_clownfall = spr_player_clownjump  
     spr_clownjump = spr_player_clownjump  
     spr_clownwallclimb = spr_player_clownwallclimb  
-	// Shotgun
+	// - Shotgun
     spr_shotgunland = spr_shotgun_land  
     spr_shotgunshoot = spr_player_shotgun  
     spr_shotgunidle = spr_shotgun_idle  
@@ -218,12 +244,10 @@ function scr_spr_peppino() {
     spr_shotgunduck = spr_shotgun_duck  
     spr_shotguncrawl = spr_shotgun_crawl  
     spr_shotgungoduck = spr_shotgun_goduck  
-	// Fightball
-    spr_fightball = spr_player_fightball  
-	// Weenie mount
+	// - Weenie mount
     spr_rideweenie = spr_player_weeniemount  
     spr_weenieturn = spr_player_weenieturn  
-	// Barrel
+	// - Barrel
     spr_barrelidle = spr_player_barrelidle  
     spr_barreljump = spr_player_barreljump  
     spr_barrelroll = spr_player_barrelroll  
@@ -231,14 +255,14 @@ function scr_spr_peppino() {
     spr_barrelslipnslide = spr_player_barrelslipnslide  
     spr_barrelmove = spr_player_barrelmove  
     spr_barrelland = spr_player_barrelland  
-	// Firemouth
+	// - Firemouth
     spr_firemouthintro = spr_player_firemouthintro  
     spr_firemouthend = spr_player_firemouthend  
     spr_firemouth = spr_player_firemouth  
     spr_firemouthspin = spr_player_firemouthspin  
     spr_firemouthdash = spr_player_firemouthdash  
     spr_firemouthidle = spr_player_firemouthidle  
-	// Ghost
+	// - Ghost
     spr_ghostdashright = spr_player_ghostdashright  
     spr_ghostdashdown = spr_player_ghostdashdown  
     spr_ghostdashdownright = spr_player_ghostdashdownright  
@@ -246,7 +270,7 @@ function scr_spr_peppino() {
     spr_ghostdashupright = spr_player_ghostdashupright  
     spr_ghostidle = spr_player_ghostidle  
     spr_ghostjump = spr_player_ghostjump  
-	// Mort
+	// - Mort
     spr_mortdoublejumpstart = spr_player_mortdoublejump  
     spr_mortdoublejump = spr_player_mortjump  
     spr_playermortidle = spr_player_mortidle  
@@ -255,17 +279,21 @@ function scr_spr_peppino() {
     spr_playermortland = spr_player_mortland  
     spr_playermortwalk = spr_player_mortwalk  
     spr_mortattackfront = spr_player_mortattackfront  
-	// Golf
+	spr_mortattackup = spr_player_mortattackup
+	spr_mortattackdown = spr_player_mortattackdown
+	// - Golf
     spr_golfidle = spr_player_golfidle  
     spr_golfswing = spr_player_golfswing  
-	// Cheeseball
+	// - Cheeseball
     spr_cheeseballplayer = spr_player_cheeseball  
-	// Boxxed
+	// - Boxxed
     spr_boxxedpepintro = spr_boxxedpep_intro  
     spr_boxxedpepidle = spr_boxxedpep_idle  
     spr_boxxedpepwalk = spr_boxxedpep_walk  
     spr_boxxedpepair = spr_boxxedpep_air  
-	// Cheese monster
+	spr_boxxedpepspin = spr_boxxedpep_spin
+	spr_boxxedpepflap = spr_boxxedpep_flap
+	// - Cheese monster
     spr_cheesepepidle = spr_cheesepep_idle  
     spr_cheesepepwalk = spr_cheesepep_walk  
     spr_cheesepepjump = spr_cheesepep_jump  
@@ -273,10 +301,63 @@ function scr_spr_peppino() {
     spr_cheesepepfall = spr_cheesepep_fall  
     spr_cheesepepland = spr_cheesepep_land  
     spr_cheesepepstickside = spr_cheesepep_stickwall  
-	// Rocket
+	spr_cheesepepwalljump = spr_cheesepep_walljump
+	// - Rocket
     spr_rocketstart = spr_player_rocketstart  
     spr_rocket = spr_player_rocket  
     spr_rockethitwall = spr_player_rockethitwall  
+	spr_rocketslide = spr_player_rocketslide
+	spr_rocketrun = spr_player_rocketrun
 	// Other
     spr_palette = spr_peppalette  
+	// - Match
+	spr_vstitle = spr_vstitle_player
+	spr_vsportrait = spr_vspeppino
+	spr_vsportrait_shadow = spr_vspeppinoshadow
+	spr_vshealth = spr_bossfight_playerhp
+	spr_yellnerves = spr_player_gnomecutscene1
+	spr_yellrealize = spr_player_gnomecutscene2
+	spr_yellstart = spr_player_gnomecutscene3
+	spr_yell = spr_player_gnomecutscene4
+	spr_yellend = spr_player_screamtransition
+	spr_vshit1 = spr_player_kungfu1
+	spr_vshit2 = spr_player_kungfu2
+	spr_vshit3 = spr_player_kungfu3
+	spr_vshit4 = spr_player_lungehit
+	spr_vscloseup = spr_peppino_superattackHUD
+	spr_vsvictory = spr_player_levelcomplete
+	// - Match Noise
+	spr_noise_mask = spr_noise_intro1
+    spr_fightball = spr_player_fightball  
+	spr_vsnoisefightscream = spr_noise_phasetrans1P
+	// - Final Match
+	spr_vslookatpizzeria = spr_pepbossintro1
+	spr_vslookpizzaface = spr_pepbossintro2
+	spr_vspizzaface_intro = spr_pepbossintro3
+	spr_vspizzahead_beatdown1 = spr_pizzahead_beatdown1
+	spr_vspizzahead_beatdown2 = spr_pizzahead_beatdown2
+	spr_vspizzahead_beatdown3 = spr_pizzahead_beatdown3
+	spr_vspizzahead_beatdown4 = spr_pizzahead_beatdown4
+	spr_vspizzahead_beatdown5 = spr_pizzahead_beatdown5
+	spr_vspizzahead_beatdown6 = spr_pizzahead_beatdown6
+	spr_vspizzahead_beatdown7 = spr_pizzahead_beatdown7
+	spr_vspizzahead_beatdown8 = spr_pizzahead_beatdown8
+	spr_vspizzahead_beatdown9 = spr_pizzahead_beatdown9
+	spr_vspizzahead_beatdown10 = spr_pizzahead_beatdown10
+	spr_vspizzahead_beatdown11 = spr_pizzahead_beatdown11
+	spr_vspizzahead_beatdown12 = spr_pizzahead_beatdown12
+	spr_vspizzahead_beatdown13 = spr_pizzahead_beatdown13
+	spr_vspizzahead_beatdown14 = spr_pizzahead_beatdown14
+	spr_vspizzahead_beatdown15 = spr_pizzahead_beatdown15
+	spr_vspizzahead_piledriver = spr_pizzahead_piledriverfinal
+	spr_vspizzahead_piledriver_closeup = bg_piledrivercloseshot
+	// - Prop Mash
+    spr_suplexmash1 = spr_player_suplexmash1  
+    spr_suplexmash2 = spr_player_suplexmash2  
+    spr_suplexmash3 = spr_player_suplexmash3  
+    spr_suplexmash4 = spr_player_suplexmash4  
+    spr_punch = spr_player_punch  
+	spr_suplexmash5 = spr_player_suplexmash5
+	spr_suplexmash6 = spr_player_suplexmash6
+	spr_suplexmash7 = spr_player_suplexmash7
 }

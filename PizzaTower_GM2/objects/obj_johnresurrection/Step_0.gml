@@ -19,7 +19,7 @@ if (!fadein)
 				{
 					other.state++;
 					other.cutscenebuffer = 100;
-					sprite_index = spr_player_idle;
+					sprite_index = obj_player1.spr_idle;
 					if (!ispeppino)
 					{
 						sprite_index = spr_playerN_doiseintro1;
@@ -39,7 +39,7 @@ if (!fadein)
 				state = 2;
 				with (obj_johnresurrection_peppino)
 				{
-					sprite_index = spr_player_idlefrown;
+					sprite_index = obj_player1.spr_frown;
 					if (!ispeppino)
 					{
 						sprite_index = spr_playerN_doiseintro2;
@@ -167,7 +167,7 @@ if (!fadein)
 					}
 					with (obj_johnresurrection_peppino)
 					{
-						sprite_index = spr_player_idle;
+						sprite_index = obj_player1.spr_idle;
 					}
 				}
 				else

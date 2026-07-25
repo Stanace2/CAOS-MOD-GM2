@@ -7,7 +7,7 @@ function scr_player_trickjump()
 		{
 			image_speed = 0.35;
 		}
-		if (sprite_index == spr_player_rampjump && ANIMATION_END)
+		if (sprite_index == spr_rampjump && ANIMATION_END)
 		{
 			image_index = image_number - 1;
 		}
@@ -20,7 +20,7 @@ function scr_player_trickjump()
 		}
 		if (ANIMATION_END)
 		{
-			sprite_index = spr_player_rampjump;
+			sprite_index = spr_rampjump;
 		}
 	}
 	if (scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
