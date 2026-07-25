@@ -5,7 +5,7 @@ Changes done directly to previous code
 // Change the superjump acceleration
     if (sjumpvsp <= -4)
     {
-        if (ispeppino && dos)
+        if (ispeppino && dos) characterID == 0
             sjumpvsp -= 0.3
         else
             sjumpvsp -= 0.1

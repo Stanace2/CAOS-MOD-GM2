@@ -18,12 +18,12 @@ if (global.collect != global.lastcollect)
 }
 if keyboard_check(ord("1"))
 {
-    characterID = 0
+    characterID = characters.donisha
     scr_character_spr_init()
 }
 if keyboard_check(ord("1")) && key_attack
 {
-    characterID = 11
+    characterID = characters.pep
     scr_character_spr_init()
 }
 if key_shoot2 {

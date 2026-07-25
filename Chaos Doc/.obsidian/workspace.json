@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sprite initializer and changes.md",
+                "file": "Dos - Changes to vainilla game.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sprite initializer and changes"
+              "title": "Dos - Changes to vainilla game"
             }
           }
         ]
@@ -185,13 +185,14 @@
   },
   "active": "5df06aa28f949f22",
   "lastOpenFiles": [
+    "Dos - Moveset.md",
     "! CaosMod - Index !.md",
-    "Post mig changes.md",
     "Sprite initializer and changes.md",
+    "Addition of the Caos key.md",
+    "Post mig changes.md",
+    "Dos - Gallery.md",
     "Dealer.md",
     "Talkers.md",
-    "Addition of the Caos key.md",
-    "Dos - Gallery.md",
     "Dos creation variables.md",
     "Changes to vainilla game.md",
     "Player create shenanigans.md",
@@ -210,7 +211,6 @@
     "Read custom chaos.txt.md",
     "Bank reading system.md",
     "Fmod sound variables.md",
-    "Global sounds execution.md",
     "shd_sdmap/VertexShaderAttributes.txt",
     "shd_sdmap/Type.txt",
     "shd_sdmap/HLSL9_Vertex.txt",
