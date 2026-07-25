@@ -4032,6 +4032,7 @@
     {"id":{"name":"obj_shotgunblast","path":"objects/obj_shotgunblast/obj_shotgunblast.yy",},"order":1182,},
     {"id":{"name":"spr_player_parry1","path":"sprites/spr_player_parry1/spr_player_parry1.yy",},"order":1182,},
     {"id":{"name":"obj_gustavofollower","path":"objects/obj_gustavofollower/obj_gustavofollower.yy",},"order":1183,},
+    {"id":{"name":"spr_dos_pistoljump2","path":"sprites/spr_dos_pistoljump2/spr_dos_pistoljump2.yy",},"order":281,},
     {"id":{"name":"spr_grabhangeffect","path":"sprites/spr_grabhangeffect/spr_grabhangeffect.yy",},"order":1183,},
     {"id":{"name":"obj_snottyexit","path":"objects/obj_snottyexit/obj_snottyexit.yy",},"order":1184,},
     {"id":{"name":"spr_tutorialBG1","path":"sprites/spr_tutorialBG1/spr_tutorialBG1.yy",},"order":1184,},

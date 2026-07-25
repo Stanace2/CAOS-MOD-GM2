@@ -1,1 +1,0 @@
-Similar to full gradient map, only it works like the rank screens, making all black one flat color and rest the head color

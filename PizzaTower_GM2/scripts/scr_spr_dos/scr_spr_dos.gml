@@ -17,7 +17,7 @@ function scr_spr_dos() {
 	spr_idle4 = spr_dos_handgesture2
 	spr_idle5 = spr_dos_handgesture3
 	spr_idle6 = spr_dos_handgesture4
-	spr_frown = spr_player_idlefrown
+	spr_frown = spr_dos_idlefrown
     spr_winding = spr_dos_winding  
 	// Crawl
     spr_crouch = spr_dos_crouch  
@@ -46,7 +46,7 @@ function scr_spr_dos() {
     spr_uppizzabox = spr_dos_uppizzabox  
     spr_levelstart = spr_dos_timesup
     spr_victory = spr_dos_victory  
-	spr_elevator = spr_peppinoelevator
+	spr_elevator = spr_dos_elevator
 	spr_spaceship = spr_spacetravelcutscene
 	spr_taxi = spr_taxitransition_pep
 	spr_taxi_cop = spr_taxitransition_cop
@@ -92,8 +92,8 @@ function scr_spr_dos() {
     spr_backslideland = spr_dos_backslideland  
     spr_rollgetup = spr_dos_rollgetup
 	// Bombdive
-	spr_bombdive = spr_player_poundcancel1
-	spr_bombdive_land = spr_player_poundcancel2
+	spr_bombdive = spr_dos_poundcancel1
+	spr_bombdive_land = spr_dos_poundcancel2
 	// Machdrift
 	// - Mach3
     spr_mach3boostfall = spr_dos_machslideboost3fall  
@@ -152,16 +152,16 @@ function scr_spr_dos() {
 	spr_scaredjump1 = spr_dos_scaredjump1  
     spr_scaredjump2 = spr_dos_scaredjump2  
     spr_currentplayer = spr_dos_current  
-	spr_throw = spr_player_throw
-	spr_grab_ratballoon = spr_player_ratballoon
-	spr_trashstart = spr_player_trashstart
-	spr_trashjump = spr_player_trashjump
-	spr_trashjump2 = spr_player_trashjump2
-	spr_trashfall = spr_player_trashfall
-	spr_trashslide = spr_player_trashslide
-	spr_jetpackstart = spr_player_jetpackstart
-	spr_jetpackmid = spr_player_jetpackmid
-	spr_jetpackend = spr_player_jetpackend
+	spr_throw = spr_dos_throw
+	spr_grab_ratballoon = spr_dos_ratballoon
+	spr_trashstart = spr_dos_trashstart
+	spr_trashjump = spr_dos_trashjump
+	spr_trashjump2 = spr_dos_trashjump2
+	spr_trashfall = spr_dos_trashfall
+	spr_trashslide = spr_dos_trashslide
+	spr_jetpackstart = spr_dos_jetpackstart
+	spr_jetpackmid = spr_dos_jetpackmid
+	spr_jetpackend = spr_dos_jetpackend
 	// Superjump
     spr_superjumpprep = spr_dos_superjumpprep  
     spr_superjump = spr_dos_superjump  
@@ -170,8 +170,8 @@ function scr_spr_dos() {
     spr_superjumpleft = spr_dos_superjumpleft  
     spr_superjumpland = spr_dos_superjumpland  
     spr_machfreefall = spr_dos_machfreefall  
-	spr_superjumpcancel_start = spr_player_Sjumpcancelstart
-	spr_superjumpcancel = spr_player_Sjumpcancel
+	spr_superjumpcancel_start = spr_dos_Sjumpcancelstart
+	spr_superjumpcancel = spr_dos_Sjumpcancel
 	// Bodyslam
     spr_bodyslamfall = spr_dos_bodyslamfall  
     spr_bodyslamstart = spr_dos_bodyslamstart  
@@ -184,18 +184,18 @@ function scr_spr_dos() {
     spr_dead = spr_dos_deathend  
 	// Transformations
 	// - Animatronic
-	spr_stuffed_animatronic = spr_pepanimatronic
-	spr_stuffed_debris = spr_animatronicdebris
+	spr_stuffed_animatronic = spr_dos_animatronic
+	spr_stuffed_debris = spr_dos_animatronicdebris
 	// - Pepper Pizza
-	spr_poweredup = spr_player_poweredup
+	spr_poweredup = spr_dos_poweredup
 	// - Revolver
-	spr_pistolintro = spr_player_pistolintro
+	spr_pistolintro = spr_dos_pistolintro
     spr_pistolshot = spr_dos_pistolshot  
     spr_pistolwalk = spr_dos_pistolwalk  
-	spr_pistoljump = spr_player_pistoljump1
-	spr_pistolfall = spr_player_pistoljump2
-	spr_pistolland = spr_player_pistolland
-	spr_vspistolshot = spr_player_pistolshotend
+	spr_pistoljump = spr_dos_pistoljump1
+	spr_pistolfall = spr_dos_pistoljump2
+	spr_pistolland = spr_dos_pistolland
+	spr_vspistolshot = spr_dos_pistolshotend
 	spr_vsvigiduel = spr_peppino_duel
 	// Knight
     spr_knightpepwalk = spr_knight_dos_walk  
