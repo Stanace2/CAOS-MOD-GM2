@@ -55,7 +55,7 @@ function scr_chaos_restart() {
                 break
         }
 
-        //scr_character_spr_init()
+        scr_character_spr_init()
     }
     // This block saves the goth kills
     // Tells cigartracker to check for shadow palette and hellish

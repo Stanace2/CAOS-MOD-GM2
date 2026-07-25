@@ -8,8 +8,8 @@ function scr_chaos_varinit() {
 	displaykeys = 0  
 	displaydata = 0
 	input_buffer_chaos = 0
-	// 0 Donisha 1 WM 2 Stefano 3 Cezar 4 Cleo 5 Acexby 9 fakeDonisha
-	// For playable pep and noise 10 Pep 12 Noise
+	// 0 Donisha 1 WM 2 Stefano 3 Cezar 4 Cleo 5 Acexby 10 fakeDonisha
+	// For playable pep and noise 11 Pep 12 Noise
 	characterID = 0
 	
 	// ==========Donisha's variables==========

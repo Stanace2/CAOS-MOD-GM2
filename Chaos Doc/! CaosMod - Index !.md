@@ -1,6 +1,7 @@
 ****
 ## Vainilla \| changes, hot fixes and utils
 List of scripts that modify structure code, optimize the game, change main systems or added utils
+[[state dictionary]]
 ### FMOD
 - [[Bank reading system]]
 - [[Global sounds execution]]

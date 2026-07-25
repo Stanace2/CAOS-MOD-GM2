@@ -591,4 +591,5 @@ function scr_playerreset(_stop_music = true)
 		}
 	}
 	instance_destroy(obj_shotgunback);
+	scr_chaos_restart();
 }
