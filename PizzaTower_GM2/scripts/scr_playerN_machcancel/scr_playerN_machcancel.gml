@@ -1,5 +1,18 @@
 function scr_playerN_machcancelstart()
 {
+	switch characterID
+    {
+        case characters.dos:
+            if (!global.manners && (!scr_doniSnapjump()))
+                return;
+            break
+
+        case characters.fdos:
+            if (!scr_doniFakeSnapjump())
+                return;
+            break
+    }
+	
 	hsp = 0;
 	vsp = 0;
 	movespeed = 0;

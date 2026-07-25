@@ -1,5 +1,21 @@
 function scr_player_freefallland()
 {
+	switch characterID
+    {
+        case characters.dos:
+        case characters.fdos:
+            if !global.manners
+            {
+                scr_dos_freefallland()
+                return;
+            }
+            break
+
+        case characters.wm:
+            scr_wmp_freefallland()
+            return;
+    }
+	
 	mach2 = 0;
 	jumpAnim = true;
 	dashAnim = true;

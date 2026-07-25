@@ -1,5 +1,24 @@
 function scr_player_mach3()
 {
+	switch characterID
+    {
+        case characters.dos:
+            if !global.manners
+            {
+                scr_dos_mach3()
+                return;
+            }
+            break
+
+        case characters.wm:
+            scr_wmp_mach3()
+            return;
+
+        case characters.fdos:
+            scr_fdos_mach3()
+            return;
+    }
+	
 	if (sprite_index == spr_fightball)
 	{
 		scr_player_fightball();

@@ -1,5 +1,12 @@
 function scr_player_Sjump()
 {
+	switch characterID
+    {
+        case characters.wm:
+            scr_wmp_Sjump()
+            return;
+    }
+	
 	move = key_right + key_left;
 	hsp = 0;
 	mach2 = 0;
@@ -40,7 +47,16 @@ function scr_player_Sjump()
 	{
 		vsp = sjumpvsp;
 	}
-	sjumpvsp -= 0.1;
+	//sjumpvsp -= 0.1;
+	
+	if (sjumpvsp <= -4)
+    {
+        if (characterID == characters.dos && !global.manners)
+            sjumpvsp -= 0.3
+        else
+            sjumpvsp -= 0.1
+    }
+	
 	if (character == "V" && image_index > 3)
 	{
 		vsp = -11;

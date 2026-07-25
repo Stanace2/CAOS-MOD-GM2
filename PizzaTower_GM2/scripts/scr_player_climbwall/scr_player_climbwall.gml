@@ -1,5 +1,24 @@
 function scr_player_climbwall()
 {
+	switch characterID
+    {
+        case characters.dos:
+            if !global.manners
+            {
+                scr_dos_climbwall()
+                return;
+            }
+            break
+
+        case characters.wm:
+            scr_wmp_cling()
+            return;
+
+        case characters.fdos:
+            scr_fdos_climbwall()
+            return;
+    }
+	
 	switch (character)
 	{
 		case "P":

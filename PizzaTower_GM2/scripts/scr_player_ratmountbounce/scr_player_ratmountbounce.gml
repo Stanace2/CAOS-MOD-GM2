@@ -1,5 +1,11 @@
 function scr_player_ratmountbounce()
 {
+	if (characterID == characters.wm)
+	{
+	    scr_wmp_ballmode()
+	    return;
+	}
+
 	if (!ispeppino)
 	{
 		isgustavo = false;

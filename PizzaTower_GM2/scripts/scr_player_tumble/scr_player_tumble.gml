@@ -1,5 +1,21 @@
 function scr_player_tumble()
 {
+	switch characterID
+	{
+	    case characters.dos:
+	    case characters.fdos:
+	        if !global.manners
+	        {
+	            scr_dos_tumble()
+	            return;
+	        }
+	        break
+
+	    case characters.wm:
+	        scr_wmp_tumble()
+	        return;
+	}
+	
 	if (place_meeting(x, y + 1, obj_railparent))
 	{
 		var _railinst = instance_place(x, y + 1, obj_railparent);
