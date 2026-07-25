@@ -1,5 +1,12 @@
 function scr_player_dynamite()
 {
+	switch characterID
+    {
+        case characters.wm:
+            scr_wmp_katana()
+            return;
+    }
+	
 	if (grounded)
 	{
 		hsp = xscale * movespeed;

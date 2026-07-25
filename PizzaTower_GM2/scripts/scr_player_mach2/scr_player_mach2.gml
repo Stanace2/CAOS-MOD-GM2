@@ -1,10 +1,19 @@
 function scr_player_mach2()
 {
+	switch characterID
+    {
+        case characters.wm:
+            scr_wmp_mach2()
+            return;
+    }
+	
 	var maxmovespeed = 12;
 	var jumpspeed = -11;
 	var slopeaccel = 0.1;
 	var slopedeccel = 0.2;
 	var accel = 0.1;
+	if (!global.manners && characterID == characters.dos && (!global.noisejetpack))
+		accel = 0.05
 	var mach4accel = 0.4;
 	var machrollvsp = 10;
 	if (windingAnim < 2000)
@@ -343,6 +352,7 @@ function scr_player_mach2()
 		image_speed = abs(movespeed) / 15;
 	}
 	scr_dotaunt();
+	doSnapjump()
 	if (skateboarding && sprite_index != spr_clownjump && grounded)
 	{
 		sprite_index = spr_clown;

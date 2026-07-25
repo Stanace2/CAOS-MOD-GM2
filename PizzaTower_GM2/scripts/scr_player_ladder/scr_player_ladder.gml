@@ -105,4 +105,6 @@ function scr_player_ladder()
 		state = states.normal;
 		image_index = 0;
 	}
+	
+	doSnapjump()
 }

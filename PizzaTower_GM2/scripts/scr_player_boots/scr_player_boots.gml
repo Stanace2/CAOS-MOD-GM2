@@ -1,5 +1,12 @@
 function scr_player_boots()
 {
+	switch characterID
+    {
+        case characters.wm:
+            scr_wmp_megadash()
+            return;
+    }
+	
 	landAnim = false;
 	hsp = move * movespeed;
 	if (dir != xscale)

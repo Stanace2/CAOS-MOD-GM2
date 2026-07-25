@@ -1,5 +1,21 @@
 function scr_player_freefall()
 {
+	switch characterID
+    {
+        case characters.dos:
+        case characters.fdos:
+            if !global.manners
+            {
+                scr_dos_freefall()
+                return;
+            }
+            break
+
+        case characters.wm:
+            scr_wmp_freefall()
+            return;
+    }
+	
 	landAnim = true;
 	if (vsp >= 2)
 	{

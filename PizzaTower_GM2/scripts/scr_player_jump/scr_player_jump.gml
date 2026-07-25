@@ -1,5 +1,12 @@
 function state_player_jump()
 {
+	switch characterID
+    {
+        case characters.wm:
+            scr_wmp_jump()
+            return;
+    }
+	
 	var maxmovespeed = 8;
 	var maxmovespeed2 = 6;
 	var turnmovespeed = 2;
@@ -602,6 +609,8 @@ function state_player_jump()
 		image_index = 0;
 		idle = 0;
 	}
+	
+	doSnapjump()
 }
 
 function state_pepperman_jump()

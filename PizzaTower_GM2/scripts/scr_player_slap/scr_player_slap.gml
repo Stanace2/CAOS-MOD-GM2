@@ -1,5 +1,12 @@
 function scr_player_slap()
 {
+	switch characterID
+	{
+	    case characters.wm:
+	        scr_wmp_attackprep()
+	        return;
+	}
+	
 	if (!grounded)
 	{
 		fallinganimation++;

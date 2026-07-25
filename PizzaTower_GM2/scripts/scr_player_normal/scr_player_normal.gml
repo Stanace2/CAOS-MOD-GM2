@@ -1,5 +1,15 @@
 function state_player_normal()
 {
+	switch characterID
+    {
+		case characters.dos:
+			scr_dos_normal();
+			return;
+        case characters.wm:
+            scr_wmp_normal()
+            return;
+    }
+	
 	var maxmovespeed = 8;
 	var maxmovespeed2 = 6;
 	var accel = 0.5;
