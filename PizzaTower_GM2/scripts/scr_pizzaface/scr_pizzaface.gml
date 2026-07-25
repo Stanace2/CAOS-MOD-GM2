@@ -149,7 +149,7 @@ function scr_pizzaface_arenaintro()
 					introbuffer = 80;
 					with (obj_player1)
 					{
-						sprite_index = spr_pepbossintro1;
+						sprite_index = spr_vslookatpizzeria;
 						if (!ispeppino)
 						{
 							sprite_index = spr_noisebossintro1;
@@ -189,9 +189,9 @@ function scr_pizzaface_arenaintro()
 				{
 					with (obj_player1)
 					{
-						if (sprite_index != spr_pepbossintro2 && sprite_index != spr_noisebossintro2)
+						if (sprite_index != spr_vslookpizzaface && sprite_index != spr_noisebossintro2)
 						{
-							sprite_index = spr_pepbossintro2;
+							sprite_index = spr_vslookpizzaface;
 							if (!ispeppino)
 							{
 								sprite_index = spr_noisebossintro2;
@@ -213,7 +213,7 @@ function scr_pizzaface_arenaintro()
 						{
 							fmod_event_one_shot_3d("event:/sfx/voice/woag", x, y);
 						}
-						sprite_index = spr_pepbossintro3;
+						sprite_index = spr_vspizzaface_intro;
 						if (!ispeppino)
 						{
 							sprite_index = spr_noisebossintro3;
@@ -518,15 +518,15 @@ function scr_pizzaface_transitioncutscene()
 	{
 		if (ANIMATION_END)
 		{
-			if (sprite_index == spr_pepbossintro2)
+			if (sprite_index == spr_vslookpizzaface)
 			{
 				image_index = image_number - 2;
 			}
-			else if (sprite_index == spr_pepbossintro1)
+			else if (sprite_index == spr_vslookatpizzeria)
 			{
 				image_index = image_number - 2;
 			}
-			else if (sprite_index == spr_pepbossintro2)
+			else if (sprite_index == spr_vslookpizzaface)
 			{
 				image_index = image_number - 3;
 			}
@@ -559,10 +559,10 @@ function scr_pizzaface_transitioncutscene()
 				movespeed = 0;
 				x = roomstartx;
 				y = 402;
-				if (sprite_index != spr_player_gnomecutscene1 && sprite_index != spr_noisebossintro1)
+				if (sprite_index != obj_player.spr_yellnerves && sprite_index != spr_noisebossintro1)
 				{
 					image_index = 0;
-					sprite_index = spr_player_gnomecutscene1;
+					sprite_index = obj_player.spr_yellnerves;
 					if (!ispeppino)
 					{
 						sprite_index = spr_noisebossintro1;
@@ -584,7 +584,7 @@ function scr_pizzaface_transitioncutscene()
 			{
 				with (obj_player1)
 				{
-					sprite_index = spr_pepbossintro2;
+					sprite_index = spr_vslookpizzaface;
 					if (!ispeppino)
 					{
 						sprite_index = spr_noisebossintro2;

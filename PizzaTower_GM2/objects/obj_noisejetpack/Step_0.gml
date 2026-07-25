@@ -63,7 +63,7 @@ switch (state)
 			with (playerid)
 			{
 				state = states.actor;
-				sprite_index = spr_player_poweredup;
+				sprite_index = spr_poweredup;
 				image_index = 0;
 				image_speed = 0.35;
 				if (!ispeppino)

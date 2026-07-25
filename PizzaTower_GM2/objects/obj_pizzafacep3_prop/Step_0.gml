@@ -7,7 +7,7 @@ if (use_collision)
 		{
 			with (obj_player1)
 			{
-				sprite_index = spr_player_gnomecutscene1;
+				sprite_index = obj_player.spr_yellnerves;
 				if (!ispeppino)
 				{
 					sprite_index = spr_playerN_bosscutscene1;

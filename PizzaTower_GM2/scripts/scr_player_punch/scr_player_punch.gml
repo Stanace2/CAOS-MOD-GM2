@@ -86,8 +86,8 @@ function scr_player_punch()
 					}
 				}
 				hsp = xscale * movespeed;
-				var _kungfuground = sprite_index == spr_player_kungfu1 || sprite_index == spr_player_kungfu2 || sprite_index == spr_player_kungfu3 || sprite_index == spr_shotgunsuplexdash;
-				var _Sjumpcancel = sprite_index == spr_player_Sjumpcancel || sprite_index == spr_player_Sjumpcancelland || sprite_index == spr_player_Sjumpcancelslide;
+				var _kungfuground = sprite_index == spr_vshit1 || sprite_index == spr_vshit2 || sprite_index == spr_vshit3 || sprite_index == spr_shotgunsuplexdash;
+				var _Sjumpcancel = sprite_index == spr_superjumpcancel || sprite_index == spr_player_Sjumpcancelland || sprite_index == spr_player_Sjumpcancelslide;
 				if (_kungfuground && image_index > 7 && !key_attack && movespeed > 0)
 				{
 					movespeed -= 0.5;
@@ -96,9 +96,9 @@ function scr_player_punch()
 				{
 					switch (sprite_index)
 					{
-						case spr_player_kungfu1:
-						case spr_player_kungfu2:
-						case spr_player_kungfu3:
+						case spr_vshit1:
+						case spr_vshit2:
+						case spr_vshit3:
 						case spr_shotgunsuplexdash:
 							state = states.normal;
 							if (move != xscale && move != 0)

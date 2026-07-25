@@ -12,7 +12,7 @@ switch (state)
 			{
 				scr_fmod_soundeffect(global.snd_trashjump1, other.x, other.y);
 				state = states.trashstart;
-				sprite_index = spr_player_trashstart;
+				sprite_index = spr_trashstart;
 				gravesurfingjumpbuffer = 0;
 				image_index = 0;
 				xscale = other.image_xscale;
@@ -69,7 +69,7 @@ switch (state)
 					fmod_event_instance_stop(global.snd_trashjump1, true);
 					x = other.x;
 					y = other.y;
-					sprite_index = spr_player_trashjump;
+					sprite_index = spr_trashjump;
 					image_index = 0;
 					movespeed = 0;
 					state = states.trashjump;

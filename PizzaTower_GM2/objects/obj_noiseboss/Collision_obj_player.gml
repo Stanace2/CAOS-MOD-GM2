@@ -25,7 +25,7 @@ else if (((state == states.walk || (state == states.stun && !savedthrown)) && fl
 		image_speed = 0.35;
 		other.state = states.actor;
 		other.image_speed = 0.35;
-		other.sprite_index = spr_player_fightball;
+		other.sprite_index = obj_player.spr_fightball;
 		other.image_index = 0;
 		if (doise)
 		{

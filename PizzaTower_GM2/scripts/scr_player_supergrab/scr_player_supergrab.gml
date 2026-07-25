@@ -137,7 +137,7 @@ function scr_player_supergrab()
 						}
 						image_index = 1;
 						image_speed = 0;
-						randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7]);
+						randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7]);
 						repeat (4 + irandom(6))
 						{
 							var _spd = 5 + irandom(6);
@@ -182,7 +182,7 @@ function scr_player_supergrab()
 							{
 								baddiegrabbedID.destroyable = true;
 							}
-							sprite_index = choose(spr_player_lungehit, spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
+							sprite_index = choose(spr_vshit1, spr_vshit2, spr_vshit3, spr_vshit4);
 							image_index = 0;
 							supergrabstate = states.finishingblow;
 							shot = false;
@@ -304,7 +304,7 @@ function scr_player_supergrab()
 				}
 				if (ANIMATION_END)
 				{
-					if (sprite_index == spr_player_lungehit)
+					if (sprite_index == spr_vshit4)
 					{
 						image_index = image_number - 3;
 					}

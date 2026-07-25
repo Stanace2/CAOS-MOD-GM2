@@ -144,14 +144,14 @@ function scr_player_jetpackjump()
 		{
 			image_speed = Approach(image_speed, 0.4, 0.1);
 		}
-		if (sprite_index == spr_player_jetpackstart && vsp > 0)
+		if (sprite_index == spr_jetpackstart && vsp > 0)
 		{
-			sprite_index = spr_player_jetpackmid;
+			sprite_index = spr_jetpackmid;
 			image_index = 0;
 		}
-		else if (sprite_index == spr_player_jetpackmid && ANIMATION_END)
+		else if (sprite_index == spr_jetpackmid && ANIMATION_END)
 		{
-			sprite_index = spr_player_jetpackend;
+			sprite_index = spr_jetpackend;
 		}
 		if (move != 0)
 		{

@@ -124,7 +124,7 @@ function mort_attack()
 	{
 		input_buffer_slap = 0;
 		state = states.mortattack;
-		sprite_index = spr_player_mortattackfront;
+		sprite_index = spr_mortattackfront;
 		image_index = 0;
 		if (move != 0)
 		{
@@ -134,7 +134,7 @@ function mort_attack()
 		if (key_up)
 		{
 			_angle = 90;
-			sprite_index = spr_player_mortattackup;
+			sprite_index = spr_mortattackup;
 		}
 		else if (key_down && !grounded)
 		{
@@ -143,7 +143,7 @@ function mort_attack()
 				vsp = 3;
 			}
 			_angle = 270;
-			sprite_index = spr_player_mortattackdown;
+			sprite_index = spr_mortattackdown;
 		}
 		else
 		{
@@ -162,11 +162,11 @@ function mort_attack()
 			with (instance_create(x, y, obj_parryeffect))
 			{
 				follow = true;
-				if (spr == spr_player_mortattackup)
+				if (spr == obj_player.spr_mortattackup)
 				{
 					sprite_index = spr_mortswingup;
 				}
-				else if (spr == spr_player_mortattackdown)
+				else if (spr == obj_player.spr_mortattackdown)
 				{
 					sprite_index = spr_mortswingdown;
 				}
@@ -179,7 +179,7 @@ function mort_attack()
 			alarm[0] = 15;
 		}
 	}
-	if (sprite_index == spr_player_mortattackdown || sprite_index == spr_player_mortattackup || sprite_index == spr_player_mortattack)
+	if (sprite_index == spr_mortattackdown || sprite_index == spr_mortattackup || sprite_index == spr_player_mortattack)
 	{
 		if (punch_afterimage > 0)
 		{
@@ -195,15 +195,15 @@ function mort_attack()
 			}
 		}
 	}
-	if (sprite_index == spr_player_mortattackfront)
+	if (sprite_index == spr_mortattackfront)
 	{
 		fmod_event_one_shot_3d("event:/sfx/mort/side", x + hsp, y);
 	}
-	else if (sprite_index == spr_player_mortattackup)
+	else if (sprite_index == spr_mortattackup)
 	{
 		fmod_event_one_shot_3d("event:/sfx/mort/up", x, y + vsp);
 	}
-	else if (sprite_index == spr_player_mortattackdown)
+	else if (sprite_index == spr_mortattackdown)
 	{
 		fmod_event_one_shot_3d("event:/sfx/mort/down", x, y + vsp);
 	}

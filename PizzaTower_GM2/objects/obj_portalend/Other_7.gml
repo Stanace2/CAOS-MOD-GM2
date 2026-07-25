@@ -1,9 +1,9 @@
-if (sprite_index == spr_pizzaportalend)
+if (sprite_index == obj_player.spr_lapportal_in)
 {
 	with (obj_player)
 	{
 		visible = true;
-		sprite_index = spr_pizzaportalentrancestart;
+		sprite_index = spr_lapportal_out;
 		image_index = 0;
 		room = treasure_room;
 		player_x = treasure_x;

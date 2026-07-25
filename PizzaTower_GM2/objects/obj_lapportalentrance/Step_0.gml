@@ -14,13 +14,13 @@ if (ANIMATION_END)
 	{
 		case spr_pizzaportal_appear:
 			fmod_event_one_shot_3d("event:/sfx/misc/secretexit", x, y);
-			sprite_index = spr_pizzaportalentrancestart;
+			sprite_index = obj_player.spr_lapportal_out;
 			if (!obj_player1.ispeppino)
 			{
 				sprite_index = spr_pizzaportalentrancestartN;
 			}
 			break;
-		case spr_pizzaportalentrancestart:
+		case obj_player.spr_lapportal_out:
 		case spr_pizzaportalentrancestartN:
 			sprite_index = spr_pizzaportal_disappear;
 			with (obj_player)

@@ -13,7 +13,7 @@ if (move && !instance_exists(obj_taxitransition))
 		bgsprite = spr_taxitransition_bg1;
 		if (other.police)
 		{
-			sprite_index = spr_taxitransition_cop;
+			sprite_index = obj_player.spr_taxi_cop;
 			if (obj_player1.ispeppino)
 			{
 				fmod_event_one_shot("event:/sfx/voice/muffledscream");
@@ -26,7 +26,7 @@ if (move && !instance_exists(obj_taxitransition))
 		else if (global.panic)
 		{
 			bgsprite = spr_taxitransition_bg2;
-			sprite_index = spr_taxitransition_pizzaface;
+			sprite_index = obj_player.spr_taxi_pizzatime;
 			if (obj_player1.ispeppino)
 			{
 				fmod_event_one_shot("event:/sfx/voice/muffledscream");
@@ -34,13 +34,13 @@ if (move && !instance_exists(obj_taxitransition))
 		}
 		else
 		{
-			sprite_index = spr_taxitransition_pep;
+			sprite_index = obj_player.spr_taxi;
 		}
 		if (!obj_player1.ispeppino)
 		{
 			switch (sprite_index)
 			{
-				case spr_taxitransition_pep:
+				case obj_player.spr_taxi:
 					sprite_index = spr_taxitransition_noise;
 					break;
 				case spr_taxitransition_gus:

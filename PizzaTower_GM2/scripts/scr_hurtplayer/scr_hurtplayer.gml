@@ -493,7 +493,7 @@ function scr_hurtplayer(_player)
 									spr_pal = info.spr_palette;
 									pal = info.paletteselect;
 									tex = info.patterntexture;
-									hp_sprite = other.ispeppino ? spr_bossfight_noiseHP : spr_bossfight_playerhp;
+									hp_sprite = other.ispeppino ? spr_bossfight_noiseHP : obj_player.spr_vshealth;
 								}
 								scr_bosscontroller_particle_hp(hp_sprite, irandom(sprite_get_number(hp_sprite) - 1), pos[0], pos[1], 1, spr_pal, pal, tex);
 							}
@@ -505,7 +505,7 @@ function scr_hurtplayer(_player)
 				else
 				{
 					var d = instance_find(obj_hpeffect, instance_number(obj_hpeffect) - 1);
-					scr_bosscontroller_particle_hp(spr_bossfight_playerhp, irandom(sprite_get_number(spr_bossfight_playerhp) - 1), d.x, d.y, (d.x > (room_width / 2)) ? -1 : 1, d.spr_palette, d.paletteselect, d.patterntexture);
+					scr_bosscontroller_particle_hp(obj_player.spr_bossfight_playerhp, irandom(sprite_get_number(obj_player.spr_vshealth) - 1), d.x, d.y, (d.x > (room_width / 2)) ? -1 : 1, d.spr_palette, d.paletteselect, d.patterntexture);
 					instance_destroy(d);
 				}
 			}

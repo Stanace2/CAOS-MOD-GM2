@@ -15,7 +15,7 @@ if ((global.panic || instance_exists(obj_wartimer)) && sprite_index != spr_pizza
 				}
 				state = states.actor;
 				visible = false;
-				other.sprite_index = spr_pizzaportalend;
+				other.sprite_index = spr_lapportal_in;
 				if (!ispeppino)
 				{
 					other.sprite_index = spr_pizzaportalendN;
@@ -36,7 +36,7 @@ if ((global.panic || instance_exists(obj_wartimer)) && sprite_index != spr_pizza
 			}
 		}
 	}
-	else if (sprite_index == spr_pizzaportalend || sprite_index == spr_pizzaportalendN)
+	else if (sprite_index == obj_player.spr_lapportal_in || sprite_index == spr_pizzaportalendN)
 	{
 		with (playerid)
 		{

@@ -94,7 +94,7 @@ function scr_player_balloon()
 		}
 		exit;
 	}
-	sprite_index = spr_player_ratballoon;
+	sprite_index = spr_grab_ratballoon;
 	hsp = movespeed;
 	move = key_left + key_right;
 	vsp = -5;

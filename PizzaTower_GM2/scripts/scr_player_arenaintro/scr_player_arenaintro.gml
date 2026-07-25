@@ -7,7 +7,7 @@ function scr_player_arenaintro()
 	{
 		image_index = 3;
 	}
-	if (sprite_index == spr_player_levelcomplete && ANIMATION_END)
+	if (sprite_index == spr_vsvictory && ANIMATION_END)
 	{
 		image_speed = 0;
 	}
