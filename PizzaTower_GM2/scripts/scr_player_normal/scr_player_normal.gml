@@ -41,8 +41,8 @@ function state_player_normal()
 	}
 	if (global.pistol && ispeppino)
 	{
-		idlespr = spr_player_pistolidle;
-		movespr = spr_player_pistolwalk;
+		idlespr = spr_pistolidle;
+		movespr = spr_pistolwalk;
 	}
 	if (room == tower_soundtest && obj_soundtest.play)
 	{
@@ -253,7 +253,7 @@ function state_player_normal()
 					movespeed = 0;
 					if (shoot)
 					{
-						sprite_index = spr_player_pistolidle;
+						sprite_index = spr_pistolidle;
 					}
 					else if (mort)
 					{
@@ -321,7 +321,7 @@ function state_player_normal()
 				image_index = 0;
 			}
 		}
-		else if (sprite_index == spr_player_pistolland)
+		else if (sprite_index == spr_pistolland)
 		{
 			if (ANIMATION_END)
 			{
@@ -412,7 +412,7 @@ function state_player_normal()
 				}
 				else if (global.pistol && ispeppino)
 				{
-					sprite_index = spr_player_pistoljump1;
+					sprite_index = spr_pistoljump;
 				}
 				image_index = 0;
 			}
@@ -451,7 +451,7 @@ function state_player_normal()
 			}
 			if (global.pistol && ispeppino)
 			{
-				sprite_index = spr_player_pistoljump2;
+				sprite_index = spr_pistolfall;
 			}
 			image_index = 0;
 			jumpAnim = false;

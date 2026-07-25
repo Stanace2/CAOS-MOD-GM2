@@ -120,7 +120,7 @@ function scr_playersounds()
 		{
 			fmod_event_instance_stop(machsnd, true);
 		}
-		if ((state == states.knightpepslopes && grounded && vsp > 0) || state == states.grind || (state == states.trashroll && grounded && vsp > 0 && sprite_index == spr_player_trashslide))
+		if ((state == states.knightpepslopes && grounded && vsp > 0) || state == states.grind || (state == states.trashroll && grounded && vsp > 0 && sprite_index == spr_trashslide))
 		{
 			if (!fmod_event_instance_is_playing(knightslidesnd))
 			{
@@ -158,7 +158,7 @@ function scr_playersounds()
 					fmod_event_instance_set_parameter(sjumpsnd, "state", 0, true);
 				}
 			}
-			if (sprite_index == spr_player_Sjumpcancelstart || sprite_index == spr_playerN_sidewayspin)
+			if (sprite_index == spr_superjumpcancel_start || sprite_index == spr_playerN_sidewayspin)
 			{
 				fmod_event_instance_stop(sjumpsnd, true);
 			}

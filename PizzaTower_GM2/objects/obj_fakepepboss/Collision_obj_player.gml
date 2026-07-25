@@ -51,7 +51,7 @@ if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == states.handstandj
 		movespeed = 4;
 		if (ispeppino)
 		{
-			sprite_index = choose(spr_player_lungehit, spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
+			sprite_index = choose(spr_vshit1, spr_vshit2, spr_vshit3, spr_vshit4);
 		}
 		else
 		{

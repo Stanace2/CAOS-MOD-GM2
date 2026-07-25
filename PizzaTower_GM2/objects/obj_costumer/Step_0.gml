@@ -29,7 +29,7 @@ if (numberofcoinsthrow == 0 && done == false)
 	with (obj_player)
 	{
 		image_index = 0;
-		sprite_index = spr_player_levelcomplete;
+		sprite_index = obj_player.spr_vsvictory;
 		image_speed = 0.35;
 		instance_create(x, y, obj_costumerpizza);
 		costumercutscenetimer = 100;

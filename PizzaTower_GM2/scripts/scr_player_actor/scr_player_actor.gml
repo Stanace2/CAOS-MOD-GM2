@@ -1,6 +1,6 @@
 function scr_player_actor()
 {
-	if (sprite_index == spr_player_givepizza || sprite_index == spr_player_gnomecutscene2)
+	if (sprite_index == spr_player_givepizza || sprite_index == obj_player.spr_yellrealize)
 	{
 		if (image_index > (image_number - 1))
 		{
@@ -27,7 +27,7 @@ function scr_player_actor()
 	}
 	x = clamp(x, _room_x, _room_w);
 	y = clamp(y, _room_y, _room_h);
-	if (room == boss_vigilante && (sprite_index == spr_player_pistolshotend || sprite_index == spr_noise_duelend))
+	if (room == boss_vigilante && (sprite_index == spr_vspistolshot || sprite_index == spr_noise_duelend))
 	{
 		if (actorbuffer > 0)
 		{

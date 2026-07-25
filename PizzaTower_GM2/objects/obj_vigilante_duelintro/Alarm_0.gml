@@ -50,7 +50,7 @@ else if (state == 6)
 with (obj_player)
 {
 	pistolanim = noone;
-	sprite_index = spr_peppino_duel;
+	sprite_index = spr_vsvigiduel;
 	if (!ispeppino)
 	{
 		sprite_index = spr_noise_duel;

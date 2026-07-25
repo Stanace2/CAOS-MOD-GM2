@@ -85,7 +85,7 @@ function scr_player_mach2()
 		}
 		if (machpunchAnim == false && sprite_index != spr_mach && sprite_index != spr_mach1 && sprite_index != spr_mach4 && sprite_index != spr_player_machhit)
 		{
-			if (sprite_index != spr_player_machhit && sprite_index != spr_rollgetup && sprite_index != spr_suplexdash && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart)
+			if (sprite_index != spr_player_machhit && sprite_index != spr_rollgetup && sprite_index != spr_suplexdash && sprite_index != spr_taunt && sprite_index != spr_superjumpcancel_start)
 			{
 				sprite_index = spr_mach;
 			}
@@ -206,7 +206,7 @@ function scr_player_mach2()
 			other.dashcloudid = id;
 		}
 	}
-	if (grounded && ANIMATION_END && (sprite_index == spr_rollgetup || sprite_index == spr_player_rampjump))
+	if (grounded && ANIMATION_END && (sprite_index == spr_rollgetup || sprite_index == spr_rampjump))
 	{
 		sprite_index = spr_mach;
 	}
@@ -214,7 +214,7 @@ function scr_player_mach2()
 	{
 		sprite_index = spr_mach;
 	}
-	if (!grounded && sprite_index != spr_playerN_skateboarddoublejump && sprite_index != spr_playerN_sidewayspin && sprite_index != spr_playerN_grindcancel && sprite_index != spr_playerN_sidewayspinend && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_walljumpend && sprite_index != spr_longjump && sprite_index != spr_longjumpend)
+	if (!grounded && sprite_index != spr_playerN_skateboarddoublejump && sprite_index != spr_playerN_sidewayspin && sprite_index != spr_playerN_grindcancel && sprite_index != spr_playerN_sidewayspinend && sprite_index != spr_secondjump2 && sprite_index != spr_clownjump && sprite_index != spr_clownfall && sprite_index != spr_mach2jump && sprite_index != spr_mach2jump && sprite_index != spr_walljumpstart && sprite_index != spr_taunt && sprite_index != spr_superjumpcancel_start && sprite_index != spr_walljumpend && sprite_index != spr_longjump && sprite_index != spr_longjumpend)
 	{
 		sprite_index = spr_secondjump1;
 		if (skateboarding)
@@ -437,7 +437,7 @@ function scr_player_mach2()
 	}
 	if (global.attackstyle == 2 && key_slap2)
 	{
-		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
+		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7, spr_punch]);
 		image_index = 0;
 		state = states.lungeattack;
 	}

@@ -55,7 +55,7 @@ if (place_meeting(x, y - 1, obj_player))
 						dir = xscale;
 						movespeed += 3;
 						instance_create(x, y, obj_jumpdust);
-						sprite_index = spr_player_trashslide;
+						sprite_index = spr_trashslide;
 					}
 				}
 			}

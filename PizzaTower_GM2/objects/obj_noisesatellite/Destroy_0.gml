@@ -11,7 +11,7 @@ obj_player.image_index = 0;
 obj_player.x = 608;
 obj_player.hsp = 0;
 obj_player.y = 498;
-obj_player.sprite_index = spr_player_levelcomplete;
+obj_player.sprite_index = obj_player.spr_vsvictory;
 obj_player.state = states.bossintro;
 if (reset == false)
 {

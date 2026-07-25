@@ -6,3 +6,4 @@ if (!obj_player1.ispeppino)
 {
 	sprite_index = spr_noise_superattackHUD;
 }
+sprite_index = obj_player.spr_vscloseup;

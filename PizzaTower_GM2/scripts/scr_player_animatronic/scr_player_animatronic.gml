@@ -19,7 +19,7 @@ function scr_player_animatronic()
 		}
 		exit;
 	}
-	sprite_index = spr_pepanimatronic;
+	sprite_index = spr_stuffed_animatronic;
 	image_speed = 0.35;
 	move = key_left + key_right;
 	hsp = move * movespeed;

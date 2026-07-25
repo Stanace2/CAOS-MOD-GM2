@@ -110,7 +110,7 @@ function scr_player_freefall()
 		{
 			movespeed = 0;
 		}
-		if (move != 0 && sprite_index != spr_player_poundcancel1)
+		if (move != 0 && sprite_index != spr_bombdive)
 		{
 			xscale = move;
 		}
@@ -157,9 +157,9 @@ function scr_player_freefall()
 		else
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-			if (sprite_index == spr_player_poundcancel1)
+			if (sprite_index == spr_bombdive)
 			{
-				sprite_index = spr_player_poundcancel2;
+				sprite_index = spr_bombdive_land;
 			}
 			else if (shotgunAnim == false)
 			{

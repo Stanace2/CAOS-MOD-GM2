@@ -139,7 +139,7 @@ function scr_player_backbreaker()
 	{
 		state = states.normal;
 	}
-	if (ANIMATION_END && sprite_index == spr_player_throw)
+	if (ANIMATION_END && sprite_index == spr_throw)
 	{
 		state = states.normal;
 	}
@@ -147,7 +147,7 @@ function scr_player_backbreaker()
 	{
 		state = states.normal;
 	}
-	if (ANIMATION_END && (sprite_index == spr_player_levelcomplete || sprite_index == spr_playerN_victory))
+	if (ANIMATION_END && (sprite_index == spr_vsvictory || sprite_index == spr_playerN_victory))
 	{
 		state = states.normal;
 	}

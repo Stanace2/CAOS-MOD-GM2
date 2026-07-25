@@ -72,50 +72,50 @@ switch (state)
 			{
 				switch (sprite_index)
 				{
-					case spr_pizzahead_beatdown1:
-						sprite_index = spr_pizzahead_beatdown2;
+					case obj_player.spr_vspizzahead_beatdown1:
+						sprite_index = obj_player.spr_vspizzahead_beatdown2;
 						break;
-					case spr_pizzahead_beatdown2:
-						sprite_index = spr_pizzahead_beatdown3;
+					case obj_player.spr_vspizzahead_beatdown2:
+						sprite_index = obj_player.spr_vspizzahead_beatdown3;
 						break;
-					case spr_pizzahead_beatdown3:
-						sprite_index = spr_pizzahead_beatdown4;
+					case obj_player.spr_vspizzahead_beatdown3:
+						sprite_index = obj_player.spr_vspizzahead_beatdown4;
 						break;
-					case spr_pizzahead_beatdown4:
-						sprite_index = spr_pizzahead_beatdown5;
+					case obj_player.spr_vspizzahead_beatdown4:
+						sprite_index = obj_player.spr_vspizzahead_beatdown5;
 						break;
-					case spr_pizzahead_beatdown5:
-						sprite_index = spr_pizzahead_beatdown6;
+					case obj_player.spr_vspizzahead_beatdown5:
+						sprite_index = obj_player.spr_vspizzahead_beatdown6;
 						break;
-					case spr_pizzahead_beatdown6:
-						sprite_index = spr_pizzahead_beatdown7;
+					case obj_player.spr_vspizzahead_beatdown6:
+						sprite_index = obj_player.spr_vspizzahead_beatdown7;
 						break;
-					case spr_pizzahead_beatdown7:
-						sprite_index = spr_pizzahead_beatdown8;
+					case obj_player.spr_vspizzahead_beatdown7:
+						sprite_index = obj_player.spr_vspizzahead_beatdown8;
 						break;
-					case spr_pizzahead_beatdown8:
-						sprite_index = spr_pizzahead_beatdown9;
+					case obj_player.spr_vspizzahead_beatdown8:
+						sprite_index = obj_player.spr_vspizzahead_beatdown9;
 						break;
-					case spr_pizzahead_beatdown9:
-						sprite_index = spr_pizzahead_beatdown10;
+					case obj_player.spr_vspizzahead_beatdown9:
+						sprite_index = obj_player.spr_vspizzahead_beatdown10;
 						break;
-					case spr_pizzahead_beatdown10:
-						sprite_index = spr_pizzahead_beatdown11;
+					case obj_player.spr_vspizzahead_beatdown10:
+						sprite_index = obj_player.spr_vspizzahead_beatdown11;
 						break;
-					case spr_pizzahead_beatdown11:
-						sprite_index = spr_pizzahead_beatdown12;
+					case obj_player.spr_vspizzahead_beatdown11:
+						sprite_index = obj_player.spr_vspizzahead_beatdown12;
 						break;
-					case spr_pizzahead_beatdown12:
-						sprite_index = spr_pizzahead_beatdown13;
+					case obj_player.spr_vspizzahead_beatdown12:
+						sprite_index = obj_player.spr_vspizzahead_beatdown13;
 						break;
-					case spr_pizzahead_beatdown13:
-						sprite_index = spr_pizzahead_beatdown14;
+					case obj_player.spr_vspizzahead_beatdown13:
+						sprite_index = obj_player.spr_vspizzahead_beatdown14;
 						break;
-					case spr_pizzahead_beatdown14:
-						sprite_index = spr_pizzahead_beatdown15;
+					case obj_player.spr_vspizzahead_beatdown14:
+						sprite_index = obj_player.spr_vspizzahead_beatdown15;
 						break;
-					case spr_pizzahead_beatdown15:
-						sprite_index = spr_pizzahead_beatdown14;
+					case obj_player.spr_vspizzahead_beatdown15:
+						sprite_index = obj_player.spr_vspizzahead_beatdown14;
 						image_xscale = -1;
 						break;
 				}
@@ -124,47 +124,47 @@ switch (state)
 			{
 				switch (sprite_index)
 				{
-					case spr_pizzahead_beatdown14:
-						sprite_index = spr_pizzahead_beatdown13;
+					case obj_player.spr_vspizzahead_beatdown14:
+						sprite_index = obj_player.spr_vspizzahead_beatdown13;
 						break;
-					case spr_pizzahead_beatdown13:
-						sprite_index = spr_pizzahead_beatdown12;
+					case obj_player.spr_vspizzahead_beatdown13:
+						sprite_index = obj_player.spr_vspizzahead_beatdown12;
 						break;
-					case spr_pizzahead_beatdown12:
-						sprite_index = spr_pizzahead_beatdown11;
+					case obj_player.spr_vspizzahead_beatdown12:
+						sprite_index = obj_player.spr_vspizzahead_beatdown11;
 						break;
-					case spr_pizzahead_beatdown11:
-						sprite_index = spr_pizzahead_beatdown10;
+					case obj_player.spr_vspizzahead_beatdown11:
+						sprite_index = obj_player.spr_vspizzahead_beatdown10;
 						break;
-					case spr_pizzahead_beatdown10:
-						sprite_index = spr_pizzahead_beatdown9;
+					case obj_player.spr_vspizzahead_beatdown10:
+						sprite_index = obj_player.spr_vspizzahead_beatdown9;
 						break;
-					case spr_pizzahead_beatdown9:
-						sprite_index = spr_pizzahead_beatdown8;
+					case obj_player.spr_vspizzahead_beatdown9:
+						sprite_index = obj_player.spr_vspizzahead_beatdown8;
 						break;
-					case spr_pizzahead_beatdown8:
-						sprite_index = spr_pizzahead_beatdown7;
+					case obj_player.spr_vspizzahead_beatdown8:
+						sprite_index = obj_player.spr_vspizzahead_beatdown7;
 						break;
-					case spr_pizzahead_beatdown7:
-						sprite_index = spr_pizzahead_beatdown6;
+					case obj_player.spr_vspizzahead_beatdown7:
+						sprite_index = obj_player.spr_vspizzahead_beatdown6;
 						break;
-					case spr_pizzahead_beatdown6:
-						sprite_index = spr_pizzahead_beatdown5;
+					case obj_player.spr_vspizzahead_beatdown6:
+						sprite_index = obj_player.spr_vspizzahead_beatdown5;
 						break;
-					case spr_pizzahead_beatdown5:
-						sprite_index = spr_pizzahead_beatdown4;
+					case obj_player.spr_vspizzahead_beatdown5:
+						sprite_index = obj_player.spr_vspizzahead_beatdown4;
 						break;
-					case spr_pizzahead_beatdown4:
-						sprite_index = spr_pizzahead_beatdown3;
+					case obj_player.spr_vspizzahead_beatdown4:
+						sprite_index = obj_player.spr_vspizzahead_beatdown3;
 						break;
-					case spr_pizzahead_beatdown3:
-						sprite_index = spr_pizzahead_beatdown2;
+					case obj_player.spr_vspizzahead_beatdown3:
+						sprite_index = obj_player.spr_vspizzahead_beatdown2;
 						break;
-					case spr_pizzahead_beatdown2:
-						sprite_index = spr_pizzahead_beatdown1;
+					case obj_player.spr_vspizzahead_beatdown2:
+						sprite_index = obj_player.spr_vspizzahead_beatdown1;
 						break;
-					case spr_pizzahead_beatdown1:
-						sprite_index = spr_pizzahead_beatdown1;
+					case obj_player.spr_vspizzahead_beatdown1:
+						sprite_index = obj_player.spr_vspizzahead_beatdown1;
 						image_xscale = 1;
 						break;
 				}
@@ -179,7 +179,7 @@ switch (state)
 			}
 			fmod_event_instance_play(snd);
 			state = states.superslam;
-			sprite_index = spr_pizzahead_piledriverfinal;
+			sprite_index = obj_player.spr_vspizzahead_piledriver;
 			image_index = 0;
 			image_speed = 0.35;
 		}

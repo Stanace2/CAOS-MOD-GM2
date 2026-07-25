@@ -13,24 +13,24 @@ function scr_player_trashroll()
 	movespeed = max(3, movespeed);
 	if (sprite_index != spr_playercorpsestart && sprite_index != spr_playercorpsesurf)
 	{
-		if (sprite_index != spr_player_trashjump && sprite_index != spr_player_trashjump2 && sprite_index != spr_player_trashfall)
+		if (sprite_index != spr_trashjump && sprite_index != spr_trashjump2 && sprite_index != spr_trashfall)
 		{
-			sprite_index = spr_player_trashslide;
+			sprite_index = spr_trashslide;
 		}
 		else
 		{
-			if (ANIMATION_END && sprite_index == spr_player_trashjump2)
+			if (ANIMATION_END && sprite_index == spr_trashjump2)
 			{
-				sprite_index = spr_player_trashfall;
+				sprite_index = spr_trashfall;
 			}
-			if (vsp > 0 && sprite_index == spr_player_trashjump)
+			if (vsp > 0 && sprite_index == spr_trashjump)
 			{
-				sprite_index = spr_player_trashjump2;
+				sprite_index = spr_trashjump2;
 				image_index = 0;
 			}
 			if (grounded && vsp > 0)
 			{
-				sprite_index = spr_player_trashslide;
+				sprite_index = spr_trashslide;
 				image_speed = 0.35;
 			}
 		}

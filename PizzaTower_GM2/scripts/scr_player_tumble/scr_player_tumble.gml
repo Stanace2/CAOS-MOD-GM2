@@ -74,7 +74,7 @@ function scr_player_tumble()
 	{
 		if (ispeppino)
 		{
-			sprite_index = spr_player_poundcancel1;
+			sprite_index = spr_bombdive;
 			image_index = 0;
 			state = states.freefall;
 			dir = xscale;
@@ -250,7 +250,7 @@ function scr_player_tumble()
 	{
 		image_speed = 0;
 	}
-	else if (ANIMATION_END && sprite_index == spr_player_Sjumpcancel)
+	else if (ANIMATION_END && sprite_index == spr_superjumpcancel)
 	{
 		image_speed = 0;
 	}

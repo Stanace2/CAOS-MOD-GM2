@@ -40,7 +40,7 @@ player_rowmax = 2;
 player_xpad = 44;
 player_ypad = 42;
 player_index = 0;
-player_hpsprite = spr_bossfight_playerhp;
+player_hpsprite = obj_player.spr_vshealth;
 bosstimer_x = 257;
 bosstimer_y = 466;
 bell_sprite = spr_bosstimer_bell;
@@ -61,9 +61,9 @@ flash = false;
 flashed = false;
 bossintrostate = states.normal;
 vstitle = spr_vstitle_noise;
-vstitleplayer = spr_vstitle_player;
-playerspr = spr_vspeppino;
-playersprshadow = spr_vspeppinoshadow;
+vstitleplayer = obj_player.spr_vstitle;
+playerspr = obj_player.spr_vsportrait;
+playersprshadow = obj_player.spr_vsportrait_shadow;
 bossspr = spr_vsnoise;
 if (!obj_player1.ispeppino)
 {

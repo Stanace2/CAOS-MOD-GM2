@@ -176,7 +176,7 @@ function scr_player_mach3()
 				{
 					sprite_index = mach3_spr;
 				}
-				if (sprite_index == spr_player_Sjumpcancel && grounded)
+				if (sprite_index == spr_superjumpcancel && grounded)
 				{
 					sprite_index = mach3_spr;
 				}
@@ -196,7 +196,7 @@ function scr_player_mach3()
 				{
 					sprite_index = mach3_spr;
 				}
-				if (movespeed > mach3movespeed && sprite_index != spr_crazyrun && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_taunt)
+				if (movespeed > mach3movespeed && sprite_index != spr_crazyrun && sprite_index != spr_superjumpcancel_start && sprite_index != spr_taunt)
 				{
 					mach4mode = true;
 					flash = true;
@@ -497,7 +497,7 @@ function scr_player_mach3()
 	}
 	if (global.attackstyle == 2 && key_slap2)
 	{
-		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
+		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7, spr_punch]);
 		image_index = 0;
 		state = states.lungeattack;
 	}

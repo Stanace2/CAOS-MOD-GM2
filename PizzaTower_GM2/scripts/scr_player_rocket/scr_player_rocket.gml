@@ -82,7 +82,7 @@ function scr_player_rocket()
 			sprite_index = spr_rocket;
 			if (grounded && vsp >= 0 && ispeppino)
 			{
-				sprite_index = spr_player_rocketrun;
+				sprite_index = spr_rocketrun;
 			}
 		}
 	}
@@ -93,7 +93,7 @@ function scr_player_rocket()
 		{
 			state = states.rocketslide;
 			fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
-			sprite_index = spr_player_rocketslide;
+			sprite_index = spr_rocketslide;
 			image_index = 0;
 		}
 	}
