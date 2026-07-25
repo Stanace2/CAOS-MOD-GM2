@@ -317,6 +317,19 @@ enum states
 	machcancel = 306,
 }
 
+enum characters 
+{
+	donisha = 0,
+	wm = 1,
+	st = 2,
+	cezar = 3,
+	cleo = 4,
+	acexby = 5,
+	fdonisha = 10,
+	pep = 11,
+	noise = 12
+}
+
 #macro ANIMATION_END floor(image_index) == (image_number - 1)
 
 global.coop = false;

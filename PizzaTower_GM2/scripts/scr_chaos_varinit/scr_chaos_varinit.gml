@@ -10,7 +10,7 @@ function scr_chaos_varinit() {
 	input_buffer_chaos = 0
 	// 0 Donisha 1 WM 2 Stefano 3 Cezar 4 Cleo 5 Acexby 10 fakeDonisha
 	// For playable pep and noise 11 Pep 12 Noise
-	characterID = 0
+	characterID = characters.donisha
 	
 	// ==========Donisha's variables==========
 	snaphold = 0  

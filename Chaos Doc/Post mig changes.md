@@ -3,7 +3,7 @@ I added a variable to check whether the user has installed the chaos.txt or not
 ## obj_textureloading
 
 ~~~js
-global.hascaostxt = false; // Here
+global.hascaostxt = false; // H e r e
 scr_get_languages();
 global.texture_load_count = ds_list_create();
 tex_list = noone;
@@ -84,4 +84,41 @@ function lang_get_value_raw(_language, _entry)
 	}
 	return n;
 }
+~~~
+## obj_ending | Create
+Modified to prevent crash on the language update
+~~~js
+var _lang = "en";
+if global.hascaostxt {
+	_lang = "en_ch"
+}
+credits = [
+	[noone, lang_get_value_newline_raw(_lang, "credits_game")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_music"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_sfx"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_mort"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_playtester1"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_playtester2"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_playtester3"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_playtester4"), "%", "\"")],
+	/*
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_lockit1"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_lockit2"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_lockit3"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_lockit4"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_lockit5"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_lockit6"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_lockit7"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_keyword1"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_keyword2"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_sprites"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_help1"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_help2"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_help3"), "%", "\"")],
+	[noone, string_replace_all(lang_get_value_newline_raw(_lang, "credits_help4"), "%", "\"")],
+	*/
+	[0, noone], [1, noone], [2, noone], [3, noone], [4, noone], [5, noone],
+	[6, noone], [7, noone],[9, noone], [10, noone], [11, noone], [12, noone], 
+	[noone, lang_get_value_newline("credits_fmod")]
+];
 ~~~
