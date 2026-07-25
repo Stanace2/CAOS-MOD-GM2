@@ -2,6 +2,29 @@
 So lonely section
 ## Sprite parameters
 ### Just Padding
+#### New Moveset
+spr_player_wallslide | *50 61*
+spr_player_poundaircancel | *50 50*
+spr_player_poundcancel | *50 50*
+spr_player_poundcanceldive | *50 100*
+spr_player_poundcancelstart | *50 100*
+spr_player_spinkf | *50 100*
+spr_player_poundmach | *60 50*
+spr_player_kungfuair1 | *111 50* **replacement**
+spr_player_kungfuair2 | *111 50* **replacement**
+spr_player_kungfuair3 | *111 50* **replacement**
+spr_player_kungfujump | *111 58* **replacement**
+spr_dos_unhingedrun | *150 50*
+spr_dos_walllaunch | *50 61*
+spr_player_rolljump | *50 45*
+spr_player_snapcrouch | *75 50*
+spr_player_snapcrouch_loop | *75 50*
+spr_player_snaphighjump | *50 100*
+spr_player_snapjumpstart | *50 50*
+spr_player_snapjumpinter | *50 50*
+spr_dos_snapjump | *50 50*
+spr_dos_snapnailit | *100 100*
+#### Base Moveset
 - ==(This is subject to change, for reference only)==
 spr_player_taunt | *50 100*
 spr_player_timesup (doorclosesheavy) | *50 100* ==Should add a variable for this animation==
