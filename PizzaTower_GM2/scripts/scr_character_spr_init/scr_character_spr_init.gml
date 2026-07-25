@@ -2,13 +2,13 @@ function scr_character_spr_init() // starts only the necessary sprites for the c
 {  
     switch characterID  
     {  
-        case characters.donisha:  
+        case characters.dos:  
             scr_spr_dos()  
             break  
         case characters.wm:  
             //scr_spr_wm()  
             break  
-        case characters.fdonisha:  
+        case characters.fdos:  
             //scr_spr_fakedos()  
             break  
 		case characters.pep:

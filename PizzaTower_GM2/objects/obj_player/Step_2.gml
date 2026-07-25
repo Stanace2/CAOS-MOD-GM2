@@ -18,7 +18,7 @@ if (global.collect != global.lastcollect)
 }
 if keyboard_check(ord("1"))
 {
-    characterID = characters.donisha
+    characterID = characters.dos
     scr_character_spr_init()
 }
 if keyboard_check(ord("1")) && key_attack
