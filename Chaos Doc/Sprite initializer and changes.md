@@ -32,6 +32,8 @@ spr_player_mortattackdown
 spr_player_pistolintro
 spr_player_pistolidle
 spr_player_pistoljump1
+spr_player_pistoljump2
+spr_player_pistolland
 spr_player_pistolwalk
 spr_player_pistolshotend
 spr_peppino_duel
@@ -39,16 +41,16 @@ spr_player_rocketslide
 spr_player_rocketrun
 spr_spacetravelcutscene
 spr_noise_intro1
-spr_player_fightball
+spr_player_fightball ==> Unused
 spr_noise_phasetrans1P
 spr_player_ratballoon
 spr_taxitransition_pep
 spr_player_rampjump ==> scr_player_trickjump() and others
 spr_taxitransition_cop
 spr_taxitransition_pizzaface
-spr_dos_boxxed_spin
-spr_dos_boxxed_flap
-spr_cheese_dos_walljump
+spr_boxxedpep_spin
+spr_boxxedpep_flap
+spr_cheesepepwalljump
 spr_player_trashstart
 spr_player_trashjump
 spr_player_trashjump2
