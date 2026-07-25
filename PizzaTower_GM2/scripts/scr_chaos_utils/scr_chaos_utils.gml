@@ -100,6 +100,7 @@ function scr_displaydata(_display)
     draw_text(10, 260, concat("sprite: ", sprite_get_name(sprite_index)))
     draw_text(10, 280, concat("brick: ", brick))
     draw_text(10, 300, concat("imagespeed: ", image_speed))
+	draw_text(10, 320, concat("imageindex: ", image_index))
     //draw_text(10, 320, concat("clingexitspeed: ", clingexitspeed))
 }
 

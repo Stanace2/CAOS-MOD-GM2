@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dealer.md",
+                "file": "Sprite initializer and changes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dealer"
+              "title": "Sprite initializer and changes"
             }
           }
         ]
@@ -186,11 +186,13 @@
   "active": "5df06aa28f949f22",
   "lastOpenFiles": [
     "! CaosMod - Index !.md",
+    "Post mig changes.md",
+    "Sprite initializer and changes.md",
+    "Dealer.md",
     "Talkers.md",
     "Addition of the Caos key.md",
     "Dos - Gallery.md",
     "Dos creation variables.md",
-    "Sprite initializer and changes.md",
     "Changes to vainilla game.md",
     "Player create shenanigans.md",
     "state dictionary.md",
@@ -206,11 +208,9 @@
     "List of tool functions.md",
     "Level garnish.md",
     "Read custom chaos.txt.md",
-    "Post mig changes.md",
     "Bank reading system.md",
     "Fmod sound variables.md",
     "Global sounds execution.md",
-    "WM - Changes to vainilla game.md",
     "shd_sdmap/VertexShaderAttributes.txt",
     "shd_sdmap/Type.txt",
     "shd_sdmap/HLSL9_Vertex.txt",

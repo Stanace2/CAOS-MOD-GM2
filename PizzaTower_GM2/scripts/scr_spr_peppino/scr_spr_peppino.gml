@@ -239,14 +239,12 @@ function scr_spr_peppino() {
     spr_firemouthdash = spr_player_firemouthdash  
     spr_firemouthidle = spr_player_firemouthidle  
 	// Ghost
-    spr_ghostdash = spr_player_ghostdash  
     spr_ghostdashright = spr_player_ghostdashright  
     spr_ghostdashdown = spr_player_ghostdashdown  
     spr_ghostdashdownright = spr_player_ghostdashdownright  
     spr_ghostdashup = spr_player_ghostdashup  
     spr_ghostdashupright = spr_player_ghostdashupright  
     spr_ghostidle = spr_player_ghostidle  
-    spr_ghostend = spr_player_ghostend  
     spr_ghostjump = spr_player_ghostjump  
 	// Mort
     spr_mortdoublejumpstart = spr_player_mortdoublejump  
@@ -267,11 +265,7 @@ function scr_spr_peppino() {
     spr_boxxedpepidle = spr_boxxedpep_idle  
     spr_boxxedpepwalk = spr_boxxedpep_walk  
     spr_boxxedpepair = spr_boxxedpep_air  
-    spr_boxxedpepdashstart = spr_boxxedpep_dashstart  
-    spr_boxxedpepdashend = spr_boxxedpep_dashend  
-    spr_boxxedpepdash = spr_boxxedpep_dash  
 	// Cheese monster
-    spr_cheesepepintro = spr_cheesepep_intro  
     spr_cheesepepidle = spr_cheesepep_idle  
     spr_cheesepepwalk = spr_cheesepep_walk  
     spr_cheesepepjump = spr_cheesepep_jump  
@@ -279,8 +273,6 @@ function scr_spr_peppino() {
     spr_cheesepepfall = spr_cheesepep_fall  
     spr_cheesepepland = spr_cheesepep_land  
     spr_cheesepepstickside = spr_cheesepep_stickwall  
-    spr_cheesepepstickceiling = spr_cheesepep_stickceilling  
-    spr_cheesepepstickfloor = spr_cheesepep_stick  
 	// Rocket
     spr_rocketstart = spr_player_rocketstart  
     spr_rocket = spr_player_rocket  

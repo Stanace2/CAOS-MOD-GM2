@@ -79,6 +79,7 @@ switch (state)
 			if (object_index != obj_pizzagoblinbomb)
 			{
 				state = states.actor;
+				/*
 				if (boxxed == false)
 				{
 					sprite_index = spr_catched;
@@ -95,6 +96,7 @@ switch (state)
 				{
 					sprite_index = spr_mach4;
 				}
+				*/
 			}
 		}
 		if (scr_solid(x, y - 1) || ((reverse && scr_solid(x, y + 1)) || place_meeting(x, y, obj_verticalhallway) || place_meeting(x, y, obj_hallway)))

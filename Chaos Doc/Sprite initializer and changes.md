@@ -1,5 +1,76 @@
 Inside obj_player | Create, a function called **"scr_characterspr()"** is runned, initializing all of peppino's sprites.
 Some changes were made at the end of this function, to prevent something from breaking.
+## Sprites to be added as a variable
+
+spr_player_Sjumpcancelstart
+spr_player_Sjumpcancel
+spr_player_poundcancel1
+spr_player_poundcancel2
+spr_pizzaportalentrancestart
+spr_pizzaportalend
+spr_player_throw
+spr_vstitle_player
+spr_vspeppino
+spr_vspeppinoshadow
+spr_bossfight_playerhp + palette
+spr_player_gnomecutscene1
+spr_player_gnomecutscene2
+spr_player_gnomecutscene3
+spr_player_gnomecutscene4
+spr_player_screamtransition
+spr_player_kungfu1
+spr_player_kungfu2
+spr_player_kungfu3
+spr_player_lungehit
+spr_peppino_superattackHUD
+spr_player_levelcomplete
+spr_peppinoelevator
+spr_player_firemouthspin ==> scr_player_firemouth()
+spr_player_mortattackfront
+spr_player_mortattackup
+spr_player_mortattackdown
+spr_player_pistolintro
+spr_player_pistolidle
+spr_player_pistoljump1
+spr_player_pistolwalk
+spr_player_pistolshotend
+spr_peppino_duel
+spr_player_rocketslide
+spr_player_rocketrun
+spr_spacetravelcutscene
+spr_noise_intro1
+spr_player_fightball
+spr_noise_phasetrans1P
+spr_player_ratballoon
+spr_taxitransition_pep
+spr_player_rampjump ==> scr_player_trickjump() and others
+spr_taxitransition_cop
+spr_taxitransition_pizzaface
+spr_dos_boxxed_spin
+spr_dos_boxxed_flap
+spr_cheese_dos_walljump
+spr_player_trashstart
+spr_player_trashjump
+spr_player_trashjump2
+spr_player_trashfall
+spr_player_trashslide
+spr_player_jetpackstart
+spr_player_jetpackmid
+spr_player_jetpackend
+spr_player_poweredup
+spr_pepanimatronic
+spr_animatronicdebris
+spr_pepbossintro1
+spr_pepbossintro2
+spr_pepbossintro3
+spr_player_suplexmash5
+spr_player_suplexmash6
+spr_player_suplexmash7
+spr_pizzahead_beatdown*
+spr_pizzahead_piledriverfinal
+bg_piledrivercloseshot
+ALL TITLE CARDS
+spr_player_idle => obj_johnresurrection
 ## scr_character_spr_init()
 Uses:
 - characterID variable | [[Player create shenanigans]]

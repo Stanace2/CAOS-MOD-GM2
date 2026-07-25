@@ -48,7 +48,10 @@ function scr_dotaunt()
 				fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
 				taunttimer = 20;
 				sprite_index = spr_taunt;
-				image_index = random_range(0, 11);
+				if (paletteselect == 18 && characterID == 0)
+                    image_index = random_range(30, (image_number - 1))
+                else
+                    image_index = random_range(0, (image_number - 1))
 			}
 			with (instance_create(x, y, obj_taunteffect))
 			{
