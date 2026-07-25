@@ -92,7 +92,7 @@ if (prevhp != elitehit)
 				xscale = 1;
 				movespeed = 0;
 				image_index = 0;
-				sprite_index = spr_player_gnomecutscene1;
+				sprite_index = obj_player.spr_yellnerves;
 				if (!ispeppino)
 				{
 					sprite_index = spr_noisebossintro2;

@@ -72,7 +72,7 @@ function scr_player_boxxedpepjump()
 				fmod_event_one_shot_3d("event:/sfx/boxxed/flap", x, y);
 			}
 			jumpstop = false;
-			sprite_index = spr_boxxedpep_flap;
+			sprite_index = spr_boxxedpepflap;
 			image_index = 0;
 			repeat (7)
 			{
@@ -138,7 +138,7 @@ function scr_player_boxxedpepjump()
 			sprite_index = spr_playerN_boxxedfall;
 		}
 	}
-	if (sprite_index == spr_boxxedpep_flap && ANIMATION_END)
+	if (sprite_index == spr_boxxedpepflap && ANIMATION_END)
 	{
 		sprite_index = spr_boxxedpepair;
 	}
@@ -146,7 +146,7 @@ function scr_player_boxxedpepjump()
 	{
 		input_buffer_slap = 0;
 		state = states.boxxedpepspin;
-		sprite_index = spr_boxxedpep_spin;
+		sprite_index = spr_boxxedpepspin;
 		if (!ispeppino)
 		{
 			sprite_index = spr_playerN_boxxedhit;

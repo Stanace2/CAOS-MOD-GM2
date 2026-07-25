@@ -2,7 +2,7 @@ draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_black, c_black, c_blac
 draw_sprite(gerome_spr, gerome_index, gerome_x, gerome_y);
 draw_sprite(spr_elevatorcliff, cliff_index, cliff_x, cliff_y);
 shader_set(global.Pal_Shader);
-var spr = spr_peppinoelevator;
+var spr = obj_player.spr_elevator;
 if (!obj_player1.ispeppino)
 {
 	spr = spr_noiseelevator;

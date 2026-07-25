@@ -2,7 +2,7 @@ var _x = x;
 var _y = y;
 if (obj_player1.state == states.arenaintro)
 {
-	var _sprite = spr_player_levelcomplete;
+	var _sprite = obj_player.spr_vsvictory;
 	if (!ispeppino)
 	{
 		_sprite = spr_playerN_levelcomplete;

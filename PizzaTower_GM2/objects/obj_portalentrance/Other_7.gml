@@ -1,4 +1,4 @@
-if (sprite_index == spr_pizzaportalentrancestart)
+if (sprite_index == obj_player.spr_lapportal_out)
 {
 	instance_destroy();
 }

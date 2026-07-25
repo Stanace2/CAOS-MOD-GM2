@@ -169,7 +169,7 @@ function scr_vigilante_arenaintro()
 			{
 				if (ispeppino)
 				{
-					sprite_index = spr_player_gnomecutscene1;
+					sprite_index = obj_player.spr_yellnerves;
 				}
 				else
 				{
@@ -178,13 +178,13 @@ function scr_vigilante_arenaintro()
 			}
 			if (ANIMATION_END)
 			{
-				if (sprite_index == spr_player_gnomecutscene2 || sprite_index == spr_playerN_bosscutscene2 || sprite_index == spr_playerN_bosscutscene3)
+				if (sprite_index == obj_player.spr_yellrealize || sprite_index == spr_playerN_bosscutscene2 || sprite_index == spr_playerN_bosscutscene3)
 				{
 					image_index = image_number - 1;
 				}
-				else if (sprite_index == spr_player_gnomecutscene3)
+				else if (sprite_index == obj_player.spr_yellstart)
 				{
-					sprite_index = spr_player_gnomecutscene4;
+					sprite_index = obj_player.spr_yell;
 				}
 				else if (sprite_index == spr_noise_vulnerable1)
 				{
@@ -206,9 +206,9 @@ function scr_vigilante_arenaintro()
 				{
 					if (ispeppino)
 					{
-						if (sprite_index == spr_player_gnomecutscene2)
+						if (sprite_index == obj_player.spr_yellrealize)
 						{
-							sprite_index = spr_player_gnomecutscene3;
+							sprite_index = obj_player.spr_yellstart;
 							image_index = 0;
 							fmod_event_one_shot("event:/sfx/pep/screamboss");
 						}
@@ -230,7 +230,7 @@ function scr_vigilante_arenaintro()
 			{
 				if (ispeppino)
 				{
-					sprite_index = spr_player_gnomecutscene2;
+					sprite_index = obj_player.spr_yellrealize;
 					image_index = 0;
 				}
 				else
@@ -260,7 +260,7 @@ function scr_vigilante_arenaintro()
 			{
 				if (ispeppino)
 				{
-					sprite_index = spr_player_screamtransition;
+					sprite_index = obj_player.spr_yellend;
 					image_index = 0;
 					image_speed = 0.35;
 				}
@@ -315,7 +315,7 @@ function scr_vigilante_phase1hurt()
 		vsp = 0;
 		state = states.actor;
 		pistolanim = noone;
-		sprite_index = spr_player_pistolshotend;
+		sprite_index = spr_vspistolshot;
 		if (!ispeppino)
 		{
 			sprite_index = spr_playerN_bosstransition;
@@ -1070,7 +1070,7 @@ function scr_vigilante_duel()
 			case 0:
 				with (obj_player1)
 				{
-					sprite_index = spr_peppino_duel;
+					sprite_index = spr_vsvigiduel;
 					if (!ispeppino)
 					{
 						sprite_index = spr_noise_duel;
@@ -1161,7 +1161,7 @@ function scr_vigilante_duel()
 							x = obj_swapmodefollow.x;
 							y = obj_swapmodefollow.y;
 						}
-						sprite_index = spr_player_pistolshotend;
+						sprite_index = spr_vspistolshot;
 						image_index = 2;
 						if (!ispeppino)
 						{

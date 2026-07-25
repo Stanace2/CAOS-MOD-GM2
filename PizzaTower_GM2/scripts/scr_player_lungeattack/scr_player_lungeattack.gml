@@ -50,7 +50,7 @@ function scr_player_lungeattack()
 				}
 				input_attack_buffer = 0;
 				state = states.lungeattack;
-				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
+				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7, spr_punch]);
 				image_index = 0;
 			}
 		}
@@ -84,7 +84,7 @@ function scr_player_lungeattack()
 				}
 				input_attack_buffer = 0;
 				state = states.lungeattack;
-				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
+				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7, spr_punch]);
 				image_index = 0;
 			}
 		}
@@ -134,7 +134,7 @@ function DoFinisher()
 	else if ((key_left + key_right) == xscale)
 	{
 		state = states.punch;
-		sprite_index = spr_player_lungehit;
+		sprite_index = spr_vshit4;
 		image_index = 0;
 		movespeed = 14;
 		with (instance_create(x, y, obj_superdashcloud))
@@ -157,7 +157,7 @@ function DoFinisher()
 	else
 	{
 		state = states.punch;
-		sprite_index = spr_player_lungehit;
+		sprite_index = spr_vshit4;
 		image_index = 0;
 		movespeed = 14;
 		with (instance_create(x, y, obj_superdashcloud))

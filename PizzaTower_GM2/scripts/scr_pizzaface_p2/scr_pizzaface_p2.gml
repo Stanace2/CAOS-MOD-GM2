@@ -133,15 +133,15 @@ function scr_pizzaface_p2_fall()
 	{
 		if (ANIMATION_END)
 		{
-			if (sprite_index == spr_player_gnomecutscene2)
+			if (sprite_index == obj_player.spr_yellrealize)
 			{
 				image_index = image_number - 1;
 			}
-			else if (sprite_index == spr_player_gnomecutscene3)
+			else if (sprite_index == obj_player.spr_yellstart)
 			{
-				sprite_index = spr_player_gnomecutscene4;
+				sprite_index = obj_player.spr_yell;
 			}
-			else if (sprite_index == spr_pepbossintro2)
+			else if (sprite_index == spr_vslookpizzaface)
 			{
 				image_index = image_number - 2;
 			}
@@ -203,7 +203,7 @@ function scr_pizzaface_p2_fall()
 				}
 				with (obj_player1)
 				{
-					sprite_index = spr_player_gnomecutscene3;
+					sprite_index = obj_player.spr_yellstart;
 					if (!ispeppino)
 					{
 						sprite_index = spr_playerN_doiseintro2;
@@ -242,7 +242,7 @@ function scr_pizzaface_p2_fall()
 					tauntstoredstate = states.normal;
 					if (ispeppino)
 					{
-						sprite_index = spr_player_screamtransition;
+						sprite_index = obj_player.spr_yellend;
 						image_index = 0;
 						image_speed = 0.35;
 					}
@@ -845,7 +845,7 @@ function boss_pizzahead_p2_phase1hurt()
 		invtime = 30;
 		state = states.actor;
 		pistolanim = noone;
-		sprite_index = spr_player_pistolshotend;
+		sprite_index = spr_vspistolshot;
 		if (!ispeppino)
 		{
 			sprite_index = spr_playerN_bosstransition;

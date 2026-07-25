@@ -41,17 +41,17 @@ switch (introstate)
 			keyshot = true;
 			fmod_event_one_shot("event:/sfx/pizzahead/recover");
 		}
-		if (floor(image_index) >= 50 && sprite_index != spr_player_gnomecutscene1)
+		if (floor(image_index) >= 50 && sprite_index != obj_player.spr_yellnerves)
 		{
 			image_xscale = -1;
 		}
-		else if (floor(image_index) >= 2 && sprite_index != spr_player_gnomecutscene1)
+		else if (floor(image_index) >= 2 && sprite_index != obj_player.spr_yellnerves)
 		{
 			with (obj_player1)
 			{
-				if (sprite_index != spr_player_gnomecutscene2 && ispeppino)
+				if (sprite_index != obj_player.spr_yellrealize && ispeppino)
 				{
-					sprite_index = spr_player_gnomecutscene2;
+					sprite_index = obj_player.spr_yellrealize;
 					image_index = 0;
 				}
 				else if (ispeppino && ANIMATION_END)
@@ -87,7 +87,7 @@ switch (introstate)
 	case 4:
 		with (obj_player1)
 		{
-			if ((ispeppino && ANIMATION_END) && sprite_index != spr_player_gnomecutscene1)
+			if ((ispeppino && ANIMATION_END) && sprite_index != obj_player.spr_yellnerves)
 			{
 				image_index = image_number - 1;
 			}
@@ -133,7 +133,7 @@ switch (introstate)
 	case 5:
 		with (obj_player1)
 		{
-			if ((ispeppino && ANIMATION_END) && sprite_index != spr_player_gnomecutscene1)
+			if ((ispeppino && ANIMATION_END) && sprite_index != obj_player.spr_yellnerves)
 			{
 				image_index = image_number - 1;
 			}
@@ -196,7 +196,7 @@ switch (introstate)
 	case 6:
 		with (obj_player1)
 		{
-			if ((ispeppino && ANIMATION_END) && sprite_index != spr_player_gnomecutscene1)
+			if ((ispeppino && ANIMATION_END) && sprite_index != obj_player.spr_yellnerves)
 			{
 				image_index = image_number - 1;
 			}
@@ -220,7 +220,7 @@ switch (introstate)
 	case 7:
 		with (obj_player1)
 		{
-			if ((ispeppino && ANIMATION_END) && sprite_index != spr_player_gnomecutscene1)
+			if ((ispeppino && ANIMATION_END) && sprite_index != obj_player.spr_yellnerves)
 			{
 				image_index = image_number - 1;
 			}
@@ -237,7 +237,7 @@ switch (introstate)
 		{
 			with (obj_player1)
 			{
-				sprite_index = spr_player_gnomecutscene3;
+				sprite_index = spr_yellstart;
 				if (!ispeppino)
 				{
 					fmod_event_one_shot_3d("event:/sfx/playerN/supernoiseeffect", x, y);
@@ -252,16 +252,16 @@ switch (introstate)
 	case 8:
 		with (obj_player1)
 		{
-			if (sprite_index == spr_player_gnomecutscene3 && ANIMATION_END)
+			if (sprite_index == spr_yellstart && ANIMATION_END)
 			{
-				sprite_index = spr_player_gnomecutscene4;
+				sprite_index = obj_player.spr_yell;
 			}
 			if (sprite_index == spr_playerN_phase3intro1 && ANIMATION_END)
 			{
 				image_index = image_number - 3;
 			}
 		}
-		if (ANIMATION_END && sprite_index != spr_player_gnomecutscene1)
+		if (ANIMATION_END && sprite_index != obj_player.spr_yellnerves)
 		{
 			image_index = image_number - 1;
 		}

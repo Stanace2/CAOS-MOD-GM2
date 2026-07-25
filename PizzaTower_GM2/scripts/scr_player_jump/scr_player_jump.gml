@@ -162,7 +162,7 @@ function state_player_jump()
 			}
 			if (global.pistol && ispeppino)
 			{
-				sprite_index = spr_player_pistoljump1;
+				sprite_index = spr_pistoljump;
 			}
 			image_index = 0;
 		}
@@ -198,7 +198,7 @@ function state_player_jump()
 			}
 			if (global.pistol && ispeppino)
 			{
-				sprite_index = spr_player_pistolland;
+				sprite_index = spr_pistolland;
 			}
 			input_buffer_secondjump = 0;
 			state = states.normal;
@@ -239,7 +239,7 @@ function state_player_jump()
 					sprite_index = spr_airdash2;
 					break;
 				case spr_player_pistolshot:
-					sprite_index = spr_player_pistoljump2;
+					sprite_index = spr_pistolfall;
 					break;
 				case spr_shotgunjump:
 					sprite_index = spr_shotgunfall;
@@ -250,8 +250,8 @@ function state_player_jump()
 				case spr_jump:
 					sprite_index = spr_fall;
 					break;
-				case spr_player_pistoljump1:
-					sprite_index = spr_player_pistoljump2;
+				case spr_pistoljump:
+					sprite_index = spr_pistolfall;
 					break;
 				case spr_suplexcancel:
 					sprite_index = spr_fall;
@@ -641,9 +641,9 @@ function state_pepperman_jump()
 	{
 		sprite_index = spr_fall;
 	}
-	if (sprite_index == spr_player_pistoljump1 && ANIMATION_END)
+	if (sprite_index == spr_pistoljump && ANIMATION_END)
 	{
-		sprite_index = spr_player_pistoljump2;
+		sprite_index = spr_pistolfall;
 	}
 	if (!key_jump2 && jumpstop == false && vsp < 0.5)
 	{

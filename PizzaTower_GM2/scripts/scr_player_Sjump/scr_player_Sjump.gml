@@ -87,14 +87,14 @@ function scr_player_Sjump()
 		state = states.Sjumpland;
 		machhitAnim = false;
 	}
-	else if ((key_attack2 || input_buffer_slap > 0) && character == "P" && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
+	else if ((key_attack2 || input_buffer_slap > 0) && character == "P" && sprite_index != spr_superspringplayer && sprite_index != spr_superjumpcancel_start)
 	{
 		if (ispeppino)
 		{
 			input_buffer_shoot = 0;
 			input_buffer_slap = 0;
 			image_index = 0;
-			sprite_index = spr_player_Sjumpcancelstart;
+			sprite_index = spr_superjumpcancel_start;
 			fmod_event_one_shot_3d("event:/sfx/pep/superjumpcancel", x, y);
 		}
 		else
@@ -123,7 +123,7 @@ function scr_player_Sjump()
 			return true;
 		}
 	}
-	if (sprite_index == spr_player_Sjumpcancelstart)
+	if (sprite_index == spr_superjumpcancel_start)
 	{
 		vsp = 0;
 		if (move != 0)
@@ -137,7 +137,7 @@ function scr_player_Sjump()
 			flash = true;
 			movespeed = 13;
 			image_index = 0;
-			sprite_index = spr_player_Sjumpcancel;
+			sprite_index = spr_superjumpcancel;
 			state = states.mach3;
 			with (instance_create(x, y, obj_crazyrunothereffect))
 			{

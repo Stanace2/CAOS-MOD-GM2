@@ -188,9 +188,11 @@ function scr_spr_peppino() {
 	spr_stuffed_debris = spr_animatronicdebris
 	// - Pepper Pizza
 	spr_poweredup = spr_player_poweredup
+    spr_jetpackstart2 = spr_player_jetpackstart2
 	// - Revolver
 	spr_pistolintro = spr_player_pistolintro
     spr_pistolshot = spr_player_pistolshot  
+	spr_pistolidle = spr_player_pistolidle
     spr_pistolwalk = spr_player_pistolwalk  
 	spr_pistoljump = spr_player_pistoljump1
 	spr_pistolfall = spr_player_pistoljump2
@@ -213,8 +215,6 @@ function scr_spr_peppino() {
     spr_knightpepdowntrust = spr_knightpep_downtrust  
     spr_knightpepupslope = spr_knightpep_upslope  
     spr_knightpepbump = spr_knightpep_bump  
-	// - Pepper pizza
-    spr_jetpackstart2 = spr_player_jetpackstart2
 	// - Fireass
     spr_fireass = spr_player_fireass  
     spr_fireassground = spr_player_fireassground  
@@ -328,12 +328,15 @@ function scr_spr_peppino() {
 	spr_vsvictory = spr_player_levelcomplete
 	// - Match Noise
 	spr_noise_mask = spr_noise_intro1
+	spr_noise_mask_out = spr_noise_intro2
     spr_fightball = spr_player_fightball  
 	spr_vsnoisefightscream = spr_noise_phasetrans1P
 	// - Final Match
 	spr_vslookatpizzeria = spr_pepbossintro1
 	spr_vslookpizzaface = spr_pepbossintro2
 	spr_vspizzaface_intro = spr_pepbossintro3
+	spr_vspizzahead_scream = spr_pizzahead_pepintro
+	spr_vspizzahead_lunge = spr_player_lunge
 	spr_vspizzahead_beatdown1 = spr_pizzahead_beatdown1
 	spr_vspizzahead_beatdown2 = spr_pizzahead_beatdown2
 	spr_vspizzahead_beatdown3 = spr_pizzahead_beatdown3

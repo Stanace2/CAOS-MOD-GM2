@@ -56,7 +56,7 @@ function scr_pizzaface_p3_do_player_attack(_player)
 		attackcooldown = 0;
 		baddieID = other.id;
 		image_index = 0;
-		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
+		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7, spr_punch]);
 		punchcount = 20;
 	}
 	hsp = 0;
@@ -70,7 +70,7 @@ function scr_pizzaface_p3_arenaintro()
 {
 	with (obj_player1)
 	{
-		if (ANIMATION_END && sprite_index == spr_player_levelcomplete)
+		if (ANIMATION_END && sprite_index == spr_vsvictory)
 		{
 			sprite_index = spr_idle;
 		}
@@ -93,7 +93,7 @@ function scr_pizzaface_p3_arenaintro()
 						xscale = sign(other.x - x);
 					}
 					state = states.actor;
-					sprite_index = spr_player_levelcomplete;
+					sprite_index = obj_player.spr_vsvictory;
 					image_index = 0;
 				}
 			}
@@ -528,7 +528,7 @@ function scr_pizzaface_p3_supergrab()
 							other.hsp = -other.image_xscale * 6;
 							punchcount--;
 							image_index = 0;
-							randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
+							randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7, spr_punch]);
 						}
 						else if (other.elitehit > 1)
 						{

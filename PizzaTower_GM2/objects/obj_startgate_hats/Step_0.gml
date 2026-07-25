@@ -5,7 +5,7 @@ if (!obj_player1.ispeppino)
 }
 else
 {
-	sprite_index = spr_bossfight_playerhp;
+	sprite_index = obj_player.spr_vshealth;
 }
 switch (state)
 {

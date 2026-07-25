@@ -21,7 +21,7 @@ function scr_player_transitioncutscene()
 		xscale *= -1;
 		sprite_index = spr_player_givepizza;
 	}
-	if (sprite_index == spr_player_levelcomplete && costumercutscenetimer < 0)
+	if (sprite_index == spr_vsvictory && costumercutscenetimer < 0)
 	{
 		if (grounded && (x > (other.x + 32) && x < (other.x + 160)) && key_up && (state == states.normal || state == states.mach1 || state == states.mach2 || state == states.mach3))
 		{
@@ -68,7 +68,7 @@ function scr_player_transitioncutscene()
 	{
 		image_speed = 0;
 	}
-	if (sprite_index == spr_player_levelcomplete && ANIMATION_END)
+	if (sprite_index == spr_vsvictory && ANIMATION_END)
 	{
 		image_speed = 0;
 	}

@@ -73,7 +73,7 @@ function scr_player_boxxedpep()
 			vsp = target_vsp;
 		}
 		state = states.boxxedpepjump;
-		sprite_index = spr_boxxedpep_flap;
+		sprite_index = spr_boxxedpepflap;
 		if (!ispeppino)
 		{
 			sprite_index = spr_playerN_boxxedjetpack;
@@ -130,7 +130,7 @@ function scr_player_boxxedpep()
 	}
 	if (sprite_index != spr_boxxedpepintro)
 	{
-		if (sprite_index != spr_boxxedpep_flap)
+		if (sprite_index != spr_boxxedpepflap)
 		{
 			if (grounded)
 			{
@@ -158,7 +158,7 @@ function scr_player_boxxedpep()
 		GamepadSetVibration(0, 0.8, 0.8, 0.65);
 		input_buffer_slap = 0;
 		state = states.boxxedpepspin;
-		sprite_index = spr_boxxedpep_spin;
+		sprite_index = spr_boxxedpepspin;
 		if (!ispeppino)
 		{
 			sprite_index = spr_playerN_boxxedhit;

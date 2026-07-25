@@ -194,7 +194,7 @@ function scr_bosscontroller_normal()
 				fmod_event_instance_play(global.snd_bossbeaten);
 				global.pistol = false;
 				pistolanim = noone;
-				sprite_index = spr_player_levelcomplete;
+				sprite_index = obj_player.spr_vsvictory;
 				if (!ispeppino)
 				{
 					sprite_index = spr_playerN_levelcomplete;
