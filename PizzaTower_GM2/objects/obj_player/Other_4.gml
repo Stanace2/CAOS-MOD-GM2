@@ -64,6 +64,7 @@ if (room == tower_finalhallway && targetDoor == "C" && state == states.comingout
 {
 	state = states.normal;
 }
+
 if (global.levelcomplete)
 {
 	global.levelcomplete = false;
@@ -104,15 +105,28 @@ if (place_meeting(x, y, obj_boxofpizza) || place_meeting(x, y - 1, obj_boxofpizz
 	hallway = false;
 	state = states.crouch;
 }
-if (object_index != obj_player2 || global.coop == true)
+
+// NEW ADDITION
+if ( variable_global_exists( "elevator_transition" ) && global.elevator_transition )
 {
-	if (targetDoor == "A" && instance_exists(obj_doorA))
+	global.elevator_transition = false;
+	state = states.normal;
+	sprite_index = spr_idle;
+	image_index = 0;
+	image_speed = 1;
+	hsp = 0;
+	vsp = 0;
+}
+
+if ( object_index != obj_player2 || global.coop == true )
+{
+	if ( targetDoor == "A" && instance_exists( obj_doorA ) )
 	{
-		if (hallway == true)
+		if  ( hallway == true ) 
 		{
-			x = obj_doorA.x + (hallwaydirection * 100);
+			x = obj_doorA.x + ( hallwaydirection * 100 );
 		}
-		else if (box == true)
+		else if ( box == true )
 		{
 			x = obj_doorA.x + 32;
 		}
@@ -217,6 +231,24 @@ if (object_index != obj_player2 || global.coop == true)
 			x = obj_doorG.x + 16;
 		}
 		y = obj_doorG.y - 14;
+	}
+	
+	// NEW ADDITION
+	if ( targetDoor == "ELEV" && instance_exists( obj_doorELEV ) )
+	{
+		if ( hallway == true )
+		{
+			x = obj_doorELEV.x + ( hallwaydirection * 100 );
+		}
+		else if ( box == true )
+		{
+			x = obj_doorELEV.x + 32;
+		}
+		else
+		{
+			x = obj_doorELEV.x + 16;
+		}
+		y = obj_doorELEV.y - 14;
 	}
 }
 if (verticalhallway)

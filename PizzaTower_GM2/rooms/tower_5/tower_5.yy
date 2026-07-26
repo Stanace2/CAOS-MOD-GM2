@@ -208,6 +208,8 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_65845B18","properties":[],"isDnd":false,"objectId":{"name":"obj_pumpkinviewer","path":"objects/obj_pumpkinviewer/obj_pumpkinviewer.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":3040.0,"y":544.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_28633044","properties":[],"isDnd":false,"objectId":{"name":"obj_costumedpizzahead","path":"objects/obj_costumedpizzahead/obj_costumedpizzahead.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":-1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2713.0,"y":2720.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_6B42056F","properties":[],"isDnd":false,"objectId":{"name":"obj_halloweenjumpscare","path":"objects/obj_halloweenjumpscare/obj_halloweenjumpscare.yy",},"inheritCode":false,"hasCreationCode":true,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1895.0,"y":3001.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_50995556","properties":[],"isDnd":false,"objectId":{"name":"obj_elevator_door","path":"objects/obj_elevator_door/obj_elevator_door.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2496.0,"y":2656.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_4BD234F8","properties":[],"isDnd":false,"objectId":{"name":"obj_doorELEV","path":"objects/obj_doorELEV/obj_doorELEV.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2528.0,"y":2752.0,},
       ],"visible":true,"depth":0,"userdefinedDepth":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritVisibility":true,"inheritSubLayers":true,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"effectEnabled":true,"effectType":null,"properties":[],},
     {"resourceType":"GMRAssetLayer","resourceVersion":"1.0","name":"Assets_2","assets":[
         {"resourceType":"GMRSpriteGraphic","resourceVersion":"1.0","name":"graphic_66DF7021","spriteId":{"name":"spr_redlight","path":"sprites/spr_redlight/spr_redlight.yy",},"headPosition":0.0,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"animationSpeed":1.0,"colour":4294967295,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1760.0,"y":2496.0,},
@@ -475,6 +477,8 @@
     {"name":"inst_65845B18","path":"rooms/tower_5/tower_5.yy",},
     {"name":"inst_28633044","path":"rooms/tower_5/tower_5.yy",},
     {"name":"inst_6B42056F","path":"rooms/tower_5/tower_5.yy",},
+    {"name":"inst_50995556","path":"rooms/tower_5/tower_5.yy",},
+    {"name":"inst_4BD234F8","path":"rooms/tower_5/tower_5.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
