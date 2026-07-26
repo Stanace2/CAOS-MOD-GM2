@@ -32,12 +32,12 @@ function scr_dos_normal()
     if (distance_to_object(obj_noisevengeful) < 250)
     {
         xscale = 1
-        idlespr = spr_player_judge
+        idlespr = spr_judge
     }
     if (global.pistol && ispeppino)
     {
-        idlespr = spr_player_pistolidle
-        movespr = spr_player_pistolwalk
+        idlespr = spr_pistolidle
+        movespr = spr_pistolwalk
     }
     if (room == tower_soundtest && obj_soundtest.play)
     {
@@ -186,7 +186,7 @@ function scr_dos_normal()
                     {
                     }
                     else if shoot
-                        sprite_index = spr_player_pistolidle
+                        sprite_index = spr_pistolidle
                     else if mort
                         sprite_index = spr_player_mortidle
                     else if (breakdance_pressed >= breakdance_max)

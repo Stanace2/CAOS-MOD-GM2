@@ -110,7 +110,7 @@ function scr_doniMoveset() //gml_Script_scr_doniMoveset
         if (key_jump && key_down)
         {
             input_buffer_down = 0
-            sprite_index = spr_player_poundcancel1
+            sprite_index = spr_bombdive
             image_index = 0
             state = states.freefall
             dir = xscale
@@ -194,7 +194,7 @@ function scr_doniMoveset() //gml_Script_scr_doniMoveset
 
 function scr_doniSnapjump() //gml_Script_scr_doniSnapjump
 {
-    if ((sprite_index == spr_snapjumpstart || sprite_index == spr_dos_dragonsnap || sprite_index == spr_player_snapcut || sprite_index == spr_snapjump || sprite_index == spr_snapjumpinter || sprite_index == spr_snaphighjump) && ispeppino)
+    if ((sprite_index == spr_snapjumpstart || /*sprite_index == spr_dos_dragonsnap || sprite_index == spr_player_snapcut ||*/ sprite_index == spr_snapjump || sprite_index == spr_snapjumpinter || sprite_index == spr_snaphighjump) && ispeppino)
     {
         mask_index = spr_player_mask
         var init = ((sprite_index == spr_snapjumpstart || sprite_index == spr_snaphighjump) && image_index < 2)
@@ -343,7 +343,7 @@ function scr_doniSnapjump() //gml_Script_scr_doniSnapjump
                 state = states.freefall
             }
             return 0;
-        }
+        } /*
         else if (input_buffer_slap > 0 && sprite_index != spr_player_snapcut && key_up)
         {
             input_buffer_slap = 0
@@ -354,6 +354,7 @@ function scr_doniSnapjump() //gml_Script_scr_doniSnapjump
             particle_set_scale(states.grabbed, xscale, 1)
             create_particle(x, y, states.grabbed, 0)
         }
+		*/
         move = key_right + key_left
         if (key_down && poundbuffer == 0)
             vsp += 1
@@ -367,12 +368,12 @@ function scr_doniSnapjump() //gml_Script_scr_doniSnapjump
                 vsp /= 2
             jumpstop = 1
         }
-        if ((move != sign(hsp) || abs(hsp) <= 8.5 || snaphold) && sprite_index != spr_dos_dragonsnap)
+        if ((move != sign(hsp) || abs(hsp) <= 8.5 || snaphold) /*&& sprite_index != spr_dos_dragonsnap*/)
         {
             snaphold = 1
             hsp = Approach(hsp, (move * (8.5 + snapjumps * 0.5)), 2)
         }
-        else if (move != 0 || sprite_index == spr_dos_dragonsnap)
+        else if (move != 0 /*|| sprite_index == spr_dos_dragonsnap*/)
             hsp = Approach(hsp, (move * movespeed), 2)
         else
             hsp = Approach(hsp, 0, 0.25)
@@ -393,7 +394,7 @@ function scr_doniSnapjump() //gml_Script_scr_doniSnapjump
         }
         if (snapjumps < 1 && movespeed < 12)
             image_speed = 0.35
-        else if (snapjumps > 1 || movespeed >= 12 || (sprite_index == spr_player_snapcut && vsp < 0))
+        else if (snapjumps > 1 || movespeed >= 12 || (/*sprite_index == spr_player_snapcut &&*/ vsp < 0))
         {
             if (punch_afterimage == 6)
             {

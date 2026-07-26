@@ -10,7 +10,6 @@ function scr_player_freefallland()
                 return;
             }
             break
-
         case characters.wm:
             scr_wmp_freefallland()
             return;

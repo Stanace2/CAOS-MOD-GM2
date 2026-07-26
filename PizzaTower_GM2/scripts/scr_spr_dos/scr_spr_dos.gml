@@ -363,9 +363,9 @@ function scr_spr_dos() {
     spr_suplexmash3 = spr_dos_suplexmash3  
     spr_suplexmash4 = spr_dos_suplexmash4  
     spr_punch = spr_dos_punch  
-	spr_suplexmash5 = spr_player_suplexmash5
-	spr_suplexmash6 = spr_player_suplexmash6
-	spr_suplexmash7 = spr_player_suplexmash7
+	spr_suplexmash5 = spr_dos_suplexmash5
+	spr_suplexmash6 = spr_dos_suplexmash6
+	spr_suplexmash7 = spr_dos_suplexmash7
 	
 	// New Moveset
 	//// - Climb
@@ -379,19 +379,19 @@ function scr_spr_dos() {
 	spr_machsplit = spr_dos_poundcancelstart;
 	//// - MachLand
 	spr_poundmach = spr_dos_poundmach;
-	//// - Fight - Air - 1
+	//// - Kungfu
+	spr_kungfu1 = spr_dos_kungfu1
+	spr_kungfu2 = spr_dos_kungfu2
+	spr_kungfu3 = spr_dos_kungfu3
 	spr_kungfuair1 = spr_dos_kungfuair1;
-	//// - Fight - Air - 2
 	spr_kungfuair2 = spr_dos_kungfuair2;
-	//// - Fight - Air - 3
 	spr_kungfuair3 = spr_dos_kungfuair3;
-	//// - Fight - Air - Bump
-	spr_kungfujump = spr_dos_kungfujump;
-	//// - MachRunning - Mach5
+	spr_kungfuwall = spr_dos_kungfujump;
+	//// - MachRunning
 	spr_unhingedrun = spr_dos_unhingedrun;
-	//// - MachRunning - MachJump
 	spr_rolljump = spr_dos_rolljump;
-	//// - SnapJump
+	spr_walllaunch = spr_dos_walllaunch;
+	//// - SnapJumping
 	spr_snapcrouch = spr_dos_snapcrouch;
 	spr_snapcrouch_loop = spr_dos_snapcrouch_loop;
 	spr_snaphighjump = spr_dos_snaphighjump;
@@ -399,10 +399,4 @@ function scr_spr_dos() {
 	spr_snapjumpinter = spr_dos_snapjumpinter;
 	spr_snapjumpstart = spr_dos_snapjumpstart;
 	spr_snapnailit = spr_dos_snapnailit;
-	//// - Wallaunch
-	spr_walllaunch = spr_dos_walllaunch;
-	
-	spr_suplexmash5 = spr_dos_suplexmash5
-	spr_suplexmash6 = spr_dos_suplexmash6
-	spr_suplexmash7 = spr_dos_suplexmash7
 }

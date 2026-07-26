@@ -19,3 +19,21 @@ if (room == boss_pizzafacefinale)
 	layer_vspeed(beatdown2_lay, 1.7);
 	layer_vspeed(beatdown1_lay, 1.8);
 }
+sprite_index = obj_player.spr_vspizzahead_beatdown1
+spr_beatdown1 = sprite_index
+spr_beatdown2 = obj_player.spr_vspizzahead_beatdown2
+spr_beatdown3 = obj_player.spr_vspizzahead_beatdown3
+spr_beatdown4 = obj_player.spr_vspizzahead_beatdown4
+spr_beatdown5 = obj_player.spr_vspizzahead_beatdown5
+spr_beatdown6 = obj_player.spr_vspizzahead_beatdown6
+spr_beatdown7 = obj_player.spr_vspizzahead_beatdown7
+spr_beatdown8 = obj_player.spr_vspizzahead_beatdown8
+spr_beatdown9 = obj_player.spr_vspizzahead_beatdown9
+spr_beatdown10 = obj_player.spr_vspizzahead_beatdown10
+spr_beatdown11 = obj_player.spr_vspizzahead_beatdown11
+spr_beatdown12 = obj_player.spr_vspizzahead_beatdown12
+spr_beatdown13 = obj_player.spr_vspizzahead_beatdown13
+spr_beatdown14 = obj_player.spr_vspizzahead_beatdown14
+spr_beatdown15 = obj_player.spr_vspizzahead_beatdown15
+spr_piledrive = obj_player.spr_vspizzahead_piledriver
+spr_piledrive_closeup = obj_player.spr_vspizzahead_piledriver_closeup

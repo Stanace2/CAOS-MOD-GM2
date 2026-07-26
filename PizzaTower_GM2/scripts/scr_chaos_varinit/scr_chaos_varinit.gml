@@ -7,6 +7,7 @@ function scr_chaos_varinit() {
 	// Debug options, used in drawGUI | obj_player, set on EndStep | obj_player
 	displaykeys = 0  
 	displaydata = 0
+	debugmarkers = [0,0,0,0]
 	input_buffer_chaos = 0
 	// 0 Donisha 1 WM 2 Stefano 3 Cezar 4 Cleo 5 Acexby 10 fakeDonisha
 	// For playable pep and noise 11 Pep 12 Noise
@@ -123,4 +124,20 @@ function scr_chaos_varinit() {
 	killbuffer = 0
 	dragonsnap = 0  
 	dragonbuffer = 0
+	
+	// ==========FMOD==========
+	machenginesnd = fmod_event_create_instance("event:/chaos-sfx/donisha/machEngine")
+	fmod_event_instance_set_parameter(machenginesnd, "state", 0, 1)
+	//Doublejump spin soundeffect
+	wmcopter = fmod_event_create_instance("event:/chaos-sfx/wm/wmcopter")
+	fmod_event_instance_set_parameter(wmcopter, "speed", 0, 1)
+	//Mach5 horn
+	mach5snd = fmod_event_create_instance("event:/chaos-sfx/donisha/mach5sup")
+	//WM superjump spin soundeffect
+	mangospinsnd = fmod_event_create_instance("event:/chaos-sfx/wm/mango/mspin")
+	//WM superjump ceiling soundeffect
+	mangospinceilingsnd = fmod_event_create_instance("event:/chaos-sfx/wm/mango/mspinceiling")
+	//Wetham kicking Mango soundeffect
+	snd_wethamkick = fmod_event_create_instance("event:/chaos-sfx/wm/wmbrickkick")
+	fmod_event_instance_set_parameter(snd_wethamkick, "state", 0, 1)
 }

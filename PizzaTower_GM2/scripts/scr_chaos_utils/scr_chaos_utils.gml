@@ -88,20 +88,28 @@ function scr_displaydata(_display)
     draw_set_font(lang_get_font("creditsfont"))
     draw_set_halign(fa_left)
     draw_set_valign(fa_top)
-    draw_text(10, 80, concat("hsp: ", hsp))
-    draw_text(10, 100, concat("vsp: ", vsp))
-    draw_text(10, 120, concat("movespeed: ", movespeed))
-    draw_text(10, 140, concat("state: ", state))
-    draw_text(10, 160, concat("xscale: ", xscale))
-    draw_text(10, 180, concat("move: ", (key_left + key_right)))
-    draw_text(10, 200, concat("in_buffer_s: ", input_buffer_chaos))
-    draw_text(10, 220, concat("in_buffer_j: ", input_buffer_jump))
-    draw_text(10, 240, concat("room: ", room_get_name(room)))
-    draw_text(10, 260, concat("sprite: ", sprite_get_name(sprite_index)))
-    draw_text(10, 280, concat("brick: ", brick))
-    draw_text(10, 300, concat("imagespeed: ", image_speed))
-	draw_text(10, 320, concat("imageindex: ", image_index))
-    //draw_text(10, 320, concat("clingexitspeed: ", clingexitspeed))
+	var _arr = [
+		concat("debug markers: ", debugmarkers[0], " + ", debugmarkers[1], " + ", debugmarkers[2], " + ", debugmarkers[3]),
+		concat("hsp: ", hsp),
+		concat("vsp: ", vsp),
+		concat("movespeed: ", movespeed),
+		concat("state: ", state),
+		concat("xscale: ", xscale),
+		concat("move: ", (key_left + key_right)),
+		concat("in_buffer_s: ", input_buffer_chaos),
+		concat("in_buffer_j: ", input_buffer_jump),
+		concat("room: ", room_get_name(room)),
+		concat("sprite: ", sprite_get_name(sprite_index)),
+		concat("brick: ", brick),
+		concat("imagespeed: ", image_speed),
+		concat("imageindex: ", image_index)
+	]
+	var _offset = 20;
+	for (var i = 0; i < array_length(_arr); i++) {
+		draw_text(10, _offset, _arr[i])
+		_offset += 20
+	}
+    //concat("clingexitspeed: ", clingexitspeed)
 }
 
 /*

@@ -71,7 +71,7 @@ function scr_player_punch()
 				{
 					if (move != xscale && movespeed > -6)
 					{
-						if (sprite_index != spr_player_kungfujump)
+						if (sprite_index != spr_kungfuwall)
 						{
 							movespeed -= 1;
 						}
@@ -80,13 +80,13 @@ function scr_player_punch()
 							movespeed -= 0.1;
 						}
 					}
-					else if (move == xscale && movespeed < 6 && sprite_index == spr_player_kungfujump)
+					else if (move == xscale && movespeed < 6 && sprite_index == spr_kungfuwall)
 					{
 						movespeed += 0.2;
 					}
 				}
 				hsp = xscale * movespeed;
-				var _kungfuground = sprite_index == spr_vshit1 || sprite_index == spr_vshit2 || sprite_index == spr_vshit3 || sprite_index == spr_shotgunsuplexdash;
+				var _kungfuground = sprite_index == spr_kungfu1 || sprite_index == spr_kungfu2 || sprite_index == spr_kungfu3 || sprite_index == spr_shotgunsuplexdash;
 				var _Sjumpcancel = sprite_index == spr_superjumpcancel || sprite_index == spr_player_Sjumpcancelland || sprite_index == spr_player_Sjumpcancelslide;
 				if (_kungfuground && image_index > 7 && !key_attack && movespeed > 0)
 				{
@@ -96,9 +96,9 @@ function scr_player_punch()
 				{
 					switch (sprite_index)
 					{
-						case spr_vshit1:
-						case spr_vshit2:
-						case spr_vshit3:
+						case spr_kungfu1:
+						case spr_kungfu2:
+						case spr_kungfu3:
 						case spr_shotgunsuplexdash:
 							state = states.normal;
 							if (move != xscale && move != 0)
@@ -166,10 +166,10 @@ function scr_player_punch()
 						image_speed = abs(movespeed) / 15;
 					}
 				}
-				if (sprite_index != spr_player_kungfujump && place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope))
+				if (sprite_index != spr_kungfuwall && place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope))
 				{
 					vsp = -4;
-					sprite_index = spr_player_kungfujump;
+					sprite_index = spr_kungfuwall;
 					image_index = 0;
 					state = states.punch;
 					movespeed = -6;

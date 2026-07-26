@@ -4,7 +4,7 @@ function scr_dos_freefall() //gml_Script_scr_dos_freefall
     if (characterID == characters.fdos)
         mach5exit = 24
     doSnapjump()
-    if (key_slap2 && sprite_index == spr_player_poundcancel1)
+    if (key_slap2 && sprite_index == spr_bombdive)
     {
         input_buffer_slap = 0
         fmod_event_one_shot_3d("event:/sfx/pep/grabcancel", x, y)
@@ -90,7 +90,7 @@ function scr_dos_freefall() //gml_Script_scr_dos_freefall
             movespeed -= 0.05
         if ((scr_solid((x + 1), y) && move == 1) || (scr_solid((x - 1), y) && move == -1))
             movespeed = 0
-        if (move != 0 && sprite_index != spr_player_poundcancel1)
+        if (move != 0 && sprite_index != spr_bombdive)
             xscale = move
     }
     if (vsp > 0)
@@ -208,7 +208,7 @@ function scr_dos_freefall() //gml_Script_scr_dos_freefall
                     return;
                 }
             }
-            else if ((sprite_index == spr_player_poundcancel1 || sprite_index == spr_bodyslamfall) && scr_check_superjump() && ispeppino)
+            else if ((sprite_index == spr_bombdive || sprite_index == spr_bodyslamfall) && scr_check_superjump() && ispeppino)
             {
                 sprite_index = spr_superjumpprep
                 state = states.Sjumpprep
@@ -216,9 +216,9 @@ function scr_dos_freefall() //gml_Script_scr_dos_freefall
                 image_index = 0
                 return;
             }
-            else if (sprite_index == spr_player_poundcancel1 && (!key_attack))
-                sprite_index = spr_player_poundcancel2
-            else if ((sprite_index == spr_player_poundcancel1 || spr_shotgunjump2) && key_attack && ispeppino)
+            else if (sprite_index == spr_bombdive && (!key_attack))
+                sprite_index = spr_bombdive_land
+            else if ((sprite_index == spr_bombdive || spr_shotgunjump2) && key_attack)
             {
                 if (freefallsmash > 12)
                     quickroll = 1

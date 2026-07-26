@@ -8,7 +8,7 @@ function scr_player_handstandjump()
 	        state = states.punch
 	        flash = 1
 	        fmod_event_one_shot_3d("event:/sfx/pep/grabcancel", x, y)
-	        sprite_index = choose(spr_player_kungfuair1, spr_player_kungfuair2, spr_player_kungfuair3)
+	        sprite_index = choose(spr_kungfuair1, spr_kungfuair2, spr_kungfuair3)
 			image_index = 0  
 			movespeed = 13  
 		}  
@@ -17,7 +17,7 @@ function scr_player_handstandjump()
 			state = states.punch
 			flash = 1  
 			fmod_event_one_shot_3d("event:/sfx/pep/grabcancel", x, y)  
-			sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3)
+			sprite_index = choose(spr_kungfu1, spr_kungfu2, spr_kungfu3)
 	        image_index = 0
 	        movespeed = 13
 	    }
@@ -53,7 +53,7 @@ function scr_player_handstandjump()
 			else if (movespeed < 10)
 			{
 				// H e r e
-	            if ((global.manners) || global.noisejetpack || instance_exists(obj_pizzaface_thunderdark))
+	            if (characterID == characters.pep || (global.manners && characterID == characters.dos) || global.noisejetpack || instance_exists(obj_pizzaface_thunderdark))
 	                movespeed += 0.5
 	            else
 	                movespeed += 0.1
@@ -71,7 +71,7 @@ function scr_player_handstandjump()
 			else if (movespeed < 10)
 			{
 				// H e r e
-	            if (global.noisejetpack || (characterID == characters.dos && (global.manners)) || instance_exists(obj_pizzaface_thunderdark))
+	            if (characterID == characters.pep || global.noisejetpack || (characterID == characters.dos && (global.manners)) || instance_exists(obj_pizzaface_thunderdark))
 	                movespeed += 0.5
 			}
 		}

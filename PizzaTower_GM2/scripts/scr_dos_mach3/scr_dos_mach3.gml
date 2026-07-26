@@ -144,7 +144,7 @@ function scr_dos_mach3() //gml_Script_scr_dos_mach3
                     sprite_index = spr_rolljump
                 if (sprite_index == spr_mach3jump && floor(image_index) == (image_number - 1))
                     sprite_index = mach3_spr
-                if (sprite_index == spr_player_Sjumpcancel && grounded)
+                if (sprite_index == spr_superjumpcancel && grounded)
                     sprite_index = mach3_spr
                 if ((sprite_index == spr_machsplit_loop || sprite_index == spr_spinkf) && grounded)
                 {
@@ -164,7 +164,7 @@ function scr_dos_mach3() //gml_Script_scr_dos_mach3
                     sprite_index = spr_playerN_sidewayspinend
                 if (grounded && (sprite_index == spr_playerN_sidewayspin || sprite_index == spr_playerN_sidewayspinend))
                     sprite_index = mach3_spr
-                if ((movespeed > mach3movespeed && sprite_index != spr_dos_unhingedrun && sprite_index != spr_crazyrun && sprite_index != spr_player_Sjumpcancelstart && sprite_index != spr_spinkf && sprite_index != spr_machsplit_loop && sprite_index != spr_machsplit && sprite_index != spr_taunt && sprite_index != spr_rolljump) || (sprite_index == spr_rolljump && grounded && movespeed >= mach3movespeed))
+                if ((movespeed > mach3movespeed && sprite_index != spr_dos_unhingedrun && sprite_index != spr_crazyrun && sprite_index != spr_superjumpcancel_start && sprite_index != spr_spinkf && sprite_index != spr_machsplit_loop && sprite_index != spr_machsplit && sprite_index != spr_taunt && sprite_index != spr_rolljump) || (sprite_index == spr_rolljump && grounded && movespeed >= mach3movespeed))
                 {
                     mach4mode = 1
                     flash = 1
