@@ -17,4 +17,6 @@ function scr_character_spr_init() // starts only the necessary sprites for the c
 		case characters.noise:	
 			break
     }  
+	
+	scr_spr_HUD()
 }

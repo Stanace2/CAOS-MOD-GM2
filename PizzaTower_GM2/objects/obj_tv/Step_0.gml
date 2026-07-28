@@ -130,64 +130,75 @@ switch (state)
 				}
 			}
 		}
-		switch (sprite_index)
+		if string_copy(room_get_name(room), 1, 15) == "spr_tv_idleanim" 
 		{
-			case spr_tv_off:
-				if (visible)
-				{
-					sprite_index = spr_tv_open;
-					image_index = 0;
-				}
-				break;
-			case spr_tv_open:
-				if (ANIMATION_END)
-				{
-					sprite_index = idlespr;
-				}
-				break;
-			case spr_tv_idle:
-			case spr_tv_idleN:
-				if (idleanim > 0)
-				{
-					idleanim--;
-				}
-				if (sprite_index != idlespr)
-				{
-					sprite_index = idlespr;
-				}
-				if (idleanim <= 0 && ANIMATION_END)
-				{
-					sprite_index = choose(spr_tv_idleanim1, spr_tv_idleanim2);
-					if (!obj_player1.ispeppino)
-					{
-						if (sprite_index == spr_tv_idleanim1)
-						{
-							sprite_index = spr_tv_idleanim1N;
-						}
-						if (sprite_index == spr_tv_idleanim2)
-						{
-							sprite_index = spr_tv_idleanim2N;
-						}
-					}
-					image_index = 0;
-				}
-				break;
-			case spr_tv_idleanim1:
-			case spr_tv_idleanim2:
-			case spr_tv_idleanim1N:
-			case spr_tv_idleanim2N:
-				if (ANIMATION_END)
-				{
-					sprite_index = idlespr;
-					idleanim = 240 + (60 * irandom_range(-1, 2));
-				}
-				if (idlespr != spr_tv_idle && idlespr != spr_tv_idleN)
-				{
-					sprite_index = idlespr;
-				}
-				break;
-			default:
+			if (ANIMATION_END) {
 				sprite_index = idlespr;
+				idleanim = 240 + (60 * irandom_range(-1, 2));
+			}
+			if (idlespr != spr_tv_idle && idlespr != spr_tv_idleN)
+				sprite_index = idlespr;
+		} 
+		else {
+			switch (sprite_index)
+			{
+				case spr_tv_off:
+					if (visible)
+					{
+						sprite_index = spr_tv_open;
+						image_index = 0;
+					}
+					break;
+				case spr_tv_open:
+					if (ANIMATION_END)
+					{
+						sprite_index = idlespr;
+					}
+					break;
+				case spr_tv_idle:
+				case spr_tv_idleN:
+					if (idleanim > 0)
+					{
+						idleanim--;
+					}
+					if (sprite_index != idlespr)
+					{
+						sprite_index = idlespr;
+					}
+					if (idleanim <= 0 && ANIMATION_END)
+					{
+						sprite_index = choose(spr_tv_idleanim1, spr_tv_idleanim2);
+						if (!obj_player1.ispeppino)
+						{
+							if (sprite_index == spr_tv_idleanim1)
+							{
+								sprite_index = spr_tv_idleanim1N;
+							}
+							if (sprite_index == spr_tv_idleanim2)
+							{
+								sprite_index = spr_tv_idleanim2N;
+							}
+						}
+						image_index = 0;
+					}
+					break;
+				case spr_tv_idleanim1:
+				case spr_tv_idleanim2:
+				case spr_tv_idleanim1N:
+				case spr_tv_idleanim2N:
+					if (ANIMATION_END)
+					{
+						sprite_index = idlespr;
+						idleanim = 240 + (60 * irandom_range(-1, 2));
+					}
+					if (idlespr != spr_tv_idle && idlespr != spr_tv_idleN)
+					{
+						sprite_index = idlespr;
+					}
+					break;
+				default:
+					sprite_index = idlespr;
+			}
 		}
 		if (sprite_index != spr_tv_open)
 		{

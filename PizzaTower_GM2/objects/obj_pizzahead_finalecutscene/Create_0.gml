@@ -37,3 +37,4 @@ spr_beatdown14 = obj_player.spr_vspizzahead_beatdown14
 spr_beatdown15 = obj_player.spr_vspizzahead_beatdown15
 spr_piledrive = obj_player.spr_vspizzahead_piledriver
 spr_piledrive_closeup = obj_player.spr_vspizzahead_piledriver_closeup
+trace(concat("sprites: ", spr_piledrive_closeup))

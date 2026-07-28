@@ -83,3 +83,5 @@ hand_index = 0;
 bar_surface = noone;
 barfill_x = 0;
 showtime_buffer = 0;
+characterID = characters.dos
+scr_spr_HUD()
