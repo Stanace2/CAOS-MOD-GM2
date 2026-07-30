@@ -1,18 +1,5 @@
 function scr_playerN_machcancelstart()
 {
-	switch characterID
-    {
-        case characters.dos:
-            if (!global.manners && (!scr_doniSnapjump()))
-                return;
-            break
-
-        case characters.fdos:
-            if (!scr_doniFakeSnapjump())
-                return;
-            break
-    }
-	
 	hsp = 0;
 	vsp = 0;
 	movespeed = 0;
@@ -28,6 +15,18 @@ function scr_playerN_machcancelstart()
 
 function scr_playerN_machcancel()
 {
+	switch characterID
+    {
+        case characters.dos:
+            if (!global.manners && (!scr_doniSnapjump()))
+                return;
+            break
+
+        case characters.fdos:
+            if (!scr_doniFakeSnapjump())
+                return;
+            break
+    }
 	noisemachcancelbuffer = 10;
 	hsp = movespeed;
 	move = key_right + key_left;

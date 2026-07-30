@@ -102,7 +102,7 @@ function scr_dos_tumble() //gml_Script_scr_dos_tumble
     {
         if ispeppino
         {
-            sprite_index = spr_player_poundcancel1
+            sprite_index = spr_bombdive
             image_index = 0
             state = states.freefall
             dir = xscale
@@ -252,7 +252,7 @@ function scr_dos_tumble() //gml_Script_scr_dos_tumble
                 movespeed = 8.5
             with (instance_create(x, y, obj_jumpdust))
                 image_xscale = other.xscale
-            if (movespeed >= 12)
+            if (movespeed >= 12 && false)
             {
                 state = states.mach3
                 sprite_index = spr_player_rollgetupALT
@@ -286,7 +286,7 @@ function scr_dos_tumble() //gml_Script_scr_dos_tumble
         image_speed = abs(movespeed) / 15
     else if (floor(image_index) == (image_number - 1) && sprite_index == spr_rolljump)
         image_speed = 0
-    else if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_Sjumpcancel)
+    else if (floor(image_index) == (image_number - 1) && sprite_index == spr_superjumpcancel)
         image_speed = 0
     else
         image_speed = 0.35

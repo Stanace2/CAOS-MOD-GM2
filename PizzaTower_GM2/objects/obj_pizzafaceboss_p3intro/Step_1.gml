@@ -274,7 +274,7 @@ switch (introstate)
 			shot = false;
 			with (obj_player1)
 			{
-				sprite_index = spr_pizzahead_pepintro;
+				sprite_index = spr_vspizzahead_scream;
 				if (!ispeppino)
 				{
 					sprite_index = spr_playerN_phase3intro2;
@@ -386,7 +386,7 @@ switch (introstate)
 					sprite_index = spr_superdashcloud;
 				}
 				hsp = 14;
-				sprite_index = spr_player_lunge;
+				sprite_index = spr_vspizzahead_lunge;
 				image_index = 7;
 				if (!ispeppino)
 				{

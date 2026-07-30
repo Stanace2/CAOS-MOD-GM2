@@ -1,4 +1,4 @@
-function scr_dos_freefalllland() //gml_Script_scr_dos_freefallland
+function scr_dos_freefallland() //gml_Script_scr_dos_freefallland
 {
     move = key_right + key_left
     mach2 = 0
@@ -34,9 +34,9 @@ function scr_dos_freefalllland() //gml_Script_scr_dos_freefallland
             return;
         }
     }
-    if (floor(image_index) == (image_number - 1))
+    if (ANIMATION_END)
     {
-        if (scr_check_superjump() && ispeppino)
+        if (scr_check_superjump())
         {
             sprite_index = spr_superjumpprep
             state = states.Sjumpprep
