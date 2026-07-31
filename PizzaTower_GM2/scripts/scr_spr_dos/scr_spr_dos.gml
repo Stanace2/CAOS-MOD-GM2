@@ -20,6 +20,8 @@ function scr_spr_dos() {
 	spr_idle6 = spr_dos_handgesture4
 	spr_frown = spr_dos_idlefrown
     spr_winding = spr_dos_winding  
+	spr_freezer = spr_dos_freezeridle
+	spr_soundtest = spr_dos_dance
 	// Crawl
     spr_crouch = spr_dos_crouch  
     spr_crouchjump = spr_dos_crouchjump  
@@ -318,6 +320,7 @@ function scr_spr_dos() {
 	spr_vsportrait = spr_vsdonisha
 	spr_vsportrait_shadow = spr_vsdonishashadow
 	spr_vshealth = spr_bossfight_dos_hp
+	spr_vshealth_palette = spr_dos_healthpalette
 	spr_yellnerves = spr_dos_screamnerves
 	spr_yellrealize = spr_dos_screamrealize
 	spr_yellstart = spr_dos_screamstart
@@ -329,6 +332,10 @@ function scr_spr_dos() {
 	spr_vshit4 = spr_dos_lungehit
 	spr_vscloseup = spr_dos_superattackHUD
 	spr_vsvictory = spr_dos_levelcomplete
+	spr_vsdead1 = spr_dos_outofpizza1
+	spr_vsdead2 = spr_dos_outofpizza2
+	spr_vsdead3 = spr_dos_outofpizza3
+	spr_vsdead4 = spr_dos_outofpizza4
 	// - Match Noise
 	spr_noise_mask = spr_noise_intro1_dos
 	spr_noise_mask_out = spr_noise_intro2_dos
@@ -366,6 +373,13 @@ function scr_spr_dos() {
 	spr_suplexmash5 = spr_dos_suplexmash5
 	spr_suplexmash6 = spr_dos_suplexmash6
 	spr_suplexmash7 = spr_dos_suplexmash7
+	// Props
+	spr_switch_sign = spr_dos_sign
+	spr_switch_sleep = spr_dos_switch1
+	spr_switch_awake = spr_dos_switch2
+	spr_palettedresser_debris = spr_palettedresserdebris_dos
+	spr_pepperman_paiting = spr_pepperman_pepportrait_dos
+	spr_grannytv = spr_dos_tvstreet
 	
 	// New Moveset
 	//// - Climb

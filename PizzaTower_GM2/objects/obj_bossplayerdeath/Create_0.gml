@@ -1,7 +1,7 @@
 with (obj_player1)
 {
 	state = states.actor;
-	sprite_index = spr_player_outofpizza1;
+	sprite_index = spr_vsdead1;
 	image_index = 0;
 	deathspeed = 10;
 	vsp = -12;

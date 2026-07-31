@@ -12,6 +12,12 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 		}
 		switch (identifier)
 		{
+			case afterimagetype.dummy:
+				if creation_state != playerid.state {
+					alarm[0] = 0;
+				}
+				visible = playerid.visible;
+				break
 			case afterimagetype.mach3effect:
 				//if (!(playerid.state == states.jump && playerid.sprite_index == spr_playerN_noisebombspinjump) && playerid.pizzapepper == 0 && playerid.state != states.Sjump && playerid.state != states.ratmount && playerid.state != states.ratmountjump && (playerid.state != states.ghost || playerid.ghostpepper < 2 || !playerid.ghostdash) && playerid.sprite_index != playerid.spr_mach && playerid.sprite_index != playerid.spr_mach4 && playerid.sprite_index != playerid.spr_barrelroll && playerid.state != states.grabbing && playerid.state != states.parry && playerid.state != states.chainsawbump && playerid.state != states.punch && playerid.state != states.chainsawbump && playerid.state != states.rideweenie && playerid.state != states.crouchslide && playerid.state != states.grabbed && playerid.pogochargeactive == false && playerid.state != states.tacklecharge && playerid.state != states.mach3 && playerid.state != states.climbwall && playerid.state != states.hookshot && playerid.state != states.charge && playerid.state != states.mach2 && playerid.state != states.handstandjump && playerid.state != states.machslide && playerid.state != states.slam && playerid.state != states.mach4 && playerid.state != states.machfreefall && playerid.state != states.superslam && playerid.state != states.machroll && playerid.state != states.chainsaw && playerid.state != states.Sjump && playerid.state != states.boxxedpep && playerid.gusdashpadbuffer <= 0)
 				//{
@@ -82,7 +88,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			{
 				other.alpha[identifier] = alpha;
 			}
-			alarm[2] = 3;
+			alarm[1] = 3;
 		}
 		if (alarm[0] == 0)
 		{
@@ -93,7 +99,5 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 		else
 		{
 		}
-		
-		trace(concat(alpha, " + ", visible))
 	}
 }

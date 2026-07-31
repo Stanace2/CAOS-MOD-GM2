@@ -483,14 +483,14 @@ function scr_hurtplayer(_player)
 							var pos = scr_bosscontroller_get_health_pos(player_hp, player_rowmax, player_columnmax, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad);
 							if (pos != undefined)
 							{
-								var spr_pal = other.spr_palette;
+								var spr_pal = obj_player.spr_vshealth_palette;
 								var pal = other.paletteselect;
 								var tex = global.palettetexture;
 								var hp_sprite = player_hpsprite;
 								if (_swap)
 								{
 									var info = other.ispeppino ? get_noise_palette_info() : get_pep_palette_info();
-									spr_pal = info.spr_palette;
+									spr_pal = obj_player.spr_vshealth_palette;
 									pal = info.paletteselect;
 									tex = info.patterntexture;
 									hp_sprite = other.ispeppino ? spr_bossfight_noiseHP : obj_player.spr_vshealth;
@@ -505,7 +505,7 @@ function scr_hurtplayer(_player)
 				else
 				{
 					var d = instance_find(obj_hpeffect, instance_number(obj_hpeffect) - 1);
-					scr_bosscontroller_particle_hp(obj_player.spr_bossfight_playerhp, irandom(sprite_get_number(obj_player.spr_vshealth) - 1), d.x, d.y, (d.x > (room_width / 2)) ? -1 : 1, d.spr_palette, d.paletteselect, d.patterntexture);
+					scr_bosscontroller_particle_hp(obj_player.spr_vshealth, irandom(sprite_get_number(obj_player.spr_vshealth) - 1), d.x, d.y, (d.x > (room_width / 2)) ? -1 : 1, d.spr_palette, d.paletteselect, d.patterntexture);
 					instance_destroy(d);
 				}
 			}

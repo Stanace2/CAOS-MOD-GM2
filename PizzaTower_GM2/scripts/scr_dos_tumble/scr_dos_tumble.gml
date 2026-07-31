@@ -255,7 +255,7 @@ function scr_dos_tumble() //gml_Script_scr_dos_tumble
             if (movespeed >= 12 && false)
             {
                 state = states.mach3
-                sprite_index = spr_player_rollgetupALT
+                sprite_index = spr_rollgetup
             }
             else
             {

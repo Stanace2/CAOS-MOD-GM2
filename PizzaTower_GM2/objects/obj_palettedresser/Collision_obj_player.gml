@@ -15,9 +15,16 @@ if (other.key_up2 && (!display) && other.ispeppino == ispeppino && other.state =
     // This is unsued vvv 
     var _player = -2  
     // Defines which actor to spawn
-    var pep = 0  
-    if (!ispeppino)  
-        pep = 1  
+	// donisha 0 pep 1 noise 2
+	var pep = 0
+	switch characterID {
+		case characters.pep:
+			pep = 1
+			break
+		case characters.noise:
+			pep = 2
+			break
+	}
     var actors = actor_array[pep]  
     with (obj_player1)  
         var pal = (ispeppino ? get_pep_palette_info() : get_noise_palette_info())  

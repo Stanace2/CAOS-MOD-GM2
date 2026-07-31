@@ -534,6 +534,7 @@ function scr_doniSnapjump() //gml_Script_scr_doniSnapjump
                             {
                                 sprite_index = spr_crazyrun
                                 state = states.mach3
+								mach4mode = 1
                             }
                             else
                             {

@@ -79,8 +79,10 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			else {
 				shd = true;
 				var _shader = shd_gm_full_filterless;
-				if playerid.characterID == characters.dos
-					_shader = shd_gm_afterimage;
+				if (variable_struct_exists(self, "playerid")) {
+					if playerid.characterID == characters.dos
+						_shader = shd_gm_afterimage;
+				}
 				scr_colormap(_shader, 0, 0, 0, colour_get_red(b), colour_get_green(b), colour_get_blue(b))
 				b = c_white
 			}

@@ -41,12 +41,14 @@ function scr_get_texture_array()
 		["pp", spr_peppattern7],
 		["war", spr_peppattern8],
 		["john", spr_peppattern9],
+		// Halloween
 		["candy", spr_peppattern10],
 		["bloodstained", spr_peppattern11],
 		["bat", spr_peppattern12],
 		["pumpkin", spr_peppattern13],
 		["fur", spr_peppattern14],
 		["flesh", spr_peppattern15],
+		// Noise
 		["racer", spr_noisepattern1],
 		["comedian", spr_noisepattern2],
 		["banana", spr_noisepattern3],
@@ -55,7 +57,17 @@ function scr_get_texture_array()
 		["bubbly", spr_noisepattern6],
 		["welldone", spr_noisepattern7],
 		["grannykisses", spr_noisepattern8],
-		["towerguy", spr_noisepattern9]
+		["towerguy", spr_noisepattern9],
+		// Donisha
+		["aqua", spr_dos_pattern19], 
+		["quetzal", spr_dos_pattern18], 
+		["maguma", spr_dos_pattern16], 
+		["demoness", spr_dos_pattern17], 
+		["gloomy", spr_dos_chaospattern1], 
+		["cheese", spr_dos_chaospattern2], 
+		["goof", spr_dos_chaospattern3], 
+		["italian", spr_dos_chaospattern4], 
+		["donibot", spr_dos_chaospattern5]
 	];
 }
 

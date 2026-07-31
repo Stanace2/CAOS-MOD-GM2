@@ -11,9 +11,9 @@ with (obj_player1)
 		switch (other.state)
 		{
 			case states.jump:
-				if (sprite_index == spr_player_outofpizza1 && ANIMATION_END)
+				if (sprite_index == spr_vsdead1 && ANIMATION_END)
 				{
-					sprite_index = spr_player_outofpizza2;
+					sprite_index = spr_vsdead2;
 				}
 				hsp = deathspeed * -xscale;
 				if (place_meeting(x + sign(hsp), y, obj_solid))
@@ -25,16 +25,16 @@ with (obj_player1)
 				if (grounded && vsp > 0)
 				{
 					image_index = 0;
-					sprite_index = spr_player_outofpizza3;
+					sprite_index = spr_vsdead3;
 					other.state = states.normal;
 					other.alarm[0] = 200;
 					other.alarm[2] = 150;
 				}
 				break;
 			case states.normal:
-				if (sprite_index == spr_player_outofpizza3 && ANIMATION_END)
+				if (sprite_index == spr_vsdead3 && ANIMATION_END)
 				{
-					sprite_index = spr_player_outofpizza4;
+					sprite_index = spr_vsdead4;
 				}
 				hsp = deathspeed * -xscale;
 				deathspeed = Approach(deathspeed, 0, 0.1);

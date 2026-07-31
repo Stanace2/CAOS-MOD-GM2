@@ -5,7 +5,10 @@ if (DEBUG)
 		with (instance_create(0, 0, obj_cheftask))
 		{
 			achievement_spr = noone;
-			sprite_index = spr_newclothes;
+			var _spr = spr_newclothes
+			if instance_exists(obj_player1)
+				_spr = obj_player1.spr_clothesnew
+			sprite_index = _spr;
 			paletteselect = 12;
 			texture = spr_peppattern1;
 		}

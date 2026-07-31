@@ -30,24 +30,34 @@ function scr_dos_freefall() //gml_Script_scr_dos_freefall
             create_particle((x + (irandom_range(-25, 25))), (y + (irandom_range(-10, 35))), states.revolver, 0)
             steppybuffer = 8
         }
-        if (vsp > 21)
+        if (vsp > 12)
         {
             if ispeppino
                 vsp += 0.7
-            if (punch_afterimage > 0)
-                punch_afterimage--
-            else
-            {
-                punch_afterimage = 5
-                with (create_mach3effect(x, y, sprite_index, image_index))
-                {
-                    image_xscale = other.xscale
-                    playerid = other.id
-                    maxmovespeed = 6
-                    vertical = 1
-                    fadeoutstate = states.freefall
-                }
-            }
+			if sprite_index != spr_machdrill {
+	            if (punch_afterimage > 0)
+	                punch_afterimage--
+	            else
+	            {
+	                punch_afterimage = 5
+	                with (create_mach3effect(x, y, sprite_index, image_index))
+	                {
+	                    image_xscale = other.xscale
+	                    playerid = other.id
+	                    maxmovespeed = 6
+	                    vertical = 1
+	                    fadeoutstate = states.freefall
+	                }
+	            }
+			} else {
+				if (punch_afterimage > 0)
+	                punch_afterimage--
+	            else
+	            {
+	                punch_afterimage = 5
+					scr_create_cookiemach3(x, y, sprite_index, image_index, xscale)
+				}
+			}
             if (piledrivereffect > 0)
                 piledrivereffect--
             else
@@ -195,7 +205,7 @@ function scr_dos_freefall() //gml_Script_scr_dos_freefall
                     if (exitSpeed < drillexitspd)
                     {
                         exitSpeed = drillexitspd
-                        if (drillexitspd > 16.5)
+                        if (drillexitspd > 16.5 && freefallsmash <= 20)
                             exitSpeed = 16.5
                     }
                     hsp = exitSpeed * xscale

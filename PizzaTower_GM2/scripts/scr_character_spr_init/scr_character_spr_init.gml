@@ -3,8 +3,8 @@ function scr_character_spr_init() // starts only the necessary sprites for the c
     switch characterID  
     {  
         case characters.dos:  
-			global.mach_color1 = make_colour_rgb(187, 0, 255); //purp
-			global.mach_color2 = make_colour_rgb(0, 255, 204); //blue
+			global.mach_color1 = make_colour_rgb(255, 0, 81); //water
+			global.mach_color2 = make_colour_rgb(0, 255, 162); //melon
             scr_spr_dos()  
             break  
         case characters.wm:  
@@ -16,8 +16,8 @@ function scr_character_spr_init() // starts only the necessary sprites for the c
 		case characters.noise:	
 			break
 		case characters.pep:
-			global.mach_color1 = make_colour_rgb(67, 224, 34);
-			global.mach_color2 = make_colour_rgb(230, 14, 14);
+			global.mach_color1 = make_colour_rgb(0, 214, 7); //green
+			global.mach_color2 = make_colour_rgb(230, 14, 14); //red
 			scr_spr_peppino()
 			break
 		default:
@@ -27,4 +27,9 @@ function scr_character_spr_init() // starts only the necessary sprites for the c
     }  
 	
 	scr_spr_HUD()
+	
+	if instance_exists(obj_palettedresser) {
+		with (obj_palettedresser)
+			characterID = obj_player1.characterID
+	}
 }

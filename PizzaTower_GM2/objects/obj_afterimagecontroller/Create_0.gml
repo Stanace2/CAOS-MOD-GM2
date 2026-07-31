@@ -9,8 +9,9 @@ enum afterimagetype
 	red = 6,
 	red_alt = 7,
 	noise = 8,
-	last = 9,
-	gradientmap = 10
+	gradientmap = 9,
+	dummy = 10,
+	last = 11
 }
 
 depth = 1;

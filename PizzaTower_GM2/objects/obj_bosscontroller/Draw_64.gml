@@ -100,7 +100,7 @@ switch (state)
 			break;
 		}
 		shader_set(global.Pal_Shader);
-		scr_bosscontroller_draw_health(player_hpsprite, player_rowmax, player_columnmax, player_hp, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad, player_index, image_alpha, obj_player1.spr_palette, obj_player1.paletteselect, global.palettetexture);
+		scr_bosscontroller_draw_health(player_hpsprite, player_rowmax, player_columnmax, player_hp, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad, player_index, image_alpha, obj_player1.spr_vshealth_palette, obj_player1.paletteselect, global.palettetexture);
 		var bpal = boss_palette;
 		var bpalsel = noone;
 		var btex = noone;

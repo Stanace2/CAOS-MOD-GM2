@@ -19,6 +19,8 @@ function scr_spr_peppino() {
 	spr_idle6 = spr_player_handgesture4
 	spr_frown = spr_player_idlefrown
     spr_winding = spr_player_winding  
+	spr_freezer = spr_player_freezeridle
+	spr_soundtest = spr_pepdance
 	// Crawl
     spr_crouch = spr_player_crouch  
     spr_crouchjump = spr_player_crouchjump  
@@ -315,6 +317,7 @@ function scr_spr_peppino() {
 	spr_vsportrait = spr_vspeppino
 	spr_vsportrait_shadow = spr_vspeppinoshadow
 	spr_vshealth = spr_bossfight_playerhp
+	spr_vshealth_palette = spr_peppalette  
 	spr_yellnerves = spr_player_gnomecutscene1
 	spr_yellrealize = spr_player_gnomecutscene2
 	spr_yellstart = spr_player_gnomecutscene3
@@ -326,6 +329,10 @@ function scr_spr_peppino() {
 	spr_vshit4 = spr_player_lungehit
 	spr_vscloseup = spr_peppino_superattackHUD
 	spr_vsvictory = spr_player_levelcomplete
+	spr_vsdead1 = spr_player_outofpizza1
+	spr_vsdead2 = spr_player_outofpizza2
+	spr_vsdead3 = spr_player_outofpizza3
+	spr_vsdead4 = spr_player_outofpizza4
 	// - Match Noise
 	spr_noise_mask = spr_noise_intro1
 	spr_noise_mask_out = spr_noise_intro2
@@ -363,4 +370,11 @@ function scr_spr_peppino() {
 	spr_suplexmash5 = spr_player_suplexmash5
 	spr_suplexmash6 = spr_player_suplexmash6
 	spr_suplexmash7 = spr_player_suplexmash7
+	// Props
+	spr_switch_sign = spr_pepsign
+	spr_switch_sleep = spr_peppinoswitch1
+	spr_switch_awake = spr_peppinoswitch2
+	spr_palettedresser_debris = spr_palettedresserdebris
+	spr_pepperman_paiting = spr_pepperman_pepportrait
+	spr_grannytv = spr_peppinotvstreet
 }

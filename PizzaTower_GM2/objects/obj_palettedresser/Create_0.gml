@@ -22,15 +22,15 @@ player_palettes[0] = [
 	["pp", false, 18, spr_peppattern7],
 	["war", false, 19, spr_peppattern8],
 	["john", false, 20, spr_peppattern9],
-	["aqua", false, 24, spr_peppattern7], 
+	["aqua", false, 24, spr_dos_pattern19], 
 	["shadow", false, 25], 
 	["goth", false, 26], 
-	["quetzal", false, 27, spr_peppattern7], 
-	["maguma", false, 28, spr_peppattern7], 
-	["demoness", false, 29, spr_peppattern7], 
-	["gloomy", false, 30, spr_peppattern7], 
+	["quetzal", false, 27, spr_dos_pattern18], 
+	["maguma", false, 28, spr_dos_pattern16], 
+	["demoness", false, 29, spr_dos_pattern17], 
+	["gloomy", false, 30, spr_dos_chaospattern1], 
 	["hero", false, 31], 
-	["cheese", false, 32, spr_peppattern7], 
+	["cheese", false, 32, spr_dos_chaospattern2], 
 	["boiling", false, 33], 
 	["aldente", false, 34], 
 	["spectral", false, 35], 
@@ -38,10 +38,10 @@ player_palettes[0] = [
 	["sunset", false, 37], 
 	["party", false, 38], 
 	["goblin", false, 39], 
-	["goof", false, 40, spr_peppattern7], 
+	["goof", false, 40, spr_dos_chaospattern3], 
 	["space", false, 41], 
-	["italian", false, 42, spr_peppattern7], 
-	["donibot", false, 43, spr_peppattern7], 
+	["italian", false, 42, spr_dos_chaospattern4], 
+	["donibot", false, 43, spr_dos_chaospattern5], 
 	["two", false, 44], 
 	["snow", false, 45], 
 	["varoness", false, 46]];
@@ -139,4 +139,5 @@ bg_y = 0
 usebuffer = 0
 scolumn = 0
 srow = 0
+characterID = obj_player1.characterID
 scr_menu_getinput()

@@ -34,7 +34,7 @@ if (tex != noone)
 {
 	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, tex);
 }
-pal_swap_set(spr_peppalette, pal, false);
+pal_swap_set(spr_dos_palette, pal, false);
 if (!pep_debris)
 {
 	draw_sprite_ext(sprite_index, image_index, _x, _y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);

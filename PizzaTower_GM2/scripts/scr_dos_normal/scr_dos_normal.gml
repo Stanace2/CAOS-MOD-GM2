@@ -26,7 +26,7 @@ function scr_dos_normal()
     var idlespr = spr_idle
     var movespr = spr_move
     if (global.leveltosave == "freezer" && (!global.noisejetpack))
-        idlespr = spr_player_freezeridle
+        idlespr = spr_dos_freezeridle
     if ((global.leveltosave == "kidsparty" || instance_exists(obj_fakepepboss) || instance_exists(obj_pizzafaceboss_p2)) && (!global.noisejetpack))
         idlespr = spr_donisha_scared
     if (distance_to_object(obj_noisevengeful) < 250)

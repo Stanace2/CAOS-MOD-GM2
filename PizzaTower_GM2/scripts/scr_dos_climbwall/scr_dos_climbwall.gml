@@ -87,9 +87,9 @@ function scr_dos_climbwall() //gml_Script_scr_dos_climbwall
             vsp = (-wallspeed)
             if (abs(wallspeed) < 20)
             {
-                if (climbdir == 1)
+                if (climbdir == 1 && wallspeed < 16)
                     wallspeed += (0.09 * climbdir)
-                else
+                if (climbdir == -1)
                     wallspeed += (0.2 * climbdir)
             }
             crouchslideAnim = 1

@@ -37,7 +37,7 @@ function state_player_normal()
 	var movespr = spr_move;
 	if (global.leveltosave == "freezer" && !global.noisejetpack)
 	{
-		idlespr = spr_player_freezeridle;
+		idlespr = spr_freezer;
 	}
 	if (global.pistol && ispeppino)
 	{
@@ -46,8 +46,8 @@ function state_player_normal()
 	}
 	if (room == tower_soundtest && obj_soundtest.play)
 	{
-		idlespr = spr_pepdance;
-		movespr = spr_pepdance;
+		idlespr = spr_soundtest;
+		movespr = spr_soundtest;
 		if (!ispeppino)
 		{
 			idlespr = spr_noise_vulnerable2;

@@ -5,6 +5,7 @@ with (obj_secretbigblock)
 {
 	particlespr = spr_streetdebris;
 }
+/*
 var lay_id = layer_get_id("Assets_1");
 var pep = layer_sprite_get_id(lay_id, "peppinotv");
 var noise = layer_sprite_get_id(lay_id, "noisetv");
@@ -18,6 +19,7 @@ else
 	layer_sprite_alpha(pep, 0);
 	layer_sprite_alpha(noise, 1);
 }
+*/
 if (!obj_secretmanager.init)
 {
 	obj_secretmanager.init = true;

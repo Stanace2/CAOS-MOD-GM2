@@ -46,6 +46,29 @@ function create_mach3effect(_x, _y, _spr, _subimg, _not_mach3 = false)
 	return q;
 }
 
+function scr_create_cookiemach3(_x, _y, _spr, _subimg, _xsc) //gml_Script_scr_windafterimage
+{
+    var b = create_afterimage(_x, _y, _spr, _subimg)
+    with (b)
+    {
+        fadeout = 0
+        fadeoutstate = -4
+        identifier = afterimagetype.dummy
+        alarm[0] = 6
+        alarm[1] = -1
+        alarm[2] = -1
+        image_blend = choose(global.mach_color1, global.mach_color2)
+        image_xscale = _xsc
+        alpha = 1
+        playerid = obj_player1
+		creation_state = obj_player1.state
+        spd = 6
+        hsp = 0
+        vsp = 0
+    }
+    return b;
+}
+
 function create_heatattack_afterimage(_x, _y, _spr, _subimg, _xscale)
 {
 	var _velocity = 6;

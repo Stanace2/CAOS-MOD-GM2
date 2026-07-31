@@ -103,6 +103,6 @@
   "nineSlice": null,
   "parent": {
     "name": "New Moveset",
-    "path": "folders/Sprites/Player/Chaos/New Moveset.yy",
+    "path": "folders/Sprites/Player/Chaos/Donisha/New Moveset.yy",
   },
 }
