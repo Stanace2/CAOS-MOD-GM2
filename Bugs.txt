@@ -1,0 +1,2 @@
+- After image not showing properly
+- Second snapjump after not holding direction is not coming out as mach4

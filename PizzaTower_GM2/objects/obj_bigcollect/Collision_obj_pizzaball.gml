@@ -17,4 +17,4 @@ with (instance_create(x + 16, y, obj_smallnumber))
 {
 	number = string(val);
 }
-tv_do_expression(spr_tv_exprcollect, true);
+tv_do_expression(obj_tv.spr_tvcollect[floor(random(array_length(obj_tv.spr_tvcollect)))], true);

@@ -10,3 +10,4 @@ if (!obj_player1.ispeppino)
 spr_palette = obj_player1.spr_palette;
 paletteselect = obj_player1.paletteselect;
 patterntexture = global.palettetexture;
+sprite_index = obj_player.spr_vshealth;

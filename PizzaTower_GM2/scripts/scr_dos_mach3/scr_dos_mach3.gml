@@ -476,4 +476,11 @@ function scr_dos_mach3() //gml_Script_scr_dos_mach3
     }
     if (movespeed > speedcap)
         movespeed = speedcap
+	if ds_list_empty(global.afterimage_list) {
+		with (create_mach3effect(x, y, sprite_index, image_index - 1, true))
+		{
+			playerid = other.object_index;
+			image_xscale = other.xscale;
+		}
+	}
 }

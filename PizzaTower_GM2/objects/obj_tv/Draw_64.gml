@@ -54,7 +54,7 @@ if (room != strongcold_endscreen)
 	{
 		pal_swap_set(spr_tv_palette, 1, false);
 		var spr = spr_tv_empty;
-		if (sprite_index == spr_tv_open)
+		if (sprite_index == spr_tvopen)
 		{
 			spr = sprite_index;
 		}

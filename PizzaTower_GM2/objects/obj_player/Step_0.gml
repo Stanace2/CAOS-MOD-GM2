@@ -1572,7 +1572,8 @@ if (state != states.jump)
 {
 	stompAnim = false;
 }
-if (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+var me_dos = (characterID == characters.dos || characterID == characters.fdos) && state == states.mach3
+if !me_dos && (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
 {
 	if (macheffect == false && !instance_exists(obj_swapgusfightball))
 	{
@@ -1601,7 +1602,7 @@ if (!(state == states.mach3) && state != states.machcancel && !(state == states.
 {
 	macheffect = false;
 }
-if (toomuchalarm1 > 0)
+if (toomuchalarm1 > 0) && !me_dos
 {
 	toomuchalarm1 -= 1;
 	if (toomuchalarm1 <= 0 && !instance_exists(obj_swapgusfightball) && (state == states.mach3 || (state == states.ghost && ghostdash && ghostpepper >= 3) || state == states.mach2 || state == states.Sjump || ratmount_movespeed >= 12 || gusdashpadbuffer > 0))
@@ -1659,7 +1660,7 @@ if ((y > (room_height + 300) || y < -800) && !place_meeting(x, y, obj_verticalha
 			{
 				if (!other.isgustavo)
 				{
-					sprite = choose(spr_technicaldifficulty1, spr_technicaldifficulty2, spr_technicaldifficulty3);
+					sprite = choose(other.spr_td1, other.spr_td2, other.spr_td3);
 				}
 				else
 				{

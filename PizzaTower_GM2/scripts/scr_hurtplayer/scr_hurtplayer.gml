@@ -341,7 +341,7 @@ function scr_hurtplayer(_player)
 			{
 				if (!isgustavo)
 				{
-					tv_do_expression(spr_tv_exprhurt);
+					tv_do_expression(spr_tvhurt[floor(random(array_length(spr_tvhurt)))]);
 				}
 				else
 				{
@@ -349,7 +349,7 @@ function scr_hurtplayer(_player)
 				}
 				if (ispeppino)
 				{
-					hurtTV = choose(spr_tv_exprhurt1, spr_tv_exprhurt2, spr_tv_exprhurt3, spr_tv_exprhurt4, spr_tv_exprhurt5, spr_tv_exprhurt6, spr_tv_exprhurt7, spr_tv_exprhurt8, spr_tv_exprhurt9, spr_tv_exprhurt10);
+					hurtTV = choose(spr_tvtorture1, spr_tvtorture2, spr_tvtorture3, spr_tvtorture4, spr_tvtorture5, spr_tvtorture6, spr_tvtorture7, spr_tvtorture8, spr_tvtorture9, spr_tvtorture10);
 				}
 				else
 				{
@@ -365,7 +365,7 @@ function scr_hurtplayer(_player)
 					trace(str2);
 					if ((state == states.expression || state == states.whitenoise) && (sprite_index == spr_tv_exprhurt || sprite_index == spr_tv_exprhurtN || sprite_index == spr_tv_hurtG || str2 == "spr_tv_exprhurt" || str2 == "spr_tv_exprhurtN"))
 					{
-						sprite_index = other.ispeppino ? spr_tv_idleN : spr_tv_idle;
+						sprite_index = other.ispeppino ? spr_tv_idleN : spr_tvidle;
 						if (other.noisecrusher)
 						{
 							sprite_index = spr_tv_idleG;
@@ -401,7 +401,7 @@ function scr_hurtplayer(_player)
 			{
 				tv_do_expression(hurtTV);
 			}
-			if (obj_tv.expressionsprite != spr_tv_exprhurt && obj_tv.expressionsprite != spr_tv_hurtG && obj_tv.expressionsprite != spr_tv_exprhurtN)
+			if (obj_tv.expressionsprite != string_copy(sprite_get_name(sprite_index), 1, 15) == "spr_tv_exprhurt" && obj_tv.expressionsprite != spr_tv_hurtG && obj_tv.expressionsprite != spr_tv_exprhurtN)
 			{
 				instance_destroy(obj_transfotip);
 				var txt = lang_get_value("peppinohurt");

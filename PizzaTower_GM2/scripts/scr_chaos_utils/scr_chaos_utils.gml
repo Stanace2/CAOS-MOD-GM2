@@ -112,18 +112,16 @@ function scr_displaydata(_display)
     //concat("clingexitspeed: ", clingexitspeed)
 }
 
-/*
-function scr_colormap(argument0, argument1, argument2, argument3, argument4, argument5, argument6) //gml_Script_scr_colormap
+function scr_colormap(_shader, _tr, _tg, _tb, _nr, _ng, _nb)
 {
-    shader_set(argument0)
-    shader_set_uniform_f(shader_get_uniform(argument0, "tailR"), argument1)
-    shader_set_uniform_f(shader_get_uniform(argument0, "tailG"), argument2)
-    shader_set_uniform_f(shader_get_uniform(argument0, "tailB"), argument3)
-    shader_set_uniform_f(shader_get_uniform(argument0, "noseR"), argument4)
-    shader_set_uniform_f(shader_get_uniform(argument0, "noseG"), argument5)
-    shader_set_uniform_f(shader_get_uniform(argument0, "noseB"), argument6)
+    shader_set(_shader)
+    shader_set_uniform_f(shader_get_uniform(_shader, "tailR"), _tr)
+    shader_set_uniform_f(shader_get_uniform(_shader, "tailG"), _tg)
+    shader_set_uniform_f(shader_get_uniform(_shader, "tailB"), _tb)
+    shader_set_uniform_f(shader_get_uniform(_shader, "noseR"), _nr)
+    shader_set_uniform_f(shader_get_uniform(_shader, "noseG"), _ng)
+    shader_set_uniform_f(shader_get_uniform(_shader, "noseB"), _nb)
 }
-*/
 
 function scr_outline_sprite(_sprindex, _imgindex, _x, _y, _xscale, _yscale, _angle, _alpha, _R, _G, _B)
 {

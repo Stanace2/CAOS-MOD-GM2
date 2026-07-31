@@ -1,6 +1,6 @@
 depth = 50;
 event_inherited();
-tv_do_expression(spr_tv_exprcollect, true);
+tv_do_expression(obj_tv.spr_tvcollect[floor(random(array_length(obj_tv.spr_tvcollect)))], true);
 image_speed = 0.35;
 yoffset = 0;
 hsp = 0;

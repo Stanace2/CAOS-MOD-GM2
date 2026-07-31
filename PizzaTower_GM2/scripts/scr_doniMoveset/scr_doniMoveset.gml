@@ -61,7 +61,7 @@ function scr_doniMoveset() //gml_Script_scr_doniMoveset
         else
         {
             punch_afterimage = 5
-            with (create_mach3effect(x, y, sprite_index, image_index, 1))
+            with (create_mach3effect(x, y, sprite_index, image_index))
             {
                 image_xscale = other.xscale
                 playerid = other.id
@@ -398,7 +398,7 @@ function scr_doniSnapjump() //gml_Script_scr_doniSnapjump
         {
             if (punch_afterimage == 6)
             {
-                with (create_mach3effect(x, y, sprite_index, (image_index - 1)))
+                with (create_mach3effect(x, y, sprite_index, image_index))
                 {
                     image_xscale = other.xscale
                     playerid = other.id

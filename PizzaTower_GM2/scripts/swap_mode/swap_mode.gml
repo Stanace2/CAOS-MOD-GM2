@@ -138,7 +138,7 @@ function swap_player(_hurtswap = false, _jumpscare = false)
 				{
 					idleanim = 60;
 				}
-				sprite_index = other.ispeppino ? spr_tv_idle : spr_tv_idleN;
+				sprite_index = other.ispeppino ? spr_tvidle : spr_tv_idleN;
 				if (sprite_index == spr_tv_idle && other.isgustavo)
 				{
 					sprite_index = spr_tv_idleG;

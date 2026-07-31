@@ -20,3 +20,4 @@ titlecard_index = 0;
 title_sprite = spr_titlecards_title;
 title_index = 0;
 title_music = "event:/music/w1/entrancetitle";
+scr_spr_HUD()

@@ -27,27 +27,27 @@ if (sprite_index != spr_rankNPend && sprite_index != spr_rankNPendstart)
 		{
 			if (global.rank == "s")
 			{
-				sprite_index = spr_rankS;
+				sprite_index = spr_rank_S;
 			}
 			if (global.rank == "a")
 			{
-				sprite_index = spr_rankA;
+				sprite_index = spr_rank_A;
 			}
 			if (global.rank == "b")
 			{
-				sprite_index = spr_rankB;
+				sprite_index = spr_rank_B;
 			}
 			if (global.rank == "c")
 			{
-				sprite_index = spr_rankC;
+				sprite_index = spr_rank_C;
 			}
 			if (global.rank == "d")
 			{
-				sprite_index = spr_rankD;
+				sprite_index = spr_rank_D;
 			}
 			if (global.rank == "p")
 			{
-				sprite_index = spr_rankP;
+				sprite_index = spr_rank_P;
 			}
 		}
 		else
@@ -84,27 +84,27 @@ if (sprite_index != spr_rankNPend && sprite_index != spr_rankNPendstart)
 		{
 			if (global.rank == "s")
 			{
-				sprite_index = spr_rankS;
+				sprite_index = spr_rank_S;
 			}
 			if (global.rank == "a")
 			{
-				sprite_index = spr_rankA;
+				sprite_index = spr_rank_A;
 			}
 			if (global.rank == "b")
 			{
-				sprite_index = spr_rankB;
+				sprite_index = spr_rank_B;
 			}
 			if (global.rank == "c")
 			{
-				sprite_index = spr_rankC;
+				sprite_index = spr_rank_C;
 			}
 			if (global.rank == "d")
 			{
-				sprite_index = spr_rankD;
+				sprite_index = spr_rank_D;
 			}
 			if (global.rank == "p")
 			{
-				sprite_index = spr_rankP;
+				sprite_index = spr_rank_P;
 			}
 		}
 		else

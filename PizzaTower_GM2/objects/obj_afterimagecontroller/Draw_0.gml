@@ -76,6 +76,14 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 					pal_swap_set(playerid.spr_palette, playerid.paletteselect, false);
 				}
 			}
+			else {
+				shd = true;
+				var _shader = shd_gm_full_filterless;
+				if playerid.characterID == characters.dos
+					_shader = shd_gm_afterimage;
+				scr_colormap(_shader, 0, 0, 0, colour_get_red(b), colour_get_green(b), colour_get_blue(b))
+				b = c_white
+			}
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, a);
 			if (shd)
 			{

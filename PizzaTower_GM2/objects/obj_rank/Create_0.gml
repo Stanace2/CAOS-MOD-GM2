@@ -80,3 +80,4 @@ brown = false;
 brownfade = 0;
 alarm[2] = 400;
 depth = -8;
+scr_spr_HUD()
