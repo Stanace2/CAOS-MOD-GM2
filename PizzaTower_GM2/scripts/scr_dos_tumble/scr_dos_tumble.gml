@@ -252,7 +252,7 @@ function scr_dos_tumble() //gml_Script_scr_dos_tumble
                 movespeed = 8.5
             with (instance_create(x, y, obj_jumpdust))
                 image_xscale = other.xscale
-            if (movespeed >= 12 && false)
+            if (movespeed >= 12)
             {
                 state = states.mach3
                 sprite_index = spr_rollgetup

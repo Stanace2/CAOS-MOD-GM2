@@ -401,7 +401,19 @@ function scr_hurtplayer(_player)
 			{
 				tv_do_expression(hurtTV);
 			}
-			if (obj_tv.expressionsprite != string_copy(sprite_get_name(sprite_index), 1, 15) == "spr_tv_exprhurt" && obj_tv.expressionsprite != spr_tv_hurtG && obj_tv.expressionsprite != spr_tv_exprhurtN)
+			var _hurtcheck = true
+			with (obj_tv) {
+				if array_length(spr_tvhurt) == 1 {
+					_hurtcheck = spr_tvhurt[0] == expressionsprite ? true : false
+				} else {
+					for (var i; i < array_length(spr_tvhurt); i++) {
+						_hurtcheck = spr_tvhurt[i] == expressionsprite ? true : false
+						if _hurtcheck
+							break
+					}
+				}
+			}
+			if (!_hurtcheck && obj_tv.expressionsprite != spr_tv_hurtG && obj_tv.expressionsprite != spr_tv_exprhurtN)
 			{
 				instance_destroy(obj_transfotip);
 				var txt = lang_get_value("peppinohurt");

@@ -80,10 +80,18 @@ if display
 			*/
         }
     }
+	var _mod = ""
+	if palette_pepfilter(actors[scolumn][srow][0]) {
+		switch (characterID) {
+			case characters.dos:
+				_mod = "dos"
+				break
+		}
+	}
     if (key_jump && (!actors[scolumn][srow][1]))
         fmod_event_one_shot_3d("event:/sfx/ui/switchchardown", x, y)
-    palettetitle = lang_get_value(concat("dresser_", actors[scolumn][srow][0], "title"))
-    palettedesc = lang_get_value_newline(concat("dresser_", actors[scolumn][srow][0]))
+    palettetitle = lang_get_value(concat("dresser_", _mod, actors[scolumn][srow][0], "title"))
+    palettedesc = lang_get_value_newline(concat("dresser_", _mod, actors[scolumn][srow][0]))
 }
 else
     ad = Approach(ad, 0, 0.1)

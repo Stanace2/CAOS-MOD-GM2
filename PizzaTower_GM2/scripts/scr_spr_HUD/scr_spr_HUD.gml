@@ -156,6 +156,8 @@ function scr_spr_HUD() {
 		with (obj_tv) {
 			characterID = obj_player1.characterID
 			scr_spr_HUD()
+			state = states.normal
+			sprite_index = spr_tv_off
 		}
 	}
 }

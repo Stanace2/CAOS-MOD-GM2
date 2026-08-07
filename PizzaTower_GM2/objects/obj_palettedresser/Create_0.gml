@@ -3,6 +3,7 @@ actor_array = [];
 player_palettes = [];
 player_palettes[0] = [
 	["classic", true, 1], 
+	["dosog", true, 47],
 	["unfunny", false, 3], 
 	["money", false, 4], 
 	["sage", false, 5], 

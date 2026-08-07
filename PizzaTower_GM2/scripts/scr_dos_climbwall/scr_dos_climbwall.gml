@@ -209,6 +209,7 @@ function scr_dos_climbwall() //gml_Script_scr_dos_climbwall
                     if (movespeed >= mach5limit)
                         movespeed = mach5exit
                     walljumpbuffer = 4
+					fmod_event_one_shot_3d("event:/chaos-sfx/donisha/walldivejump", x + (50 * xscale), y + 50)
                 }
             }
             if (state != states.mach2 && verticalbuffer <= 0 && place_meeting(x, (y - 1), obj_solid) && scr_solid((x + xscale), y) && (!(place_meeting(x, (y - 1), obj_verticalhallway))) && (!(place_meeting(x, (y - 1), obj_destructibles))) && ((!(place_meeting((x + sign(hsp)), y, obj_slope))) || scr_solid_slope((x + sign(hsp)), y)) && (!(place_meeting((x - sign(hsp)), y, obj_slope))))

@@ -104,7 +104,7 @@ function scr_displaydata(_display)
 		concat("imagespeed: ", image_speed),
 		concat("imageindex: ", image_index)
 	]
-	var _offset = 20;
+	var _offset = 0;
 	for (var i = 0; i < array_length(_arr); i++) {
 		draw_text(10, _offset, _arr[i])
 		_offset += 20
@@ -176,4 +176,35 @@ function mango_ledge_bump(hicup, amount)
         return false;
     }
     return true;
+}
+
+function palette_pepfilter(name = "") 
+{
+	if name != "" {
+		if (name == "classic" ||
+		name == "unfunny" ||
+		name == "money" ||
+		name == "sage" ||
+		name == "blood" ||
+		name == "tv" ||
+		name == "dark" ||
+		name == "shitty" ||
+		name == "golden" ||
+		name == "garish" ||
+		name == "mooney" ||
+		name == "funny" ||
+		name == "itchy" ||
+		name == "pizza" ||
+		name == "stripes" ||
+		name == "goldemanne" ||
+		name == "bones" ||
+		name == "pp" ||
+		name == "war" ||
+		name == "john") 
+		{
+			return true;
+		}
+		return false;
+	}
+	return false;
 }

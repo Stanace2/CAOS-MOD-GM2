@@ -1,4 +1,4 @@
-function scr_character_spr_init() // starts only the necessary sprites for the characters
+function scr_character_spr_init(_hud = true) // starts only the necessary sprites for the characters
 {  
     switch characterID  
     {  
@@ -16,7 +16,7 @@ function scr_character_spr_init() // starts only the necessary sprites for the c
 		case characters.noise:	
 			break
 		case characters.pep:
-			global.mach_color1 = make_colour_rgb(0, 214, 7); //green
+			global.mach_color1 = make_colour_rgb(116, 191, 59); //green
 			global.mach_color2 = make_colour_rgb(230, 14, 14); //red
 			scr_spr_peppino()
 			break
@@ -26,7 +26,8 @@ function scr_character_spr_init() // starts only the necessary sprites for the c
 			return;
     }  
 	
-	scr_spr_HUD()
+	if _hud
+		scr_spr_HUD()
 	
 	if instance_exists(obj_palettedresser) {
 		with (obj_palettedresser)

@@ -2,6 +2,7 @@ function scr_playersounds()
 {
 	with (obj_player)
 	{
+		scr_chaos_sounds() 
 		if (instance_exists(obj_pizzaface))
 		{
 			if (!fmod_event_instance_is_playing(global.snd_pizzafacemoving))
@@ -101,11 +102,11 @@ function scr_playersounds()
 			{
 				s = 2;
 			}
-			else if (state == states.mach3 && sprite_index != spr_crazyrun)
+			else if (state == states.mach3 && sprite_index != spr_unhingedrun && sprite_index != spr_crazyrun)
 			{
 				s = 3;
 			}
-			else if (sprite_index == spr_crazyrun)
+			else if (sprite_index == spr_crazyrun || sprite_index == spr_unhingedrun)
 			{
 				s = 4;
 			}
@@ -113,6 +114,8 @@ function scr_playersounds()
 			{
 				s = 4;
 			}
+			if ((sprite_index == spr_machsplit_loop || sprite_index == spr_rolljump) && abs(hsp) > 15)
+				s = 4;
 			fmod_event_instance_set_3d_attributes(machsnd, x, y);
 			fmod_event_instance_set_parameter(machsnd, "state", s, true);
 		}
