@@ -3411,6 +3411,7 @@
     {"id":{"name":"tower_tutorial3N","path":"rooms/tower_tutorial3N/tower_tutorial3N.yy",},"order":847,},
     {"id":{"name":"obj_pizzacoin","path":"objects/obj_pizzacoin/obj_pizzacoin.yy",},"order":848,},
     {"id":{"name":"spr_player_piledriver","path":"sprites/spr_player_piledriver/spr_player_piledriver.yy",},"order":848,},
+    {"id":{"name":"spr_dresserbg_contrast","path":"sprites/spr_dresserbg_contrast/spr_dresserbg_contrast.yy",},"order":2,},
     {"id":{"name":"tower_peppinohouse","path":"rooms/tower_peppinohouse/tower_peppinohouse.yy",},"order":848,},
     {"id":{"name":"obj_phonebooth","path":"objects/obj_phonebooth/obj_phonebooth.yy",},"order":849,},
     {"id":{"name":"spr_player_grabmove","path":"sprites/spr_player_grabmove/spr_player_grabmove.yy",},"order":849,},

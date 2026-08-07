@@ -406,15 +406,19 @@ option_keyboard_groundpound = "DIR. GROUNDPOUND"
 # ---------------
 # MISC TEXT
 # ---------------
+# --------------- You've hurt
+donishahurt = "{s}You've hurt Donisha % times.../"
+wethamhurt = "{s}You've hurt Wetham % times.../"
+peppinohurt = "{s}You've hurt Peppino % times.../"
+gustavohurt = "{s}You've hurt Gustavo % times.../"
+noisehurt = "{s}You've hurt The Noise % times.../"
+# ---------------
 swap_press_start = "PRESS\nSTART"
 menu_delete = "HOLD TO DELETE SAVE %"
 menu_controller_disconnected = "CONTROLLER DISCONNECTED\n\nPRESS START TO CONTINUE"
 menu_exit = "EXIT THE GAME?"
 menu_skip = "[c] Skip"
 menu_loading = "LOADING..."
-peppinohurt = "{s}You've hurt Donisha % times.../"
-gustavohurt = "{s}You've hurt Wetham % times.../"
-noisehurt = "{s}You've hurt The Noise % times.../"
 mrsticknotification = "{u}Come to Mr.Stick to rent a boss gate!/"
 noisettenotification = "{u}Come to Noisette for hugs and kisses!!!!/"
 noisetterabbitnotification = "{u}???/"
@@ -619,8 +623,8 @@ dresser_dosjohn = "Unlocked by resurrecting John in less than 2h 15m"
 #
 # ------------ CHAOS PALS -----------------
 #
-dresser_dosogtitle = "Original cook"
-dresser_dosog = "High fidelity"
+dresser_dosogtitle = "The Original"
+dresser_dosog = "Less contrast and High fidelity"
 dresser_aquatitle = "AquaPop"
 dresser_aqua = "Unlocked by beating a game in the Quick title"
 dresser_shadowtitle = "Donisha's Shadow"

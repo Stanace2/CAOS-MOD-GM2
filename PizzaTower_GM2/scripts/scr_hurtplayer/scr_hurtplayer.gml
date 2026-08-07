@@ -402,21 +402,30 @@ function scr_hurtplayer(_player)
 				tv_do_expression(hurtTV);
 			}
 			var _hurtcheck = true
-			with (obj_tv) {
-				if array_length(spr_tvhurt) == 1 {
-					_hurtcheck = spr_tvhurt[0] == expressionsprite ? true : false
-				} else {
-					for (var i; i < array_length(spr_tvhurt); i++) {
-						_hurtcheck = spr_tvhurt[i] == expressionsprite ? true : false
-						if _hurtcheck
-							break
-					}
+			if array_length(obj_tv.spr_tvhurt) == 1 {
+				_hurtcheck = obj_tv.spr_tvhurt[0] == obj_tv.expressionsprite ? true : false
+			} else {
+				for (var i = 0; i < array_length(obj_tv.spr_tvhurt); i++) {
+					_hurtcheck = obj_tv.spr_tvhurt[i] == obj_tv.expressionsprite ? true : false
+					if _hurtcheck
+						break
 				}
 			}
 			if (!_hurtcheck && obj_tv.expressionsprite != spr_tv_hurtG && obj_tv.expressionsprite != spr_tv_exprhurtN)
 			{
 				instance_destroy(obj_transfotip);
 				var txt = lang_get_value("peppinohurt");
+				switch characterID {
+					case characters.dos:
+						txt = lang_get_value("donishahurt");
+						break
+					case characters.wm:
+						txt = lang_get_value("wethamhurt");
+						break
+					case characters.noise:
+						txt = lang_get_value("noisehurt");
+						break
+				}
 				if (!_swap)
 				{
 					if (isgustavo)
