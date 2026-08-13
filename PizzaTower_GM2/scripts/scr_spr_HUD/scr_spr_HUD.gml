@@ -4,7 +4,6 @@ function scr_spr_HUD() {
 	
 	// Title cards
 	if object_index == obj_startgate {
-		trace("Title cards choose")
 		switch obj_player1.characterID {
 			case characters.dos:
 				titlecard_sprite = spr_titlecards_dos
@@ -49,9 +48,9 @@ function scr_spr_HUD() {
 				spr_td1 = spr_dos_technicaldifficulty1
 				spr_td2 = spr_dos_technicaldifficulty2
 				spr_td3 = spr_dos_technicaldifficulty3
+				// New Clothes
+				spr_clothesnew = spr_newclothes
 			}
-			// New Clothes
-			spr_clothesnew = spr_newclothes
 			// Tv HUD
 			// - Normal
 			spr_tvopen = spr_tv_open_dos
@@ -99,9 +98,9 @@ function scr_spr_HUD() {
 				spr_td1 = spr_technicaldifficulty1
 				spr_td2 = spr_technicaldifficulty2
 				spr_td3 = spr_technicaldifficulty3
-			}
-			// New Clothes
-			spr_clothesnew = spr_newclothes_dos
+				// New Clothes
+				spr_clothesnew = spr_newclothes_dos
+			} 
 			// Tv HUD
 			// - Normal
 			spr_tvopen = spr_tv_open

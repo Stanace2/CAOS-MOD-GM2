@@ -1,4 +1,6 @@
 event_inherited();
+if obj_player1.characterID == characters.dos
+	tv_do_expression(spr_tv_exprcollect_cheese_dos, true);
 spr_intro = spr_toppincheese_intro;
 spr_idle = spr_toppincheese;
 spr_run = spr_toppincheese_run;

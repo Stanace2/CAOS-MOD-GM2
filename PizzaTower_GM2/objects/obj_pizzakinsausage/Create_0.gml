@@ -1,4 +1,6 @@
 event_inherited();
+if obj_player1.characterID == characters.dos
+	tv_do_expression(spr_tv_exprcollect_sausage_dos, true);
 spr_intro = spr_toppinsausage_intro;
 spr_idle = spr_toppinsausage;
 spr_run = spr_toppinsausage_run;

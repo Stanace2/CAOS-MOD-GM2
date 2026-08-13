@@ -361,7 +361,7 @@ function scr_spr_peppino() {
 	spr_vspizzahead_beatdown15 = spr_pizzahead_beatdown15
 	spr_vspizzahead_piledriver = spr_pizzahead_piledriverfinal
 	spr_vspizzahead_piledriver_closeup = bg_piledrivercloseshot
-	// - Prop Mash
+	// Prop Mash
     spr_suplexmash1 = spr_player_suplexmash1  
     spr_suplexmash2 = spr_player_suplexmash2  
     spr_suplexmash3 = spr_player_suplexmash3  

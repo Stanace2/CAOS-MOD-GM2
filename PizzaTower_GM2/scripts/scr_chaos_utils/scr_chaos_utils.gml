@@ -85,7 +85,7 @@ function scr_displaydata(_display)
 {
     if (!_display)
         return;
-    draw_set_font(lang_get_font("creditsfont"))
+    draw_set_font(lang_get_font("smallfont"))
     draw_set_halign(fa_left)
     draw_set_valign(fa_top)
 	var _arr = [
@@ -104,9 +104,18 @@ function scr_displaydata(_display)
 		concat("imagespeed: ", image_speed),
 		concat("imageindex: ", image_index)
 	]
+	var _padding = 8;
 	var _offset = 0;
 	for (var i = 0; i < array_length(_arr); i++) {
-		draw_text(10, _offset, _arr[i])
+		var tw = string_width(_arr[i])
+		var th = string_height(_arr[i])
+		draw_sprite_ext(spr_fontbg,0,
+			0,
+			_offset + sprite_get_yoffset(spr_smallerfont), 
+			string_length(_arr[i]) * sprite_get_width(spr_smallerfont), 
+			sprite_get_height(spr_smallerfont) - sprite_get_yoffset(spr_smallerfont),
+			0,c_black,0.6)
+		draw_text(10, _offset, string_upper(_arr[i]))
 		_offset += 20
 	}
     //concat("clingexitspeed: ", clingexitspeed)

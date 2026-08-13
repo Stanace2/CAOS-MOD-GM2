@@ -42,12 +42,6 @@ if keyboard_check(ord("1")) && key_attack
 if key_shoot2 && characterID == characters.noise {
 	instance_create(x,y, obj_canonexplosion)
 }
-if keyboard_check_pressed(vk_f7)  
-    displaykeys = (!displaykeys)  
-if keyboard_check_pressed(vk_f6) { 
-	debugmarkers = [0,0,0,0]
-    displaydata = (!displaydata)
-}
 if (key_shoot2 || input_buffer_chaos > 0)  
     input_buffer_chaos++  
 else  

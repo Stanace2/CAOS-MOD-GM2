@@ -1,5 +1,15 @@
 if (DEBUG)
 {
+	if instance_exists(obj_player1) {
+		with (obj_player1) {
+			if keyboard_check_pressed(vk_f7)  
+		    	displaykeys = (!displaykeys)  
+			if keyboard_check_pressed(vk_f6) { 
+				debugmarkers = [0,0,0,0]
+			    displaydata = (!displaydata)
+			}
+		}
+	}
 	if (keyboard_check_pressed(vk_f2))
 	{
 		with (instance_create(0, 0, obj_cheftask))

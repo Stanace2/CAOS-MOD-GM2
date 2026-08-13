@@ -326,6 +326,17 @@ function scr_spr_dos() {
 	spr_yellstart = spr_dos_screamstart
 	spr_yell = spr_dos_scream
 	spr_yellend = spr_dos_screamtransition
+	/// - Scream noise
+	spr_yellrealize_noise = spr_dos_screamrealize_nerves
+	spr_yellstart_noise = spr_dos_screamstart_nerves
+	spr_yell_noise = spr_dos_scream_nerves
+	spr_yellend_noise = spr_dos_screamnervestransition
+	/// - Scream fakepep
+	spr_yellrealize_horror = spr_dos_screamrealize_nerves
+	spr_yellstart_horror = spr_dos_screamstart_nerves
+	spr_yell_horror = spr_dos_scream_nerves
+	spr_yellend_horror = spr_dos_screamnervestransition
+	///
 	spr_vshit1 = spr_dos_kungfu1
 	spr_vshit2 = spr_dos_kungfu2
 	spr_vshit3 = spr_dos_kungfu3
@@ -364,7 +375,7 @@ function scr_spr_dos() {
 	spr_vspizzahead_beatdown15 = spr_pizzahead_beatdown15_dos
 	spr_vspizzahead_piledriver = spr_pizzahead_piledriverfinal_dos
 	spr_vspizzahead_piledriver_closeup = bg_piledrivercloseshot_dos
-	// - Prop Mash
+	// Prop Mash
     spr_suplexmash1 = spr_dos_suplexmash1  
     spr_suplexmash2 = spr_dos_suplexmash2  
     spr_suplexmash3 = spr_dos_suplexmash3  
@@ -384,9 +395,9 @@ function scr_spr_dos() {
 	// New Moveset
 	//// - Climb
 	spr_wallslide = spr_dos_wallslide;
-	//// - Dive - Divebomb
+	//// - Dive > Divebomb cancel
 	spr_poundaircancel = spr_dos_poundaircancel;
-	//// - Dive landBoost
+	//// - MachSplit > MachDrill
 	spr_machsplit_loop = spr_dos_poundcancel;
 	spr_machdrill = spr_dos_poundcanceldive;
 	spr_spinkf = spr_dos_spinkf;

@@ -140,7 +140,7 @@ if (state == states.stun && stunned > 100 && birdcreated == false)
 		ID = other.id;
 	}
 }
-var _inv = (state == states.stun && savedthrown == thrown && !savedthrown) || (obj_player1.characterID == characters.dos && substate == states.land) || (!obj_player1.ispeppino && state == states.ram && substate == states.land);
+var _inv = (state == states.stun && savedthrown == thrown && !savedthrown) || (obj_player1.characterID == characters.dos && state == states.ram && substate == states.land) || (!obj_player1.ispeppino && state == states.ram && substate == states.land);
 if (_inv && elitehit > 1)
 {
 	invincible = false;

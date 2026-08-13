@@ -11,7 +11,6 @@ function scr_chaos_restart() {
     //scr_settoppingoal()
     with (obj_player)
     {
-		scr_character_spr_init(false)
         tornadospeed = -16
         jawsbuffer = 0
         mangocall = 0
@@ -55,7 +54,9 @@ function scr_chaos_restart() {
                 katanatypebuffer = katanatype
                 break
         }
-
+		
+		if object_index != obj_player2
+			scr_character_spr_init(false)
     }
     // This block saves the goth kills
     // Tells cigartracker to check for shadow palette and hellish

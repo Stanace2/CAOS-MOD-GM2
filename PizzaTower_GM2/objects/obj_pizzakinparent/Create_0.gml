@@ -1,6 +1,7 @@
 depth = 50;
 event_inherited();
-tv_do_expression(obj_tv.spr_tvcollect[floor(random(array_length(obj_tv.spr_tvcollect)))], true);
+if obj_player1.characterID != characters.dos
+	tv_do_expression(obj_tv.spr_tvcollect[floor(random(array_length(obj_tv.spr_tvcollect)))], true);
 image_speed = 0.35;
 yoffset = 0;
 hsp = 0;
