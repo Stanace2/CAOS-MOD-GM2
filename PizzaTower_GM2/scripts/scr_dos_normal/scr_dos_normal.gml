@@ -41,8 +41,8 @@ function scr_dos_normal()
     }
     if (room == tower_soundtest && obj_soundtest.play)
     {
-        idlespr = spr_pepdance
-        movespr = spr_pepdance
+        idlespr = spr_soundtest
+        movespr = spr_soundtest
         if (!ispeppino)
         {
             idlespr = spr_noise_vulnerable2
@@ -126,7 +126,7 @@ function scr_dos_normal()
         {
             if (steppybuffer > 0)
                 steppybuffer--
-            else if (sprite_index != spr_breakdance && sprite_index != spr_pepdance && sprite_index != spr_noise_vulnerable2)
+            else if (sprite_index != spr_breakdance && sprite_index != spr_soundtest && sprite_index != spr_noise_vulnerable2)
             {
                 create_particle(x, (y + 43), particletypes.cloudeffect, 0)
                 steppybuffer = 12

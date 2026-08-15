@@ -236,7 +236,8 @@ function scr_noise_arenaintro()
 					{
 						sprite_index = _pscream2;
 						image_index = 0;
-						fmod_event_one_shot("event:/sfx/pep/screamboss");
+						if obj_player.characterID != characters.dos
+							fmod_event_one_shot("event:/sfx/pep/screamboss");
 					}
 					if (other.sprite_index == obj_player.spr_noise_mask_out && sprite_index != _pfrown && sprite_index != spr_idle)
 					{

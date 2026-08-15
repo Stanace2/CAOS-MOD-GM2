@@ -37,7 +37,7 @@ if (other.key_up2 && (!display) && other.ispeppino == ispeppino && other.state =
 	        // Create every actor
             with (instance_create((obj_player1.x - camera_get_view_x(view_camera[0]) + _relx), (obj_player1.y - camera_get_view_y(view_camera[0]) + _rely), obj_dresseractor))  
             {  
-                sprite_index = choose(obj_player1.spr_idle, obj_player1.spr_3hpidle, obj_player1.spr_rageidle, obj_player1.spr_idle1, obj_player1.spr_idle2, obj_player1.spr_idle3, obj_player1.spr_idle4)  
+                sprite_index = choose(obj_player1.spr_paletteactor1, obj_player1.spr_paletteactor2, obj_player1.spr_paletteactor3, obj_player1.spr_paletteactor4, obj_player1.spr_paletteactor5, obj_player1.spr_paletteactor6, obj_player1.spr_paletteactor7)  
                 image_index = 0  
                 if actors[i][j][1]  
                     unlocked = 1  

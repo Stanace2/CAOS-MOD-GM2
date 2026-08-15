@@ -192,6 +192,7 @@ function scr_spr_dos() {
 	// - Pepper Pizza
 	spr_poweredup = spr_dos_poweredup
     spr_jetpackstart2 = spr_dos_jetpackstart2
+	spr_pepperjump = spr_dos_pepperjump
 	// - Revolver
 	spr_pistolintro = spr_dos_pistolintro
     spr_pistolshot = spr_dos_pistolshot  
@@ -315,6 +316,13 @@ function scr_spr_dos() {
 	spr_rocketrun = spr_dos_rocketrun
 	// Other
     spr_palette = spr_dos_palette
+	spr_paletteactor1 = spr_player_idle
+	spr_paletteactor2 = spr_player_3hpidle
+	spr_paletteactor3 = spr_player_rageidle
+	spr_paletteactor4 = spr_player_freezeridle
+	spr_paletteactor5 = spr_dos_blush
+	spr_paletteactor6 = spr_dos_wonder
+	spr_paletteactor7 = spr_donisha_scared
 	// - Match
 	spr_vstitle = spr_vstitle_donisha
 	spr_vsportrait = spr_vsdonisha
@@ -327,10 +335,10 @@ function scr_spr_dos() {
 	spr_yell = spr_dos_scream
 	spr_yellend = spr_dos_screamtransition
 	/// - Scream noise
-	spr_yellrealize_noise = spr_dos_screamrealize_nerves
-	spr_yellstart_noise = spr_dos_screamstart_nerves
-	spr_yell_noise = spr_dos_scream_nerves
-	spr_yellend_noise = spr_dos_screamnervestransition
+	spr_yellrealize_noise = spr_dos_screamrealize_sass
+	spr_yellstart_noise = spr_dos_screamstart_sass
+	spr_yell_noise = spr_dos_scream_sass
+	spr_yellend_noise = spr_dos_screamtransition_sass
 	/// - Scream fakepep
 	spr_yellrealize_horror = spr_dos_screamrealize_nerves
 	spr_yellstart_horror = spr_dos_screamstart_nerves

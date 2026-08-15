@@ -1,5 +1,15 @@
 function scr_player_jetpackjump()
 {
+	if global.noisejetpack {
+		switch characterID {
+			case characters.dos:
+				if !global.manners {
+					scr_dos_pepperjump()
+					return;
+				}
+				break
+		}
+	}
 	landAnim = false;
 	if (firemouth_afterimage > 0)
 	{

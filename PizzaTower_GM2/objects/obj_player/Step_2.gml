@@ -16,6 +16,17 @@ if (global.collect != global.lastcollect)
 		global.collect_player[player_index] += diff;
 	}
 }
+if ((global.noisejetpack /*|| flamedash*/) && characterID == characters.dos && !global.manners)
+{
+    with (obj_iceblock_breakable)
+    {
+        if (place_meeting((x - other.hsp), y, other) || place_meeting((x - other.xscale), y, other) || place_meeting(x, (y + other.vsp), other) || place_meeting(x, (y + 1), other) || place_meeting(x, (y - 1), other))
+        {
+            instance_destroy()
+            GamepadSetVibration(0, 0.5, 0.5, 0.8)
+        }
+    }
+}
 if characterID == characters.dos {
 	fightmode = (instance_exists(obj_bosscontroller) && (!instance_exists(obj_pistolpickup)))
 	if (sprite_index != spr_snapjumpstart && state != states.machcancel)  

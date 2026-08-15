@@ -312,6 +312,13 @@ function scr_spr_peppino() {
 	spr_rocketrun = spr_player_rocketrun
 	// Other
     spr_palette = spr_peppalette  
+	spr_paletteactor1 = spr_player_idle
+	spr_paletteactor2 = spr_player_3hpidle
+	spr_paletteactor3 = spr_player_rageidle
+	spr_paletteactor4 = spr_player_freezeridle
+	spr_paletteactor5 = spr_player_panic
+	spr_paletteactor6 = spr_player_smirk
+	spr_paletteactor7 = spr_file1
 	// - Match
 	spr_vstitle = spr_vstitle_player
 	spr_vsportrait = spr_vspeppino

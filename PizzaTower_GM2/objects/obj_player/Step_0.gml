@@ -611,6 +611,9 @@ switch (state)
 	case states.fightball:
 		scr_player_fightball();
 		break;
+	case states.trashstart:
+		image_speed = 0.35;
+		break;
 }
 if (instance_exists(obj_swapmodeeffect))
 {
@@ -930,44 +933,48 @@ if ((state == states.jump || state == states.normal || state == states.machcance
 {
 	if ((!can_jump && key_jump) || (grounded && key_jump && key_up))
 	{
-		fmod_event_instance_play(pizzapeppersnd);
-		scr_fmod_soundeffect(jumpsnd, x, y);
-		fmod_event_instance_set_parameter(pizzapeppersnd, "state", 0, true);
-		if (key_down)
-		{
-			vsp = 0;
-		}
-		else
-		{
-			vsp = -11;
-		}
-		if (move != 0)
-		{
-			if (state != states.machcancel)
+		if (characterID == characters.pep || characterID == characters.noise) {
+			fmod_event_instance_play(pizzapeppersnd);
+			scr_fmod_soundeffect(jumpsnd, x, y);
+			fmod_event_instance_set_parameter(pizzapeppersnd, "state", 0, true);
+			if (key_down)
 			{
-				if (movespeed < 10)
-				{
-					movespeed = 10;
-				}
+				vsp = 0;
 			}
 			else
 			{
-				if (movespeed != 0)
+				vsp = -11;
+			}
+			if (move != 0)
+			{
+				if (state != states.machcancel)
 				{
-					xscale = sign(movespeed);
+					if (movespeed < 10)
+					{
+						movespeed = 10;
+					}
 				}
-				movespeed = abs(movespeed);
-				if (abs(movespeed) < 10)
+				else
 				{
-					movespeed = 10;
+					if (movespeed != 0)
+					{
+						xscale = sign(movespeed);
+					}
+					movespeed = abs(movespeed);
+					if (abs(movespeed) < 10)
+					{
+						movespeed = 10;
+					}
 				}
 			}
+			with (instance_create(x, y, obj_highjumpcloud2))
+			{
+				sprite_index = spr_player_firemouthjumpdust;
+			}
+			scr_do_pepperpizzajump();
+		} else {
+			scr_dopepperjump_chaos()
 		}
-		with (instance_create(x, y, obj_highjumpcloud2))
-		{
-			sprite_index = spr_player_firemouthjumpdust;
-		}
-		scr_do_pepperpizzajump();
 	}
 }
 if (walljumpbuffer > 0)

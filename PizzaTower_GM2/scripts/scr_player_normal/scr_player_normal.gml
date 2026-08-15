@@ -171,7 +171,7 @@ function state_player_normal()
 			{
 				steppybuffer--;
 			}
-			else if (sprite_index != spr_breakdance && sprite_index != spr_pepdance && sprite_index != spr_noise_vulnerable2)
+			else if (sprite_index != spr_breakdance && sprite_index != spr_soundtest && sprite_index != spr_noise_vulnerable2)
 			{
 				create_particle(x, y + 43, particletypes.cloudeffect, 0);
 				steppybuffer = 12;
