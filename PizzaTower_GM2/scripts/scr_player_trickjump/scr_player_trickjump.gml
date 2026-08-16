@@ -3,18 +3,18 @@ function scr_player_trickjump()
 	hsp = movespeed * xscale;
 	if (sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4)
 	{
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			image_speed = 0.35;
 		}
-		if (sprite_index == spr_rampjump && ANIMATION_END)
+		if (sprite_index == spr_rampjump && characterID != characters.noise && ANIMATION_END)
 		{
 			image_index = image_number - 1;
 		}
 	}
 	else
 	{
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			image_speed = 0.5;
 		}
@@ -34,7 +34,7 @@ function scr_player_trickjump()
 	{
 		ramp_buffer--;
 	}
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		image_speed = Approach(image_speed, 0.4, 0.1);
 	}

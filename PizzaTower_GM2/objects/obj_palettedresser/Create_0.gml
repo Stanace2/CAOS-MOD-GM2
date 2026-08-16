@@ -127,7 +127,7 @@ for (i = 0; i < array_length(player_palettes); i++)
 }
 scr_create_uparrowhitbox();
 paletteselect = 0;
-ispeppino = -1;
+ispeppino = true;
 showtext = false;
 alpha = 0;
 palettetitle = "";

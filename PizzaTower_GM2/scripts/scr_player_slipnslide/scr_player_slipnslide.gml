@@ -15,7 +15,7 @@ function scr_player_slipnslide()
 	hurted = true;
 	machhitAnim = false;
 	crouchslideAnim = true;
-	if (!ispeppino && instance_exists(obj_surfback))
+	if ((!ispeppino || characterID == characters.noise) && instance_exists(obj_surfback))
 	{
 		image_speed = 0.35;
 		sprite_index = spr_playerN_surfing;

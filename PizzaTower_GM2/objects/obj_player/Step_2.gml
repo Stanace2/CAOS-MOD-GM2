@@ -40,18 +40,25 @@ if characterID == characters.dos {
 	    mach5 = 0  
 	}
 }
-if keyboard_check(ord("1"))
-{
-    characterID = characters.dos
-    scr_character_spr_init()
-}
-if keyboard_check(ord("1")) && key_attack
-{
-    characterID = characters.pep
-    scr_character_spr_init()
-}
-if key_shoot2 && characterID == characters.noise {
-	instance_create(x,y, obj_canonexplosion)
+if instance_exists(obj_debugcontroller) && obj_debugcontroller.DEBUG {
+	if keyboard_check(ord("1"))
+	{
+	    characterID = characters.dos
+	    scr_character_spr_init()
+	}
+	if keyboard_check(ord("1")) && key_attack
+	{
+	    characterID = characters.pep
+	    scr_character_spr_init()
+	}
+	if keyboard_check(ord("3")) && key_attack
+	{
+	    characterID = characters.noise
+	    scr_character_spr_init()
+	}
+	if key_shoot2 && characterID == characters.noise {
+		instance_create(x,y, obj_canonexplosion)
+	}
 }
 if (key_shoot2 || input_buffer_chaos > 0)  
     input_buffer_chaos++  

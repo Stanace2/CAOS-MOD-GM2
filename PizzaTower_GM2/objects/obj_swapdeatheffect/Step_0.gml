@@ -1,6 +1,6 @@
 x += hsp;
 y += vsp;
-if (!ispeppino && vsp < 20)
+if ((!ispeppino || obj_player1.characterID == characters.noise) && vsp < 20)
 {
 	vsp += 0.5;
 }

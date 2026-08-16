@@ -8,6 +8,7 @@ function scr_spr_HUD() {
 			case characters.dos:
 				titlecard_sprite = spr_titlecards_dos
 				break
+			case characters.noise:
 			case characters.pep:
 				titlecard_sprite = spr_titlecards
 				break
@@ -35,6 +36,14 @@ function scr_spr_HUD() {
 				spr_rank_A = spr_rankA
 				spr_rank_S = spr_rankS
 				spr_rank_P = spr_rankP
+				break
+			case characters.noise:
+				spr_rank_D = spr_rankND
+				spr_rank_C = spr_rankNC
+				spr_rank_B = spr_rankNB
+				spr_rank_A = spr_rankNA
+				spr_rank_S = spr_rankNS
+				spr_rank_P = spr_rankNP
 				break
 				
 		}
@@ -141,6 +150,56 @@ function scr_spr_HUD() {
 			spr_tvrocket = spr_tv_rocket
 			spr_tvshotgun = spr_tv_shotgun
 			spr_tvweenie = spr_tv_weenie
+			break
+		case characters.noise:
+			if object_index != obj_tv {
+				// Technical Difficulties
+				spr_td1 = spr_technicaldifficulty5
+				spr_td2 = spr_technicaldifficulty6
+				spr_td3 = spr_technicaldifficulty7
+				// New Clothes
+				spr_clothesnew = spr_newclothesN
+			} 
+			// Tv HUD
+			// - Normal
+			spr_tvopen = spr_tv_open
+			spr_tvcollect = [spr_tv_exprcollectN]
+			spr_tvhurt = [spr_tv_exprhurtN]
+			spr_tvidle = spr_tv_idleN
+			spr_tvidle_expression = [spr_tv_idleanim1N, spr_tv_idleanim2N]
+			spr_tvmach3 = spr_tv_exprmach3N
+			spr_tvmach4 = spr_tv_exprmach4N
+			spr_tvpizzatime = spr_tv_exprpanicN
+			spr_tvcombo_low = spr_tv_exprcomboN
+			spr_tvcombo_high = spr_tv_exprheatN
+			// - youhavehurtpeppino
+			spr_tvtorture1 = spr_tv_exprhurtN1
+			spr_tvtorture2 = spr_tv_exprhurtN2
+			spr_tvtorture3 = spr_tv_exprhurtN3
+			spr_tvtorture4 = spr_tv_exprhurtN4
+			spr_tvtorture5 = spr_tv_exprhurtN5
+			spr_tvtorture6 = spr_tv_exprhurtN6
+			spr_tvtorture7 = spr_tv_exprhurtN7
+			spr_tvtorture8 = spr_tv_exprhurtN8
+			spr_tvtorture9 = spr_tv_exprhurtN9
+			spr_tvtorture10 = spr_tv_exprhurtN10
+			// - Transfos
+			spr_tvball = spr_tv_tumbleN
+			spr_tvbarrel = spr_tv_barrelN
+			spr_tvbombo = spr_tv_bombpepN
+			spr_tvcheeseball = spr_tv_cheeseballN
+			spr_tvcheesepep = spr_tv_cheesepepN
+			spr_tvfireass = spr_tv_fireassN
+			spr_tvfiremouth = spr_tv_firemouthN
+			spr_tvghost = spr_tv_ghostN
+			spr_tvgolf = spr_tv_golfN
+			spr_tvknight = spr_tv_knightN
+			spr_tvmort = spr_tv_mortN
+			spr_tvscaredjump = spr_tv_scaredjumpN
+			spr_tvboxxedpep = spr_tv_boxxedpepN
+			spr_tvrocket = spr_tv_rocketN
+			spr_tvshotgun = spr_tv_shotgunN
+			spr_tvweenie = spr_tv_weenieN
 			break
 	
 	}

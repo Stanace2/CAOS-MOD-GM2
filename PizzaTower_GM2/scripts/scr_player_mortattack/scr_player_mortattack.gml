@@ -2,7 +2,7 @@ function scr_player_mortattack()
 {
 	image_speed = 0.45;
 	hsp = movespeed;
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		if (instance_exists(mortprojectileID) && instance_exists(mortprojectileID.target) && mortprojectileID.target.object_index == obj_morthook)
 		{
@@ -25,7 +25,7 @@ function scr_player_mortattack()
 			image_index = image_number - 1;
 		}
 	}
-	if ((ispeppino && ANIMATION_END) || (!ispeppino && !instance_exists(mortprojectileID)))
+	if ((ispeppino && characterID != characters.noise && ANIMATION_END) || ((!ispeppino || characterID == characters.noise) && !instance_exists(mortprojectileID)))
 	{
 		if (grounded && vsp > 0)
 		{

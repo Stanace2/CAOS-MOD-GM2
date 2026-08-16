@@ -26,7 +26,7 @@ function scr_player_animation()
 	if (instance_exists(obj_pizzahead_whitefade))
 	{
 		image_index = image_number - 1;
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			image_index = 0;
 		}

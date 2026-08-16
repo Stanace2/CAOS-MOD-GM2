@@ -170,7 +170,7 @@ if (!pause && instance_exists(obj_player1) && alarm[3] == -1 && obj_player1.key_
 				case states.boxxedpepjump:
 				case states.boxxedpepspin:
 					_txt = lang_get_value("boxxedtip");
-					if (!ispeppino)
+					if (!ispeppino || obj_player1.characterID == characters.noise)
 					{
 						_txt = lang_get_value("boxxedtipN");
 					}
@@ -183,7 +183,7 @@ if (!pause && instance_exists(obj_player1) && alarm[3] == -1 && obj_player1.key_
 					break;
 				case states.ghost:
 					_txt = lang_get_value("ghosttip");
-					if (!ispeppino)
+					if (!ispeppino || obj_player1.characterID == characters.noise)
 					{
 						_txt = lang_get_value("ghosttipN");
 					}
@@ -191,7 +191,7 @@ if (!pause && instance_exists(obj_player1) && alarm[3] == -1 && obj_player1.key_
 				case states.rocket:
 				case states.rocketslide:
 					_txt = lang_get_value("rockettip");
-					if (!ispeppino)
+					if (!ispeppino || obj_player1.characterID == characters.noise)
 					{
 						_txt = lang_get_value("rockettipN");
 					}
@@ -210,7 +210,7 @@ if (!pause && instance_exists(obj_player1) && alarm[3] == -1 && obj_player1.key_
 					else
 					{
 						_txt = lang_get_value("trashrolltip");
-						if (!ispeppino)
+						if (!ispeppino || obj_player1.characterID == characters.noise)
 						{
 							_txt = lang_get_value("trashrolltipN");
 						}
@@ -218,7 +218,7 @@ if (!pause && instance_exists(obj_player1) && alarm[3] == -1 && obj_player1.key_
 					break;
 				case states.antigrav:
 					_txt = lang_get_value("antigravtip");
-					if (!ispeppino)
+					if (!ispeppino || obj_player1.characterID == characters.noise)
 					{
 						_txt = lang_get_value("antigravtipN");
 					}
@@ -237,7 +237,7 @@ if (!pause && instance_exists(obj_player1) && alarm[3] == -1 && obj_player1.key_
 					_txt = lang_get_value("weenietip");
 					break;
 				case states.bombpep:
-					if (!ispeppino)
+					if (!ispeppino || obj_player1.characterID == characters.noise)
 					{
 						_txt = lang_get_value("bombtipN");
 					}

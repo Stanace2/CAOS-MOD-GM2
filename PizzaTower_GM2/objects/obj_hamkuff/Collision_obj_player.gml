@@ -1,6 +1,6 @@
 if (state != states.stun)
 {
-	if (other.ispeppino)
+	if (other.ispeppino && other.characterID != characters.noise && other.characterID != characters.dos)
 	{
 		if (!other.isgustavo)
 		{

@@ -7,7 +7,7 @@ if (boss_func != noone)
 	boss_func();
 }
 boss_prevhp = boss_hp;
-if (bossspr == spr_vsnoise && (!obj_player1.ispeppino || global.swapmode))
+if (bossspr == spr_vsnoise && (!obj_player1.ispeppino || obj_player1.characterID == characters.noise || global.swapmode))
 {
 	bossspr = spr_vsdoise;
 	vstitle = spr_vstitle_doise;

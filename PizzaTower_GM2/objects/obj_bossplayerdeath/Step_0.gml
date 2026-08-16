@@ -6,7 +6,7 @@ if (fade2start)
 with (obj_player1)
 {
 	image_speed = 0.35;
-	if (ispeppino)
+	if (ispeppino && obj_player1.characterID != characters.noise)
 	{
 		switch (other.state)
 		{

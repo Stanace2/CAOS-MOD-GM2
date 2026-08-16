@@ -101,7 +101,7 @@ function scr_player_mort()
 
 function mort_attack()
 {
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		if (input_buffer_slap > 0)
 		{
@@ -215,7 +215,7 @@ function Mort_DownMovement()
 	{
 		with (playerid)
 		{
-			if (ispeppino)
+			if (ispeppino && characterID != characters.noise)
 			{
 				doublejump = false;
 				vsp = -14;

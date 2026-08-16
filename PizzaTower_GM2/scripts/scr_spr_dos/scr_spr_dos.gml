@@ -193,6 +193,7 @@ function scr_spr_dos() {
 	spr_poweredup = spr_dos_poweredup
     spr_jetpackstart2 = spr_dos_jetpackstart2
 	spr_pepperjump = spr_dos_pepperjump
+	spr_firemouthend = spr_dos_firemouthend  
 	// - Revolver
 	spr_pistolintro = spr_dos_pistolintro
     spr_pistolshot = spr_dos_pistolshot  
@@ -248,6 +249,7 @@ function scr_spr_dos() {
     spr_shotgunduck = spr_dos_shotgun_duck  
     spr_shotguncrawl = spr_dos_shotgun_crawl  
     spr_shotgungoduck = spr_dos_shotgun_goduck  
+	spr_shotgundrop = spr_dos_shotgunback
 	// Fightball
     spr_fightball = spr_dos_fightball  
 	// Weenie mount
@@ -263,7 +265,6 @@ function scr_spr_dos() {
     spr_barrelland = spr_dos_barrelland  
 	// Firemouth
     spr_firemouthintro = spr_dos_firemouthintro  
-    spr_firemouthend = spr_dos_firemouthend  
     spr_firemouth = spr_dos_firemouth  
     spr_firemouthspin = spr_dos_firemouthspin  
     spr_firemouthdash = spr_dos_firemouthdash  
@@ -316,10 +317,10 @@ function scr_spr_dos() {
 	spr_rocketrun = spr_dos_rocketrun
 	// Other
     spr_palette = spr_dos_palette
-	spr_paletteactor1 = spr_player_idle
-	spr_paletteactor2 = spr_player_3hpidle
-	spr_paletteactor3 = spr_player_rageidle
-	spr_paletteactor4 = spr_player_freezeridle
+	spr_paletteactor1 = spr_dos_idle
+	spr_paletteactor2 = spr_dos_3hpidle
+	spr_paletteactor3 = spr_dos_rageidle
+	spr_paletteactor4 = spr_dos_freezeridle
 	spr_paletteactor5 = spr_dos_blush
 	spr_paletteactor6 = spr_dos_wonder
 	spr_paletteactor7 = spr_donisha_scared

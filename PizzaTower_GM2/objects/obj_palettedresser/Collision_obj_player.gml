@@ -1,4 +1,4 @@
-if (other.key_up2 && (!display) && other.ispeppino == ispeppino && other.state == states.normal)  
+if (other.key_up2 && (!display) && other.characterID == characterID && other.state == states.normal)  
 {  
     obj_camera.chargecamera = 0  
     usebuffer = 20  

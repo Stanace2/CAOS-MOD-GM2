@@ -27,7 +27,7 @@ else
 		instance_destroy();
 	}
 }
-if (!obj_player1.ispeppino)
+if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise)
 {
 	cloud_index += 0.15;
 	if (hand_state == states.fall)

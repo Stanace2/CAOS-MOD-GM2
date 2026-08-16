@@ -20,7 +20,7 @@ function scr_character_spr_init(_hud = true) // starts only the necessary sprite
 		case characters.noise:	
 			global.mach_color1 = make_colour_rgb(96, 208, 72); //green
 			global.mach_color2 = make_colour_rgb(248, 0, 0); //red
-			//scr_spr_noise()
+			scr_spr_noise()
 			break
 		case characters.pep:
 			global.mach_color1 = make_colour_rgb(96, 208, 72); //green

@@ -54,7 +54,7 @@ function scr_player_mach2()
 		}
 		vsp = jumpspeed;
 	}
-	if (input_buffer_jump > 0 && !can_jump && !ispeppino && key_up && character == "P" && noisedoublejump && !skateboarding && sprite_index != spr_clownjump)
+	if (input_buffer_jump > 0 && !can_jump && (!ispeppino || characterID == characters.noise) && key_up && character == "P" && noisedoublejump && !skateboarding && sprite_index != spr_clownjump)
 	{
 		scr_player_do_noisecrusher();
 	}
@@ -165,7 +165,7 @@ function scr_player_mach2()
 	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
 	{
 		var _climb = true;
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			_climb = ledge_bump(32, abs(hsp) + 1);
 		}
@@ -187,7 +187,7 @@ function scr_player_mach2()
 	if (!grounded && place_meeting(x + sign(hsp), y, obj_climbablewall) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_metalblock))
 	{
 		var _climb = true;
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			_climb = ledge_bump(32);
 		}
@@ -272,7 +272,7 @@ function scr_player_mach2()
 	{
 		image_index = 0;
 		state = states.machslide;
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/break", x, y);
 		}
@@ -288,7 +288,7 @@ function scr_player_mach2()
 	}
 	if (move == -xscale && movespeed >= 8 && grounded && vsp > 0 && skateboarding == false)
 	{
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
 		}
@@ -394,14 +394,14 @@ function scr_player_mach2()
 		}
 		image_index = 0;
 	}
-	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && !skateboarding && (!global.pistol || !ispeppino))
+	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && !skateboarding && (!global.pistol || characterID == characters.noise || !ispeppino))
 	{
 		input_buffer_slap = 0;
 		state = states.punch;
 		image_index = 0;
 		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			vsp = -10;
 		}
@@ -412,7 +412,7 @@ function scr_player_mach2()
 		movespeed = hsp;
 		particle_set_scale(particletypes.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particletypes.highjumpcloud2, 0);
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			repeat (4)
 			{

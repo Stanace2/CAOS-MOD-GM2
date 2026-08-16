@@ -47,7 +47,7 @@ function scr_player_mach3()
 				}
 				exit;
 			}
-			if (!ispeppino && grounded && vsp > 0)
+			if ((!ispeppino || characterID == characters.noise) && grounded && vsp > 0)
 			{
 				if (sprite_index == spr_mach4 && place_meeting(x, y + 1, obj_water))
 				{
@@ -166,7 +166,7 @@ function scr_player_mach3()
 					vsp = -13;
 				}
 			}
-			if (input_buffer_jump > 0 && !can_jump && key_up && !ispeppino && character == "P" && noisedoublejump)
+			if (input_buffer_jump > 0 && !can_jump && key_up && (!ispeppino || characterID == characters.noise) && character == "P" && noisedoublejump)
 			{
 				scr_player_do_noisecrusher();
 			}
@@ -230,7 +230,7 @@ function scr_player_mach3()
 			if (((!key_attack && fightball == false && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0 && (character == "P" || character == "N")) || ((character == "S" && (move == 0 || move != xscale) && grounded) && fightball == false))
 			{
 				sprite_index = spr_machslidestart;
-				if (ispeppino)
+				if (ispeppino && characterID != characters.noise)
 				{
 					fmod_event_one_shot_3d("event:/sfx/pep/break", x, y);
 				}
@@ -244,7 +244,7 @@ function scr_player_mach3()
 			}
 			if (move == -xscale && grounded && vsp > 0 && !launched && (character == "P" || character == "N") && fightball == false && sprite_index != spr_dashpadmach)
 			{
-				if (ispeppino)
+				if (ispeppino && characterID != characters.noise)
 				{
 					fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
 				}
@@ -280,7 +280,7 @@ function scr_player_mach3()
 			if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
 			{
 				var _climb = true;
-				if (!ispeppino)
+				if (!ispeppino || characterID == characters.noise)
 				{
 					_climb = ledge_bump(40, abs(hsp) + 1);
 				}
@@ -302,7 +302,7 @@ function scr_player_mach3()
 			if (!grounded && place_meeting(x + sign(hsp), y, obj_climbablewall) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_metalblock))
 			{
 				var _climb = true;
-				if (!ispeppino)
+				if (!ispeppino || characterID == characters.noise)
 				{
 					_climb = ledge_bump(40);
 				}
@@ -328,14 +328,14 @@ function scr_player_mach3()
 				}
 				image_index = 0;
 			}
-			else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && sprite_index != spr_dashpadmach && (!global.pistol || !ispeppino))
+			else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && sprite_index != spr_dashpadmach && (!global.pistol || characterID == characters.noise || !ispeppino))
 			{
 				input_buffer_slap = 0;
 				state = states.punch;
 				image_index = 0;
 				sprite_index = spr_breakdanceuppercut;
 				fmod_event_instance_play(snd_uppercut);
-				if (ispeppino)
+				if (ispeppino && characterID != characters.noise)
 				{
 					vsp = -10;
 				}
@@ -346,7 +346,7 @@ function scr_player_mach3()
 				movespeed = hsp;
 				particle_set_scale(particletypes.highjumpcloud2, xscale, 1);
 				create_particle(x, y, particletypes.highjumpcloud2, 0);
-				if (!ispeppino)
+				if (!ispeppino || characterID == characters.noise)
 				{
 					repeat (4)
 					{
@@ -372,7 +372,7 @@ function scr_player_mach3()
 			if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 			{
 				var _bump = true;
-				if (ispeppino || noisemachcancelbuffer <= 0)
+				if ((ispeppino && characterID != characters.noise) || noisemachcancelbuffer <= 0)
 				{
 					_bump = ledge_bump((vsp >= 0) ? 32 : 22);
 				}

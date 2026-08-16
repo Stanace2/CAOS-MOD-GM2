@@ -125,7 +125,7 @@ function scr_dos_mach3() //gml_Script_scr_dos_mach3
                     image_index = 0
                     sprite_index = spr_mach3jump
                 }
-                if (sprite_index == spr_crazyrun && ispeppino)
+                if (sprite_index == spr_crazyrun && characterID != characters.noise && ispeppino)
                 {
                     mach4mode = 1
                     image_index = 0

@@ -2,7 +2,7 @@ if (!global.option_hud)
 {
 	exit;
 }
-if (obj_player1.ispeppino == ispeppino && ad > 0)
+if (obj_player1.characterID == characterID && ad > 0)
 {
 	draw_sprite_ext(spr_dresserbg_contrast,0,0,0,1,1,0,c_white,ad)
 	var text = concat(palettetitle, "\n", palettedesc);

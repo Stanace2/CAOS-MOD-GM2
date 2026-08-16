@@ -52,7 +52,7 @@ function scr_boss_grabbed()
 			sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_suplexmash5, spr_suplexmash6, spr_suplexmash7);
 			image_index = sprite_get_number(sprite_index) - 1;
 			other.camzoom = 1;
-			if (!ispeppino)
+			if (!ispeppino || characterID == characters.noise)
 			{
 				if (x != other.x)
 				{
@@ -127,7 +127,7 @@ function scr_boss_pizzaheadjump()
 				sprite_index = spr_playerV_idle;
 				break;
 			case obj_noiseboss:
-				if (obj_player1.ispeppino)
+				if (obj_player1.ispeppino && obj_player.characterID != characters.noise)
 				{
 					sprite_index = spr_playerN_idle;
 				}
@@ -322,7 +322,7 @@ function scr_boss_do_hurt_phase2(_player, _invulnerability = 100)
 	instance_create_unique(0, 0, obj_blackoutline);
 	instance_create_unique(0, 0, obj_superattackeffect);
 	image_xscale = -_player.xscale;
-	if (!_player.ispeppino)
+	if (!_player.ispeppino || _player.characterID == characters.noise)
 	{
 		hitX = x;
 		hitY = y;
@@ -424,7 +424,7 @@ function scr_boss_playerN_phase1hurt(_func = noone)
 
 function scr_boss_phase1hurt(_func = noone)
 {
-	if (!obj_player1.ispeppino)
+	if (!obj_player1.ispeppino || obj_player.characterID == characters.noise)
 	{
 		scr_boss_playerN_phase1hurt(_func);
 		exit;

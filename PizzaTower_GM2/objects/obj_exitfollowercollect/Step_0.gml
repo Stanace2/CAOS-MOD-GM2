@@ -26,7 +26,7 @@ if (((obj_player1.ispeppino && !global.swapmode) || (object_index == obj_gustavo
 		{
 			fmod_event_one_shot_3d("event:/sfx/voice/fakepeppositive", x, y);
 		}
-		if (other.object_index == obj_noisefollower && obj_player1.ispeppino)
+		if (other.object_index == obj_noisefollower && obj_player1.ispeppino && obj_player1.characterID != characters.noise)
 		{
 			fmod_event_one_shot_3d("event:/sfx/voice/noisepositive", x, y);
 		}
