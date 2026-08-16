@@ -29,7 +29,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
 			{
 				image_alpha = 0.3;
 			}
-			if (other.object_index == obj_noiseboss && other.pizzahead && !obj_player1.ispeppino)
+			if (other.object_index == obj_noiseboss && other.pizzahead && (!obj_player1.ispeppino || obj_player1.characterID == characters.noise))
 			{
 				sprite_index = spr_doise_deadair;
 				hsp = 0;

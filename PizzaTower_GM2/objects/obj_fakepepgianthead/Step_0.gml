@@ -4,7 +4,7 @@ switch (state)
 		image_speed = 0.35;
 		targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 		var _g = distance_to_point(targetplayer.x, targetplayer.y);
-		if (obj_player1.ispeppino)
+		if (obj_player1.ispeppino && obj_player1.characterID != characters.noise)
 		{
 			if (movespeed < 8.25)
 			{
@@ -31,13 +31,13 @@ switch (state)
 		fmod_event_instance_set_3d_attributes(snd, x, y);
 		if (place_meeting(x, y, obj_player1) || x > obj_player1.x)
 		{
-			if (obj_player1.ispeppino)
+			if (obj_player1.ispeppino && obj_player1.characterID != characters.noise)
 			{
 				var s = obj_player1.state;
 				var xx = obj_player1.x;
 				scr_hurtplayer(obj_player1);
 				ispeppino = true;
-				if (instance_exists(obj_swapmodeeffect) || (s != obj_player1.state || !obj_player1.ispeppino))
+				if (instance_exists(obj_swapmodeeffect) || (s != obj_player1.state || !obj_player1.ispeppino || obj_player1.characterID == characters.noise))
 				{
 					state = states.fall;
 					target_x = xx - 700;
@@ -73,7 +73,7 @@ switch (state)
 		}
 		break;
 	case states.fall:
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			image_speed = 0.5;
 			movespeed += 0.2;
@@ -85,7 +85,7 @@ switch (state)
 		x = Approach(x, target_x, movespeed);
 		if (x == target_x)
 		{
-			if (ispeppino)
+			if (ispeppino && characterID != characters.noise)
 			{
 				state = states.normal;
 				movespeed = 5;

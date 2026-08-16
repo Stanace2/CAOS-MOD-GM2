@@ -13,7 +13,7 @@ if (state != states.boxxedpepspin)
 			sprite_index = spr_haulingstart;
 			other.defused = true;
 			bombgrabID = other.id;
-			if (!ispeppino)
+			if (!ispeppino || obj_player1.characterID == characters.noise)
 			{
 				create_transformation_tip(lang_get_value("bombtipN"), "bombtipN");
 			}

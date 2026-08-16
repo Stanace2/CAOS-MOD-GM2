@@ -31,7 +31,7 @@ function scr_player_tumble()
 	}
 	if (!grounded && (sprite_index == spr_crouchslip || sprite_index == spr_machroll || sprite_index == spr_mach2jump || sprite_index == spr_backslide || sprite_index == spr_backslideland))
 	{
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			sprite_index = spr_playerN_divebomb;
 			state = states.machcancel;

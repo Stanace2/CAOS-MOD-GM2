@@ -43,11 +43,6 @@ function scr_dos_normal()
     {
         idlespr = spr_soundtest
         movespr = spr_soundtest
-        if (!ispeppino)
-        {
-            idlespr = spr_noise_vulnerable2
-            movespr = spr_noise_vulnerable2
-        }
         idle = 0
     }
     var breakdance_max = 10

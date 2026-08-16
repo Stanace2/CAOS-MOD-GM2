@@ -78,7 +78,7 @@ music_arr =
 	["event:/music/soundtest/halloweenstart", "The Bone Rattler - MrSauceman"],
 	["event:/music/soundtest/halloweenrace", "The Runner - PostElvis"]
 ];
-if (!obj_player1.ispeppino || global.swapmode)
+if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise || global.swapmode)
 {
 	music_arr =
 	[

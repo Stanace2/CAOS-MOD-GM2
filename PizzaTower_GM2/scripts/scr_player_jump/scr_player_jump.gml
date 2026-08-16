@@ -167,7 +167,7 @@ function state_player_jump()
 			{
 				sprite_index = spr_shotgunjump;
 			}
-			if (global.pistol && ispeppino)
+			if (global.pistol && ispeppino && characterID != characters.noise)
 			{
 				sprite_index = spr_pistoljump;
 			}
@@ -176,7 +176,7 @@ function state_player_jump()
 		particle_set_scale(particletypes.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particletypes.highjumpcloud2, 0);
 	}
-	if (!can_jump && character == "P" && !ispeppino && key_up && noisedoublejump && input_buffer_jump > 0 && !key_down && !key_attack)
+	if (!can_jump && character == "P" && (!ispeppino || characterID == characters.noise) && key_up && noisedoublejump && input_buffer_jump > 0 && !key_down && !key_attack)
 	{
 		freefallstart = 0;
 		railmomentum = false;
@@ -203,7 +203,7 @@ function state_player_jump()
 			{
 				image_index = 0;
 			}
-			if (global.pistol && ispeppino)
+			if (global.pistol && ispeppino && characterID != characters.noise)
 			{
 				sprite_index = spr_pistolland;
 			}
@@ -302,7 +302,7 @@ function state_player_jump()
 			pistolanim = noone;
 			vsp = -6;
 		}
-		else if (ispeppino)
+		else if (ispeppino && characterID != characters.noise)
 		{
 			fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
 			sprite_index = spr_shotgunjump1;
@@ -369,14 +369,14 @@ function state_player_jump()
 		state = states.handstandjump;
 		movespeed = 5;
 	}
-	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && (!global.pistol || !ispeppino))
+	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && (!global.pistol || characterID == characters.noise || !ispeppino))
 	{
 		input_buffer_slap = 0;
 		state = states.punch;
 		image_index = 0;
 		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			vsp = -10;
 		}
@@ -391,7 +391,7 @@ function state_player_jump()
 		}
 		particle_set_scale(particletypes.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particletypes.highjumpcloud2, 0);
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			repeat (4)
 			{
@@ -462,7 +462,7 @@ function state_player_jump()
 					shake_mag = 3;
 					shake_mag = 3 / room_speed;
 				}
-				if (ispeppino)
+				if (ispeppino && characterID != characters.noise)
 				{
 					with (instance_create(x + (xscale * 20), y, obj_shotgunbullet))
 					{

@@ -13,7 +13,7 @@ function scr_hurtplayer(_player)
 		else if (state == states.ratmounthurt || state == states.duel || state == states.supergrab || state == states.phase2transition || state == states.parry || instance_exists(obj_vigilante_duelintro) || state == states.taxi || state == states.spaceshuttle || state == states.tube || state == states.debugstate || state == states.golf || state == states.slipbanan)
 		{
 		}
-		else if (global.noisejetpack == true && (ispeppino || noisepizzapepper))
+		else if (global.noisejetpack == true && ((ispeppino && characterID != characters.noise) || noisepizzapepper))
 		{
 		}
 		else if (holycross > 0 || invtime > 0)

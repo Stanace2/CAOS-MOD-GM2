@@ -71,7 +71,7 @@ function scr_player_Sjumpprep()
 				state = states.Sjump;
 				vsp = -17;
 				image_index = 0;
-				if (!ispeppino)
+				if (!ispeppino || characterID == characters.noise)
 				{
 					scr_fmod_soundeffect(snd_noiseSjumprelease, x, y);
 				}
@@ -105,7 +105,7 @@ function scr_player_Sjumpprep()
 				else if (sprite_index == spr_superjumpprep)
 				{
 					var sjumpsnd = superjumpsnd;
-					if (!ispeppino)
+					if (!ispeppino || characterID == characters.noise)
 					{
 						sjumpsnd = snd_noiseSjump;
 					}
@@ -114,7 +114,7 @@ function scr_player_Sjumpprep()
 					sprite_index = spr_superjump;
 					state = states.Sjump;
 					vsp = -15;
-					if (!ispeppino)
+					if (!ispeppino || characterID == characters.noise)
 					{
 						scr_fmod_soundeffect(snd_noiseSjumprelease, x, y);
 					}

@@ -180,7 +180,7 @@ function scr_player_handstandjump()
 	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && scr_slope()))
 	{
 		var _climb = true;
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			_climb = ledge_bump(32, abs(hsp) + 1);
 		}

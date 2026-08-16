@@ -1,6 +1,6 @@
-if (!other.ignore_grind && (other.state != states.tumble || (other.sprite_index != other.spr_tumble && other.sprite_index != other.spr_tumblestart && other.sprite_index != other.spr_tumbleend)) && other.state != states.backbreaker && other.state != states.chainsaw && other.state != states.bump && other.y > other.yprevious && ((!other.isgustavo && (other.ispeppino || !other.noisecrusher) && other.y <= (y + 10)) || ((other.isgustavo || other.noisecrusher) && other.y < y)))
+if (!other.ignore_grind && (other.state != states.tumble || (other.sprite_index != other.spr_tumble && other.sprite_index != other.spr_tumblestart && other.sprite_index != other.spr_tumbleend)) && other.state != states.backbreaker && other.state != states.chainsaw && other.state != states.bump && other.y > other.yprevious && ((!other.isgustavo && ((other.ispeppino && other.characterID != characters.noise) || !other.noisecrusher) && other.y <= (y + 10)) || ((other.isgustavo || other.noisecrusher) && other.y < y)))
 {
-	if (!other.isgustavo && (other.ispeppino || !other.noisecrusher))
+	if (!other.isgustavo && ((other.ispeppino && other.characterID != characters.noise) || !other.noisecrusher))
 	{
 		if (other.state == states.punch)
 		{
@@ -35,7 +35,7 @@ if (!other.ignore_grind && (other.state != states.tumble || (other.sprite_index 
 	{
 		with (other)
 		{
-			if (brick == true && ispeppino)
+			if (brick == true && ispeppino && obj_player1.characterID != characters.noise)
 			{
 				with (instance_create(x, y, obj_brickcomeback))
 				{
@@ -57,7 +57,7 @@ if (!other.ignore_grind && (other.state != states.tumble || (other.sprite_index 
 		}
 		other.y = y + 8;
 		other.state = states.ratmountgrind;
-		if (!other.ispeppino)
+		if (!other.ispeppino || other.characterID == characters.noise)
 		{
 			other.movespeed = other.hsp;
 		}

@@ -210,7 +210,7 @@ if (room == boss_pizzaface)
 	{
 		if (sprite_index == spr_playerN_phase3intro2 || sprite_index == spr_playerN_phase3intro2 || instance_exists(obj_pizzaface_thunderdark))
 		{
-			if (image_alpha > 0 && !ispeppino)
+			if (image_alpha > 0 && (!ispeppino || obj_player1.characterID == characters.noise))
 			{
 				draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, image_angle, image_blend, supernoisefade);
 			}

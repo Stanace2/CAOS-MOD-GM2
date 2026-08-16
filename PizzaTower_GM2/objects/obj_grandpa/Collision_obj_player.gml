@@ -1,4 +1,4 @@
-if (other.ispeppino && !global.swapmode)
+if (other.ispeppino && other.characterID != characters.noise && !global.swapmode)
 {
 	with (obj_player)
 	{

@@ -10,6 +10,7 @@ function scr_chaos_varinit() {
 	debugmarkers = [0,0,0,0]
 	input_buffer_chaos = 0
 	// 0 Donisha 1 WM 2 Stefano 3 Cezar 4 Cleo 5 Acexby 10 fakeDonisha
+	// 6 Wunderly 7 Wendy 8 ???
 	// For playable pep and noise 11 Pep 12 Noise
 	characterID = characters.dos
 	
@@ -22,7 +23,7 @@ function scr_chaos_varinit() {
 	mach5 = 0  
 	machengineprev = -1  
 	mach5buffer = 0
-	//canrollsnd = 0  // Have to check this one to optimize it
+	//canrollsnd = 0
 	poundbuffer = 0
 	quickroll = 0
 	// Italian manners
@@ -136,6 +137,7 @@ function scr_chaos_varinit() {
 	rolljumpsnd = fmod_event_create_instance("event:/chaos-sfx/donisha/rolljump")
 	//General quick spins
 	dosspinsnd = fmod_event_create_instance("event:/chaos-sfx/donisha/machsplitspin")
+	
 	//// Wetham and Mango
 	//WM superjump spin soundeffect
 	mangospinsnd = fmod_event_create_instance("event:/chaos-sfx/wm/mango/mspin")

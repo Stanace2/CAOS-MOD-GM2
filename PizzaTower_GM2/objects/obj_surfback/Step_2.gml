@@ -20,7 +20,7 @@ visible = target.visible;
 image_alpha = target.image_alpha;
 image_blend = target.image_blend;
 depth = 0;
-if (obj_player1.ispeppino && !global.swapmode)
+if (obj_player1.ispeppino && obj_player1.characterID != characters.noise && !global.swapmode)
 {
 	instance_destroy();
 }

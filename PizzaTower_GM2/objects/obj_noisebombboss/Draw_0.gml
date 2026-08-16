@@ -1,4 +1,4 @@
-if (!obj_player1.ispeppino)
+if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise)
 {
 	shader_set(global.Pal_Shader);
 	pal_swap_set(spr_noiseboss_palette, 1, false);

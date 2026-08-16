@@ -1,6 +1,6 @@
 function scr_player_rocketslide()
 {
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		if (image_speed == 0)
 		{

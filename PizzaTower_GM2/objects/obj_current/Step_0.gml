@@ -7,9 +7,9 @@ if (place_meeting(x, y - 1, obj_player))
 		{
 			if (place_meeting(x, y + 1, other))
 			{
-				if ((state != states.trashjump && state != states.trashroll) || !ispeppino)
+				if ((state != states.trashjump && state != states.trashroll) || !ispeppino || obj_player1.characterID == characters.noise)
 				{
-					if (!instance_exists(obj_surfback) || ispeppino)
+					if (!instance_exists(obj_surfback) || (ispeppino && characterID != characters.noise))
 					{
 						if (state != states.barrel && state != states.barreljump && state != states.barrelslide && state != states.barrelclimbwall)
 						{

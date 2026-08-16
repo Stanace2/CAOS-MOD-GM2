@@ -37,7 +37,7 @@ function scr_player_punch()
 		else if (vsp < 0)
 		{
 			punch_afterimage = 5;
-			if (!ispeppino)
+			if (!ispeppino || characterID == characters.noise)
 			{
 				with (instance_create(x, y, obj_explosioneffect))
 				{

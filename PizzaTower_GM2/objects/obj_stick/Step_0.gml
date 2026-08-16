@@ -170,7 +170,7 @@ switch (state)
 				else
 				{
 					sprite_index = spr_noisettestick_takemoney2;
-					if (obj_player1.ispeppino)
+					if (obj_player1.ispeppino && obj_player1.characterID != characters.noise)
 					{
 						fmod_event_one_shot_3d("event:/sfx/noisette/voice2", x, y);
 						sprite_index = spr_noisettestick_helicopterstart;

@@ -66,6 +66,8 @@ switch (state)
 				sprite_index = spr_poweredup;
 				image_index = 0;
 				image_speed = 0.35;
+				if (characterID == characters.noise)
+					noisepizzapepper = true;
 				if (!ispeppino)
 				{
 					noisepizzapepper = true;

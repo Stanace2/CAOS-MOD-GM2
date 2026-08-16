@@ -1,6 +1,6 @@
 function scr_pistolshoot(_state, _enable_charge = false)
 {
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		scr_bombshoot();
 		exit;

@@ -325,6 +325,8 @@ enum characters
 	cezar = 3,
 	cleo = 4,
 	acexby = 5,
+	wuns = 6,
+	wendy = 7,
 	fdos = 10,
 	pep = 11,
 	noise = 12

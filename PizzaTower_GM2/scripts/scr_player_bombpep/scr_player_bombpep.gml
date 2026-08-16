@@ -86,7 +86,7 @@ function scr_player_bombgrab()
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 			create_particle(x, y, particletypes.landcloud);
 		}
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			if (place_meeting(x + hsp, y, obj_ratblock) || place_meeting(x, y + vsp, obj_ratblock))
 			{
@@ -113,7 +113,7 @@ function scr_player_bombgrab()
 		{
 			sprite_index = spr_haulingfall;
 		}
-		if (input_buffer_slap > 0 && ispeppino)
+		if (input_buffer_slap > 0 && ispeppino && characterID != characters.noise)
 		{
 			input_buffer_slap = 0;
 			image_index = 0;

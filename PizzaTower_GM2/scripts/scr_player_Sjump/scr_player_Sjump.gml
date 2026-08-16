@@ -105,7 +105,7 @@ function scr_player_Sjump()
 	}
 	else if ((key_attack2 || input_buffer_slap > 0) && character == "P" && sprite_index != spr_superspringplayer && sprite_index != spr_superjumpcancel_start)
 	{
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			input_buffer_shoot = 0;
 			input_buffer_slap = 0;
@@ -173,7 +173,7 @@ function scr_player_Sjump()
 			image_xscale = other.xscale;
 		}
 	}
-	if (!ispeppino && character == "P" && sprite_index == spr_superjump)
+	if ((!ispeppino || characterID == characters.noise) && character == "P" && sprite_index == spr_superjump)
 	{
 		hsp = move * 3;
 	}

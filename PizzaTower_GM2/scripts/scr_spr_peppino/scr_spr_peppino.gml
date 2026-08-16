@@ -191,6 +191,7 @@ function scr_spr_peppino() {
 	// - Pepper Pizza
 	spr_poweredup = spr_player_poweredup
     spr_jetpackstart2 = spr_player_jetpackstart2
+	spr_firemouthend = spr_player_firemouthend 
 	// - Revolver
 	spr_pistolintro = spr_player_pistolintro
     spr_pistolshot = spr_player_pistolshot  
@@ -246,6 +247,7 @@ function scr_spr_peppino() {
     spr_shotgunduck = spr_shotgun_duck  
     spr_shotguncrawl = spr_shotgun_crawl  
     spr_shotgungoduck = spr_shotgun_goduck  
+	spr_shotgundrop = spr_shotgunback
 	// - Weenie mount
     spr_rideweenie = spr_player_weeniemount  
     spr_weenieturn = spr_player_weenieturn  
@@ -258,8 +260,7 @@ function scr_spr_peppino() {
     spr_barrelmove = spr_player_barrelmove  
     spr_barrelland = spr_player_barrelland  
 	// - Firemouth
-    spr_firemouthintro = spr_player_firemouthintro  
-    spr_firemouthend = spr_player_firemouthend  
+    spr_firemouthintro = spr_player_firemouthintro   
     spr_firemouth = spr_player_firemouth  
     spr_firemouthspin = spr_player_firemouthspin  
     spr_firemouthdash = spr_player_firemouthdash  
@@ -315,7 +316,7 @@ function scr_spr_peppino() {
 	spr_paletteactor1 = spr_player_idle
 	spr_paletteactor2 = spr_player_3hpidle
 	spr_paletteactor3 = spr_player_rageidle
-	spr_paletteactor4 = spr_player_freezeridle
+	spr_paletteactor4 = spr_player_pistolidle
 	spr_paletteactor5 = spr_player_panic
 	spr_paletteactor6 = spr_player_smirk
 	spr_paletteactor7 = spr_file1

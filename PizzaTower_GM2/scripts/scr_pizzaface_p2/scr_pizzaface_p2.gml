@@ -240,7 +240,7 @@ function scr_pizzaface_p2_fall()
 				{
 					state = states.animation;
 					tauntstoredstate = states.normal;
-					if (ispeppino)
+					if (ispeppino && characterID != characters.noise)
 					{
 						sprite_index = obj_player.spr_yellend;
 						image_index = 0;
@@ -248,7 +248,7 @@ function scr_pizzaface_p2_fall()
 					}
 					landAnim = false;
 				}
-				if (!obj_player1.ispeppino)
+				if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise)
 				{
 					with (obj_music)
 					{
@@ -278,7 +278,7 @@ function scr_pizzaface_p2_normal()
 	}
 	else
 	{
-		if (!obj_player1.ispeppino)
+		if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise)
 		{
 			with (obj_music)
 			{

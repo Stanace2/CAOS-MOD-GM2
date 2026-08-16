@@ -93,7 +93,7 @@ if (prevhp != elitehit)
 				movespeed = 0;
 				image_index = 0;
 				sprite_index = obj_player.spr_yellnerves;
-				if (!ispeppino)
+				if (!ispeppino || obj_player1.characterID == characters.noise)
 				{
 					sprite_index = spr_noisebossintro2;
 				}
@@ -140,7 +140,7 @@ if (state == states.stun && stunned > 100 && birdcreated == false)
 		ID = other.id;
 	}
 }
-var _inv = (state == states.stun && savedthrown == thrown && !savedthrown) || (obj_player1.characterID == characters.dos && state == states.ram && substate == states.land) || (!obj_player1.ispeppino && state == states.ram && substate == states.land);
+var _inv = (state == states.stun && savedthrown == thrown && !savedthrown) || (obj_player1.characterID == characters.dos && state == states.ram && substate == states.land) || ((!obj_player1.ispeppino || obj_player1.characterID == characters.noise) && state == states.ram && substate == states.land);
 if (_inv && elitehit > 1)
 {
 	invincible = false;

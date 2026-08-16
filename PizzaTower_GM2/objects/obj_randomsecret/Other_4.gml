@@ -46,7 +46,7 @@ switch (room)
 		global.noisejetpack = true;
 		break;
 	case freezer_secret3:
-		if (!obj_player1.ispeppino)
+		if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise)
 		{
 			global.noisejetpack = true;
 		}
@@ -80,7 +80,7 @@ if (isgustavo != obj_player.isgustavo)
 		tauntstoredsprite = sprite_index;
 	}
 }
-if (!obj_player1.ispeppino && isgustavo != obj_player.noisecrusher)
+if ((!obj_player1.ispeppino || obj_player1.characterID == characters.noise) && isgustavo != obj_player.noisecrusher)
 {
 	if (isgustavo)
 	{
@@ -91,7 +91,7 @@ if (!obj_player1.ispeppino && isgustavo != obj_player.noisecrusher)
 		scr_switchpeppino();
 	}
 }
-if (!obj_player1.ispeppino && global.noisejetpack)
+if ((!obj_player1.ispeppino || obj_player1.characterID == characters.noise) && global.noisejetpack)
 {
 	create_transformation_tip(lang_get_value("jetpack2tip"));
 }

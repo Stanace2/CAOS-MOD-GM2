@@ -5,7 +5,7 @@ with (obj_player1)
 	image_index = 0;
 	deathspeed = 10;
 	vsp = -12;
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		fmod_event_instance_set_parameter(snd_bossdeathN, "state", 0, true);
 		scr_fmod_soundeffect(snd_bossdeathN, x, y);

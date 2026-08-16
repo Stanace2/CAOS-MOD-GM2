@@ -1,5 +1,5 @@
 targetRoom = tower_tutorial1;
-if (!obj_player1.ispeppino)
+if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise)
 {
 	targetRoom = tower_tutorial1N;
 }

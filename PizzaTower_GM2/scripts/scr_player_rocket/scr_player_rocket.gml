@@ -6,7 +6,7 @@ function scr_player_rocket()
 	alarm[8] = 60;
 	alarm[7] = 120;
 	hurted = true;
-	if (!ispeppino && sprite_index == spr_rocketstart)
+	if ((!ispeppino || characterID == characters.noise) && sprite_index == spr_rocketstart)
 	{
 		global.combotimepause = 5;
 		image_speed = 0.35;
@@ -80,7 +80,7 @@ function scr_player_rocket()
 		if (sprite_index != spr_rocketstart)
 		{
 			sprite_index = spr_rocket;
-			if (grounded && vsp >= 0 && ispeppino)
+			if (grounded && vsp >= 0 && (ispeppino && characterID != characters.noise))
 			{
 				sprite_index = spr_rocketrun;
 			}
@@ -89,7 +89,7 @@ function scr_player_rocket()
 	if (grounded)
 	{
 		move = key_left + key_right;
-		if (ispeppino && move != 0 && move != xscale && sprite_index != spr_rocketstart && state != states.mach2)
+		if (ispeppino && characterID != characters.noise && move != 0 && move != xscale && sprite_index != spr_rocketstart && state != states.mach2)
 		{
 			state = states.rocketslide;
 			fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
@@ -99,7 +99,7 @@ function scr_player_rocket()
 	}
 	if (scr_solid(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting(x + sign(hsp), y, obj_solid)) && (!place_meeting(x + sign(hsp), y, obj_metalblock) && (!place_meeting(x + sign(hsp), y, obj_ratblock) || place_meeting(x + sign(hsp), y, obj_rattumble)) && character != "V") && (!place_meeting(x + sign(hsp), y, obj_destructibles) && character != "V") && !place_meeting(x + sign(hsp), y, obj_hungrypillar))
 	{
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			pizzapepper = 0;
 			sprite_index = spr_rockethitwall;

@@ -12,7 +12,7 @@ if (visible == true)
 		}
 	}
 	timetovisible = 100;
-	if (other.ispeppino)
+	if (other.ispeppino && other.characterID != characters.noise)
 	{
 		with (other)
 		{
