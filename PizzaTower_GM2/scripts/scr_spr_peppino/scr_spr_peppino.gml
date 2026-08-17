@@ -1,6 +1,6 @@
 function scr_spr_peppino() {
 	// Normal
-	spr_dressup = spr_player_idle
+	spr_dressup = spr_pep_palettedressup
 	spr_idle = spr_player_idle  
     spr_move = spr_player_move  
     spr_land2 = spr_player_land2  

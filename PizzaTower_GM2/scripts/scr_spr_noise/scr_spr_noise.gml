@@ -1,6 +1,6 @@
 function scr_spr_noise() {
 	// Normal
-	spr_dressup = spr_playerN_idle
+	spr_dressup = spr_noise_palettedressup
 	spr_idle = spr_playerN_idle  
     spr_move = spr_playerN_move  
     spr_land2 = spr_playerN_land2  

@@ -10,7 +10,7 @@ function scr_character_spr_init(_hud = true) // starts only the necessary sprite
         case characters.wm:  
 			global.mach_color1 = make_colour_rgb(37, 255, 227) //sunset
 			global.mach_color2 = make_colour_rgb(255, 108, 251) //waves
-            //scr_spr_wm()  
+            scr_spr_wm()  
             break  
         case characters.fdos:  
 			global.mach_color1 = make_colour_rgb(255, 0, 81); //water
