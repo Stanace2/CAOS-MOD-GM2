@@ -6,7 +6,7 @@ function scr_player_ratmountbounce()
 	    return;
 	}
 
-	if (!ispeppino || characterID == characters.noise)
+	if (!ispeppino || (characterID == characters.noise && !isgustavo))
 	{
 		isgustavo = false;
 		scr_player_noisecrusher();

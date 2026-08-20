@@ -39,7 +39,7 @@ function scr_player_comingoutdoor()
 			exit;
 		}
 	}
-	if (sprite_index != spr_Timesup)
+	if (sprite_index != spr_levelstart)
 	{
 		if (steppybuffer > 0)
 		{
@@ -51,7 +51,7 @@ function scr_player_comingoutdoor()
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 		}
 	}
-	if (sprite_index != spr_Timesup)
+	if (sprite_index != spr_levelstart)
 	{
 		if (isgustavo)
 		{

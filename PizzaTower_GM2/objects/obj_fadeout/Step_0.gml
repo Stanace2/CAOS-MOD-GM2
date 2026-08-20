@@ -89,8 +89,20 @@ if (instance_exists(obj_player))
 		}
 		if (other.fadein == true && obj_player1.state == states.door && (obj_player1.sprite_index == spr_downpizzabox || obj_player1.sprite_index == spr_uppizzabox))
 		{
-			state = states.crouchjump;
-			uncrouch = 20;
+			// Coming out downwards as wm goes in a bodyslam
+			if (characterID == 1 && obj_player1.sprite_index == spr_downpizzabox)  
+			{  
+				sprite_index = spr_bodyslamstart  
+				image_index = 0  
+				state = states.freefall
+				hsp = 0  
+				pistolanim = -4  
+			}  
+			else  
+			{  
+				state = states.crouchjump;
+				uncrouch = 20;
+			}
 			if (global.coop == true)
 			{
 				obj_player2.state = states.crouchjump;

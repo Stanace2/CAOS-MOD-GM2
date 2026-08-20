@@ -1,0 +1,21 @@
+hsp = 0  
+vsp = 0  
+grav = 0.5  
+movespeed = 0  
+grounded = 0  
+vsp_carry = 0  
+hsp_carry = 0  
+platformid = -4  
+state = mbstates.rolling  
+sit_buffer = 20  
+collect = [obj_collect, obj_bigcollect, obj_giantcollect]  
+pizzakin = obj_pizzaboxunopen  
+toppins = -4  
+collectibles = -4  
+hover = 0  
+canhover = 1  
+flash = 0  
+recover_distance = 1350  
+depth = obj_player1.depth + 1  
+image_speed = 0.35  
+instance_create(x, y, obj_mango_brickball_indicator)

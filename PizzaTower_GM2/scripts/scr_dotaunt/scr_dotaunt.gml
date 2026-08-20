@@ -1,5 +1,7 @@
 function scr_dotaunt()
 {
+	if (characterID == characters.wm && key_up && supercharged && (!((brick || instance_exists(obj_mango_companion)))))
+        return;
 	if ((key_taunt2 || input_finisher_buffer > 0 || (state == states.backbreaker && key_up && supercharged)) && !skateboarding)
 	{
 		input_finisher_buffer = 0;

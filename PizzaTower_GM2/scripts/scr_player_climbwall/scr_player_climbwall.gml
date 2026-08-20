@@ -9,11 +9,9 @@ function scr_player_climbwall()
                 return;
             }
             break
-
         case characters.wm:
             scr_wmp_cling()
             return;
-
         case characters.fdos:
             scr_fdos_climbwall()
             return;

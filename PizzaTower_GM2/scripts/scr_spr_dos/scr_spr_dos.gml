@@ -42,7 +42,7 @@ function scr_spr_dos() {
 	// Level transitions
     spr_lapportal_in = spr_pizzaportalend_dos
     spr_lapportal_out = spr_pizzaportalentrancestart_dos
-    spr_entergate = spr_dos_entergate  
+    spr_entergate = spr_dos_entergate 
     spr_lookdoor = spr_dos_lookdoor  
     spr_walkfront = spr_dos_walkfront  
     spr_downpizzabox = spr_dos_downpizzabox  

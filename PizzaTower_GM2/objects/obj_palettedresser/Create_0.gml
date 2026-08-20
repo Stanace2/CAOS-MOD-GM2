@@ -46,7 +46,7 @@ player_palettes[0] = [
 	["two", false, 44], 
 	["snow", false, 45], 
 	["varoness", false, 46]];
-player_palettes[1] = [
+player_palettes[11] = [
   ["classic", true, 1],
   ["unfunny", false, 3],
   ["money", false, 4],
@@ -68,7 +68,7 @@ player_palettes[1] = [
   ["war", false, 12, spr_peppattern8],
   ["john", false, 12, spr_peppattern9]
 ];
-player_palettes[2] = [
+player_palettes[12] = [
   ["classicN", true, 1],
   ["boise", false, 3],
   ["roise", false, 4],
@@ -93,6 +93,60 @@ player_palettes[2] = [
   ["grannykisses", false, 21, spr_noisepattern8],
   ["towerguy", false, 20, spr_noisepattern9]
 ];
+player_palettes[1] = [
+	["classic", true, 1], 
+	["unfunny", false, 3], 
+	["money", false, 4], 
+	["sage", false, 5], 
+	["blood", false, 6], 
+	["tv", false, 7], 
+	["dark", false, 8], 
+	["shitty", false, 9], 
+	["golden", false, 10], 
+	["garish", false, 11], 
+	["mooney", false, 15], 
+	["funny", false, 17, spr_peppattern1],
+	["itchy", false, 12, spr_peppattern2],
+	["pizza", false, 12, spr_peppattern3],
+	["stripes", false, 12, spr_peppattern4],
+	["goldemanne", false, 16, spr_peppattern5],
+	["bones", false, 12, spr_peppattern6],
+	["pp", false, 18, spr_peppattern7],
+	["war", false, 19, spr_peppattern8],
+	["john", false, 20, spr_peppattern9],
+	["aqua", false, 24, spr_dos_pattern19], 
+	["shadow", false, 25], 
+	["goth", false, 26], 
+	["quetzal", false, 27, spr_dos_pattern18], 
+	["maguma", false, 28, spr_dos_pattern16], 
+	["demoness", false, 29, spr_dos_pattern17], 
+	["gloomy", false, 30, spr_dos_chaospattern1], 
+	["hero", false, 31], 
+	["cheese", false, 32, spr_dos_chaospattern2], 
+	["boiling", false, 33], 
+	["aldente", false, 34], 
+	["spectral", false, 35], 
+	["fun", false, 36], 
+	["sunset", false, 37], 
+	["party", false, 38], 
+	["goblin", false, 39], 
+	["goof", false, 40, spr_dos_chaospattern3], 
+	["space", false, 41], 
+	["italian", false, 42, spr_dos_chaospattern4], 
+	["donibot", false, 43, spr_dos_chaospattern5], 
+	["two", false, 44], 
+	["snow", false, 45], 
+	["varoness", false, 46]
+];
+player_palettes[2] = [["classic", true, 1]]
+player_palettes[3] = [["classic", true, 1]]
+player_palettes[4] = [["classic", true, 1]]
+player_palettes[5] = [["classic", true, 1]]
+player_palettes[6] = [["classic", true, 1]]
+player_palettes[7] = [["classic", true, 1]]
+player_palettes[8] = [["classic", true, 1]]
+player_palettes[9] = [["classic", true, 1]]
+player_palettes[10] = [["classic", true, 1]]
 ini_open_from_string(obj_savesystem.ini_str_options);
 for (var i = 0; i < array_length(player_palettes); i++)
 {

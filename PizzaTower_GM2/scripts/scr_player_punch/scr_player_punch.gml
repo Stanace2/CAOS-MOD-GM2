@@ -1,5 +1,11 @@
 function scr_player_punch()
 {
+	switch characterID  
+    {  
+        case characters.wm:  
+            scr_wmp_jaws()  
+            return;  
+    } 
 	if (sprite_index == spr_breakdanceuppercut || sprite_index == spr_breakdanceuppercutend)
 	{
 		move = key_left + key_right;

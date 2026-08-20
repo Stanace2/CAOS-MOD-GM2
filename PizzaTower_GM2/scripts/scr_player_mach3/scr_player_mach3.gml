@@ -9,11 +9,9 @@ function scr_player_mach3()
                 return;
             }
             break
-
         case characters.wm:
             scr_wmp_mach3()
             return;
-
         case characters.fdos:
             scr_fdos_mach3()
             return;

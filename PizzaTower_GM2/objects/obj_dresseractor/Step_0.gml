@@ -8,16 +8,7 @@ if (alpha == 0 && die)
     instance_destroy()
 with (obj_palettedresser)
 {
-    var pep = 0
-	switch characterID {
-		case characters.pep:
-			pep = 1
-			break
-		case characters.noise:
-			pep = 2
-			break
-	}
-    var actors = actor_array[pep]
+    var actors = actor_array[characterID]
     if ((actors[scolumn][srow][2] == other.paletteindex && array_length(actors[scolumn][srow]) <= 3) || (array_length(actors[scolumn][srow]) > 3 && actors[scolumn][srow][3] == other.palettetexture))
         other.amax = 1
     else

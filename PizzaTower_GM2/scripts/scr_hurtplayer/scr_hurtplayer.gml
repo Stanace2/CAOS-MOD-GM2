@@ -5,9 +5,13 @@ function scr_hurtplayer(_player)
 	var _savedstate = _player.state;
 	var _hurt = false;
 	var _swap = false;
+	var rolliframes = ((_player.state == states.crouch && _player.sprite_index == spr_wethamroll) || (_player.state == states.tumble && _player.sprite_index == spr_lonewetham_tumble));
 	with (_player)
 	{
-		if (global.failcutscene || instance_exists(obj_endlevelfade))
+		if (string_copy(sprite_get_name(sprite_index), 1, 16) == "spr_m_lastbreath" || sprite_index == spr_w_spinkick || sprite_index == spr_m_call || rolliframes || ikcurrent || sprite_index == spr_w_lastbreath_travel)
+        {
+        }
+		else if (global.failcutscene || instance_exists(obj_endlevelfade))
 		{
 		}
 		else if (state == states.ratmounthurt || state == states.duel || state == states.supergrab || state == states.phase2transition || state == states.parry || instance_exists(obj_vigilante_duelintro) || state == states.taxi || state == states.spaceshuttle || state == states.tube || state == states.debugstate || state == states.golf || state == states.slipbanan)

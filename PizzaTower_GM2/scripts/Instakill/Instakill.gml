@@ -23,7 +23,7 @@ function Instakill()
 			}
 		}
 	}
-	if (state == states.mach3 && sprite_index != spr_superjumpcancel && sprite_index != spr_mach3hit && (character == "P" || character == "V"))
+	if (characterID != characters.wm && state == states.mach3 && sprite_index != spr_superjumpcancel && sprite_index != spr_mach3hit && (character == "P" || character == "V"))
 	{
 		if (sprite_index != spr_fightball)
 		{
@@ -183,6 +183,8 @@ function Instakill()
 			}
 		}
 	}
+	if (characterID == characters.wm && (!brick))
+        return;
 	var _dos = (sprite_index != spr_snapjump && sprite_index != spr_snaphighjump && sprite_index != spr_spinkf && sprite_index != spr_rolljump && sprite_index != spr_machsplit_loop && sprite_index != spr_machsplit && sprite_index != spr_machdrill && sprite_index != spr_snapjumpstart && sprite_index != spr_snapjumpinter && state != states.Sjump)
 	if _dos
 		state = states.chainsaw;

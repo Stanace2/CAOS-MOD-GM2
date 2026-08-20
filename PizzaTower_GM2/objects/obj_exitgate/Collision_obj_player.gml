@@ -10,7 +10,7 @@ if (image_index == 1 && global.panic == false && room != war_13)
 			with (obj_player1)
 			{
 				lastroom = room;
-				sprite_index = spr_Timesup;
+				sprite_index = spr_levelstart;
 				image_index = 0;
 				with (obj_camera)
 				{
@@ -23,7 +23,7 @@ if (image_index == 1 && global.panic == false && room != war_13)
 				with (obj_player2)
 				{
 					lastroom = room;
-					sprite_index = spr_Timesup;
+					sprite_index = spr_levelstart;
 					image_index = 0;
 					with (obj_camera)
 					{

@@ -27,7 +27,8 @@ if (!place_meeting(x, y, obj_doorblocked))
 {
 	with (other)
 	{
-		if (key_up && !instance_exists(obj_jumpscare) && grounded && (((state == states.ratmount || state == states.ratmountbounce || state == states.noisecrusher) && brick) || state == states.normal || state == states.mach1 || state == states.mach2 || state == states.pogo || state == states.mach3 || state == states.Sjumpprep) && y == (other.y + 50) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
+		var wm = (characterID == characters.wm && ((state == states.crouch && sprite_index == spr_wm_roll) || state == states.tumble || state == states.machslide || state == states.punch))
+		if (key_up && !instance_exists(obj_jumpscare) && grounded && (((state == states.ratmount || state == states.ratmountbounce || state == states.noisecrusher) && brick) || wm || state == states.normal || state == states.mach1 || state == states.mach2 || state == states.pogo || state == states.mach3 || state == states.Sjumpprep) && y == (other.y + 50) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
 		{
 			if (room == tower_5 || other.object_index == obj_pumpkindoor)
 			{

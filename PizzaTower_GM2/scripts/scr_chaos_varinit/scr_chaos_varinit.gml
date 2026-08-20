@@ -1,4 +1,7 @@
 function scr_chaos_varinit() {
+	#macro PLAYER_STUNNED (state == states.antigrav || state == states.fireass || state == states.backbreaker || state == states.hurt || state == states.slipbanan || state == states.freefallland || state == states.crouchjump || state == states.bump || state == states.parry || state == states.machslide)
+	#macro PLAYER_LOCK (state == states.tube || state == states.backtohub || state == states.transitioncutscene || state == states.door || state == states.secretportal || state == states.actor || state == states.comingoutdoor || state == states.animation)
+	
 	// Mort friendship
 	global.friendShip = 0 // Used in obj_mort_Collision_obj_player
 	// Goth palette
@@ -73,7 +76,7 @@ function scr_chaos_varinit() {
 	iwalpha = 0 // Dodge afterimages
 	// Italian manners variable, obsolete
 	wm = 1
-	// Vainilla is brick
+	// From vainilla is brick
 	brickskinbuffer = 1 // Used for the skinswitcher for these guys
 	
 	// ==========Caos challenge==========

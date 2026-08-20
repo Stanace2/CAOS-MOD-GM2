@@ -101,6 +101,7 @@ function scr_displaydata(_display)
 		concat("room: ", room_get_name(room)),
 		concat("sprite: ", sprite_get_name(sprite_index)),
 		concat("brick: ", brick),
+		concat("clingexit: ", clingexitspeed),
 		concat("imagespeed: ", image_speed),
 		concat("imageindex: ", image_index)
 	]
@@ -170,7 +171,7 @@ function mango_ledge_bump(hicup, amount)
     var old_x = x
     var old_y = y
     x += (image_xscale * amount)
-    var ty = try_solid(0, -1, 574, hicup)
+    var ty = try_solid(0, -1, obj_solid, hicup)
     x = old_x
     if (ty != -1)
     {

@@ -1,16 +1,6 @@
 if display
 {
-	// donisha 0 pep 1 noise 2
-	var pep = 0
-	switch characterID {
-		case characters.pep:
-			pep = 1
-			break
-		case characters.noise:
-			pep = 2
-			break
-	}
-    var actors = actor_array[pep]
+    var actors = actor_array[characterID]
     scr_menu_getinput()
     ad = Approach(ad, 1, 0.1)
     if key_back

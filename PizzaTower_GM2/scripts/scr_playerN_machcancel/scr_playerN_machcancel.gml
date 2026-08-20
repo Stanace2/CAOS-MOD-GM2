@@ -21,7 +21,6 @@ function scr_playerN_machcancel()
             if (!global.manners && (!scr_doniSnapjump()))
                 return;
             break
-
         case characters.fdos:
             if (!scr_doniFakeSnapjump())
                 return;

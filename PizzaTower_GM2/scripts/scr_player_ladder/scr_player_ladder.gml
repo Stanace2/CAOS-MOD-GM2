@@ -32,6 +32,8 @@ function scr_player_ladder()
 	{
 		sprite_index = spr_ladderdown;
 		vsp = 10;
+		if (characterID == characters.wm)  
+			vsp = 15  
 		image_speed = -0.35;
 	}
 	else
@@ -105,6 +107,11 @@ function scr_player_ladder()
 		state = states.normal;
 		image_index = 0;
 	}
-	
+	if (characterID == characters.wm && brick && (!instance_exists(obj_mango_companion)))
+    {
+        with (instance_create(x, y, obj_mango_companion))
+            wait = 1
+        brick = 0
+    }
 	doSnapjump()
 }

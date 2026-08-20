@@ -6,7 +6,9 @@ with (obj_player)
 {
 	if (other.image_yscale == 1)
 	{
-		if (((key_down && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other) && ((state == states.crouch || character == "S" || character == "M") || state == states.machroll || (state == states.tumble && sprite_index == spr_dive))) || ((state == states.crouchslide || (state == states.tumble && key_down) || state == states.machcancel || state == states.unknown300 || state == states.unknown303 || state == states.freefall || state == states.freefallland) && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
+		// While going down the pizzabox
+		var wmadd = (state == states.ratmountbounce && (vsp > 1 || key_down) && characterID == characters.wm && (place_meeting(x, (y + vsp), other) || place_meeting(x, (y + 1), other)) && (!instance_exists(obj_fadeout)))  
+		if (wmadd || (((key_down && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other) && ((state == states.crouch || character == "S" || character == "M") || state == states.machroll || (state == states.tumble && sprite_index == spr_dive))) || ((state == states.crouchslide || (state == states.tumble && key_down) || state == states.machcancel || state == states.unknown300 || state == states.unknown303 || state == states.freefall || state == states.freefallland) && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor))
 		{
 			obj_player1.lastroom = room;
 			obj_player2.lastroom = room;
@@ -49,7 +51,9 @@ with (obj_player)
 	}
 	if (other.image_yscale == -1)
 	{
-		if (((key_up && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 10, other) && (state == states.normal || state == states.machcancel || state == states.pogo || state == states.unknown300 || state == states.unknown302 || state == states.machcancel || state == states.jump || state == states.mach1 || state == states.mach2 || state == states.mach3 || state == states.Sjumpprep || (state == states.punch && sprite_index == spr_breakdanceuppercut))) || ((state == states.Sjump || state == states.machcancel || state == states.Sjumpland) && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
+		// While going up
+		var wmadd = (((state == states.ratmountbounce && vsp < 1) || (state == states.mach2 && vsp < 1) || (state == states.climbwall && vsp < 1)) && characterID == characters.wm && (place_meeting(x, (y + vsp), other) || place_meeting(x, (y - 1), other)) && (!instance_exists(obj_fadeout))) 
+		if (wmadd || (((key_up && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 10, other) && (state == states.normal || state == states.machcancel || state == states.pogo || state == states.unknown300 || state == states.unknown302 || state == states.machcancel || state == states.jump || state == states.mach1 || state == states.mach2 || state == states.mach3 || state == states.Sjumpprep || (state == states.punch && sprite_index == spr_breakdanceuppercut))) || ((state == states.Sjump || state == states.machcancel || state == states.Sjumpland) && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor))
 		{
 			obj_player1.lastroom = room;
 			obj_player2.lastroom = room;

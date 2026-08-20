@@ -86,6 +86,8 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					state = states.ratmountjump;
 					image_index = 0;
 				}
+				if (characterID == characters.wm)
+                    instance_destroy(other.baddieID)
 			}
 			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) || state != states.tumble) && ((state == states.handstandjump && global.attackstyle == 1) || instakillmove == true) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
 			{
@@ -241,6 +243,8 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 				other.baddieID.grabbedby = _playerindex;
 				pepp_grab = true;
 			}
+			var exec = (characterID == characters.wm && sprite_index == spr_wethamroll)
+            var allow = (characterID == characters.wm && state == states.slap)
 			if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (state == states.tumble || state == states.mach2 || state == states.machslide || sprite_index == spr_player_ratmountattack || sprite_index == spr_lonegustavo_dash) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == false && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
 			{
 				var lag = 0;

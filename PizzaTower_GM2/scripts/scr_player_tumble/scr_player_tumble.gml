@@ -4,13 +4,12 @@ function scr_player_tumble()
 	{
 	    case characters.dos:
 	    case characters.fdos:
-	        if !global.manners
+	        if !global.manners || characterID == characters.fdos
 	        {
 	            scr_dos_tumble()
 	            return;
 	        }
 	        break
-
 	    case characters.wm:
 	        scr_wmp_tumble()
 	        return;

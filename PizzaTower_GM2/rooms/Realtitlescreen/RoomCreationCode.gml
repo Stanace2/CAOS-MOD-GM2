@@ -332,6 +332,32 @@ enum characters
 	noise = 12
 }
 
+enum mbstates {
+	rolling = 0,
+	longjump = 1,
+	bodyslam = 2,
+	callback = 3,
+	ball = 4,
+	verticalhallway = 5
+}
+
+enum mstates {
+	follower = 0,
+	taunt = 1,
+	comeback = 2,
+	flykick = 3
+}
+
+enum mfstates {
+	slip = 0,
+	run = 1
+}
+
+enum wrstates {
+	wait = 0,
+	travel = 1
+}
+
 #macro ANIMATION_END floor(image_index) == (image_number - 1)
 
 global.coop = false;
