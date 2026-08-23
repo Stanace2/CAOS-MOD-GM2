@@ -19,17 +19,23 @@ if (toppins != noone)
     with (obj_player)
         other.toppins.force = 1
 }
+var box = 50;
 for (var i = 0; i < array_length(collect); i++)
 {
-    collectibles = instance_place(x, y, collect[i])
-    if (collectibles != noone)
-    {
-        with (obj_player)
-        {
-            with (other.collectibles)
-                event_perform(ev_collision, obj_player)
-        }
-    }
+	var _list = ds_list_create()  
+	collectibles = collision_rectangle_list(x - box, y - box, x + box, y + box, collect[i], 0, 0, _list, 0)  
+	if (collectibles > 0)  
+	{  
+	    for (var i = 0; i < collectibles; i++)  
+	    {  
+			with (obj_player)
+	        {
+	            with (ds_list_find_value(_list, i))
+	                event_perform(ev_collision, obj_player)
+	        }
+	    }  
+	}  
+	ds_list_destroy(_list)
 }
 var banan = instance_place(x, y, obj_slipnslide)
 if (banan != noone)
@@ -49,3 +55,11 @@ if (banan != noone)
     instance_destroy()
     return;
 }
+if (grounded)
+{
+	if (!fmod_event_instance_is_playing(m_rollingsound))
+		fmod_event_instance_play(m_rollingsound);
+	fmod_event_instance_set_3d_attributes(m_rollingsound, x, y)
+}
+else
+	fmod_event_instance_stop(m_rollingsound, true);

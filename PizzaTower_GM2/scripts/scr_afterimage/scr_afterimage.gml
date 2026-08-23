@@ -215,3 +215,25 @@ function create_blur_afterimage(_x, _y, _spr, _subimg, _xscale)
 	}
 	return b;
 }
+
+function scr_windafterimage(_x, _y, _spr, _subimg, _xscale) //gml_Script_scr_windafterimage
+{
+    var b = create_afterimage(_x, _y, _spr, _subimg)
+    with (b)
+    {
+        fadeout = 0
+        fadeoutstate = -4
+        identifier = afterimagetype.wind
+        alarm[0] = -1
+        alarm[1] = -1
+        alarm[2] = -1
+        image_blend = c_white
+        image_xscale = _xscale
+        alpha = 1
+        playerid = -4
+        spd = 0.15
+        hsp = 0
+        vsp = 0
+    }
+    return b;
+}

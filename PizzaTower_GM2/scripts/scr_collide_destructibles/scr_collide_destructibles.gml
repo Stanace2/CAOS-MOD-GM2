@@ -2,7 +2,7 @@ function scr_collide_destructibles()
 {
 	with (obj_player)
 	{
-		var wm = (characterID == characters.wm && (state == states.dynamite || sprite_index == spr_dive || sprite_index == spr_wm_cling || sprite_index == spr_mach || sprite_index == spr_walljumpstart || sprite_index == spr_wm_roll))
+		var wm = (characterID == characters.wm && (state == states.dynamite || sprite_index == spr_dive || state == states.climbwall || sprite_index == spr_mach || sprite_index == spr_walljumpstart || sprite_index == spr_wm_roll))
 		if (wm || (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) || (ghostdash && sprite_index != spr_ghostidle) || state == states.machcancel || state == states.slipbanan || state == states.rideweenie || state == states.trickjump || state == states.ratmountbounce || state == states.noisecrusher || (state == states.pogo && pogochargeactive == true))
 		{
 			var arr = [[xscale, 0], [hsp + xscale, 0], [0, vsp + 1], [0, vsp - 1], [0, 1], [0, -1]];

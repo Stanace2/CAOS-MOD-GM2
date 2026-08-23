@@ -51,7 +51,7 @@ switch state
                         if (!grounded)  
                         {  
                             state = mbstates.ball 
-                            sprite_index = spr_lonebrick_roll  
+                            sprite_index = spr_m_roll  
                             vsp = 10  
                             hover = 0  
                         }  
@@ -70,6 +70,7 @@ switch state
         }  
         if (grounded && (sprite_index == spr_m_bb_air || sprite_index == spr_m_bb_air_loop))  
         {  
+			fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y)  
             sprite_index = spr_m_bb  
             image_index = 0  
         }  
@@ -134,6 +135,7 @@ switch state
         }  
         if (grounded && vsp > 0.5)  
         {  
+			fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y)  
             sprite_index = spr_m_bb  
             image_index = 0  
             state = mbstates.rolling
@@ -281,7 +283,7 @@ if exc
 }  
 if grounded  
     movespeed = Approach(movespeed, 15, 0.05)  
-if (sprite_index == spr_lonebrick_roll)  
+if (sprite_index == spr_m_roll)  
     image_speed = 0.55  
 else  
     image_speed = 0.35  

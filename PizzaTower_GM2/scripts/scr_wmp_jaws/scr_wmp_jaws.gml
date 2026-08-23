@@ -38,6 +38,7 @@ function scr_wmp_jaws() //gml_Script_scr_wmp_jaws
             movespeed = 8  
         if ((!key_down) && grounded && sprite_index == spr_wm_pounce_slide && (!(scr_solid(x, (y - 16)))) && (!(scr_solid(x, (y - 32)))))  
         {  
+			fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y)  
             flash = 1  
             sprite_index = spr_wm_pounce  
             if key_shoot  
@@ -50,6 +51,7 @@ function scr_wmp_jaws() //gml_Script_scr_wmp_jaws
         }  
         if (sprite_index == spr_wm_pounce_dive && grounded)  
         {  
+			fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y)  
             if (!key_down)  
             {  
                 flash = 1  
@@ -81,6 +83,7 @@ function scr_wmp_jaws() //gml_Script_scr_wmp_jaws
         {  
             if (grounded && vsp >= 0)  
             {  
+				fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y)  
                 if (move != 0)  
                 {  
                     if (xscale != move)  
@@ -98,6 +101,7 @@ function scr_wmp_jaws() //gml_Script_scr_wmp_jaws
     {  
         if (grounded && vsp >= 0)  
         {  
+			fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y)  
             if (move != 0)  
             {  
                 if (xscale != move)  
@@ -155,6 +159,7 @@ function scr_wmp_jaws() //gml_Script_scr_wmp_jaws
     }  
     if ((sprite_index == spr_wm_pouncestart_air || sprite_index == spr_wm_longjump || sprite_index == spr_wm_longjump_loop || sprite_index == spr_wm_pounce_dj || sprite_index == spr_wm_pounce_air) && grounded && vsp > 0.5)  
     {  
+		fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y)  
         flash = 1  
         sprite_index = spr_wm_pounce  
         if key_shoot  
@@ -164,7 +169,7 @@ function scr_wmp_jaws() //gml_Script_scr_wmp_jaws
             wmlongjumpbuffer = 1  
             image_index = 8  
         }  
-    }  
+    } 
     scr_wm_doyosh()  
     if (key_jump && (!grounded) && brick && sprite_index != spr_wm_pounce_dj)  
     {  
@@ -172,6 +177,7 @@ function scr_wmp_jaws() //gml_Script_scr_wmp_jaws
         input_buffer_chaos = 0  
         GamepadSetVibration(0, 0.8, 0.8, 0.65)  
         instance_create(x, y, obj_highjumpcloud2)  
+		fmod_event_one_shot_3d("event:/chaos-sfx/wm/wmdoublejump", x, y)  
         sprite_index = spr_wm_pounce_dj  
         image_index = 0  
         state = states.punch
@@ -233,6 +239,7 @@ function scr_wmp_jaws() //gml_Script_scr_wmp_jaws
                                 flash = 1  
                             xscale = move  
                         }  
+						fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y)  
                         input_buffer_chaos = 0  
                         sprite_index = spr_mach4  
                         state = states.mach3

@@ -12,10 +12,7 @@ if (!trapped)
     depth = obj_player1.depth + 1
     x = Approach(x, obj_player1.x, cbspeed)
     y = Approach(y, obj_player1.y, cbspeed)
-    if ((!obj_player1.callstored) && sprite_index != spr_m_flykicked)
-        cbspeed = Approach(cbspeed, 20, (comebackaccel / 5))
-    else
-        cbspeed = Approach(cbspeed, 45, comebackaccel)
+    cbspeed = Approach(cbspeed, 45, comebackaccel)
     if (sprite_index != spr_m_comeback && sprite_index != spr_m_flykicked)
         sprite_index = spr_m_comeback
 }

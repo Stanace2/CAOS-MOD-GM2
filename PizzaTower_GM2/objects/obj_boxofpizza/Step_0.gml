@@ -7,7 +7,7 @@ with (obj_player)
 	if (other.image_yscale == 1)
 	{
 		// While going down the pizzabox
-		var wmadd = (state == states.ratmountbounce && (vsp > 1 || key_down) && characterID == characters.wm && (place_meeting(x, (y + vsp), other) || place_meeting(x, (y + 1), other)) && (!instance_exists(obj_fadeout)))  
+		var wmadd = (state == states.ratmountbounce && (vsp > 1 || key_down) && characterID == characters.wm && place_meeting(x, (y + 1), other) && (!instance_exists(obj_fadeout)))  
 		if (wmadd || (((key_down && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other) && ((state == states.crouch || character == "S" || character == "M") || state == states.machroll || (state == states.tumble && sprite_index == spr_dive))) || ((state == states.crouchslide || (state == states.tumble && key_down) || state == states.machcancel || state == states.unknown300 || state == states.unknown303 || state == states.freefall || state == states.freefallland) && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor))
 		{
 			obj_player1.lastroom = room;

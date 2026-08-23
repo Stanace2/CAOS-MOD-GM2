@@ -21,10 +21,11 @@ function scr_wmp_attackprep()
         switch sprite_index  
         {  
             case spr_wm_balltokatana:  
-                movespeed = clingexitspeed  
-                if (movespeed < 15)  
+				if clingexitspeed != 0 && clingexitspeed >= 15
+                	movespeed = clingexitspeed  
+                if (movespeed < 15.5)  
                 {  
-                    movespeed = 15  
+                    movespeed = 15.5
                     with (instance_create(x, y, obj_wethamtornado))  
                     {  
                         state = wrstates.wait
@@ -35,6 +36,9 @@ function scr_wmp_attackprep()
                     }  
                     fmod_event_one_shot_3d("event:/chaos-sfx/wm/wetham/speedboost", x, y)  
                 }  
+				else if movespeed <= 16.5 {
+					movespeed += 2
+				}
                 if allowjawsfly  
                     jawsbuffer = 25  
                 allowjawsfly = 0  

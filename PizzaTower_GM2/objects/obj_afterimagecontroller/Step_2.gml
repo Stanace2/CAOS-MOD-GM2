@@ -12,8 +12,18 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 		}
 		switch (identifier)
 		{
+			case afterimagetype.wind:
+			case afterimagetype.ichaos:
+                alpha -= 0.05
+                if (alpha <= 0 && alarm[0] != 0)
+                    alarm[0] = 0
+                if (playerid != noone && instance_exists(playerid))
+                    visible = playerid.visible
+                else
+                    visible = 1
+                break
 			case afterimagetype.dummy:
-				if creation_state != playerid.state {
+				if creation_state != playerid.state || playerid.kickiw {
 					alarm[0] = 0;
 				}
 				visible = playerid.visible;
@@ -23,7 +33,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				//{
 				//	alarm[0] = 0;
 				//}
-				if creation_state != playerid.state {
+				if creation_state != playerid.state || playerid.kickiw {
 					alarm[0] = 0;
 				}
 				if (playerid.state == states.mach2 || playerid.state == states.mach1 || playerid.state == states.mach3)

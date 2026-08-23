@@ -50,6 +50,7 @@ function scr_wmp_ballmode()
             {  
                 if scr_slope()  
                 {  
+					fmod_event_one_shot_3d("event:/chaos-sfx/wm/wmpoundslope", x, y)  
                     with (instance_place(x, (y + 1), obj_slope))  
                     {  
                         other.xscale = (-sign(image_xscale))  
@@ -143,6 +144,7 @@ function scr_wmp_ballmode()
         }  
         image_index = 0  
         state = states.mach3  
+		fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y)  
         scr_wm_doroll()  
         if (key_shoot && (!key_down))  
             scr_wm_dokatana(true)  

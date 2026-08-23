@@ -8,8 +8,8 @@ function scr_character_spr_init(_hud = true) // starts only the necessary sprite
             scr_spr_dos()  
             break  
         case characters.wm:  
-			global.mach_color1 = make_colour_rgb(37, 255, 227) //sunset
-			global.mach_color2 = make_colour_rgb(255, 108, 251) //waves
+			global.mach_color1 = make_colour_rgb(37, 255, 227) //waves bottom 10, 61, 191
+			global.mach_color2 = make_colour_rgb(255, 108, 251) //sunset bottom 59, 25, 48
             scr_spr_wm()  
             break  
         case characters.fdos:  

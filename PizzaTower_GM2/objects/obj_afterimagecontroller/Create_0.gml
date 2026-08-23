@@ -11,7 +11,9 @@ enum afterimagetype
 	noise = 8,
 	gradientmap = 9,
 	dummy = 10,
-	last = 11
+	wind = 11,
+	ichaos = 12,
+	last = 13
 }
 
 depth = 1;

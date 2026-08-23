@@ -120,14 +120,46 @@ function scr_wmp_cling()
         vsp = 0  
         state = states.normal 
     }  
-    image_speed = 0.35 
 	if (sprite_index == spr_wm_wallclimb && vsp > 4)  
         sprite_index = spr_wm_wall_losingas  
-	if (sprite_index != spr_wm_cling)  
-    {  
-        sprite_index = spr_wm_cling  
-        image_index = 0  
-    }  
+	if (vsp > -4 && key_down) || (vsp > 18) || (sprite_index == spr_wethamcling_dive) || (sprite_index == spr_wethamcling_dive_start) {
+		if (sprite_index != spr_wethamcling_dive_start && sprite_index != spr_wethamcling_dive) {
+			if key_down
+				fmod_event_one_shot_3d("event:/chaos-sfx/wm/wetham/wallclingcancel", x, y)  
+			sprite_index = spr_wethamcling_dive_start
+			image_index = 0
+		}
+		if (ANIMATION_END && sprite_index == spr_wethamcling_dive_start)
+			sprite_index = spr_wethamcling_dive
+	}
+	else {
+		if place_meeting(x, y - 1, obj_solid) && sprite_index != spr_wm_cling && sprite_index != spr_wetham_runtocling {
+			if sprite_index == spr_wetham_wallrun {
+				sprite_index = spr_wetham_runtocling
+				image_index = 0
+			}
+			else
+				sprite_index = spr_wm_cling 
+		}
+		if (wallclingpulse > 0 && vsp < -4 && !place_meeting(x, y - 1, obj_solid) && sprite_index != spr_wm_cling && sprite_index != spr_wetham_runtocling)
+			sprite_index = spr_wetham_wallrun
+		else {
+			if (sprite_index == spr_wetham_wallrun) {
+				sprite_index = spr_wetham_runtocling
+				image_index = 0
+			}
+			if (ANIMATION_END && sprite_index == spr_wetham_runtocling)
+	    		sprite_index = spr_wm_cling  
+			if (sprite_index != spr_wm_cling && sprite_index != spr_wetham_runtocling && sprite_index != spr_wetham_wallrun)
+				sprite_index = spr_wm_cling  
+		}
+	}
+	if (!fmod_event_instance_is_playing(snd_wethamslide))
+		fmod_event_instance_play(snd_wethamslide)
+	var s = 0
+	if sprite_index != spr_wetham_wallrun
+		s = 1
+	fmod_event_instance_set_parameter(snd_wethamslide, "state", s, 1)
 	// Keeping this in just for nostalgia
 	/*
     if (sprite_index != spr_wm_cling && string_copy(sprite_get_name(sprite_index), 1, 11) != "spr_wm_wall")  
@@ -177,4 +209,5 @@ function scr_wmp_cling()
     }  
     scr_wm_dokatana()  
     scr_wm_dobombdive()  
+	image_speed = 0.35 
 }

@@ -1,6 +1,6 @@
 function scr_wm_lastbreath() {  
     var g_ex = (place_meeting(x, (y + 20), obj_solid) || place_meeting(x, (y + 20), obj_slope))  
-    if (((key_shoot && key_up) || key_superjump) && (grounded || g_ex) && (brick || instance_exists(obj_mango_companion)))  
+    if (((key_shoot && !key_slap && key_up) || key_superjump) && (grounded || g_ex) && (brick || instance_exists(obj_mango_companion)))  
     {  
         if instance_exists(obj_mango_companion)  
         {  
@@ -13,7 +13,6 @@ function scr_wm_lastbreath() {
         brick = 1  
         fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, (y + 50))  
         state = states.Sjump 
-        scr_wmp_Sjump()  
         sprite_index = spr_m_lastbreath  
         image_index = 0  
         image_speed = 0.35  
@@ -35,6 +34,7 @@ function scr_wm_lastbreath() {
             sprite_index = spr_R_lastbreath  
         }  
         vsp = -16  
+		scr_wmp_Sjump()  
         return true;  
     }  
     return false;  

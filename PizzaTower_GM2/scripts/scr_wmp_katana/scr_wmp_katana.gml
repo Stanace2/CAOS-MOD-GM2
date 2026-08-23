@@ -53,8 +53,6 @@ function scr_wmp_katana()
         katanawallexit = 0  
         return;  
     }  
-    if scr_wmp_uppercut()  
-        return;  
     move = key_left + key_right  
     if (movespeed < 12)  
         hsp = movespeed * (power(slashstored, -0.3)) * xscale  
@@ -149,11 +147,12 @@ function scr_wmp_katana()
             image_alpha = 0.8  
             sprite_index = spr_w_wallcurrent  
         }  
+		var min_wallspeed = 14
         fmod_event_one_shot_3d("event:/chaos-sfx/wm/wetham/wallcurrent", x, y)  
-        if (grounded && movespeed < 16)  
-            movespeed = 16  
-        if ((fakehsp < 16 || movespeed < 16) && fakehsp != 0)  
-            movespeed = 16  
+        if (grounded && movespeed < min_wallspeed)  
+            movespeed = min_wallspeed  
+        if ((fakehsp < min_wallspeed || movespeed < min_wallspeed) && fakehsp != 0)  
+            movespeed = min_wallspeed  
         else if (fakehsp > movespeed)  
             movespeed = fakehsp  
         scr_wm_dowallcling()  

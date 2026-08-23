@@ -92,6 +92,7 @@ function scr_displaydata(_display)
 		concat("debug markers: ", debugmarkers[0], " + ", debugmarkers[1], " + ", debugmarkers[2], " + ", debugmarkers[3]),
 		concat("hsp: ", hsp),
 		concat("vsp: ", vsp),
+		concat("grounded: ", grounded),
 		concat("movespeed: ", movespeed),
 		concat("state: ", state),
 		concat("xscale: ", xscale),

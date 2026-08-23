@@ -277,12 +277,26 @@ function draw_player()
 	{
 		spr = spr_noisepalette_rage;
 	}
+	if (iwalpha > 0)
+        scr_outline_sprite(_sprite_index, _image_index, x, y, (xscale * scale_xs), (yscale * scale_ys), angle, iwalpha, 0, 242, 255)
+    if (object_index == obj_player1) {
+		shader_set(global.Pal_Shader)
+        pattern_set(global.Base_Pattern_Color, _sprite_index, _image_index, (xscale * scale_xs), (yscale * scale_ys), pattern)
+	}
 	pal_swap_set(spr, ps, false);
 	draw_sprite_ext(_sprite_index, _image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
-	if (global.noisejetpack && ((ispeppino && characterID != characters.noise) || noisepizzapepper))
+	if (object_index == obj_player1) {
+		shader_reset()
+		pattern_reset()
+	}
+	if (global.noisejetpack && object_index == obj_player1 && ((ispeppino && characterID != characters.noise) || noisepizzapepper))
 	{
+		shader_set(global.Pal_Shader)
+        pattern_set(global.Base_Pattern_Color, _sprite_index, _image_index, (xscale * scale_xs), (yscale * scale_ys), pattern)
 		pal_swap_set(spr_palette, 2, false);
 		draw_sprite_ext(_sprite_index, _image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+		shader_reset()
+		pattern_reset()
 	}
 	draw_superslam_enemy();
 	if (global.pistol)

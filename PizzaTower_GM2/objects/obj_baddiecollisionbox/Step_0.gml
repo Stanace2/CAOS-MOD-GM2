@@ -15,6 +15,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 	{
 		with (obj_player)
 		{
+			var _instakill = (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
 			var _obj_player = id;
 			var _playerindex = (object_index == obj_player1) ? 1 : 2;
 			if (instance_exists(other.baddieID) && y < other.baddieID.y && other.baddieID.stompbuffer <= 0 && attacking == false && !global.kungfu && sprite_index != spr_player_mach2jump && ((state == states.boots && vsp > 0) || state == states.jump || (isgustavo && ratmount_movespeed < 12 && state == states.ratmountjump) || state == states.mach1 || state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
@@ -86,12 +87,33 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					state = states.ratmountjump;
 					image_index = 0;
 				}
-				if (characterID == characters.wm)
-                    instance_destroy(other.baddieID)
+				if (characterID == characters.wm && _instakill)
+                    Instakill();
 			}
-			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) || state != states.tumble) && ((state == states.handstandjump && global.attackstyle == 1) || instakillmove == true) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
+			var addons = state == states.ratmountbounce
+			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) || state != states.tumble) && ((state == states.handstandjump && global.attackstyle == 1) || addons || instakillmove == true) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
 			{
 				Instakill();
+				if (sprite_index == spr_w_spinkick)
+                {
+                    if (movespeed < 18)
+                        movespeed += 3
+                    else
+                        movespeed += 1.5
+                    if (movespeed < 12)
+                        movespeed = 12
+                    hsp = xscale * movespeed
+                    fmod_event_one_shot_3d("event:/chaos-sfx/wm/wetham/slash", x, y)
+                    with (instance_create((x + 50 * xscale + hsp), y, obj_wethamtornado))
+                    {
+                        state = states.normal
+                        image_xscale = other.xscale
+                        image_speed = 0.45
+                        image_alpha = 0.8
+                        sprite_index = spr_w_windpulse
+                    }
+                    fmod_event_one_shot_3d("event:/chaos-sfx/wm/wetham/speedboost", x, y)
+                }
 			}
 			else if (instance_exists(other.baddieID) && state == states.handstandjump && global.attackstyle == 0 && other.baddieID.invtime <= 0 && !other.baddieID.invincible)
 			{
@@ -243,9 +265,9 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 				other.baddieID.grabbedby = _playerindex;
 				pepp_grab = true;
 			}
-			var exec = (characterID == characters.wm && sprite_index == spr_wethamroll)
-            var allow = (characterID == characters.wm && state == states.slap)
-			if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (state == states.tumble || state == states.mach2 || state == states.machslide || sprite_index == spr_player_ratmountattack || sprite_index == spr_lonegustavo_dash) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == false && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
+			//var exec = (characterID == characters.wm && sprite_index == spr_wethamroll)
+            var allow = (characterID == characters.wm && (state == states.slap || sprite_index == spr_mach))
+			if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (allow || state == states.tumble || state == states.mach2 || state == states.machslide || sprite_index == spr_player_ratmountattack || sprite_index == spr_lonegustavo_dash) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == false && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
 			{
 				var lag = 0;
 				other.baddieID.stuntouchbuffer = 15;

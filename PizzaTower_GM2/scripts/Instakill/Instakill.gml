@@ -183,7 +183,7 @@ function Instakill()
 			}
 		}
 	}
-	if (characterID == characters.wm && (!brick))
+	if (characterID == characters.wm)
         return;
 	var _dos = (sprite_index != spr_snapjump && sprite_index != spr_snaphighjump && sprite_index != spr_spinkf && sprite_index != spr_rolljump && sprite_index != spr_machsplit_loop && sprite_index != spr_machsplit && sprite_index != spr_machdrill && sprite_index != spr_snapjumpstart && sprite_index != spr_snapjumpinter && state != states.Sjump)
 	if _dos

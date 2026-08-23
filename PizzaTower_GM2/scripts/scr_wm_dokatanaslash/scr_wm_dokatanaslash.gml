@@ -6,7 +6,8 @@ function scr_wm_dokatana(force_jaws = false, force_katana = false)
     {  
         if (wethamcombo[1] == 0)  
         {  
-			clingexitspeed = movespeed
+			if state != states.climbwall
+				clingexitspeed = movespeed
             if instance_exists(obj_mango_companion)  
             {  
                 with (obj_mango_companion)  
@@ -66,9 +67,10 @@ function scr_wm_dokatana(force_jaws = false, force_katana = false)
                 wethamcombo[1] = 1  
                 if (fakehsp != 0)  
                     movespeed = fakehsp  
-                if ((fakehsp < 13.5 && kpulsebuffer > 0 && (!grounded)) || (grounded && movespeed < 13.5))  
+				var boost_min = 13.5
+                if ((fakehsp < boost_min && kpulsebuffer > 0 && (!grounded)) || (grounded && movespeed < boost_min))  
                 {  
-                    movespeed = 13.5  
+                    movespeed = boost_min  
                     with (instance_create(x, y, obj_wethamtornado))  
                     {  
                         state = wrstates.wait
@@ -79,8 +81,10 @@ function scr_wm_dokatana(force_jaws = false, force_katana = false)
                     }  
                     fmod_event_one_shot_3d("event:/chaos-sfx/wm/wetham/speedboost", x, y)  
                 }  
+				else if movespeed <= 16 && movespeed >= boost_min
+					movespeed += 2
                 kpulsebuffer = 0  
-                fakehsp = 0  
+                fakehsp = 0 
             }  
             if ((!grounded) && vsp > lj_th)  
                 vsp = 0  
@@ -143,17 +147,17 @@ function scr_wm_dokatana(force_jaws = false, force_katana = false)
                 xscale *= -1  
                 if place_meeting(x, y, obj_destructibles)  
                     xscale *= -1  
-                if (clingexitspeed >= 16)  
+                if (clingexitspeed >= 14)  
                     movespeed = clingexitspeed  
                 else  
-                    movespeed = 16  
+                    movespeed = 14 
                 katanawallexit = 1  
             }  
             else if (move != 0)  
                 xscale = move  
             if (state == states.punch)  
                 wethamcombo[3] = 1  
-            if (state == states.punch || (state == states.ratmountbounce && ballvertical == 0) || (state == states.mach3 && (sprite_index == spr_wm_katanaboost || sprite_index == spr_wm_katanaboost_loop)))  
+            if (state == states.punch || (state == states.ratmountbounce) || (state == states.mach3 && (sprite_index == spr_wm_katanaboost || sprite_index == spr_wm_katanaboost_loop)))  
             {  
                 if (state == states.punch && move != xscale && move != 0)  
                     movespeed = 0  

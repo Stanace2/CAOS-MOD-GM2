@@ -51,6 +51,7 @@ function scr_wmp_doublejump() //gml_Script_scr_wmp_doublejump
             }  
             else  
             {  
+				fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y) 
                 sprite_index = spr_mach4  
                 state = states.mach3  
             }  

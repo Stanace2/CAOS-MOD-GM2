@@ -13,7 +13,7 @@ var yoff = sprite_get_yoffset(sprite_index)
 if (image_xscale == -1)  
     xoff *= -1  
 var _list = ds_list_create()  
-var ender = collision_rectangle_list((x + 80 * image_xscale - xoff), (y + 28 - yoff), (x + abs(sprite_width) * image_xscale - xoff), (y + sprite_height - 3 - yoff), 596, 0, 0, _list, 0)  
+var ender = collision_rectangle_list((x + 80 * image_xscale - xoff), (y + 28 - yoff), (x + abs(sprite_width) * image_xscale - xoff), (y + sprite_height - 3 - yoff), obj_destructibles, 0, 0, _list, 0)  
 if (ender > 0)  
 {  
     for (var i = 0; i < ender; i++)  

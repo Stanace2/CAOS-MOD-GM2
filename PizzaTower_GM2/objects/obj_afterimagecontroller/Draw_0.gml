@@ -76,14 +76,36 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 					pal_swap_set(playerid.spr_palette, playerid.paletteselect, false);
 				}
 			}
+			else if (identifier == afterimagetype.wind)
+            {
+                a = alpha
+                shd = true
+                var ex = global.wdodge_color1
+                var tail_ex = global.wdodge_color2
+                scr_colormap(shd_gm_full, tail_ex[0], tail_ex[1], tail_ex[2], ex[0], ex[1], ex[2])
+            }
 			else {
 				shd = true;
 				var _shader = shd_gm_full_filterless;
+				var _br = 0
+				var _bg = 0
+				var _bb = 0
 				if (variable_struct_exists(self, "playerid")) {
-					if playerid.characterID == characters.dos
+					if playerid.characterID == characters.dos || playerid.characterID == characters.wm
 						_shader = shd_gm_afterimage;
+					if playerid.characterID == characters.wm {
+						if colour_get_red(b) == 37 {
+							_br = 7
+							_bg = 37
+							_bb = 43
+						} else {
+							_br = 59
+							_bg = 25
+							_bb = 48
+						}
+					}
 				}
-				scr_colormap(_shader, 0, 0, 0, colour_get_red(b), colour_get_green(b), colour_get_blue(b))
+				scr_colormap(_shader, _br, _bg, _bb, colour_get_red(b), colour_get_green(b), colour_get_blue(b))
 				b = c_white
 			}
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, a);

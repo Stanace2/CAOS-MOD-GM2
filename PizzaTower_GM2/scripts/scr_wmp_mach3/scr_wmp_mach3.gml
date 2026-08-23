@@ -116,6 +116,8 @@ function scr_wmp_mach3()
             }  
             if (move == xscale && grounded && movespeed < speedCap)  
                 movespeed += accel  
+			if (movespeed > 16 && grounded && vsp >= 0.5)
+				movespeed = Approach(movespeed, 16, 0.05)
             mach2 = 100  
             momemtum = 1  
             move = key_right + key_left  
@@ -173,7 +175,7 @@ function scr_wmp_mach3()
             }  
             if (fightball == 0 && sprite_index != spr_wm_airspin && sprite_index != spr_wm_katanaboost && sprite_index != spr_wm_katanaboost_loop && sprite_index != spr_wm_katanaboost_recover)  
             {  
-                if (grounded && vsp >= 0)  
+                if (grounded && vsp >= 0)
                     sprite_index = mach3_spr  
                 else  
                     sprite_index = mach3jump_spr  

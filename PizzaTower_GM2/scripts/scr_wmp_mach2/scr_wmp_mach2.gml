@@ -62,8 +62,11 @@ function scr_wmp_mach2() //gml_Script_scr_wmp_mach2
     {  
         if (movespeed < 12)  
             state = states.normal
-        else  
+        else {
+			if brick
+				fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y)  
             state = states.mach3
+		}
     }  
     if scr_wm_lastbreath()  
         return;  

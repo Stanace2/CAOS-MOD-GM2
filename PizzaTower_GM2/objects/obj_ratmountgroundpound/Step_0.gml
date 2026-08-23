@@ -7,6 +7,7 @@ if (!kicked)
 	x = obj_player.x - (obj_player.xscale * 10);
 	y = obj_player.y + 60;
 }
+vsp += 2
 if (hitbox == false)
 {
 	with (instance_create(x, y, obj_shotgunbullet))

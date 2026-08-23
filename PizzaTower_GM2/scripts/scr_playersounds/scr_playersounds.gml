@@ -98,7 +98,7 @@ function scr_playersounds()
 			{
 				s = 1;
 			}
-			else if ((state == states.mach2 && sprite_index == spr_mach) || state == states.climbwall)
+			else if ((state == states.mach2 && sprite_index == spr_mach) || (state == states.climbwall && characterID != characters.wm))
 			{
 				s = 2;
 			}

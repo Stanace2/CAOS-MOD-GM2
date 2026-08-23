@@ -227,9 +227,19 @@ if characterID == characters.wm {
     }  
 	if state != states.ratmountbounce && state != states.slap && state != states.punch && state != states.freefall && state != states.freefallland && state != states.climbwall
 		clingexitspeed = 0
+	if (state == states.mach3 && !grounded)
+		can_sktsnd = true;
+	if can_sktsnd && state != states.mach3
+		can_sktsnd = false;
+	if grounded && (brick || instance_exists(obj_mango_companion)) && can_sktsnd {
+		can_sktsnd = false;
+		fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mskateland", x, y);
+	}
     // Doublejump copter sound reset
     if (sprite_index != spr_wm_djump)  
         fmod_event_instance_stop(wmcopter, 1)  
+	if (state != states.climbwall)  
+        fmod_event_instance_stop(snd_wethamslide, 1)  
 }
 if instance_exists(obj_debugcontroller) && obj_debugcontroller.DEBUG {
 	if keyboard_check(ord("1"))

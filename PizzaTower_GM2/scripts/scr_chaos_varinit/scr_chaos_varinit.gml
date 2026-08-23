@@ -131,25 +131,36 @@ function scr_chaos_varinit() {
 	
 	// ==========FMOD==========
 	//// Donisha
-	//Mach engine feedback
+	// Mach engine feedback
 	machenginesnd = fmod_event_create_instance("event:/chaos-sfx/donisha/machEngine")
 	fmod_event_instance_set_parameter(machenginesnd, "state", 0, 1)
-	//Mach5 run soundeffect
+	// Mach5 run soundeffect
 	mach5snd = fmod_event_create_instance("event:/chaos-sfx/donisha/mach5sup")
-	//Rolljump
+	// Rolljump
 	rolljumpsnd = fmod_event_create_instance("event:/chaos-sfx/donisha/rolljump")
-	//General quick spins
+	// General quick spins
 	dosspinsnd = fmod_event_create_instance("event:/chaos-sfx/donisha/machsplitspin")
 	
 	//// Wetham and Mango
-	//WM superjump spin soundeffect
+	// WM superjump spin soundeffect
 	mangospinsnd = fmod_event_create_instance("event:/chaos-sfx/wm/mango/mspin")
-	//WM superjump ceiling soundeffect
+	// WM superjump ceiling soundeffect
 	mangospinceilingsnd = fmod_event_create_instance("event:/chaos-sfx/wm/mango/mspinceiling")
-	//Wetham kicking Mango soundeffect
+	// Wetham kicking Mango soundeffect
 	snd_wethamkick = fmod_event_create_instance("event:/chaos-sfx/wm/wmbrickkick")
 	fmod_event_instance_set_parameter(snd_wethamkick, "state", 0, 1)
-	//Doublejump spin soundeffect
+	wethamkick = 0
+	// Doublejump spin soundeffect
 	wmcopter = fmod_event_create_instance("event:/chaos-sfx/wm/wmcopter")
 	fmod_event_instance_set_parameter(wmcopter, "speed", 0, 1)
+	// Galloping
+	ratmountgallopsnd = fmod_event_create_instance("event:/sfx/ratmount/gallop")
+	// Groundpound
+	wm_groundpoundsnd = fmod_event_create_instance("event:/chaos-sfx/wm/wmdivebomb");
+	// Wetham wallsliding
+	snd_wethamslide = fmod_event_create_instance("event:/chaos-sfx/wm/wetham/wallcling")
+	fmod_event_instance_set_parameter(snd_wethamslide, "state", 0, 1)
+	// SkateRolling
+	m_rollingsound = fmod_event_create_instance("event:/chaos-sfx/wm/mango/mskateroll");
+	can_sktsnd = false;
 }

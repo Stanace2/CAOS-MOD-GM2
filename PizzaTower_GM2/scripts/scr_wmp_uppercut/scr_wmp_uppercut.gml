@@ -64,7 +64,7 @@ function scr_wmp_uppercut() {
             vsp = -11
             image_index = 0
             sprite_index = spr_w_spinball
-            state = states.mach4
+            state = states.mach2
         }
         return true;
     }

@@ -1,5 +1,5 @@
 var roomname = string_letters(room_get_name(room));
-if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
+if ((place_meeting(x, y, obj_player) || force) && sprite_index == spr_pizzaboxunopen)
 {
 	global.combotime = 60;
 	fmod_event_one_shot("event:/sfx/misc/collecttoppin");
@@ -50,7 +50,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		{
 			number = "1000";
 		}
-		if (place_meeting(x, y, obj_player1))
+		if (place_meeting(x, y, obj_player1) || force)
 		{
 			global.collect += 1000;
 		}
@@ -89,7 +89,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		{
 			number = "1000";
 		}
-		if (place_meeting(x, y, obj_player1))
+		if (place_meeting(x, y, obj_player1) || force)
 		{
 			global.collect += 1000;
 		}
@@ -128,7 +128,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		{
 			number = "1000";
 		}
-		if (place_meeting(x, y, obj_player1))
+		if (place_meeting(x, y, obj_player1) || force)
 		{
 			global.collect += 1000;
 		}
@@ -167,7 +167,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		{
 			number = "1000";
 		}
-		if (place_meeting(x, y, obj_player1))
+		if (place_meeting(x, y, obj_player1) || force)
 		{
 			global.collect += 1000;
 		}
@@ -206,7 +206,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		{
 			number = "1000";
 		}
-		if (place_meeting(x, y, obj_player1))
+		if (place_meeting(x, y, obj_player1) || force)
 		{
 			global.collect += 1000;
 		}

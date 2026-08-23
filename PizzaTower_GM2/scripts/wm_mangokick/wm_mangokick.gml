@@ -31,13 +31,10 @@ function wm_mangokick() //gml_Script_wm_mangokick
         {
             movespeed = 8
             sprite_index = spr_w_kick
-            fmod_event_one_shot_3d("event:/chaos-sfx/wm/wmbrickkick_slow", x, y)
         }
         else
-        {
             sprite_index = spr_wetham_machmango_kick
-            fmod_event_one_shot_3d("event:/chaos-sfx/wm/wmbrickkick", x, y)
-        }
+
         image_index = 0
         brick = false
         return true;

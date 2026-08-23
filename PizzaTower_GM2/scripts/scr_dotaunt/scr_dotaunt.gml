@@ -33,6 +33,15 @@ function scr_dotaunt()
 			state = states.backbreaker;
 			if (supercharged && key_up)
 			{
+				if instance_exists(obj_mango_companion)
+                {
+                    with (obj_mango_companion)
+                    {
+                        instance_destroy(tauntID)
+                        instance_destroy()
+                    }
+                    brick = 1
+                }
 				ini_open_from_string(obj_savesystem.ini_str);
 				ini_write_real("Game", "supertaunt", true);
 				obj_savesystem.ini_str = ini_close();

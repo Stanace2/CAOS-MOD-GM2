@@ -19,3 +19,4 @@ recover_distance = 1350
 depth = obj_player1.depth + 1  
 image_speed = 0.35  
 instance_create(x, y, obj_mango_brickball_indicator)
+m_rollingsound = fmod_event_create_instance("event:/chaos-sfx/wm/mango/mskateroll")
