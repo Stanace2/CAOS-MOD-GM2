@@ -142,7 +142,7 @@ function draw_enemy(_draw_healthbar, _pal, _color = c_white)
 			pal_swap_set(spr_peppalette, 0);
 			if (!global.swapmode)
 			{
-				if ((object_index == obj_fakepepboss || object_index == obj_gustavograbbable) && obj_player1.ispeppino)
+				if ((object_index == obj_fakepepboss || object_index == obj_gustavograbbable) && obj_player1.ispeppino && obj_player1.characterID != characters.noise)
 				{
 					pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale * xscale, image_yscale * yscale, global.palettetexture);
 				}
@@ -243,7 +243,7 @@ function draw_player()
 		}
 		exit;
 	}
-	if (!ispeppino && state == states.trashstart)
+	if ((!ispeppino || characterID == characters.noise) && state == states.trashstart)
 	{
 		exit;
 	}
@@ -258,7 +258,7 @@ function draw_player()
 		_sprite_index = pistolanim;
 		_image_index = pistolindex;
 	}
-	if (ispeppino && room == boss_noise && (sprite_index == spr_playerN_doiseintro1 || sprite_index == spr_playerN_doiseintro2 || sprite_index == spr_playerN_doiseintro3))
+	if ((ispeppino || characterID == characters.pep) && room == boss_noise && (sprite_index == spr_playerN_doiseintro1 || sprite_index == spr_playerN_doiseintro2 || sprite_index == spr_playerN_doiseintro3))
 	{
 		var info = get_noise_palette_info();
 		pattern = info.patterntexture;
@@ -273,17 +273,32 @@ function draw_player()
 	{
 		spr = spr_ratmountpalette;
 	}
-	if (!ispeppino && instance_exists(obj_pizzaface_thunderdark))
+	if ((!ispeppino || characterID == characters.noise) && instance_exists(obj_pizzaface_thunderdark))
 	{
 		spr = spr_noisepalette_rage;
 	}
+	if (iwalpha > 0)
+        scr_outline_sprite(_sprite_index, _image_index, x, y, (xscale * scale_xs), (yscale * scale_ys), angle, iwalpha, 0, 242, 255)
+    if (object_index == obj_player1) {
+		shader_set(global.Pal_Shader)
+        pattern_set(global.Base_Pattern_Color, _sprite_index, _image_index, (xscale * scale_xs), (yscale * scale_ys), pattern)
+	}
 	pal_swap_set(spr, ps, false);
 	draw_sprite_ext(_sprite_index, _image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
-	if (global.noisejetpack && (ispeppino || noisepizzapepper))
+	if (object_index == obj_player1) {
+		shader_reset()
+		pattern_reset()
+	}
+	if (global.noisejetpack && object_index == obj_player1 && ((ispeppino && characterID != characters.noise) || noisepizzapepper))
 	{
+		shader_set(global.Pal_Shader)
+        pattern_set(global.Base_Pattern_Color, _sprite_index, _image_index, (xscale * scale_xs), (yscale * scale_ys), pattern)
 		pal_swap_set(spr_palette, 2, false);
 		draw_sprite_ext(_sprite_index, _image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+		shader_reset()
+		pattern_reset()
 	}
+	shader_set(global.Pal_Shader)
 	draw_superslam_enemy();
 	if (global.pistol)
 	{

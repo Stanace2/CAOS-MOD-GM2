@@ -1,5 +1,38 @@
 function scr_player_handstandjump()
 {
+	// Fightmode
+	if (fightmode && characterID == characters.dos && !global.manners && (!instance_exists(obj_pizzaface_thunderdark)))
+	{
+	    if (!grounded)
+	    {
+	        state = states.punch
+	        flash = 1
+	        fmod_event_one_shot_3d("event:/sfx/pep/grabcancel", x, y)
+	        sprite_index = choose(spr_kungfuair1, spr_kungfuair2, spr_kungfuair3)
+			image_index = 0  
+			movespeed = 13  
+		}  
+		else  
+		{  
+			state = states.punch
+			flash = 1  
+			fmod_event_one_shot_3d("event:/sfx/pep/grabcancel", x, y)  
+			sprite_index = choose(spr_kungfu1, spr_kungfu2, spr_kungfu3)
+	        image_index = 0
+	        movespeed = 13
+	    }
+	    return;
+	}
+	else
+	{
+	    if (shoot == 1)
+	        var attackdash = spr_player_pistolshot
+	    else
+	        attackdash = spr_suplexdash
+	    var airattackdash = spr_suplexdashjump
+	    var airattackdashstart = spr_suplexdashjumpstart
+	}
+	
 	landAnim = false;
 	hsp = xscale * movespeed;
 	move = key_left + key_right;
@@ -19,7 +52,11 @@ function scr_player_handstandjump()
 			}
 			else if (movespeed < 10)
 			{
-				movespeed += 0.5;
+				// H e r e
+	            if (characterID == characters.pep || (global.manners && characterID == characters.dos) || global.noisejetpack || instance_exists(obj_pizzaface_thunderdark))
+	                movespeed += 0.5
+	            else
+	                movespeed += 0.1
 			}
 		}
 	}
@@ -33,7 +70,9 @@ function scr_player_handstandjump()
 			}
 			else if (movespeed < 10)
 			{
-				movespeed += 0.5;
+				// H e r e
+	            if (characterID == characters.pep || global.noisejetpack || (characterID == characters.dos && (global.manners)) || instance_exists(obj_pizzaface_thunderdark))
+	                movespeed += 0.5
 			}
 		}
 		if (global.pummeltest && !instance_exists(lungeattackID))
@@ -45,20 +84,20 @@ function scr_player_handstandjump()
 			}
 		}
 	}
-	if (shoot == true)
-	{
-		var attackdash = spr_player_pistolshot;
-	}
-	else
-	{
-		var attackdash = spr_suplexdash;
-	}
+	//if (shoot == true)
+	//{
+	//	var attackdash = spr_player_pistolshot;
+	//}
+	//else
+	//{
+	//	var attackdash = spr_suplexdash;
+	//}
 	if (sprite_index == spr_player_lungestart && ANIMATION_END)
 	{
 		sprite_index = spr_player_lunge;
 	}
-	var airattackdash = spr_suplexdashjump;
-	var airattackdashstart = spr_suplexdashjumpstart;
+	//var airattackdash = spr_suplexdashjump;
+	//var airattackdashstart = spr_suplexdashjumpstart;
 	if (global.attackstyle == 2)
 	{
 		vsp = 0;
@@ -119,6 +158,9 @@ function scr_player_handstandjump()
 		state = states.mach2;
 		grav = 0.5;
 	}
+	
+	doSnapjump()
+	
 	if (scr_mach_check_dive() && grounded && global.attackstyle != 2)
 	{
 		with (instance_create(x, y, obj_jumpdust))
@@ -138,7 +180,7 @@ function scr_player_handstandjump()
 	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && scr_slope()))
 	{
 		var _climb = true;
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			_climb = ledge_bump(32, abs(hsp) + 1);
 		}

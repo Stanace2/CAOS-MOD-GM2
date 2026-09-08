@@ -1,0 +1,2 @@
+- Add health palette to the hp and sprite changer
+- Add player props to sprite changer

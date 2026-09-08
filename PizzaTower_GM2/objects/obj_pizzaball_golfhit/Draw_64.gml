@@ -17,7 +17,7 @@ draw_text_color(x - 91, y - 117, hit, c_white, c_white, c_white, c_white, 1);
 draw_text_color(tx, ty, primoburg, c_white, c_white, c_white, c_white, 1);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-if (!obj_player1.ispeppino)
+if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise)
 {
 	if (hand_shake != 0)
 	{

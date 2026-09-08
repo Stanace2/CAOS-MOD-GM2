@@ -2,7 +2,7 @@ with (other)
 {
 	if ((state == states.ghost || (state == states.chainsaw && tauntstoredstate == states.ghost)) && other.visible == true)
 	{
-		if (ispeppino)
+		if (ispeppino && obj_player1.characterID != characters.noise)
 		{
 			ghostdash = true;
 		}

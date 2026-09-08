@@ -23,7 +23,7 @@ function scr_player_boxxedpepspin()
 		movespeed = -(sign(hsp) * 6);
 		GamepadSetVibration(0, 0.4, 0.4, 0.65);
 	}
-	if (ispeppino)
+	if (ispeppino && characterID != characters.noise)
 	{
 		if ((!key_slap || abs(movespeed) <= 3) && boxxedspinbuffer == 0)
 		{

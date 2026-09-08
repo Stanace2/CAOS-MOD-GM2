@@ -1,5 +1,15 @@
 function scr_player_machslide()
 {
+	switch characterID
+    {
+        case characters.wm:
+            scr_wmp_skid()
+            return;
+    }
+	
+	if (sprite_index == spr_mach3boost || sprite_index == spr_machslideboost)
+        doSnapjump()
+	
 	if (!place_meeting(x, y + 1, obj_railparent))
 	{
 		hsp = xscale * movespeed;

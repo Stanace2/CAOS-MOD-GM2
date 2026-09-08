@@ -2,7 +2,9 @@ if (place_meeting(x, y - 1, obj_player1))
 {
 	with (obj_player1)
 	{
-		if (place_meeting(x, y + 1, obj_ladder) && !place_meeting(other.x + 16, y + 1, obj_solid) && key_down && ladderbuffer <= 0 && (state == states.crouch || ((character == "S" || character == "M") && (state == states.normal || state == states.mach1))) && place_meeting(x, y + 1, obj_platform))
+		var wmp = (characterID == characters.wm && (state == states.crouch || state == states.tumble))
+		var exec = sprite_index == spr_wm_pounce_slide
+		if (!exec && place_meeting(x, y + 1, obj_ladder) && !place_meeting(other.x + 16, y + 1, obj_solid) && key_down && ladderbuffer <= 0 && (wmp || state == states.crouch || ((character == "S" || character == "M") && (state == states.normal || state == states.mach1))) && place_meeting(x, y + 1, obj_platform))
 		{
 			y += 5;
 			state = states.ladder;

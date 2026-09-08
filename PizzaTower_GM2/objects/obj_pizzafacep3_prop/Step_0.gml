@@ -8,7 +8,7 @@ if (use_collision)
 			with (obj_player1)
 			{
 				sprite_index = obj_player.spr_yellnerves;
-				if (!ispeppino)
+				if (!ispeppino || obj_player1.characterID == characters.noise)
 				{
 					sprite_index = spr_playerN_bosscutscene1;
 				}

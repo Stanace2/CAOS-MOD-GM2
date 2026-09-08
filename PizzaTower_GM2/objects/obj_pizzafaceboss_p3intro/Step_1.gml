@@ -238,7 +238,7 @@ switch (introstate)
 			with (obj_player1)
 			{
 				sprite_index = spr_yellstart;
-				if (!ispeppino)
+				if (!ispeppino || obj_player1.characterID == characters.noise)
 				{
 					fmod_event_one_shot_3d("event:/sfx/playerN/supernoiseeffect", x, y);
 					sprite_index = spr_playerN_phase3intro1;
@@ -274,8 +274,8 @@ switch (introstate)
 			shot = false;
 			with (obj_player1)
 			{
-				sprite_index = spr_pizzahead_pepintro;
-				if (!ispeppino)
+				sprite_index = spr_vspizzahead_scream;
+				if (!ispeppino || obj_player1.characterID == characters.noise)
 				{
 					sprite_index = spr_playerN_phase3intro2;
 				}
@@ -373,7 +373,7 @@ switch (introstate)
 			introstate++;
 			with (obj_player1)
 			{
-				if (!ispeppino)
+				if (!ispeppino || obj_player1.characterID == characters.noise)
 				{
 					fmod_event_one_shot("event:/sfx/playerN/supernoisescream");
 				}
@@ -386,9 +386,9 @@ switch (introstate)
 					sprite_index = spr_superdashcloud;
 				}
 				hsp = 14;
-				sprite_index = spr_player_lunge;
+				sprite_index = spr_vspizzahead_lunge;
 				image_index = 7;
-				if (!ispeppino)
+				if (!ispeppino || obj_player1.characterID == characters.noise)
 				{
 					sprite_index = spr_playerN_phase3intro3;
 					image_index = 0;

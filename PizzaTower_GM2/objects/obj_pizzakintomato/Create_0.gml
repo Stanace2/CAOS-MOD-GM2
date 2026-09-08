@@ -1,4 +1,6 @@
 event_inherited();
+if obj_player1.characterID == characters.dos
+	tv_do_expression(spr_tv_exprcollect_tomato_dos, true);
 spr_intro = spr_toppintomato_intro;
 spr_idle = spr_toppintomato;
 spr_run = spr_toppintomato_run;

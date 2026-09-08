@@ -1,0 +1,55 @@
+dir = obj_player1.xscale  
+space = 0  
+maxspace = 1  
+spaceaccel = 0.2  
+lastplayerposx = obj_player1.x  
+lastplayerposy = obj_player1.y  
+playerid = obj_player1.id  
+xoffset = 80  
+yoffset = 0  
+LAG_STEPS = 8  
+instakilled = 0  
+use_collision = 0  
+interp = 0.05  
+relinterp = 1  
+lock = 0  
+hsp = 0  
+vsp = 0  
+hsp_carry = 0  
+vsp_carry = 0  
+platformid = -4  
+grav = 0.5  
+grounded = 0  
+followqueue = ds_queue_create()  
+dummylist = ds_list_create()  
+ds_list_add_unique(dummylist, id)  
+pos = ds_list_find_index(dummylist, id)  
+followid = (pos > 0 ? ds_list_find_value(dummylist, (pos - 1)) : -4)  
+image_speed = 0.35  
+comeback = 0  
+cbspeed = 8  
+wait = 0  
+trapped = 0  
+baddieID = -4  
+state = mstates.follower 
+substate = playerid.state  
+relativestate = playerid.state  
+savedstate = state  
+savedsubstate = substate  
+savedsprite = sprite_index  
+savedin = 0  
+tauntID = -4  
+moving = 1  
+grounded = 1  
+xprev = x  
+solidarr = [obj_solid, obj_slope, obj_platform]  
+flash = 0  
+slashbuffer = 0  
+depth = obj_player1.depth  
+visible = 0  
+if obj_player.callstored  
+{  
+    wait = 0  
+    comeback = 1  
+}  
+poof = 1

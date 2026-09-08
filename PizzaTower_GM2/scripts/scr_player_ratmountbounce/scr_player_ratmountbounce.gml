@@ -1,6 +1,12 @@
 function scr_player_ratmountbounce()
 {
-	if (!ispeppino)
+	if (characterID == characters.wm)
+	{
+	    scr_wmp_ballmode()
+	    return;
+	}
+
+	if (!ispeppino || (characterID == characters.noise && !isgustavo))
 	{
 		isgustavo = false;
 		scr_player_noisecrusher();

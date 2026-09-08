@@ -1,6 +1,6 @@
 function scr_player_balloon()
 {
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		image_speed = 0.35;
 		hsp = movespeed;

@@ -85,37 +85,56 @@ function scr_displaydata(_display)
 {
     if (!_display)
         return;
-    draw_set_font(lang_get_font("creditsfont"))
+    draw_set_font(lang_get_font("smallfont"))
     draw_set_halign(fa_left)
     draw_set_valign(fa_top)
-    draw_text(10, 80, concat("hsp: ", hsp))
-    draw_text(10, 100, concat("vsp: ", vsp))
-    draw_text(10, 120, concat("movespeed: ", movespeed))
-    draw_text(10, 140, concat("state: ", state))
-    draw_text(10, 160, concat("xscale: ", xscale))
-    draw_text(10, 180, concat("move: ", (key_left + key_right)))
-    draw_text(10, 200, concat("in_buffer_s: ", input_buffer_chaos))
-    draw_text(10, 220, concat("in_buffer_j: ", input_buffer_jump))
-    draw_text(10, 240, concat("room: ", room_get_name(room)))
-    draw_text(10, 260, concat("sprite: ", sprite_get_name(sprite_index)))
-    draw_text(10, 280, concat("brick: ", brick))
-    draw_text(10, 300, concat("imagespeed: ", image_speed))
-	draw_text(10, 320, concat("imageindex: ", image_index))
-    //draw_text(10, 320, concat("clingexitspeed: ", clingexitspeed))
+	var _arr = [
+		concat("debug markers: ", debugmarkers[0], " + ", debugmarkers[1], " + ", debugmarkers[2], " + ", debugmarkers[3]),
+		concat("x: ", x, " y: ", y),
+		concat("hsp: ", hsp),
+		concat("vsp: ", vsp),
+		concat("grounded: ", grounded),
+		concat("movespeed: ", movespeed),
+		concat("state: ", state),
+		concat("xscale: ", xscale),
+		concat("move: ", (key_left + key_right)),
+		concat("in_buffer_s: ", input_buffer_chaos),
+		concat("in_buffer_j: ", input_buffer_jump),
+		concat("room: ", room_get_name(room)),
+		concat("sprite: ", sprite_get_name(sprite_index)),
+		concat("brick: ", brick),
+		concat("clingexit: ", clingexitspeed),
+		concat("imagespeed: ", image_speed),
+		concat("imageindex: ", image_index),
+		concat("sv_cheats: ", global.sv_cheats)
+	]
+	var _padding = 8;
+	var _offset = 0;
+	for (var i = 0; i < array_length(_arr); i++) {
+		var tw = string_width(_arr[i])
+		var th = string_height(_arr[i])
+		draw_sprite_ext(spr_fontbg,0,
+			0,
+			_offset + sprite_get_yoffset(spr_smallerfont), 
+			string_length(_arr[i]) * sprite_get_width(spr_smallerfont), 
+			sprite_get_height(spr_smallerfont) - sprite_get_yoffset(spr_smallerfont),
+			0,c_black,0.6)
+		draw_text(10, _offset, string_upper(_arr[i]))
+		_offset += 20
+	}
+    //concat("clingexitspeed: ", clingexitspeed)
 }
 
-/*
-function scr_colormap(argument0, argument1, argument2, argument3, argument4, argument5, argument6) //gml_Script_scr_colormap
+function scr_colormap(_shader, _tr, _tg, _tb, _nr, _ng, _nb)
 {
-    shader_set(argument0)
-    shader_set_uniform_f(shader_get_uniform(argument0, "tailR"), argument1)
-    shader_set_uniform_f(shader_get_uniform(argument0, "tailG"), argument2)
-    shader_set_uniform_f(shader_get_uniform(argument0, "tailB"), argument3)
-    shader_set_uniform_f(shader_get_uniform(argument0, "noseR"), argument4)
-    shader_set_uniform_f(shader_get_uniform(argument0, "noseG"), argument5)
-    shader_set_uniform_f(shader_get_uniform(argument0, "noseB"), argument6)
+    shader_set(_shader)
+    shader_set_uniform_f(shader_get_uniform(_shader, "tailR"), _tr)
+    shader_set_uniform_f(shader_get_uniform(_shader, "tailG"), _tg)
+    shader_set_uniform_f(shader_get_uniform(_shader, "tailB"), _tb)
+    shader_set_uniform_f(shader_get_uniform(_shader, "noseR"), _nr)
+    shader_set_uniform_f(shader_get_uniform(_shader, "noseG"), _ng)
+    shader_set_uniform_f(shader_get_uniform(_shader, "noseB"), _nb)
 }
-*/
 
 function scr_outline_sprite(_sprindex, _imgindex, _x, _y, _xscale, _yscale, _angle, _alpha, _R, _G, _B)
 {
@@ -155,7 +174,7 @@ function mango_ledge_bump(hicup, amount)
     var old_x = x
     var old_y = y
     x += (image_xscale * amount)
-    var ty = try_solid(0, -1, 574, hicup)
+    var ty = try_solid(0, -1, obj_solid, hicup)
     x = old_x
     if (ty != -1)
     {
@@ -170,4 +189,35 @@ function mango_ledge_bump(hicup, amount)
         return false;
     }
     return true;
+}
+
+function palette_pepfilter(name = "") 
+{
+	if name != "" {
+		if (name == "classic" ||
+		name == "unfunny" ||
+		name == "money" ||
+		name == "sage" ||
+		name == "blood" ||
+		name == "tv" ||
+		name == "dark" ||
+		name == "shitty" ||
+		name == "golden" ||
+		name == "garish" ||
+		name == "mooney" ||
+		name == "funny" ||
+		name == "itchy" ||
+		name == "pizza" ||
+		name == "stripes" ||
+		name == "goldemanne" ||
+		name == "bones" ||
+		name == "pp" ||
+		name == "war" ||
+		name == "john") 
+		{
+			return true;
+		}
+		return false;
+	}
+	return false;
 }

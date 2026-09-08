@@ -1,5 +1,12 @@
 function scr_player_crouch()
 {
+	switch characterID
+    {
+        case characters.wm:
+            scr_wmp_crouch()
+            return;
+    }
+	
 	move = key_left + key_right;
 	if (!place_meeting(x, y + 1, obj_railparent))
 	{
@@ -117,4 +124,6 @@ function scr_player_crouch()
 		sprite_index = spr_playerV_revolverstart;
 	}
 	image_speed = 0.45;
+	
+	doSnapjump()
 }

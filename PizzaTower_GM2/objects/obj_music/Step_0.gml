@@ -75,7 +75,7 @@ if (global.panic)
 		if (!global.lap)
 		{
 			var secs = 56;
-			if (fmod_get_parameter("isnoise") >= 1)
+			if (fmod_get_parameter("characterID") == 12)
 			{
 				secs = 65;
 			}

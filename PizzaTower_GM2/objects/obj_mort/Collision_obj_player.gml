@@ -4,6 +4,20 @@ if (sprite_index != spr_mortspawn && !instance_exists(obj_backtohub_fadeout) && 
 	{
 		if (state != states.mort && state != states.mortjump && state != states.mortattack && state != states.morthook && state != states.ridecow)
 		{
+			global.friendShip += 1
+			with (obj_player1) {
+				if (global.panic || global.friendShip >= 4) && characterID == characters.dos
+		        {
+		            spr_playermortidle = spr_dos_mortidleD
+		            spr_playermortwalk = spr_dos_mortwalkD
+		            spr_playermortjump = spr_dos_mortjumpD
+		            spr_playermortjumpstart = spr_dos_mortjumpstartD
+		            spr_mortdoublejumpstart = spr_dos_mortdoublejumpD
+		            spr_playermortland = spr_dos_mortlandD
+		            spr_mortdoublejump = spr_dos_mortjumpD
+		            spr_mortattackfront = spr_dos_mortattackfrontD
+		        }
+			}
 			repeat (6)
 			{
 				create_debris(x, y, spr_feather);

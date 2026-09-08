@@ -3,7 +3,7 @@ function doisebg_start()
 	if (event_type == ev_draw && event_number == 0 && instance_exists(obj_player1))
 	{
 		shader_set(global.Pal_Shader);
-		if (!obj_player1.ispeppino || global.swapmode)
+		if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise || global.swapmode)
 		{
 			pal_swap_set(spr_noiseboss_palette, 1, false);
 		}

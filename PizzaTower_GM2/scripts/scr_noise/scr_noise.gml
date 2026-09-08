@@ -158,13 +158,25 @@ function scr_noise_arenaintro()
 			exit;
 		}
 	}
-	if (obj_player1.ispeppino && !doise)
+	var _pscream1 = obj_player1.spr_yellrealize
+	var _pscream2 = obj_player1.spr_yellstart
+	var _pscream3 = obj_player1.spr_yell
+	var _pfrown = obj_player1.spr_frown
+	switch obj_player1.characterID {
+		case characters.dos:
+			_pscream1 = obj_player1.spr_yellrealize_noise
+			_pscream2 = obj_player1.spr_yellstart_noise
+			_pscream3 = obj_player1.spr_yell_noise
+			_pfrown = obj_player1.spr_yellend_noise
+			break
+	}
+	if (obj_player1.ispeppino && obj_player1.characterID != characters.noise && !doise)
 	{
 		if (!skipintro)
 		{
 			if (!intro)
 			{
-				sprite_index = obj_player.spr_noise_mask;
+				sprite_index = obj_player1.spr_noise_mask;
 				image_index = 0;
 				intro = true;
 				introbuffer = 130;
@@ -177,7 +189,7 @@ function scr_noise_arenaintro()
 					x = roomstartx;
 					image_speed = 0.35;
 					xscale = 1;
-					sprite_index = obj_player.spr_yellrealize;
+					sprite_index = _pscream1;
 					image_index = 0;
 				}
 			}
@@ -203,15 +215,15 @@ function scr_noise_arenaintro()
 				{
 					if (ANIMATION_END)
 					{
-						if (sprite_index == spr_yellrealize)
+						if (sprite_index == _pscream1)
 						{
 							image_index = image_number - 1;
 						}
-						else if (sprite_index == spr_yellstart)
+						else if (sprite_index == _pscream2)
 						{
-							sprite_index = obj_player.spr_yell;
+							sprite_index = _pscream3;
 						}
-						else if (sprite_index == spr_player_idlefrown)
+						else if (sprite_index == _pfrown)
 						{
 							sprite_index = spr_idle;
 						}
@@ -220,15 +232,16 @@ function scr_noise_arenaintro()
 					movespeed = 0;
 					flash = false;
 					x = roomstartx;
-					if (other.sprite_index == obj_player.spr_noise_mask && sprite_index == spr_yellrealize && floor(other.image_index) > 16)
+					if (other.sprite_index == obj_player.spr_noise_mask && sprite_index == _pscream1 && floor(other.image_index) > 16)
 					{
-						sprite_index = spr_yellstart;
+						sprite_index = _pscream2;
 						image_index = 0;
-						fmod_event_one_shot("event:/sfx/pep/screamboss");
+						if obj_player.characterID != characters.dos
+							fmod_event_one_shot("event:/sfx/pep/screamboss");
 					}
-					if (other.sprite_index == obj_player.spr_noise_mask_out && sprite_index != spr_player_idlefrown && sprite_index != spr_idle)
+					if (other.sprite_index == obj_player.spr_noise_mask_out && sprite_index != _pfrown && sprite_index != spr_idle)
 					{
-						sprite_index = spr_player_idlefrown;
+						sprite_index = _pfrown;
 						image_index = 0;
 					}
 				}
@@ -310,15 +323,15 @@ function scr_noise_arenaintro()
 			{
 				if (ANIMATION_END)
 				{
-					if (sprite_index == obj_player.spr_yellrealize)
+					if (sprite_index == _pscream1)
 					{
 						image_index = image_number - 1;
 					}
-					else if (sprite_index == obj_player.spr_yellstart)
+					else if (sprite_index == _pscream2)
 					{
-						sprite_index = obj_player.spr_yell;
+						sprite_index = _pscream3;
 					}
-					else if (sprite_index == spr_player_idlefrown)
+					else if (sprite_index == _pfrown)
 					{
 						sprite_index = spr_idle;
 					}
@@ -1443,15 +1456,27 @@ function scr_noise_fightball()
 
 function scr_noise_finale()
 {
+	var _pscream1 = obj_player1.spr_yellrealize
+	var _pscream2 = obj_player1.spr_yellstart
+	var _pscream3 = obj_player1.spr_yell
+	var _prelax = obj_player1.spr_idle
+	switch obj_player1.characterID {
+		case characters.dos:
+			_pscream1 = obj_player1.spr_yellrealize_horror
+			_pscream2 = obj_player1.spr_yellstart_horror
+			_pscream3 = obj_player1.spr_yell_horror
+			_prelax = spr_dos_wonder
+			break
+	}
 	with (obj_player1)
 	{
-		if (sprite_index == obj_player.spr_yellrealize && ANIMATION_END)
+		if (sprite_index == _pscream1 && ANIMATION_END)
 		{
 			image_index = image_number - 1;
 		}
-		if (sprite_index == obj_player.spr_yellstart && ANIMATION_END)
+		if (sprite_index == _pscream2 && ANIMATION_END)
 		{
-			sprite_index = obj_player.spr_yell;
+			sprite_index = _pscream3;
 		}
 		if (sprite_index == spr_playerN_stunned && ANIMATION_END)
 		{
@@ -1545,7 +1570,7 @@ function scr_noise_finale()
 					substate = states.shotgun;
 					with (obj_player1)
 					{
-						sprite_index = obj_player.spr_yellrealize;
+						sprite_index = _pscream1;
 						image_index = 0;
 						if (!ispeppino)
 						{
@@ -1583,7 +1608,7 @@ function scr_noise_finale()
 							create_debris(x, y, spr_slapstar);
 						}
 						sprite_index = spr_playerN_stunned;
-						if (ispeppino)
+						if (ispeppino && characterID != characters.noise)
 						{
 							sprite_index = spr_player_stunneddoise;
 						}
@@ -1602,7 +1627,7 @@ function scr_noise_finale()
 			{
 				if ((sprite_index == spr_playerN_stunned || sprite_index == spr_player_stunneddoise) && floor(image_index) >= 25)
 				{
-					if (ispeppino)
+					if (ispeppino && characterID != characters.noise)
 					{
 						sprite_index = spr_bombpepend;
 						image_index = 13;
@@ -1624,9 +1649,9 @@ function scr_noise_finale()
 				substate = states.shotgunshoot;
 				with (obj_player1)
 				{
-					if (ispeppino && !other.doise)
+					if (ispeppino && characterID != characters.noise && !other.doise)
 					{
-						sprite_index = obj_player.spr_yellstart;
+						sprite_index = _pscream2;
 						image_index = 0;
 						fmod_event_one_shot("event:/sfx/pep/screamboss");
 					}
@@ -1647,9 +1672,9 @@ function scr_noise_finale()
 			{
 				if (ANIMATION_END)
 				{
-					if (ispeppino && !other.doise)
+					if (ispeppino && characterID != characters.noise && !other.doise)
 					{
-						sprite_index = obj_player.spr_yell;
+						sprite_index = _pscream3;
 					}
 				}
 			}
@@ -1660,9 +1685,9 @@ function scr_noise_finale()
 				sprite_index = spr_playerN_bump;
 				with (obj_player1)
 				{
-					if (ispeppino && !other.doise)
+					if (ispeppino && characterID != characters.noise && !other.doise)
 					{
-						sprite_index = spr_idle;
+						sprite_index = _prelax;
 					}
 				}
 			}
@@ -1746,7 +1771,7 @@ function scr_noise_phase1hurt()
 				image_speed = 0.35;
 				sprite_index = spr_fightball;
 				image_index = 0;
-				if (!ispeppino)
+				if (!ispeppino || characterID == characters.noise)
 				{
 					y = 402;
 					x = room_width / 2;

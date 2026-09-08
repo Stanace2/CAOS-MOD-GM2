@@ -1,4 +1,4 @@
-if (global.noisejetpack && (other.ispeppino || other.noisepizzapepper) && playerid == noone)
+if (global.noisejetpack && ((other.ispeppino && other.characterID != characters.noise) || other.noisepizzapepper) && playerid == noone)
 {
 	with (other)
 	{

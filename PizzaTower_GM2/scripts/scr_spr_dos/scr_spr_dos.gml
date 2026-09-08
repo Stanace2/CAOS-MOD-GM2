@@ -1,5 +1,6 @@
 function scr_spr_dos() {
 	// Normal
+	spr_judge = spr_dos_judge
 	spr_dressup = spr_dos_dressup
 	spr_idle = spr_dos_idle  
     spr_move = spr_dos_move  
@@ -19,6 +20,8 @@ function scr_spr_dos() {
 	spr_idle6 = spr_dos_handgesture4
 	spr_frown = spr_dos_idlefrown
     spr_winding = spr_dos_winding  
+	spr_freezer = spr_dos_freezeridle
+	spr_soundtest = spr_dos_dance
 	// Crawl
     spr_crouch = spr_dos_crouch  
     spr_crouchjump = spr_dos_crouchjump  
@@ -39,7 +42,7 @@ function scr_spr_dos() {
 	// Level transitions
     spr_lapportal_in = spr_pizzaportalend_dos
     spr_lapportal_out = spr_pizzaportalentrancestart_dos
-    spr_entergate = spr_dos_entergate  
+    spr_entergate = spr_dos_entergate 
     spr_lookdoor = spr_dos_lookdoor  
     spr_walkfront = spr_dos_walkfront  
     spr_downpizzabox = spr_dos_downpizzabox  
@@ -189,6 +192,8 @@ function scr_spr_dos() {
 	// - Pepper Pizza
 	spr_poweredup = spr_dos_poweredup
     spr_jetpackstart2 = spr_dos_jetpackstart2
+	spr_pepperjump = spr_dos_pepperjump
+	spr_firemouthend = spr_dos_firemouthend  
 	// - Revolver
 	spr_pistolintro = spr_dos_pistolintro
     spr_pistolshot = spr_dos_pistolshot  
@@ -244,6 +249,7 @@ function scr_spr_dos() {
     spr_shotgunduck = spr_dos_shotgun_duck  
     spr_shotguncrawl = spr_dos_shotgun_crawl  
     spr_shotgungoduck = spr_dos_shotgun_goduck  
+	spr_shotgundrop = spr_dos_shotgunback
 	// Fightball
     spr_fightball = spr_dos_fightball  
 	// Weenie mount
@@ -259,7 +265,6 @@ function scr_spr_dos() {
     spr_barrelland = spr_dos_barrelland  
 	// Firemouth
     spr_firemouthintro = spr_dos_firemouthintro  
-    spr_firemouthend = spr_dos_firemouthend  
     spr_firemouth = spr_dos_firemouth  
     spr_firemouthspin = spr_dos_firemouthspin  
     spr_firemouthdash = spr_dos_firemouthdash  
@@ -312,22 +317,45 @@ function scr_spr_dos() {
 	spr_rocketrun = spr_dos_rocketrun
 	// Other
     spr_palette = spr_dos_palette
+	spr_paletteactor1 = spr_dos_idle
+	spr_paletteactor2 = spr_dos_3hpidle
+	spr_paletteactor3 = spr_dos_rageidle
+	spr_paletteactor4 = spr_dos_freezeridle
+	spr_paletteactor5 = spr_dos_blush
+	spr_paletteactor6 = spr_dos_wonder
+	spr_paletteactor7 = spr_donisha_scared
 	// - Match
 	spr_vstitle = spr_vstitle_donisha
 	spr_vsportrait = spr_vsdonisha
 	spr_vsportrait_shadow = spr_vsdonishashadow
 	spr_vshealth = spr_bossfight_dos_hp
+	spr_vshealth_palette = spr_dos_healthpalette
 	spr_yellnerves = spr_dos_screamnerves
 	spr_yellrealize = spr_dos_screamrealize
 	spr_yellstart = spr_dos_screamstart
 	spr_yell = spr_dos_scream
 	spr_yellend = spr_dos_screamtransition
+	/// - Scream noise
+	spr_yellrealize_noise = spr_dos_screamrealize_sass
+	spr_yellstart_noise = spr_dos_screamstart_sass
+	spr_yell_noise = spr_dos_scream_sass
+	spr_yellend_noise = spr_dos_screamtransition_sass
+	/// - Scream fakepep
+	spr_yellrealize_horror = spr_dos_screamrealize_nerves
+	spr_yellstart_horror = spr_dos_screamstart_nerves
+	spr_yell_horror = spr_dos_scream_nerves
+	spr_yellend_horror = spr_dos_screamnervestransition
+	///
 	spr_vshit1 = spr_dos_kungfu1
 	spr_vshit2 = spr_dos_kungfu2
 	spr_vshit3 = spr_dos_kungfu3
 	spr_vshit4 = spr_dos_lungehit
 	spr_vscloseup = spr_dos_superattackHUD
 	spr_vsvictory = spr_dos_levelcomplete
+	spr_vsdead1 = spr_dos_outofpizza1
+	spr_vsdead2 = spr_dos_outofpizza2
+	spr_vsdead3 = spr_dos_outofpizza3
+	spr_vsdead4 = spr_dos_outofpizza4
 	// - Match Noise
 	spr_noise_mask = spr_noise_intro1_dos
 	spr_noise_mask_out = spr_noise_intro2_dos
@@ -356,7 +384,7 @@ function scr_spr_dos() {
 	spr_vspizzahead_beatdown15 = spr_pizzahead_beatdown15_dos
 	spr_vspizzahead_piledriver = spr_pizzahead_piledriverfinal_dos
 	spr_vspizzahead_piledriver_closeup = bg_piledrivercloseshot_dos
-	// - Prop Mash
+	// Prop Mash
     spr_suplexmash1 = spr_dos_suplexmash1  
     spr_suplexmash2 = spr_dos_suplexmash2  
     spr_suplexmash3 = spr_dos_suplexmash3  
@@ -365,4 +393,44 @@ function scr_spr_dos() {
 	spr_suplexmash5 = spr_dos_suplexmash5
 	spr_suplexmash6 = spr_dos_suplexmash6
 	spr_suplexmash7 = spr_dos_suplexmash7
+	// Props
+	spr_switch_sign = spr_dos_sign
+	spr_switch_sleep = spr_dos_switch1
+	spr_switch_awake = spr_dos_switch2
+	spr_palettedresser_debris = spr_palettedresserdebris_dos
+	spr_pepperman_paiting = spr_pepperman_pepportrait_dos
+	spr_grannytv = spr_dos_tvstreet
+	
+	// New Moveset
+	//// - Climb
+	spr_wallslide = spr_dos_wallslide;
+	//// - Dive > Divebomb cancel
+	spr_poundaircancel = spr_dos_poundaircancel;
+	//// - MachSplit > MachDrill
+	spr_machsplit_loop = spr_dos_poundcancel;
+	spr_machdrill = spr_dos_poundcanceldive;
+	spr_spinkf = spr_dos_spinkf;
+	spr_machsplit = spr_dos_poundcancelstart;
+	//// - MachLand
+	spr_poundmach = spr_dos_poundmach;
+	//// - Kungfu
+	spr_kungfu1 = spr_dos_kungfu1
+	spr_kungfu2 = spr_dos_kungfu2
+	spr_kungfu3 = spr_dos_kungfu3
+	spr_kungfuair1 = spr_dos_kungfuair1;
+	spr_kungfuair2 = spr_dos_kungfuair2;
+	spr_kungfuair3 = spr_dos_kungfuair3;
+	spr_kungfuwall = spr_dos_kungfujump;
+	//// - MachRunning
+	spr_unhingedrun = spr_dos_unhingedrun;
+	spr_rolljump = spr_dos_rolljump;
+	spr_walllaunch = spr_dos_walllaunch;
+	//// - SnapJumping
+	spr_snapcrouch = spr_dos_snapcrouch;
+	spr_snapcrouch_loop = spr_dos_snapcrouch_loop;
+	spr_snaphighjump = spr_dos_snaphighjump;
+	spr_snapjump = spr_dos_snapjump;
+	spr_snapjumpinter = spr_dos_snapjumpinter;
+	spr_snapjumpstart = spr_dos_snapjumpstart;
+	spr_snapnailit = spr_dos_snapnailit;
 }

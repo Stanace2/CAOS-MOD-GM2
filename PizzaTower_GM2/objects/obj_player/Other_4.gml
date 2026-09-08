@@ -1,3 +1,28 @@
+// If mango is superjumping and calling wetham, while trasitioning rooms, prevents softlock
+if (sprite_index == spr_m_call)
+{
+    move = key_left + key_right
+    mangocall = 0
+    brick = 1
+    flash = 1
+    if (move != 0)
+        xscale = move
+    input_buffer_jump = 0
+    movespeed = 16
+    hsp = movespeed * xscale
+    sprite_index = spr_mach3jump
+    image_index = 0
+    jumpAnim = 1
+    state = states.mach3
+    vsp = 0
+    jumpstop = 0
+}
+// When mango falls into a vertival hallway, betters the player movement by forcing a bomb dive when starting the next room
+if (sprite_index == spr_wm_balltochomp)  
+{  
+    state = states.freefall
+    //scr_wm_dobombdive(true)  
+}
 if (room == timesuproom)
 {
 	scale_xs = 1;
@@ -64,6 +89,7 @@ if (room == tower_finalhallway && targetDoor == "C" && state == states.comingout
 {
 	state = states.normal;
 }
+
 if (global.levelcomplete)
 {
 	global.levelcomplete = false;
@@ -104,15 +130,28 @@ if (place_meeting(x, y, obj_boxofpizza) || place_meeting(x, y - 1, obj_boxofpizz
 	hallway = false;
 	state = states.crouch;
 }
-if (object_index != obj_player2 || global.coop == true)
+
+// NEW ADDITION
+if ( variable_global_exists( "elevator_transition" ) && global.elevator_transition )
 {
-	if (targetDoor == "A" && instance_exists(obj_doorA))
+	global.elevator_transition = false;
+	state = states.normal;
+	sprite_index = spr_idle;
+	image_index = 0;
+	image_speed = 1;
+	hsp = 0;
+	vsp = 0;
+}
+
+if ( object_index != obj_player2 || global.coop == true )
+{
+	if ( targetDoor == "A" && instance_exists( obj_doorA ) )
 	{
-		if (hallway == true)
+		if  ( hallway == true ) 
 		{
-			x = obj_doorA.x + (hallwaydirection * 100);
+			x = obj_doorA.x + ( hallwaydirection * 100 );
 		}
-		else if (box == true)
+		else if ( box == true )
 		{
 			x = obj_doorA.x + 32;
 		}
@@ -218,6 +257,24 @@ if (object_index != obj_player2 || global.coop == true)
 		}
 		y = obj_doorG.y - 14;
 	}
+	
+	// NEW ADDITION
+	if ( targetDoor == "ELEV" && instance_exists( obj_doorELEV ) )
+	{
+		if ( hallway == true )
+		{
+			x = obj_doorELEV.x + ( hallwaydirection * 100 );
+		}
+		else if ( box == true )
+		{
+			x = obj_doorELEV.x + 32;
+		}
+		else
+		{
+			x = obj_doorELEV.x + 16;
+		}
+		y = obj_doorELEV.y - 14;
+	}
 }
 if (verticalhallway)
 {
@@ -293,6 +350,13 @@ if (state == states.spaceshuttle)
 hallway = false;
 verticalhallway = false;
 box = false;
+// Retrive mango when changing rooms
+if (characterID == characters.wm)  
+{  
+    brick = 1  
+    brickskinbuffer = 1  
+    scr_wm_skinswitch()  
+}
 if (isgustavo)
 {
 	brick = true;

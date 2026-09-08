@@ -205,7 +205,7 @@ function scr_pizzaface_arenaintro()
 					introstate++;
 					with (obj_player1)
 					{
-						if (ispeppino)
+						if (ispeppino && characterID != characters.noise)
 						{
 							fmod_event_one_shot_3d("event:/sfx/voice/peppinoangryscream", x, y);
 						}

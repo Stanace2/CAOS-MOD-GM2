@@ -21,8 +21,8 @@
   "width": 960,
   "height": 540,
   "textureGroupId": {
-    "name": "backgroundgroup",
-    "path": "texturegroups/backgroundgroup",
+    "name": "bossgroup",
+    "path": "texturegroups/bossgroup",
   },
   "swatchColours": null,
   "gridX": 0,

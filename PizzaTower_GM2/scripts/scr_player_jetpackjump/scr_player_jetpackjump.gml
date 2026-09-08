@@ -1,5 +1,15 @@
 function scr_player_jetpackjump()
 {
+	if global.noisejetpack {
+		switch characterID {
+			case characters.dos:
+				if !global.manners {
+					scr_dos_pepperjump()
+					return;
+				}
+				break
+		}
+	}
 	landAnim = false;
 	if (firemouth_afterimage > 0)
 	{
@@ -29,7 +39,7 @@ function scr_player_jetpackjump()
 			}
 		}
 	}
-	if (global.noisejetpack && !ispeppino && noisepizzapepper)
+	if (global.noisejetpack && (!ispeppino || characterID == characters.noise) && noisepizzapepper)
 	{
 		if (noisepeppermissile > 0)
 		{
@@ -191,9 +201,14 @@ function scr_player_jetpackjump()
 	{
 		if (sprite_index != spr_jetpackstart2)
 		{
-			with (instance_create(x, y, obj_rocketdead))
+			if characterID == characters.dos && global.noisejetpack
 			{
-				sprite_index = spr_jetpackdebris;
+			}
+			else {
+				with (instance_create(x, y, obj_rocketdead))
+				{
+					sprite_index = spr_jetpackdebris;
+				}
 			}
 		}
 		input_buffer_slap = 0;

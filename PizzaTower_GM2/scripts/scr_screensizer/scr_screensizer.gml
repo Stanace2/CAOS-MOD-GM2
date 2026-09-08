@@ -248,6 +248,8 @@ function get_options()
 	{
 		global.option_lang = lang;
 	}
+	if is_undefined(global.option_lang)
+		global.option_lang = "en";
 	global.offload_lang = noone;
 	global.option_screenshake = ini_read_real("Option", "screenshake", 1);
 	global.lang = global.option_lang;

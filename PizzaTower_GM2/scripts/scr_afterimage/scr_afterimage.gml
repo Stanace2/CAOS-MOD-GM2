@@ -35,7 +35,8 @@ function create_mach3effect(_x, _y, _spr, _subimg, _not_mach3 = false)
 		visible: true,
 		identifier: afterimagetype.mach3effect,
 		playerid: obj_player1,
-		alpha: 1
+		alpha: 1,
+		creation_state: obj_player1.state
 	};
 	if (_not_mach3)
 	{
@@ -43,6 +44,29 @@ function create_mach3effect(_x, _y, _spr, _subimg, _not_mach3 = false)
 	}
 	ds_list_add(global.afterimage_list, q);
 	return q;
+}
+
+function scr_create_cookiemach3(_x, _y, _spr, _subimg, _xsc) //gml_Script_scr_windafterimage
+{
+    var b = create_afterimage(_x, _y, _spr, _subimg)
+    with (b)
+    {
+        fadeout = 0
+        fadeoutstate = -4
+        identifier = afterimagetype.dummy
+        alarm[0] = 6
+        alarm[1] = -1
+        alarm[2] = -1
+        image_blend = choose(global.mach_color1, global.mach_color2)
+        image_xscale = _xsc
+        alpha = 1
+        playerid = obj_player1
+		creation_state = obj_player1.state
+        spd = 6
+        hsp = 0
+        vsp = 0
+    }
+    return b;
 }
 
 function create_heatattack_afterimage(_x, _y, _spr, _subimg, _xscale)
@@ -190,4 +214,26 @@ function create_blur_afterimage(_x, _y, _spr, _subimg, _xscale)
 		vsp = 0;
 	}
 	return b;
+}
+
+function scr_windafterimage(_x, _y, _spr, _subimg, _xscale) //gml_Script_scr_windafterimage
+{
+    var b = create_afterimage(_x, _y, _spr, _subimg)
+    with (b)
+    {
+        fadeout = 0
+        fadeoutstate = -4
+        identifier = afterimagetype.wind
+        alarm[0] = -1
+        alarm[1] = -1
+        alarm[2] = -1
+        image_blend = c_white
+        image_xscale = _xscale
+        alpha = 1
+        playerid = -4
+        spd = 0.15
+        hsp = 0
+        vsp = 0
+    }
+    return b;
 }

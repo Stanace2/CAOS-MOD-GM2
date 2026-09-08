@@ -29,7 +29,7 @@ function scr_player_trashjump()
 	{
 		sprite_index = spr_trashjump;
 	}
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		sprite_index = spr_playerN_trash;
 	}

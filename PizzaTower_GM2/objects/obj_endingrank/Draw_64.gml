@@ -1,5 +1,5 @@
 var bg_spr = spr_finalrankBG;
-if (!ispeppino)
+if (!ispeppino || obj_player1.characterID == characters.noise)
 {
 	bg_spr = spr_finalrankBG_N;
 }

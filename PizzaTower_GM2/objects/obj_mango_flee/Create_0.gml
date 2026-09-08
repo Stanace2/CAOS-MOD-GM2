@@ -1,0 +1,20 @@
+hsp = 0  
+vsp = -11  
+hsp_carry = 0  
+vsp_carry = 0  
+platformid = -4  
+grav = 0.5  
+grounded = 0  
+depth = obj_player1.depth + 1  
+image_speed = 0.35  
+image_xscale = choose(-1, 1)  
+state = mfstates.slip 
+launchforce = irandom_range(8, 14)  
+launchbuffer = 5  
+flee_speed = 10.5  
+flash = 0  
+collect = [obj_collect, obj_bigcollect, obj_giantcollect]  
+pizzakin = obj_pizzaboxunopen  
+toppins = -4  
+collectibles = -4  
+fmod_event_one_shot_3d("event:/chaos-sfx/wm/mango/mflee", x, y)

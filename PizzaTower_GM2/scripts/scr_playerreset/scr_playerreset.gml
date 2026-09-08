@@ -137,7 +137,7 @@ function scr_playerreset(_stop_music = true)
 			if (!global.levelreset)
 			{
 				sprite_index = spr_tv_off;
-				tvsprite = spr_tv_idle;
+				tvsprite = spr_tvidle;
 				state = states.normal;
 				tv_set_idle();
 			}

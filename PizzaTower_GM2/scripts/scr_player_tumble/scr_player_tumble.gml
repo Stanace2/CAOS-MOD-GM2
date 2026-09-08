@@ -1,5 +1,20 @@
 function scr_player_tumble()
 {
+	switch characterID
+	{
+	    case characters.dos:
+	    case characters.fdos:
+	        if !global.manners || characterID == characters.fdos
+	        {
+	            scr_dos_tumble()
+	            return;
+	        }
+	        break
+	    case characters.wm:
+	        scr_wmp_tumble()
+	        return;
+	}
+	
 	if (place_meeting(x, y + 1, obj_railparent))
 	{
 		var _railinst = instance_place(x, y + 1, obj_railparent);
@@ -15,7 +30,7 @@ function scr_player_tumble()
 	}
 	if (!grounded && (sprite_index == spr_crouchslip || sprite_index == spr_machroll || sprite_index == spr_mach2jump || sprite_index == spr_backslide || sprite_index == spr_backslideland))
 	{
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			sprite_index = spr_playerN_divebomb;
 			state = states.machcancel;

@@ -167,8 +167,11 @@ function palette_unlock(_achievement, _palname, _palindex, _texture = noone, _is
 			unlocked = true;
 			with (instance_create(0, 0, obj_cheftask))
 			{
+				var _spr = spr_newclothes
+				if instance_exists(obj_player1)
+					_spr = obj_player1.spr_clothesnew
 				achievement_spr = noone;
-				sprite_index = spr_newclothes;
+				sprite_index = _spr;
 				if (!_is_peppino)
 				{
 					sprite_index = spr_newclothesN;

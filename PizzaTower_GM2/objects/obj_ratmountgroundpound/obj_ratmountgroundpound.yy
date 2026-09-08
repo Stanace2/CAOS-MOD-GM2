@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_ratmountgroundpound",
   "spriteId": {
-    "name": "spr_ratmountgroundpound",
-    "path": "sprites/spr_ratmountgroundpound/spr_ratmountgroundpound.yy",
+    "name": "spr_mango_yoshied",
+    "path": "sprites/spr_mango_yoshied/spr_mango_yoshied.yy",
   },
   "solid": false,
   "visible": true,

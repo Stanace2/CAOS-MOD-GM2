@@ -1,6 +1,6 @@
 function scr_player_antigrav()
 {
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		sprite_index = spr_playerN_bubbleidle;
 		move_h = key_right_axis + key_left_axis;
@@ -87,7 +87,7 @@ function scr_player_antigrav()
 		exit;
 	}
 	sprite_index = spr_currentplayer;
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		sprite_index = spr_playerN_bubbleidle;
 	}

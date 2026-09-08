@@ -68,7 +68,7 @@ function SUPER_player_destroy(_player)
 		y = hitY;
 		xscale = -other.image_xscale;
 		hitxscale = -other.image_xscale;
-		sprite_index = spr_player_outofpizza1;
+		sprite_index = obj_player1.spr_vsdead1;
 		hithsp = 15;
 		hitstunned = 10000;
 		hitvsp = -8;

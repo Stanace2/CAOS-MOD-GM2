@@ -1,6 +1,6 @@
 function scr_player_barrelclimbwall()
 {
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		move = key_left + key_right;
 		vsp = -wallspeed;

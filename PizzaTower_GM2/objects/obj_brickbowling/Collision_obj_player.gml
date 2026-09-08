@@ -1,4 +1,4 @@
-if (other.ispeppino && other.isgustavo)
+if (other.ispeppino && other.characterID != characters.noise && other.isgustavo)
 {
 	exit;
 }

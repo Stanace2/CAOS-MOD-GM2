@@ -58,7 +58,7 @@ function scr_mach_check_dive()
 
 function scr_check_dive()
 {
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		return scr_check_groundpound2();
 	}
@@ -163,6 +163,10 @@ function scr_getinput()
 		key_start_p2 = (_dvc2 >= 0) ? tdp_input_get("menu_startC").pressed : tdp_input_get("menu_start").pressed;
 	}
 	tdp_input_update(_dvc);
+	if instance_exists(obj_CHAOSdevconsole) && obj_CHAOSdevconsole.display
+	{
+		exit;
+	}
 	if (instance_exists(obj_debugcontroller) && obj_debugcontroller.active)
 	{
 		exit;

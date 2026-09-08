@@ -1,14 +1,21 @@
 function scr_chaos_varinit() {
+	#macro PLAYER_STUNNED (state == states.antigrav || state == states.fireass || state == states.backbreaker || state == states.hurt || state == states.slipbanan || state == states.freefallland || state == states.crouchjump || state == states.bump || state == states.parry || state == states.machslide)
+	#macro PLAYER_LOCK (state == states.tube || state == states.backtohub || state == states.transitioncutscene || state == states.door || state == states.secretportal || state == states.actor || state == states.comingoutdoor || state == states.animation)
+	
 	// Mort friendship
 	global.friendShip = 0 // Used in obj_mort_Collision_obj_player
 	// Goth palette
 	global.gothkills = 0  
 	global.gothunlocked = 0  
 	// Debug options, used in drawGUI | obj_player, set on EndStep | obj_player
+	global.godmode = 0
+	force_hurt = 0
 	displaykeys = 0  
 	displaydata = 0
+	debugmarkers = [0,0,0,0]
 	input_buffer_chaos = 0
 	// 0 Donisha 1 WM 2 Stefano 3 Cezar 4 Cleo 5 Acexby 10 fakeDonisha
+	// 6 Wunderly 7 Wendy 8 ???
 	// For playable pep and noise 11 Pep 12 Noise
 	characterID = characters.dos
 	
@@ -21,7 +28,7 @@ function scr_chaos_varinit() {
 	mach5 = 0  
 	machengineprev = -1  
 	mach5buffer = 0
-	//canrollsnd = 0  // Have to check this one to optimize it
+	//canrollsnd = 0
 	poundbuffer = 0
 	quickroll = 0
 	// Italian manners
@@ -71,7 +78,7 @@ function scr_chaos_varinit() {
 	iwalpha = 0 // Dodge afterimages
 	// Italian manners variable, obsolete
 	wm = 1
-	// Vainilla is brick
+	// From vainilla is brick
 	brickskinbuffer = 1 // Used for the skinswitcher for these guys
 	
 	// ==========Caos challenge==========
@@ -123,4 +130,39 @@ function scr_chaos_varinit() {
 	killbuffer = 0
 	dragonsnap = 0  
 	dragonbuffer = 0
+	
+	// ==========FMOD==========
+	//// Donisha
+	// Mach engine feedback
+	machenginesnd = fmod_event_create_instance("event:/chaos-sfx/donisha/machEngine")
+	fmod_event_instance_set_parameter(machenginesnd, "state", 0, 1)
+	// Mach5 run soundeffect
+	mach5snd = fmod_event_create_instance("event:/chaos-sfx/donisha/mach5sup")
+	// Rolljump
+	rolljumpsnd = fmod_event_create_instance("event:/chaos-sfx/donisha/rolljump")
+	// General quick spins
+	dosspinsnd = fmod_event_create_instance("event:/chaos-sfx/donisha/machsplitspin")
+	
+	//// Wetham and Mango
+	// WM superjump spin soundeffect
+	mangospinsnd = fmod_event_create_instance("event:/chaos-sfx/wm/mango/mspin")
+	// WM superjump ceiling soundeffect
+	mangospinceilingsnd = fmod_event_create_instance("event:/chaos-sfx/wm/mango/mspinceiling")
+	// Wetham kicking Mango soundeffect
+	snd_wethamkick = fmod_event_create_instance("event:/chaos-sfx/wm/wmbrickkick")
+	fmod_event_instance_set_parameter(snd_wethamkick, "state", 0, 1)
+	wethamkick = 0
+	// Doublejump spin soundeffect
+	wmcopter = fmod_event_create_instance("event:/chaos-sfx/wm/wmcopter")
+	fmod_event_instance_set_parameter(wmcopter, "speed", 0, 1)
+	// Galloping
+	ratmountgallopsnd = fmod_event_create_instance("event:/sfx/ratmount/gallop")
+	// Groundpound
+	wm_groundpoundsnd = fmod_event_create_instance("event:/chaos-sfx/wm/wmdivebomb");
+	// Wetham wallsliding
+	snd_wethamslide = fmod_event_create_instance("event:/chaos-sfx/wm/wetham/wallcling")
+	fmod_event_instance_set_parameter(snd_wethamslide, "state", 0, 1)
+	// SkateRolling
+	m_rollingsound = fmod_event_create_instance("event:/chaos-sfx/wm/mango/mskateroll");
+	can_sktsnd = false;
 }
