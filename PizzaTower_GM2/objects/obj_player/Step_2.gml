@@ -241,7 +241,7 @@ if characterID == characters.wm {
 	if (state != states.climbwall)  
         fmod_event_instance_stop(snd_wethamslide, 1)  
 }
-if instance_exists(obj_debugcontroller) && obj_debugcontroller.DEBUG {
+if instance_exists(obj_debugcontroller) && obj_debugcontroller.DEBUG && !obj_CHAOSdevconsole.display {
 	if keyboard_check(ord("1"))
 	{
 	    characterID = characters.dos

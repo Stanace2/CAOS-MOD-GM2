@@ -13,8 +13,8 @@ function scr_character_spr_init(_hud = true) // starts only the necessary sprite
             scr_spr_wm()  
             break  
         case characters.fdos:  
-			global.mach_color1 = make_colour_rgb(255, 0, 81); //water
-			global.mach_color2 = make_colour_rgb(0, 255, 162); //melon
+			global.mach_color1 = make_colour_rgb(255, 0, 93); //retaw bottom 0, 0, 0
+			global.mach_color2 = make_colour_rgb(0, 255, 174); //nolem bottom 0, 0, 0
             //scr_spr_fakedos()  
             break  
 		case characters.noise:	

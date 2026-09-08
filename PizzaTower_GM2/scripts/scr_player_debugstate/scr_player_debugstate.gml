@@ -10,10 +10,10 @@ function scr_player_debugstate()
 	hsp = (key_left + key_right) * _spd;
 	vsp = -(key_up - key_down) * _spd;
 	image_speed = 1;
-	sprite_index = spr_idle;
-	if (key_jump || key_slap2)
+	if (key_jump || key_slap2 || key_shoot2)
 	{
 		image_speed = 0.35;
-		state = states.normal;
+		sprite_index = obj_CHAOSdevconsole.noclip_arguments[0]
+		state = obj_CHAOSdevconsole.noclip_arguments[1];
 	}
 }

@@ -37,10 +37,6 @@ function scr_dos_pepperjump() {
 	
 	if (input_buffer_slap > 0)
 	{
-		with (instance_create(x, y, obj_rocketdead))
-		{
-			sprite_index = spr_jetpackdebris;
-		}
 		input_buffer_slap = 0;
 		particle_set_scale(particletypes.jumpdust, xscale, 1);
 		create_particle(x, y, particletypes.jumpdust, 0);

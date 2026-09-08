@@ -8,8 +8,13 @@ function scr_mangostates(){
 	        if (global.panic || global.combo >= 50)  
 	        {  
 	            ispr = spr_mango_idle_distressed  
-	            wspr = spr_mango_walk_distressed  
+				if global.combo >= 50
+	            	wspr = spr_mango_walk_distressed  
 	        }  
+			if ((global.combo >= 25 && global.combo < 50) || instance_exists(obj_pizzafaceboss) || (global.noisejetpack && (ispeppino || noisepizzapepper))) {
+				ispr = spr_mango_idle_anger
+	        	wspr = spr_mango_walk_anger
+			}
 	        if (playerid.sprite_index == playerid.spr_mach)  
 	            wspr = spr_lonemango_mach1  
 	        if moving  

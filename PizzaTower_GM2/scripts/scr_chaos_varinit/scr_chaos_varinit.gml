@@ -8,6 +8,8 @@ function scr_chaos_varinit() {
 	global.gothkills = 0  
 	global.gothunlocked = 0  
 	// Debug options, used in drawGUI | obj_player, set on EndStep | obj_player
+	global.godmode = 0
+	force_hurt = 0
 	displaykeys = 0  
 	displaydata = 0
 	debugmarkers = [0,0,0,0]

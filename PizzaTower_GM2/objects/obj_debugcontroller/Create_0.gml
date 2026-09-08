@@ -30,6 +30,7 @@ if (!DEBUG)
 }
 if (DEBUG)
 {
+	instance_create(0,0,obj_CHAOSdevconsole)
 	active = false;
 	showoverlay = false;
 	SET_GAME_SPEED = new DebugCommand("set_game_speed", "Sets the game speed", "<int>", function(_int)

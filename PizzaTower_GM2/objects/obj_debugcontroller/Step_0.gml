@@ -1,6 +1,6 @@
 if (DEBUG)
 {
-	if instance_exists(obj_player1) {
+	if instance_exists(obj_player1) && !obj_CHAOSdevconsole.display {
 		with (obj_player1) {
 			if keyboard_check_pressed(vk_f7)  
 		    	displaykeys = (!displaykeys)  
@@ -23,10 +23,14 @@ if (DEBUG)
 			texture = spr_peppattern1;
 		}
 	}
-	if (keyboard_check_pressed(vk_f5))
+	if (!instance_exists(obj_mainmenu) && ((keyboard_check_pressed(vk_f5) || (keyboard_check_pressed(vk_escape) && obj_CHAOSdevconsole.display))))
 	{
-		active = !active;
+		obj_CHAOSdevconsole.visible = true;
+		obj_CHAOSdevconsole.display = !obj_CHAOSdevconsole.display
 		keyboard_string = "";
+		if (false) {
+			active = !active;
+		}
 	}
 	if (active)
 	{

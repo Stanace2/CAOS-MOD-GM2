@@ -43,8 +43,8 @@ function scr_wm_skinswitch() {
         spr_idle = spr_w_idle
         spr_move = spr_w_walk
         spr_land2 = spr_wetham_landwalk
-        spr_3hpwalk = spr_w_walk
-        spr_3hpidle = spr_w_idle
+        spr_3hpwalk = spr_wetham_walk_anger
+        spr_3hpidle = spr_wetham_idle_anger
         spr_rageidle = spr_wetham_idle_distressed
         spr_ragemove = spr_wetham_walk_distressed
         spr_hurtidle = spr_wetham_idle_distressed

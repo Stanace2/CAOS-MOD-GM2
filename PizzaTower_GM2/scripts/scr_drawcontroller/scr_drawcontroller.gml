@@ -298,6 +298,7 @@ function draw_player()
 		shader_reset()
 		pattern_reset()
 	}
+	shader_set(global.Pal_Shader)
 	draw_superslam_enemy();
 	if (global.pistol)
 	{

@@ -749,7 +749,7 @@ function scr_fakepepboss_grabdash()
 		}
 		with (instance_place(x, y, obj_player))
 		{
-			if (!hurted && state != states.grabthrow && state != states.tackle && state != states.actor && state != states.supergrab)
+			if (!hurted && !global.godmode && state != states.grabthrow && state != states.tackle && state != states.actor && state != states.supergrab)
 			{
 				other.state = states.grabthrow;
 				other.playerID = id;

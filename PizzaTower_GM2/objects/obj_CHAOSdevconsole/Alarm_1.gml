@@ -1,0 +1,1 @@
+variable_instance_set(fire_obj, fire_var, fire_val);

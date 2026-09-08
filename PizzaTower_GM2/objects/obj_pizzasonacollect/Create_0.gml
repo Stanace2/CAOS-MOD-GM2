@@ -12,10 +12,10 @@ var r = -1;
 var alt = "";  
 while 1  
 {  
-    r = irandom_range(1, 55)  
+    r = irandom_range(1, 56)  
     if (r == 8)  
         continue  
-    else if (r == 1 || r == 2 || r == 3 || r == 19 || r == 21 || r == 33 || r == 41 || r == 39 || r == 55 || r == 34 || r == 13 || r == 45 || r == 28 || r == 5 || r == 9 || r == 20 || r == 38 || r == 51)  
+    else if (r == 56 || r == 1 || r == 2 || r == 3 || r == 19 || r == 21 || r == 33 || r == 41 || r == 39 || r == 55 || r == 34 || r == 13 || r == 45 || r == 28 || r == 5 || r == 9 || r == 20 || r == 38 || r == 51)  
         break  
     else  
         continue  
