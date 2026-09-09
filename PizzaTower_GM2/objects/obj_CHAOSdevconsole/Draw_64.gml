@@ -35,7 +35,12 @@ if death
 if !display
 	return;
 draw_rectangle_color(0, SCREEN_HEIGHT - 25, SCREEN_WIDTH, SCREEN_HEIGHT, c_black, c_black, c_black, c_black, false);
-if (searching && string_starts_with(search_sugges, command) && haslist && search_list != undefined && search_sugges != "" && search_sugges != undefined) {
+var _phrase = command;
+if (array_length(string_split(command, " ")) > 1) {
+	var _arr = string_split(command, " ");
+	_phrase = _arr[array_length(_arr) - 1]
+}
+if (searching && string_starts_with(search_sugges, _phrase) && haslist && search_list != undefined && search_sugges != "" && search_sugges != undefined) {
 	draw_set_color(c_white);
 	draw_set_font(global.caosfont);
 	draw_set_halign(fa_left);

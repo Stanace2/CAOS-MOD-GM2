@@ -1,2 +1,2 @@
-- Add health palette to the hp and sprite changer
-- Add player props to sprite changer
+- Dev console not working properly after reopening
+- Crash with reload command while pizza time

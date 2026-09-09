@@ -415,6 +415,66 @@ function c_Createcommands() {
 	"<object name>,<variable>,<value>,[delay - miliseconds]");
 	
 	RELOAD = new c_Debugcommand("reload", function() {
+		with (obj_pause) {
+			if (room == Endingroom || room == Creditsroom || room == Johnresurrectionroom)
+			{
+				exit;
+			}
+			pause_unpause_music();
+			stop_music();
+			scr_pause_stop_sounds();
+			instance_destroy(obj_option);
+			instance_destroy(obj_keyconfig);
+			fmod_event_instance_stop(global.snd_bossbeaten, true);
+			fmod_event_instance_stop(pausemusicID, true);
+			obj_music.music = noone;
+			var sl = ds_list_create();
+			var il = ds_list_create();
+			var arr = noone;
+			ds_list_copy(sl, sound_list);
+			ds_list_copy(il, instance_list);
+			hub = false;
+			arr = ["menugroup"];
+			with (obj_player1)
+			{
+				character = "P";
+				ispeppino = true;
+				scr_characterspr();
+			}
+			offload_arr = arr;
+			offload_textures = true;
+			ds_list_add(il, id);
+	
+			obj_player1.targetRoom = Realtitlescreen;
+			obj_player2.targetRoom = Realtitlescreen;
+			room = Realtitlescreen;
+			with (obj_player1)
+			{
+				character = "P";
+				scr_characterspr();
+			}
+			global.leveltosave = noone;
+			global.leveltorestart = noone;
+			scr_playerreset();
+			alarm[0] = 2;
+			obj_player1.state = states.titlescreen;
+			obj_player2.state = states.titlescreen;
+			obj_player1.targetDoor = "A";
+			if (instance_exists(obj_player2))
+			{
+				obj_player2.targetDoor = "A";
+			}
+			global.cowboyhat = false;
+			global.coop = false;
+			
+			scr_pause_activate_objects();
+			instance_destroy(obj_option);
+			instance_destroy(obj_keyconfig);
+			pause = false;
+	
+			ds_list_destroy(sl);
+			ds_list_destroy(il);
+		}
 		game_restart();
 	});
 	
