@@ -4,7 +4,7 @@ if (sprite_index == idlespr)
 	if (showmoney && obj_player1.key_up2 && (global.pigtotal - global.pigreduction) >= maxscore)
 	{
 		sprite_index = smilespr;
-		if (!obj_player1.ispeppino || global.swapmode)
+		if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise || global.swapmode)
 		{
 			alarm[0] = 100;
 		}
@@ -17,7 +17,7 @@ if (sprite_index == idlespr)
 		notification_push(notifications.mooney_unlocked, [room]);
 		with (obj_palettedresser)
 		{
-			var _clothes = (!obj_player1.ispeppino || global.swapmode) ? "feminine" : "mooney";
+			var _clothes = (!obj_player1.ispeppino || obj_player1.characterID == characters.noise || global.swapmode) ? "feminine" : "mooney";
 			for (var j = 0; j < array_length(player_palettes); j++)
 			{
 				var pals = player_palettes[j];
@@ -46,7 +46,7 @@ else
 		}
 	}
 }
-if (!obj_player1.ispeppino && x != obj_player1.x)
+if ((!obj_player1.ispeppino || obj_player1.characterID == characters.noise) && x != obj_player1.x)
 {
 	image_xscale = sign(obj_player1.x - x);
 }

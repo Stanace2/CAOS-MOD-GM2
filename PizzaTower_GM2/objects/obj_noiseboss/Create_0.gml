@@ -97,7 +97,7 @@ hotairhit = 0;
 lastattack = 0;
 cloudbuffer = 0;
 doise = false;
-if (!obj_player1.ispeppino || global.swapmode)
+if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise || global.swapmode)
 {
 	usepalette = true;
 	spr_palette = spr_noiseboss_palette;

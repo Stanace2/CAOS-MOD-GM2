@@ -1,0 +1,2 @@
+- Dev console not working properly after reopening
+- Crash with reload command while pizza time

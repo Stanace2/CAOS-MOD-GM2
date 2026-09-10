@@ -95,7 +95,7 @@ function scr_player_barrelslide()
 			}
 			state = states.barrelclimbwall;
 			movespeed = 0;
-			if (!ispeppino)
+			if (!ispeppino || characterID == characters.noise)
 			{
 				wallspeed = abs(vsp);
 			}

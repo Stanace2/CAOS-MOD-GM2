@@ -1,19 +1,36 @@
 if (DEBUG)
 {
+	if instance_exists(obj_player1) && !obj_CHAOSdevconsole.display {
+		with (obj_player1) {
+			if keyboard_check_pressed(vk_f7)  
+		    	displaykeys = (!displaykeys)  
+			if keyboard_check_pressed(vk_f6) { 
+				debugmarkers = [0,0,0,0]
+			    displaydata = (!displaydata)
+			}
+		}
+	}
 	if (keyboard_check_pressed(vk_f2))
 	{
 		with (instance_create(0, 0, obj_cheftask))
 		{
 			achievement_spr = noone;
-			sprite_index = spr_newclothes;
+			var _spr = spr_newclothes
+			if instance_exists(obj_player1)
+				_spr = obj_player1.spr_clothesnew
+			sprite_index = _spr;
 			paletteselect = 12;
 			texture = spr_peppattern1;
 		}
 	}
-	if (keyboard_check_pressed(vk_f5))
+	if (!instance_exists(obj_mainmenu) && ((keyboard_check_pressed(vk_f5) || (keyboard_check_pressed(vk_escape) && obj_CHAOSdevconsole.display))))
 	{
-		active = !active;
+		obj_CHAOSdevconsole.visible = true;
+		obj_CHAOSdevconsole.display = !obj_CHAOSdevconsole.display
 		keyboard_string = "";
+		if (false) {
+			active = !active;
+		}
 	}
 	if (active)
 	{

@@ -30,7 +30,7 @@ if (global.fill <= 0 && global.panic == true && !global.tutorial_room && !instan
 			visible = true;
 			image_blend = c_white;
 			audio_stop_all();
-			if (object_index == obj_player1 && ispeppino && !global.swapmode)
+			if (object_index == obj_player1 && obj_player1.characterID != characters.noise && ispeppino && !global.swapmode)
 			{
 				stop_music();
 			}

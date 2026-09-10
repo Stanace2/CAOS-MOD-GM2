@@ -5,21 +5,28 @@ function scr_hurtplayer(_player)
 	var _savedstate = _player.state;
 	var _hurt = false;
 	var _swap = false;
+	var rolliframes = ((_player.state == states.crouch && _player.sprite_index == spr_wethamroll) || (_player.state == states.tumble && _player.sprite_index == spr_lonewetham_tumble));
 	with (_player)
-	{
-		if (global.failcutscene || instance_exists(obj_endlevelfade))
+	{	
+		if (global.godmode && !force_hurt)
+		{
+		}
+		else if (string_copy(sprite_get_name(sprite_index), 1, 16) == "spr_m_lastbreath" || sprite_index == spr_w_spinkick || sprite_index == spr_m_call || rolliframes || ikcurrent || sprite_index == spr_w_lastbreath_travel)
+        {
+        }
+		else if (global.failcutscene || instance_exists(obj_endlevelfade))
 		{
 		}
 		else if (state == states.ratmounthurt || state == states.duel || state == states.supergrab || state == states.phase2transition || state == states.parry || instance_exists(obj_vigilante_duelintro) || state == states.taxi || state == states.spaceshuttle || state == states.tube || state == states.debugstate || state == states.golf || state == states.slipbanan)
 		{
 		}
-		else if (global.noisejetpack == true && (ispeppino || noisepizzapepper))
+		else if !force_hurt && (global.noisejetpack == true && ((ispeppino && characterID != characters.noise) || noisepizzapepper))
 		{
 		}
-		else if (holycross > 0 || invtime > 0)
+		else if !force_hurt && (holycross > 0 || invtime > 0)
 		{
 		}
-		else if (sprite_index == spr_jetpackstart2)
+		else if !force_hurt && (sprite_index == spr_jetpackstart2)
 		{
 		}
 		else if ((state == states.backbreaker && (parrytimer > 0 || instance_exists(obj_parryhitbox) || sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmountsupertaunt)) || state == states.chainsaw || state == states.phase1hurt || state == states.actor || instance_exists(obj_bossdark))
@@ -29,7 +36,7 @@ function scr_hurtplayer(_player)
 				trace(parrytimer);
 			}
 		}
-		else if (global.kungfu)
+		else if !force_hurt && (global.kungfu)
 		{
 			if (state == states.blockstance)
 			{
@@ -90,7 +97,7 @@ function scr_hurtplayer(_player)
 		}
 		else if (isgustavo)
 		{
-			if (!hurted)
+			if (!hurted || force_hurt)
 			{
 				if (x != other.x)
 				{
@@ -120,7 +127,7 @@ function scr_hurtplayer(_player)
 		else if (instance_exists(obj_pizzafaceboss_p2) && obj_pizzafaceboss_p2.state == states.fall)
 		{
 		}
-		else if (state == states.shotgundash)
+		else if !force_hurt && (state == states.shotgundash)
 		{
 		}
 		else if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.knightpepbump) && cutscene == false)
@@ -143,25 +150,25 @@ function scr_hurtplayer(_player)
 				}
 			}
 		}
-		else if (state == states.slipnslide)
+		else if !force_hurt && (state == states.slipnslide)
 		{
 		}
-		else if (state == states.trickjump || state == states.chainsaw)
+		else if !force_hurt && (state == states.trickjump || state == states.chainsaw)
 		{
 		}
-		else if (state == states.chainsawbump)
+		else if !force_hurt && (state == states.chainsawbump)
 		{
 		}
-		else if (state == states.bombpep && hurted == false)
+		else if !force_hurt && (state == states.bombpep && hurted == false)
 		{
 		}
-		else if (state == states.rideweenie)
+		else if !force_hurt && (state == states.rideweenie)
 		{
 		}
-		else if (state == states.slipnslide)
+		else if !force_hurt && (state == states.slipnslide)
 		{
 		}
-		else if (pizzashield == true)
+		else if !force_hurt && (pizzashield == true)
 		{
 			pizzashield = false;
 			with (instance_create(x, y, obj_sausageman_dead))
@@ -178,7 +185,7 @@ function scr_hurtplayer(_player)
 			hurted = true;
 			fmod_event_one_shot_3d("event:/sfx/pep/hurt", x, y);
 		}
-		else if (state != states.hurt && state != states.ratmounthurt && state != states.grabbed && (hurted == false || state == states.cheesepep || state == states.cheesepepstickside || state == states.cheesepepstickup) && cutscene == false)
+		else if (force_hurt || (state != states.hurt && state != states.ratmounthurt && state != states.grabbed && (hurted == false || state == states.cheesepep || state == states.cheesepepstickside || state == states.cheesepepstickup) && cutscene == false))
 		{
 			if (state == states.animatronic)
 			{
@@ -302,8 +309,9 @@ function scr_hurtplayer(_player)
 				instance_create(x, y, obj_hurtstars);
 			}
 		}
-		if (_hurt)
+		if (_hurt || force_hurt)
 		{
+			force_hurt = false;
 			notification_push(notifications.hurt, [_player.id, _savedstate, _obj]);
 			global.combotime -= 25;
 			global.style -= 25;
@@ -341,7 +349,7 @@ function scr_hurtplayer(_player)
 			{
 				if (!isgustavo)
 				{
-					tv_do_expression(spr_tv_exprhurt);
+					tv_do_expression(spr_tvhurt[floor(random(array_length(spr_tvhurt)))]);
 				}
 				else
 				{
@@ -349,7 +357,7 @@ function scr_hurtplayer(_player)
 				}
 				if (ispeppino)
 				{
-					hurtTV = choose(spr_tv_exprhurt1, spr_tv_exprhurt2, spr_tv_exprhurt3, spr_tv_exprhurt4, spr_tv_exprhurt5, spr_tv_exprhurt6, spr_tv_exprhurt7, spr_tv_exprhurt8, spr_tv_exprhurt9, spr_tv_exprhurt10);
+					hurtTV = choose(spr_tvtorture1, spr_tvtorture2, spr_tvtorture3, spr_tvtorture4, spr_tvtorture5, spr_tvtorture6, spr_tvtorture7, spr_tvtorture8, spr_tvtorture9, spr_tvtorture10);
 				}
 				else
 				{
@@ -365,7 +373,7 @@ function scr_hurtplayer(_player)
 					trace(str2);
 					if ((state == states.expression || state == states.whitenoise) && (sprite_index == spr_tv_exprhurt || sprite_index == spr_tv_exprhurtN || sprite_index == spr_tv_hurtG || str2 == "spr_tv_exprhurt" || str2 == "spr_tv_exprhurtN"))
 					{
-						sprite_index = other.ispeppino ? spr_tv_idleN : spr_tv_idle;
+						sprite_index = other.ispeppino ? spr_tv_idleN : spr_tvidle;
 						if (other.noisecrusher)
 						{
 							sprite_index = spr_tv_idleG;
@@ -401,10 +409,31 @@ function scr_hurtplayer(_player)
 			{
 				tv_do_expression(hurtTV);
 			}
-			if (obj_tv.expressionsprite != spr_tv_exprhurt && obj_tv.expressionsprite != spr_tv_hurtG && obj_tv.expressionsprite != spr_tv_exprhurtN)
+			var _hurtcheck = true
+			if array_length(obj_tv.spr_tvhurt) == 1 {
+				_hurtcheck = obj_tv.spr_tvhurt[0] == obj_tv.expressionsprite ? true : false
+			} else {
+				for (var i = 0; i < array_length(obj_tv.spr_tvhurt); i++) {
+					_hurtcheck = obj_tv.spr_tvhurt[i] == obj_tv.expressionsprite ? true : false
+					if _hurtcheck
+						break
+				}
+			}
+			if (!_hurtcheck && obj_tv.expressionsprite != spr_tv_hurtG && obj_tv.expressionsprite != spr_tv_exprhurtN)
 			{
 				instance_destroy(obj_transfotip);
 				var txt = lang_get_value("peppinohurt");
+				switch characterID {
+					case characters.dos:
+						txt = lang_get_value("donishahurt");
+						break
+					case characters.wm:
+						txt = lang_get_value("wethamhurt");
+						break
+					case characters.noise:
+						txt = lang_get_value("noisehurt");
+						break
+				}
 				if (!_swap)
 				{
 					if (isgustavo)
@@ -483,14 +512,14 @@ function scr_hurtplayer(_player)
 							var pos = scr_bosscontroller_get_health_pos(player_hp, player_rowmax, player_columnmax, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad);
 							if (pos != undefined)
 							{
-								var spr_pal = other.spr_palette;
+								var spr_pal = obj_player.spr_vshealth_palette;
 								var pal = other.paletteselect;
 								var tex = global.palettetexture;
 								var hp_sprite = player_hpsprite;
 								if (_swap)
 								{
 									var info = other.ispeppino ? get_noise_palette_info() : get_pep_palette_info();
-									spr_pal = info.spr_palette;
+									spr_pal = obj_player.spr_vshealth_palette;
 									pal = info.paletteselect;
 									tex = info.patterntexture;
 									hp_sprite = other.ispeppino ? spr_bossfight_noiseHP : obj_player.spr_vshealth;
@@ -505,7 +534,7 @@ function scr_hurtplayer(_player)
 				else
 				{
 					var d = instance_find(obj_hpeffect, instance_number(obj_hpeffect) - 1);
-					scr_bosscontroller_particle_hp(obj_player.spr_bossfight_playerhp, irandom(sprite_get_number(obj_player.spr_vshealth) - 1), d.x, d.y, (d.x > (room_width / 2)) ? -1 : 1, d.spr_palette, d.paletteselect, d.patterntexture);
+					scr_bosscontroller_particle_hp(obj_player.spr_vshealth, irandom(sprite_get_number(obj_player.spr_vshealth) - 1), d.x, d.y, (d.x > (room_width / 2)) ? -1 : 1, d.spr_palette, d.paletteselect, d.patterntexture);
 					instance_destroy(d);
 				}
 			}

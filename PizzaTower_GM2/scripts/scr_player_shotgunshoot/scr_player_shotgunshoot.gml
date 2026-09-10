@@ -22,7 +22,7 @@ function scr_player_shotgunshoot()
 	{
 		movespeed = Approach(movespeed, 0, 0.1);
 	}
-	if (ispeppino)
+	if (ispeppino && characterID != characters.noise)
 	{
 		if (ANIMATION_END)
 		{

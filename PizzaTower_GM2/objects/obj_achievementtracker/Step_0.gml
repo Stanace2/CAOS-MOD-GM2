@@ -44,7 +44,7 @@ if (!ds_queue_empty(unlock_queue) && !instance_exists(obj_cheftask))
 }
 if (instance_exists(obj_player1))
 {
-	ispeppino = obj_player1.ispeppino;
+	ispeppino = obj_player1.characterID != characters.noise;
 }
 if (global.swapmode)
 {

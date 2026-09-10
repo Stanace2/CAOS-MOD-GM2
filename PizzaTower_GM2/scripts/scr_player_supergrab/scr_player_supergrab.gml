@@ -45,7 +45,7 @@ function scr_player_supergrab()
 	{
 		midpointX = x + ((baddiegrabbedID.x - x) * 1.15);
 		midpointY = y + ((baddiegrabbedID.y - y) * 0.5);
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			midpointX = x + ((baddiegrabbedID.x - x) * 0.5);
 		}
@@ -54,7 +54,7 @@ function scr_player_supergrab()
 	{
 		alarm[1] = 80;
 	}
-	if (ispeppino)
+	if (ispeppino && characterID != characters.noise)
 	{
 		switch (supergrabstate)
 		{

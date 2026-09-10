@@ -1,3 +1,28 @@
+// If mango is superjumping and calling wetham, while trasitioning rooms, prevents softlock
+if (sprite_index == spr_m_call)
+{
+    move = key_left + key_right
+    mangocall = 0
+    brick = 1
+    flash = 1
+    if (move != 0)
+        xscale = move
+    input_buffer_jump = 0
+    movespeed = 16
+    hsp = movespeed * xscale
+    sprite_index = spr_mach3jump
+    image_index = 0
+    jumpAnim = 1
+    state = states.mach3
+    vsp = 0
+    jumpstop = 0
+}
+// When mango falls into a vertival hallway, betters the player movement by forcing a bomb dive when starting the next room
+if (sprite_index == spr_wm_balltochomp)  
+{  
+    state = states.freefall
+    //scr_wm_dobombdive(true)  
+}
 if (room == timesuproom)
 {
 	scale_xs = 1;
@@ -325,6 +350,13 @@ if (state == states.spaceshuttle)
 hallway = false;
 verticalhallway = false;
 box = false;
+// Retrive mango when changing rooms
+if (characterID == characters.wm)  
+{  
+    brick = 1  
+    brickskinbuffer = 1  
+    scr_wm_skinswitch()  
+}
 if (isgustavo)
 {
 	brick = true;

@@ -32,7 +32,7 @@ function scr_player_bump()
 		{
 			image_index = image_number - 1;
 		}
-		if (ANIMATION_END && sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air && !_gus)
+		if (ANIMATION_END && characterID != characters.wm && sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air && !_gus)
 		{
 			if (!skateboarding)
 			{
@@ -54,9 +54,39 @@ function scr_player_bump()
 		{
 			sprite_index = !skateboarding ? spr_bump : spr_clownbump;
 		}
+		//wm crash anims have only 1 frame, the image index animation ender doesnt work properly, they can only stand up when grounded
+		if (characterID == characters.wm && grounded && vsp >= 0.5)
+        {
+            movespeed = 0
+            hsp = 0
+            vsp = 0
+            state = (0 << 0)
+            return;
+        }
 	}
 	else
 	{
+		// Bump overwritter, if pressed shoot key, jumps out in a ball bounce
+        var hasM = (brick || instance_exists(obj_mango_companion) || (instance_exists(obj_mangocomeback) && obj_mangocomeback.sprite_index == spr_m_flykicked))  
+        if (key_shoot && characterID == characters.wm && hasM)  
+        {  
+            if instance_exists(obj_mango_companion)  
+            {  
+                with (obj_mango_companion)  
+                    instance_destroy()  
+                flash = 1  
+                brick = 1  
+            }  
+            if instance_exists(obj_mangocomeback)  
+            {  
+                with (obj_mangocomeback)  
+                    instance_destroy()  
+                instance_create(other.x, other.y, obj_genericpoofeffect)  
+                flash = 1  
+                brick = 1  
+            }  
+            scr_wm_bouncejaws(true)  
+        }  
 		movespeed = 0;
 		hsp = 0;
 		vsp = 0;

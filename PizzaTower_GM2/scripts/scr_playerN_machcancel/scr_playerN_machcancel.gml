@@ -21,7 +21,6 @@ function scr_playerN_machcancel()
             if (!global.manners && (!scr_doniSnapjump()))
                 return;
             break
-
         case characters.fdos:
             if (!scr_doniFakeSnapjump())
                 return;
@@ -153,7 +152,7 @@ function scr_playerN_machcancel()
 		}
 	}
 	noisedoublejump = true;
-	if (input_buffer_slap > 0 && key_up && (!global.pistol || !ispeppino))
+	if (input_buffer_slap > 0 && key_up && (!global.pistol || !ispeppino || characterID == characters.noise))
 	{
 		input_buffer_slap = 0;
 		state = states.punch;
@@ -173,7 +172,7 @@ function scr_playerN_machcancel()
 			}
 		}
 	}
-	if (!ispeppino && key_up && input_buffer_jump > 0 && !scr_check_groundpound2())
+	if ((!ispeppino || characterID == characters.noise) && key_up && input_buffer_jump > 0 && !scr_check_groundpound2())
 	{
 		freefallstart = 0;
 		railmomentum = false;
@@ -229,7 +228,7 @@ function scr_playerN_machcancel()
 
 function scr_noise_machcancel_grab()
 {
-	if (ispeppino)
+	if (ispeppino && characterID != characters.noise)
 	{
 		exit;
 	}

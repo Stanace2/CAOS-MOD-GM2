@@ -29,7 +29,7 @@ else if (state == 2)
 			{
 				animatronic = other.animatronic_buffer;
 			}
-			if (ispeppino)
+			if (ispeppino && obj_player1.characterID != characters.noise)
 			{
 				instance_create(x, y, obj_noiseanimatroniceffect);
 			}

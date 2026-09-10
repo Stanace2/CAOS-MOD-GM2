@@ -31,7 +31,7 @@ if (floor(other.x) == (x + _offset_x) && floor(other.y) == (y + _offset_y))
 	other.state = states.tube;
 	other.tube_id = id;
 	var ms = movespeed;
-	if (!other.ispeppino)
+	if (!other.ispeppino || other.characterID == characters.noise)
 	{
 		ms += 5;
 	}

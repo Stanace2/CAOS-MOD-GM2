@@ -1,6 +1,15 @@
 if (start)
 {
+	if obj_player1.characterID == characters.dos {
+		shader_set(global.Pal_Shader)
+		pattern_set(global.Base_Pattern_Color, titlecard_sprite, titlecard_index, 1, 1, global.palettetexture)
+		pal_swap_set(spr_dos_titlecardpalette, obj_player1.paletteselect, 0)
+	}
 	draw_sprite(titlecard_sprite, titlecard_index, 0, 0);
+	if obj_player1.characterID == characters.dos {
+		pattern_reset()
+		shader_reset()
+	}
 	var s = 1;
 	lang_draw_sprite(title_sprite, title_index, 32 + irandom_range(-s, s), irandom_range(-s, s));
 	for (var i = 0; i < array_length(noisehead); i++)

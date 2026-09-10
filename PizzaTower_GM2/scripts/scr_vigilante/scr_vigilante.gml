@@ -1156,7 +1156,7 @@ function scr_vigilante_duel()
 								isgustavo = other.isgustavo;
 								hsp = -image_xscale * 8;
 								vsp = -15;
-								sprite_index = spr_player_outofpizza1;
+								sprite_index = spr_vsdead1;
 							}
 							x = obj_swapmodefollow.x;
 							y = obj_swapmodefollow.y;

@@ -1,9 +1,6 @@
 if display
 {
-    var pep = 0
-    if (!ispeppino)
-        pep = 1
-    var actors = actor_array[pep]
+    var actors = actor_array[characterID]
     scr_menu_getinput()
     ad = Approach(ad, 1, 0.1)
     if key_back
@@ -21,7 +18,7 @@ if display
             hsp = irandom_range(-5, 5)
             vsp = (-(irandom_range(6, 11)))
             usepalette = 1
-            sprite_index = spr_palettedresserdebris
+            sprite_index = obj_player1.spr_palettedresser_debris
             if (!obj_player1.ispeppino)
                 sprite_index = spr_palettedresserdebrisN
             spr_palette = obj_player1.spr_palette
@@ -73,10 +70,18 @@ if display
 			*/
         }
     }
+	var _mod = ""
+	if palette_pepfilter(actors[scolumn][srow][0]) {
+		switch (characterID) {
+			case characters.dos:
+				_mod = "dos"
+				break
+		}
+	}
     if (key_jump && (!actors[scolumn][srow][1]))
         fmod_event_one_shot_3d("event:/sfx/ui/switchchardown", x, y)
-    palettetitle = lang_get_value(concat("dresser_", actors[scolumn][srow][0], "title"))
-    palettedesc = lang_get_value_newline(concat("dresser_", actors[scolumn][srow][0]))
+    palettetitle = lang_get_value(concat("dresser_", _mod, actors[scolumn][srow][0], "title"))
+    palettedesc = lang_get_value_newline(concat("dresser_", _mod, actors[scolumn][srow][0]))
 }
 else
     ad = Approach(ad, 0, 0.1)

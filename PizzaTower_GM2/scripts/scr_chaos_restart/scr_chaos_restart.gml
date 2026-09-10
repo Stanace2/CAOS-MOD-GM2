@@ -46,7 +46,7 @@ function scr_chaos_restart() {
         ceilinded = 0
         switch characterID
         {
-            case 1:
+            case characters.wm:
                 brick = 1
                 brickskinbuffer = 1
                 wethamcombo = [0, 0, 0, 0]
@@ -54,8 +54,9 @@ function scr_chaos_restart() {
                 katanatypebuffer = katanatype
                 break
         }
-
-        scr_character_spr_init()
+		
+		if object_index != obj_player2
+			scr_character_spr_init(false)
     }
     // This block saves the goth kills
     // Tells cigartracker to check for shadow palette and hellish

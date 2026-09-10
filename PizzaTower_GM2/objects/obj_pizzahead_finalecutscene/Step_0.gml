@@ -1,3 +1,4 @@
+trace(concat("Pizza head state: ", state))
 with (obj_player2)
 {
 	state = states.titlescreen;

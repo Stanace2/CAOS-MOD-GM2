@@ -3,7 +3,7 @@ function tv_set_idle()
 	with (obj_tv)
 	{
 		state = states.normal;
-		sprite_index = spr_tv_idle;
+		sprite_index = spr_tvidle;
 	}
 }
 
@@ -12,7 +12,7 @@ function tv_reset()
 	with (obj_tv)
 	{
 		state = states.normal;
-		sprite_index = spr_tv_idle;
+		sprite_index = spr_tvidle;
 		ds_list_clear(tvprompts_list);
 	}
 }
@@ -133,50 +133,74 @@ function tv_do_expression(_spr, _reset_palette = false, _make_peppino = false)
 		{
 			state = states.whitenoise;
 			expressionsprite = _spr;
-			switch (expressionsprite)
-			{
-				case spr_tv_exprhurt:
-				case spr_tv_exprhurtN:
-				case spr_tv_hurtG:
-					expressionbuffer = 60;
-					break;
-				case spr_tv_exprhurt1:
-				case spr_tv_exprhurt2:
-				case spr_tv_exprhurt3:
-				case spr_tv_exprhurt4:
-				case spr_tv_exprhurt5:
-				case spr_tv_exprhurt6:
-				case spr_tv_exprhurt7:
-				case spr_tv_exprhurt8:
-				case spr_tv_exprhurt9:
-				case spr_tv_exprhurt10:
-				case spr_tv_exprhurtN1:
-				case spr_tv_exprhurtN2:
-				case spr_tv_exprhurtN3:
-				case spr_tv_exprhurtN4:
-				case spr_tv_exprhurtN5:
-				case spr_tv_exprhurtN6:
-				case spr_tv_exprhurtN7:
-				case spr_tv_exprhurtN8:
-				case spr_tv_exprhurtN9:
-				case spr_tv_exprhurtN10:
-					expressionbuffer = 100;
-					break;
-				case spr_tv_exprcollect:
-					expressionbuffer = 150;
-					if (obj_player.isgustavo)
-					{
-						expressionsprite = spr_tv_happyG;
-						if (irandom(100) <= 50)
-						{
-							fmod_event_one_shot_3d("event:/sfx/voice/brickok", obj_player1.x, obj_player1.y);
-						}
-					}
+			if string_copy(sprite_get_name(expressionsprite), 1, 18) == "spr_tv_exprcollect" {
+				expressionbuffer = 150;
+				if (obj_player.isgustavo)
+				{
+					expressionsprite = spr_tv_happyG;
 					if (irandom(100) <= 50)
 					{
-						scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y);
+						fmod_event_one_shot_3d("event:/sfx/voice/brickok", obj_player1.x, obj_player1.y);
 					}
-					break;
+				}
+				if (irandom(100) <= 50)
+				{
+					scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y);
+				}
+			} else if string_copy(sprite_get_name(expressionsprite), 1, 15) == "spr_tv_exprhurt" {
+				for (var i = 0; i < array_length(spr_tvhurt); i++) {
+					if expressionsprite == spr_tvhurt[i] {
+						expressionbuffer = 60;
+						break;
+					}
+					expressionbuffer = 100;
+				}
+			} else {
+				switch (expressionsprite)
+				{
+					case spr_tv_exprhurt:
+					case spr_tv_exprhurtN:
+					case spr_tv_hurtG:
+						expressionbuffer = 60;
+						break;
+					case spr_tv_exprhurt1:
+					case spr_tv_exprhurt2:
+					case spr_tv_exprhurt3:
+					case spr_tv_exprhurt4:
+					case spr_tv_exprhurt5:
+					case spr_tv_exprhurt6:
+					case spr_tv_exprhurt7:
+					case spr_tv_exprhurt8:
+					case spr_tv_exprhurt9:
+					case spr_tv_exprhurt10:
+					case spr_tv_exprhurtN1:
+					case spr_tv_exprhurtN2:
+					case spr_tv_exprhurtN3:
+					case spr_tv_exprhurtN4:
+					case spr_tv_exprhurtN5:
+					case spr_tv_exprhurtN6:
+					case spr_tv_exprhurtN7:
+					case spr_tv_exprhurtN8:
+					case spr_tv_exprhurtN9:
+					case spr_tv_exprhurtN10:
+						expressionbuffer = 100;
+						break;
+					case spr_tv_exprcollect:
+						expressionbuffer = 150;
+						if (obj_player.isgustavo)
+						{
+							expressionsprite = spr_tv_happyG;
+							if (irandom(100) <= 50)
+							{
+								fmod_event_one_shot_3d("event:/sfx/voice/brickok", obj_player1.x, obj_player1.y);
+							}
+						}
+						if (irandom(100) <= 50)
+						{
+							scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y);
+						}
+						break;
+				}
 			}
 			if (!_make_peppino && instance_exists(obj_player1) && !obj_player1.ispeppino)
 			{
@@ -216,35 +240,35 @@ function scr_tv_get_transfo_sprite()
 		case states.knightpepattack:
 		case states.knightpepbump:
 		case states.knightpepslopes:
-			_spr = spr_tv_knight;
+			_spr = spr_tvknight;
 			break;
 		case states.bombpep:
 		case states.bombgrab:
-			_spr = spr_tv_bombpep;
+			_spr = spr_tvbombo;
 			break;
 		case states.fireass:
-			_spr = spr_tv_fireass;
+			_spr = spr_tvfireass;
 			if (obj_player1.sprite_index == obj_player1.spr_scaredjump1 || obj_player1.sprite_index == obj_player1.spr_scaredjump2)
 			{
-				_spr = spr_tv_scaredjump;
+				_spr = spr_tvscaredjump;
 			}
 			break;
 		case states.tumble:
 			if (obj_player1.sprite_index == obj_player1.spr_tumble || obj_player1.sprite_index == obj_player1.spr_tumblestart || obj_player1.sprite_index == obj_player1.spr_tumbleend)
 			{
-				_spr = spr_tv_tumble;
+				_spr = spr_tvball;
 			}
 			else if (obj_player1.shotgunAnim)
 			{
-				_spr = spr_tv_shotgun;
+				_spr = spr_tvshotgun;
 			}
 			break;
 		case states.firemouth:
-			_spr = spr_tv_firemouth;
+			_spr = spr_tvfiremouth;
 			break;
 		case states.ghost:
 		case states.ghostpossess:
-			_spr = spr_tv_ghost;
+			_spr = spr_tvghost;
 			break;
 		case states.stunned:
 			if (obj_player1.sprite_index == obj_player1.spr_squished)
@@ -264,11 +288,11 @@ function scr_tv_get_transfo_sprite()
 			{
 				if (shotgunAnim)
 				{
-					_spr = spr_tv_shotgun;
+					_spr = spr_tvshotgun;
 				}
 				else if (global.mort)
 				{
-					_spr = spr_tv_mort;
+					_spr = spr_tvmort;
 				}
 			}
 			break;
@@ -277,13 +301,13 @@ function scr_tv_get_transfo_sprite()
 		case states.freefallland:
 			if (obj_player1.shotgunAnim)
 			{
-				_spr = spr_tv_shotgun;
+				_spr = spr_tvshotgun;
 			}
 			break;
 		case states.pistol:
 			if (global.mort)
 			{
-				_spr = spr_tv_mort;
+				_spr = spr_tvmort;
 			}
 			break;
 		case states.shotgun:
@@ -293,44 +317,44 @@ function scr_tv_get_transfo_sprite()
 		case states.shotgundash:
 		case states.shotguncrouch:
 		case states.shotguncrouchjump:
-			_spr = spr_tv_shotgun;
+			_spr = spr_tvshotgun;
 			break;
 		case states.barrel:
 		case states.barreljump:
 		case states.barrelslide:
 		case states.barrelclimbwall:
-			_spr = spr_tv_barrel;
+			_spr = spr_tvbarrel;
 			break;
 		case states.golf:
-			_spr = spr_tv_golf;
+			_spr = spr_tvgolf;
 			break;
 		case states.rocket:
 		case states.rocketslide:
-			_spr = spr_tv_rocket;
+			_spr = spr_tvrocket;
 			break;
 		case states.cheeseball:
-			_spr = spr_tv_cheeseball;
+			_spr = spr_tvcheeseball;
 			break;
 		case states.cheesepep:
 		case states.cheesepepjump:
 		case states.cheesepepstick:
 		case states.cheesepepstickside:
 		case states.cheesepepstickup:
-			_spr = spr_tv_cheesepep;
+			_spr = spr_tvcheesepep;
 			break;
 		case states.boxxedpep:
 		case states.boxxedpepjump:
 		case states.boxxedpepspin:
-			_spr = spr_tv_boxxedpep;
+			_spr = spr_tvboxxedpep;
 			break;
 		case states.rideweenie:
-			_spr = spr_tv_weenie;
+			_spr = spr_tvweenie;
 			break;
 		case states.mort:
 		case states.mortattack:
 		case states.morthook:
 		case states.mortjump:
-			_spr = spr_tv_mort;
+			_spr = spr_tvmort;
 			break;
 		case states.mach2:
 		case states.climbwall:
@@ -342,7 +366,7 @@ function scr_tv_get_transfo_sprite()
 			}
 			else if (obj_player1.shotgunAnim)
 			{
-				_spr = spr_tv_shotgun;
+				_spr = spr_tvshotgun;
 			}
 			break;
 	}
@@ -350,7 +374,7 @@ function scr_tv_get_transfo_sprite()
 	{
 		if (state == states.actor && sprite_index == spr_tumble)
 		{
-			_spr = spr_tv_tumble;
+			_spr = spr_tvball;
 		}
 	}
 	return _spr;

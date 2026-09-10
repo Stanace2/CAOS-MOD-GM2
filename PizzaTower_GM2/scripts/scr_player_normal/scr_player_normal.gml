@@ -37,26 +37,21 @@ function state_player_normal()
 	var movespr = spr_move;
 	if (global.leveltosave == "freezer" && !global.noisejetpack)
 	{
-		idlespr = spr_player_freezeridle;
+		idlespr = spr_freezer;
 	}
-	if (global.pistol && ispeppino)
+	if (global.pistol && ispeppino && characterID != characters.noise)
 	{
 		idlespr = spr_pistolidle;
 		movespr = spr_pistolwalk;
 	}
 	if (room == tower_soundtest && obj_soundtest.play)
 	{
-		idlespr = spr_pepdance;
-		movespr = spr_pepdance;
-		if (!ispeppino)
-		{
-			idlespr = spr_noise_vulnerable2;
-			movespr = spr_noise_vulnerable2;
-		}
+		idlespr = spr_soundtest;
+		movespr = spr_soundtest;
 		idle = 0;
 	}
 	var breakdance_max = 10;
-	if (key_taunt && !shotgunAnim && (!global.pistol || !ispeppino))
+	if (key_taunt && !shotgunAnim && (!global.pistol || !ispeppino || characterID == characters.noise))
 	{
 		breakdance_pressed++;
 	}
@@ -148,11 +143,11 @@ function state_player_normal()
 			{
 				sprite_index = spr_hurtwalk;
 			}
-			else if ((global.combo >= 25 && global.combo < 50) || instance_exists(obj_pizzafaceboss) || (global.noisejetpack && (ispeppino || noisepizzapepper)))
+			else if ((global.combo >= 25 && global.combo < 50) || instance_exists(obj_pizzafaceboss) || (global.noisejetpack && ((ispeppino && characterID != characters.noise) || noisepizzapepper)))
 			{
 				sprite_index = spr_3hpwalk;
 			}
-			else if (global.combo >= 50 || (ispeppino && instance_exists(obj_pizzaface_thunderdark)))
+			else if (global.combo >= 50 || (ispeppino && characterID != characters.noise && instance_exists(obj_pizzaface_thunderdark)))
 			{
 				sprite_index = spr_ragemove;
 			}
@@ -171,7 +166,7 @@ function state_player_normal()
 			{
 				steppybuffer--;
 			}
-			else if (sprite_index != spr_breakdance && sprite_index != spr_pepdance && sprite_index != spr_noise_vulnerable2)
+			else if (sprite_index != spr_breakdance && sprite_index != spr_soundtest && sprite_index != spr_noise_vulnerable2)
 			{
 				create_particle(x, y + 43, particletypes.cloudeffect, 0);
 				steppybuffer = 12;
@@ -211,7 +206,7 @@ function state_player_normal()
 					facehurt = false;
 					idle = 0;
 				}
-				if ((!global.pistol || !ispeppino) && !shotgunAnim && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6)
+				if ((!global.pistol || !ispeppino || characterID == characters.noise) && !shotgunAnim && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6)
 				{
 					idleanim = random_range(0, 100);
 					if (irandom(100) <= 25)
@@ -271,11 +266,11 @@ function state_player_normal()
 					{
 						sprite_index = spr_panic;
 					}
-					else if ((global.combo >= 25 && global.combo < 50) || instance_exists(obj_pizzafaceboss) || (global.noisejetpack && (ispeppino || noisepizzapepper)))
+					else if ((global.combo >= 25 && global.combo < 50) || instance_exists(obj_pizzafaceboss) || (global.noisejetpack && ((ispeppino && characterID != characters.noise) || noisepizzapepper)))
 					{
 						sprite_index = spr_3hpidle;
 					}
-					else if (global.combo >= 50 || (ispeppino && instance_exists(obj_pizzaface_thunderdark)))
+					else if (global.combo >= 50 || (ispeppino && characterID != characters.noise && instance_exists(obj_pizzaface_thunderdark)))
 					{
 						sprite_index = spr_rageidle;
 					}
@@ -410,7 +405,7 @@ function state_player_normal()
 				{
 					sprite_index = spr_shotgunjump;
 				}
-				else if (global.pistol && ispeppino)
+				else if (global.pistol && ispeppino && characterID != characters.noise)
 				{
 					sprite_index = spr_pistoljump;
 				}
@@ -449,7 +444,7 @@ function state_player_normal()
 			{
 				sprite_index = spr_shotgunfall;
 			}
-			if (global.pistol && ispeppino)
+			if (global.pistol && ispeppino && characterID != characters.noise)
 			{
 				sprite_index = spr_pistolfall;
 			}
@@ -485,14 +480,14 @@ function state_player_normal()
 		movespeed = 8;
 		image_index = 0;
 	}
-	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && (!global.pistol || !ispeppino))
+	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && (!global.pistol || !ispeppino || characterID == characters.noise))
 	{
 		state = states.punch;
 		input_buffer_slap = 0;
 		image_index = 0;
 		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			vsp = -14;
 		}
@@ -507,7 +502,7 @@ function state_player_normal()
 		}
 		particle_set_scale(particletypes.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particletypes.highjumpcloud2, 0);
-		if (!ispeppino)
+		if (!ispeppino || characterID == characters.noise)
 		{
 			repeat (4)
 			{

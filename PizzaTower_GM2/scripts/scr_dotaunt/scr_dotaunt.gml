@@ -1,5 +1,7 @@
 function scr_dotaunt()
 {
+	if (characterID == characters.wm && key_up && supercharged && (!((brick || instance_exists(obj_mango_companion)))))
+        return;
 	if ((key_taunt2 || input_finisher_buffer > 0 || (state == states.backbreaker && key_up && supercharged)) && !skateboarding)
 	{
 		input_finisher_buffer = 0;
@@ -31,6 +33,15 @@ function scr_dotaunt()
 			state = states.backbreaker;
 			if (supercharged && key_up)
 			{
+				if instance_exists(obj_mango_companion)
+                {
+                    with (obj_mango_companion)
+                    {
+                        instance_destroy(tauntID)
+                        instance_destroy()
+                    }
+                    brick = 1
+                }
 				ini_open_from_string(obj_savesystem.ini_str);
 				ini_write_real("Game", "supertaunt", true);
 				obj_savesystem.ini_str = ini_close();

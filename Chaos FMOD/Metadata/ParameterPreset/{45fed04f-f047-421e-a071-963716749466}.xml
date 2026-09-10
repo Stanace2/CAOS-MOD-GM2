@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{45fed04f-f047-421e-a071-963716749466}">
 		<property name="name">
-			<value>isnoise</value>
+			<value>characterID</value>
 		</property>
 		<relationship name="folder">
 			<destination>{ebd80d4a-6c3c-468b-883d-cc9e4f67e374}</destination>
@@ -16,7 +16,7 @@
 			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>2</value>
+			<value>100</value>
 		</property>
 		<property name="isGlobal">
 			<value>true</value>

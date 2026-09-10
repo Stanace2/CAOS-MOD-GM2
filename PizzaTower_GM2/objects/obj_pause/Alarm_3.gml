@@ -30,7 +30,7 @@ else
 	scr_playerreset();
 	with (obj_player1)
 	{
-		swap_player();
+		//swap_player();
 	}
 	global.levelreset = true;
 	obj_player1.targetDoor = "HUB";

@@ -26,7 +26,7 @@ function scr_dos_normal()
     var idlespr = spr_idle
     var movespr = spr_move
     if (global.leveltosave == "freezer" && (!global.noisejetpack))
-        idlespr = spr_player_freezeridle
+        idlespr = spr_dos_freezeridle
     if ((global.leveltosave == "kidsparty" || instance_exists(obj_fakepepboss) || instance_exists(obj_pizzafaceboss_p2)) && (!global.noisejetpack))
         idlespr = spr_donisha_scared
     if (distance_to_object(obj_noisevengeful) < 250)
@@ -41,13 +41,8 @@ function scr_dos_normal()
     }
     if (room == tower_soundtest && obj_soundtest.play)
     {
-        idlespr = spr_pepdance
-        movespr = spr_pepdance
-        if (!ispeppino)
-        {
-            idlespr = spr_noise_vulnerable2
-            movespr = spr_noise_vulnerable2
-        }
+        idlespr = spr_soundtest
+        movespr = spr_soundtest
         idle = 0
     }
     var breakdance_max = 10
@@ -126,7 +121,7 @@ function scr_dos_normal()
         {
             if (steppybuffer > 0)
                 steppybuffer--
-            else if (sprite_index != spr_breakdance && sprite_index != spr_pepdance && sprite_index != spr_noise_vulnerable2)
+            else if (sprite_index != spr_breakdance && sprite_index != spr_soundtest && sprite_index != spr_noise_vulnerable2)
             {
                 create_particle(x, (y + 43), particletypes.cloudeffect, 0)
                 steppybuffer = 12

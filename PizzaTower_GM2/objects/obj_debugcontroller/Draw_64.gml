@@ -1,5 +1,11 @@
 if (DEBUG)
 {
+	if instance_exists(obj_player1) {
+		with (obj_player1) {
+			scr_displaykeys(c_aqua, displaykeys)  
+			scr_displaydata(displaydata)
+		}
+	}
 	if (!active)
 	{
 		exit;

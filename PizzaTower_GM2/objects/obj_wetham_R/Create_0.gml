@@ -1,0 +1,13 @@
+vsp = -6  
+hsp = 0  
+grounded = 0  
+grav = 0.5  
+platformid = -4  
+hsp_carry = 0  
+vsp_carry = 0  
+image_speed = 0.35  
+image_index = 0  
+state = wrstates.wait
+angle = 0  
+distance = 0  
+notfade = 0

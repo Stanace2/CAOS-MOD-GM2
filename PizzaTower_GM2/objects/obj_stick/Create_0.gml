@@ -13,7 +13,7 @@ money_y = 0;
 noisette = false;
 spr_helicopter = spr_stick_helicopter;
 kiss_snd = fmod_event_create_instance("event:/sfx/noisette/kiss");
-if (!obj_player1.ispeppino || global.swapmode)
+if (!obj_player1.ispeppino || obj_player1.characterID == characters.noise || global.swapmode)
 {
 	sprite_index = spr_noisettestick_idle;
 	noisette = true;

@@ -1,6 +1,6 @@
 if (active)
 {
-	if (other.ispeppino)
+	if (other.ispeppino && other.characterID != characters.noise)
 	{
 		if (other.isgustavo && other.brick)
 		{

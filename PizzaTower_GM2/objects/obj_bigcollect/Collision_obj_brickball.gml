@@ -19,5 +19,5 @@ if (image_alpha == 1 && !place_meeting(x, y, obj_metalblock))
 	{
 		number = string(val);
 	}
-	tv_do_expression(spr_tv_exprcollect, true);
+	tv_do_expression(obj_tv.spr_tvcollect[floor(random(array_length(obj_tv.spr_tvcollect)))], true);
 }

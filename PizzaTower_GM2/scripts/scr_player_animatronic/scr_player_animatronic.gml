@@ -1,6 +1,6 @@
 function scr_player_animatronic()
 {
-	if (!ispeppino)
+	if (!ispeppino || characterID == characters.noise)
 	{
 		xscale = 1;
 		sprite_index = spr_playerN_animatronic;

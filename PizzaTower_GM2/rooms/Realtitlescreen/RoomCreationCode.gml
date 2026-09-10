@@ -325,9 +325,37 @@ enum characters
 	cezar = 3,
 	cleo = 4,
 	acexby = 5,
+	wuns = 6,
+	wendy = 7,
 	fdos = 10,
 	pep = 11,
 	noise = 12
+}
+
+enum mbstates {
+	rolling = 0,
+	longjump = 1,
+	bodyslam = 2,
+	callback = 3,
+	ball = 4,
+	verticalhallway = 5
+}
+
+enum mstates {
+	follower = 0,
+	taunt = 1,
+	comeback = 2,
+	flykick = 3
+}
+
+enum mfstates {
+	slip = 0,
+	run = 1
+}
+
+enum wrstates {
+	wait = 0,
+	travel = 1
 }
 
 #macro ANIMATION_END floor(image_index) == (image_number - 1)
@@ -353,12 +381,14 @@ global.newtoppin[1] = false;
 global.newtoppin[2] = false;
 global.newtoppin[3] = false;
 global.newtoppin[4] = false;
-global.mach_color1 = make_colour_rgb(96, 208, 72);
-global.mach_color2 = make_colour_rgb(248, 0, 0);
+global.mach_color1 = make_colour_rgb(67, 224, 34);
+global.mach_color2 = make_colour_rgb(230, 14, 14);
 global.afterimage_color1 = make_colour_rgb(255, 0, 0);
 global.afterimage_color2 = make_colour_rgb(0, 255, 0);
 global.smallnumber_color1 = make_colour_rgb(255, 255, 255);
 global.smallnumber_color2 = make_colour_rgb(248, 0, 0);
+global.machcolormap1 = [make_colour_rgb(120, 7, 79),make_colour_rgb(255, 0, 0)]
+global.machcolormap2 = [make_colour_rgb(7, 120, 79),make_colour_rgb(0, 255, 0)]
 global.optimize = 0;
 global.autotile = true;
 global.smallnumber_fnt = font_add_sprite_ext(spr_smallnumber, "1234567890-+", true, 0);

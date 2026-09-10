@@ -9,11 +9,9 @@ function scr_player_climbwall()
                 return;
             }
             break
-
         case characters.wm:
             scr_wmp_cling()
             return;
-
         case characters.fdos:
             scr_fdos_climbwall()
             return;
@@ -132,7 +130,7 @@ function scr_player_climbwall()
 			{
 				wallspeed = 0;
 			}
-			if (!ispeppino && !skateboarding)
+			if ((!ispeppino || characterID == characters.noise) && !skateboarding)
 			{
 				with (instance_create(x, y, obj_noiseeffect))
 				{
@@ -147,7 +145,7 @@ function scr_player_climbwall()
 				movespeed = 0;
 				image_index = 0;
 			}
-			if (input_buffer_jump > 8 && ispeppino)
+			if (input_buffer_jump > 8 && ispeppino && characterID != characters.noise)
 			{
 				fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
 				input_buffer_jump = 0;

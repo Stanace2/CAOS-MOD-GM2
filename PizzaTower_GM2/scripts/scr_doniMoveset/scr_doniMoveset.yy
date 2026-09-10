@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "New Moveset",
-    "path": "folders/Scripts/Player/New Moveset.yy",
+    "name": "Executer",
+    "path": "folders/Scripts/Player/New Moveset/Donisha/Executer.yy",
   },
 }
