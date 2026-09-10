@@ -7,7 +7,7 @@
     "path": "sprites/spr_elev_1/spr_elev_1.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

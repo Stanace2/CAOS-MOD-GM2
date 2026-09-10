@@ -83,6 +83,7 @@ function scr_displaykeys(_color, _display)
 
 function scr_displaydata(_display)
 {
+	var temp = instance_find( obj_elevator, 0 )
     if (!_display)
         return;
     draw_set_font(lang_get_font("creditsfont"))
@@ -102,6 +103,7 @@ function scr_displaydata(_display)
 		concat("sprite: ", sprite_get_name(sprite_index)),
 		concat("brick: ", brick),
 		concat("imagespeed: ", image_speed),
+		concat("imagenumber: ", image_number),
 		concat("imageindex: ", image_index)
 	]
 	var _offset = 20;
