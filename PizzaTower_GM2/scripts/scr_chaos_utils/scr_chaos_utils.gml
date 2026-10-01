@@ -83,6 +83,7 @@ function scr_displaykeys(_color, _display)
 
 function scr_displaydata(_display)
 {
+	var temp = instance_find( obj_elevator, 0 )
     if (!_display)
         return;
     draw_set_font(lang_get_font("smallfont"))
@@ -105,6 +106,7 @@ function scr_displaydata(_display)
 		concat("brick: ", brick),
 		concat("clingexit: ", clingexitspeed),
 		concat("imagespeed: ", image_speed),
+		concat("imagenumber: ", image_number),
 		concat("imageindex: ", image_index),
 		concat("sv_cheats: ", global.sv_cheats),
 		concat("obj: ", object_get_name(object_index))
