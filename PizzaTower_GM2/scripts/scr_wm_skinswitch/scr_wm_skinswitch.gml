@@ -24,8 +24,6 @@ function scr_wm_skinswitch() {
         spr_jump = spr_wm_jump
 	    spr_fall = spr_wm_fall
 	    spr_land = spr_wm_land
-        spr_facestomp = spr_player_facestomp  
-	    spr_freefall = spr_player_freefall  
 	    spr_stompprep = spr_wm_mushroombounce
 	    spr_stomp = spr_wm_stomp_end
         spr_mach = spr_wm_attack
@@ -37,6 +35,10 @@ function scr_wm_skinswitch() {
         spr_walkfront = spr_wm_exitdoor
         spr_downpizzabox = spr_wm_downpizzabox
         spr_uppizzabox = spr_wm_uppizzabox
+		spr_parry1 = spr_wm_parry1
+	    spr_parry2 = spr_wm_parry2
+	    spr_parry3 = spr_wm_parry1
+		spr_dashpadmach = spr_wm_dashpad
     }
     else
     {
@@ -55,8 +57,6 @@ function scr_wm_skinswitch() {
         spr_jump = spr_w_jump
         spr_fall = spr_w_fall
         spr_land = spr_wetham_land
-        spr_facestomp = spr_player_facestomp
-        spr_freefall = spr_player_freefall
         spr_stompprep = spr_w_stomp
         spr_stomp = spr_w_stompend
         spr_mach = spr_w_dash
@@ -68,6 +68,10 @@ function scr_wm_skinswitch() {
         spr_walkfront = spr_ratmount_exitdoor
         spr_downpizzabox = spr_w_downpizzabox
         spr_uppizzabox = spr_w_uppizzabox
+		spr_parry1 = spr_lonewetham_parry
+	    spr_parry2 = spr_lonewetham_parry
+	    spr_parry3 = spr_lonewetham_parry
+		spr_dashpadmach = spr_w_dashpad
     }
     scr_arc_wmspr()
 	if (spr_next != -4)

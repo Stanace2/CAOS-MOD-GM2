@@ -1,7 +1,7 @@
 function calculate_parrallax_still_x(_layer, _intensity)
 {
 	var _cam_x = camera_get_view_x(view_camera[0]);
-	var lay = layer_get_id(_layer);
+	var lay = _layer;
 	var w = room_width - SCREEN_WIDTH;
 	var per_x;
 	if (room_width <= SCREEN_WIDTH)

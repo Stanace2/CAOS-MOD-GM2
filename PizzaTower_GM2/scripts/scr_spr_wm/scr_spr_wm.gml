@@ -37,8 +37,8 @@ function scr_spr_wm() {
     spr_jump = spr_wm_jump
     spr_fall = spr_wm_fall
     spr_land = spr_wm_land
-    spr_facestomp = spr_player_facestomp  
-    spr_freefall = spr_player_freefall  
+    spr_facestomp = spr_wm_fall_long
+    spr_freefall = spr_wm_fall_longer
     spr_stompprep = spr_wm_mushroombounce
     spr_stomp = spr_wm_stomp_end
 	// Level transitions
@@ -61,15 +61,15 @@ function scr_spr_wm() {
     spr_laddermove = spr_w_ladder
     spr_ladderdown = spr_w_ladderdown
 	// Taunt
-    spr_breakdance = spr_player_breakdance  
+    spr_breakdance = spr_wetham_bd 
 	spr_taunt = spr_wm_taunt
     spr_supertaunt1 = spr_wm_supertaunt1
     spr_supertaunt2 = spr_wm_supertaunt2
     spr_supertaunt3 = spr_wm_supertaunt3
     spr_supertaunt4 = spr_wm_supertaunt4
     spr_parry1 = spr_wm_parry1
-    spr_parry2 = spr_player_parry2  
-    spr_parry3 = spr_player_parry3  
+    spr_parry2 = spr_wm_parry2
+    spr_parry3 = spr_wm_parry1
 	// Mach running
 	// - Mach 2 
     spr_mach = spr_wm_attack
@@ -78,7 +78,7 @@ function scr_spr_wm() {
     spr_mach4 = spr_wm_mach3
     spr_mach3jump = spr_wm_dashjump
     spr_hitwall = spr_wm_bump
-    spr_dashpadmach = spr_player_dashpad  
+    spr_dashpadmach = spr_wm_dashpad
 	// Wallcling
 	spr_wm_cling = spr_wethamcling
 	spr_walljumpstart = spr_wethamwalljump

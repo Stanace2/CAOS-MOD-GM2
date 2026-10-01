@@ -8,7 +8,7 @@ cursor_blink = false;
 alarm[0] = 20
 display = false;
 tick_records = false;
-create_commandlists()
+create_commandlists();
 rooms = ds_list_create();
 for (var i = 0; room_exists(i); i++)
 	ds_list_add(rooms,room_get_name(i))

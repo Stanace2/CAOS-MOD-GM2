@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_stickycheese",
   "spriteId": {
-    "name": "spr_destroyable2",
-    "path": "sprites/spr_destroyable2/spr_destroyable2.yy",
+    "name": "spr_stickycheese",
+    "path": "sprites/spr_stickycheese/spr_stickycheese.yy",
   },
   "solid": false,
   "visible": false,

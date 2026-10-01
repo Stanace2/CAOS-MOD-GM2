@@ -106,7 +106,8 @@ function scr_displaydata(_display)
 		concat("clingexit: ", clingexitspeed),
 		concat("imagespeed: ", image_speed),
 		concat("imageindex: ", image_index),
-		concat("sv_cheats: ", global.sv_cheats)
+		concat("sv_cheats: ", global.sv_cheats),
+		concat("obj: ", object_get_name(object_index))
 	]
 	var _padding = 8;
 	var _offset = 0;

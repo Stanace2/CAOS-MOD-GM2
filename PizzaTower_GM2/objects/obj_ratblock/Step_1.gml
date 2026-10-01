@@ -12,6 +12,9 @@ with (obj_player)
 			image_index = 0;
 			switch (sprite_index)
 			{
+				case spr_ratdummy_idle:
+					sprite_index = spr_ratdummy_bump;
+					break;
 				case spr_ratblock:
 					sprite_index = spr_ratblock1_bump;
 					break;

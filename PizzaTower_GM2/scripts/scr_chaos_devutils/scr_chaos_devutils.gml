@@ -264,7 +264,7 @@ function c_Createcommands() {
 			create_record("Error: Amount can't be negative or zero","error");
 			exit;
 		}
-		
+
 		if (_obj == undefined || _obj == "" || _obj == "me") {
 			obj_player1.force_hurt = true;
 			with (instance_create_unique(0, 0, obj_hurtmeplenty)) {
@@ -280,7 +280,7 @@ function c_Createcommands() {
 		else if (asset_get_index(_obj) != -1) 
 		{
 			var _victim = asset_get_index(_obj)
-			if (!object_exists(_victim)) {
+			if (!object_exists(_victim)) { 
 				create_record("Error: Given asset is not an object","error");
 				exit;
 			}
@@ -343,6 +343,12 @@ function c_Createcommands() {
 			create_record("Error: No value provided","error");
 			exit;
 		}
+		
+		if (_val == "true")
+			_val = 1;
+		
+		if (_val == "false")
+			_val = 0;
 		
 		if (_obj == "obj_CHAOSdevconsole" || _obj == "obj_debugcontroller") {
 			create_record("Error: GET OUT","error");

@@ -1,6 +1,6 @@
 function scr_wm_lastbreath() {  
     var g_ex = (place_meeting(x, (y + 20), obj_solid) || place_meeting(x, (y + 20), obj_slope))  
-    if (((key_shoot && !key_slap && key_up) || key_superjump) && (grounded || g_ex) && (brick || instance_exists(obj_mango_companion)))  
+    if (((key_shoot && !key_slap && key_up) || key_superjump) && (grounded || g_ex) && sprite_index != spr_dashpadmach && (brick || instance_exists(obj_mango_companion)))  
     {  
         if instance_exists(obj_mango_companion)  
         {  

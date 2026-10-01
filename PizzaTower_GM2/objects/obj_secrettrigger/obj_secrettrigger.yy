@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_secrettrigger",
   "spriteId": {
-    "name": "sprite10332571",
-    "path": "sprites/sprite10332571/sprite10332571.yy",
+    "name": "spr_disposal",
+    "path": "sprites/spr_disposal/spr_disposal.yy",
   },
   "solid": false,
   "visible": false,

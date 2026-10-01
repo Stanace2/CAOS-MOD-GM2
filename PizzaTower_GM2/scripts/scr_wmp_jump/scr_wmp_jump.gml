@@ -103,7 +103,7 @@ function scr_wmp_jump()
         particle_set_scale(particletypes.highjumpcloud2, xscale, 1)  
         create_particle(x, y, particletypes.highjumpcloud2, 0)  
     }    
-    if (grounded && vsp > 0)  
+    if (grounded && vsp > 0 && sprite_index != spr_facestomp && sprite_index != spr_freefall)
     {  
         fmod_event_one_shot_3d("event:/sfx/pep/step", x, y)  
         if (key_attack || sprite_index == spr_shotgunshoot)  
@@ -138,10 +138,37 @@ function scr_wmp_jump()
     }  
     if (vsp > 5 && sprite_index != spr_mortdoublejump)  
         fallinganimation++  
-    if (fallinganimation >= 40 && fallinganimation < 80)  
-        sprite_index = spr_facestomp  
-    else if (fallinganimation >= 80)  
-        sprite_index = spr_freefall  
+	if (brick || instance_exists(obj_mango_companion)) {
+	    if (fallinganimation >= 40 && fallinganimation < 80) {
+	        sprite_index = spr_facestomp  
+			if (instance_exists(obj_mango_companion)) {
+				with (obj_mango_companion) {
+					poof = true;
+					instance_destroy()
+				}
+		        brick = 1  
+			}
+		}
+	    else if (fallinganimation >= 80)  
+	        sprite_index = spr_freefall  
+	} else {
+		if (fallinganimation >= 40) {
+			input_buffer_slap = 0  
+	        clingexitspeed = movespeed  
+	        sprite_index = spr_bodyslamstart  
+	        image_index = 0  
+	        state = states.freefall
+	        hsp = 0  
+	        pistolanim = -4  
+	        if (brick == 1)  
+	        {  
+	            with (instance_create(x, y, obj_mango_companion))  
+	                wait = 1  
+	            brick = 0  
+	        }  
+	        return;  
+		}
+	}
     if (!stompAnim)  
     {  
         if (!jumpAnim)  
@@ -271,8 +298,11 @@ function scr_wmp_jump()
     {  
         fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y)  
         image_index = 0  
-        sprite_index = spr_bodyslamland  
+        sprite_index = spr_wm_bombdive_land  
         state = states.freefallland
+		create_particle(x, (y + 3), particletypes.groundpoundeffect, 0)  
+        movespeed = 0;
+        hsp = 0;
         with (obj_baddie)  
         {  
             if (shakestun && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0)  
@@ -286,6 +316,7 @@ function scr_wmp_jump()
             shake_mag = 10  
             shake_mag_acc = 30 / room_speed  
         }  
+		return;
     }  
     if (input_buffer_shoot > 0)  
     {  
