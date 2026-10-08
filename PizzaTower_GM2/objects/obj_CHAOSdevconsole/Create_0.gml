@@ -45,3 +45,4 @@ ds_list_sort(ID_transfos, true);
 ds_list_sort(ID_items, true);
 ds_list_sort(ID_chars, true);
 global.sv_cheats = false;
+showcollisions = false;
