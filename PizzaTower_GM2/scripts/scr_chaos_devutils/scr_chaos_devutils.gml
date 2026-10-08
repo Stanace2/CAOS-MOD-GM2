@@ -746,13 +746,16 @@ function c_Createcommands() {
 			var _pepper = ( noisepizzapepper && ( !ispeppino || characterID == characters.noise ) );
 			var _pizzapepper = ( _jetpack || _pepper );
 			
-			if ( !_statetransfo && !_pizzapepper )
+			// Weapons
+			var _shotgun = shotgunAnim;
+			var _pistol = global.pistol;
+			var _weapon = ( _shotgun || _pistol );
+			
+			if ( !_statetransfo && !_pizzapepper && !_weapon )
 			{
 				create_record( "No transformation active", "normal" );
 				exit;
 			}
-			
-			var _points = 0;
 			
 			if ( _statetransfo )
 			{
@@ -805,16 +808,46 @@ function c_Createcommands() {
 				if ( _jetpack ) { global.noisejetpack = false; }
 				if ( _pepper ) { noisepizzapepper = false; }
 			
-				fmod_event_one_shot_3d("event:/sfx/misc/cow", x, y);
+				fmod_event_one_shot_3d( "event:/sfx/misc/cow", x, y );
 			}
 			
-			// Effect + points
+			if ( _weapon )
+			{
+				if ( _shotgun )
+				{
+					shotgunAnim = false;
+					with ( instance_create( x, y, obj_sausageman_dead ) ) { sprite_index = other.spr_shotgundrop; }
+					if ( state == states.shotgunshoot ) { state = states.normal; }
+				}
+				
+				if ( _pistol )
+				{
+					global.pistol = false;
+					with ( instance_create( x, y, obj_sausageman_dead ) ) { sprite_index = spr_pistolrevolver; }
+					if ( state == states.animation ) { state = states.normal; }
+				}
+				
+				fmod_event_one_shot_3d( "event:/sfx/misc/detransfo", x, y );
+			}
+			
+			// Effect
 			instance_create( x, y, obj_genericpoofeffect );
 			
 			// Messages
-			if ( _statetransfo && _pizzapepper ) { create_record( "Transformation and pepper pizza removed", "normal" ); }
-			else if ( _pizzapepper ) { create_record( "Pepper pizza removed", "normal" ); }
-			else { create_record( "Transformation removed", "normal" ); }
+			var _removed = [];
+			if ( _statetransfo ) { array_push( _removed, "transformation" ); }
+			if ( _pizzapepper ) { array_push( _removed, "pepper pizza" ); }
+			if ( _shotgun ) { array_push( _removed, "shotgun" ); }
+			if ( _pistol ) { array_push( _removed, "pistol" ); }
+			
+			var _msg = "Removed: ";
+			for ( var i = 0; i < array_length( _removed ); i++ )
+			{
+				if ( i > 0 ) { _msg += ", "; }
+				_msg += _removed[i];
+			}
+			
+			create_record( _msg, "normal" );
 		}
 	})
 	
