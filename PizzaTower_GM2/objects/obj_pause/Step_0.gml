@@ -78,7 +78,7 @@ if (!pause && instance_exists(obj_player1) && alarm[3] == -1 && obj_player1.key_
 		if (global.leveltorestart != noone)
 		{
 			array_push(pause_menu, "pause_restart");
-			if (global.leveltorestart != tower_tutorial1 && global.leveltorestart != tower_tutorial1N && global.leveltorestart != tower_finalhallway && global.leveltorestart != secret_entrance)
+			if (global.leveltorestart != tower_tutorial1 && global.leveltorestart != tower_tutorial1N && global.leveltorestart != tower_finalhallway && global.leveltorestart != secret_entrance && global.leveltorestart != sandbox_1)
 			{
 				array_push(pause_menu, "pause_achievements");
 			}

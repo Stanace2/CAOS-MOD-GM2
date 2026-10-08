@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_trap",
   "spriteId": {
-    "name": "sprite10332478",
-    "path": "sprites/sprite10332478/sprite10332478.yy",
+    "name": "spr_secrettile",
+    "path": "sprites/spr_secrettile/spr_secrettile.yy",
   },
   "solid": false,
   "visible": true,

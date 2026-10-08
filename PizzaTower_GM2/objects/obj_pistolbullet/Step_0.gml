@@ -10,6 +10,10 @@ with (instance_place(x + spd, y, obj_destructibles))
 {
 	instance_destroy();
 }
+if (instance_place(x + spd, y, obj_solid) != noone)
+	instance_destroy();
+if (instance_place(x + spd, y, obj_slope) != noone)
+	instance_destroy();
 var _x = x;
 x += (image_xscale * spd);
 y += -spdh;

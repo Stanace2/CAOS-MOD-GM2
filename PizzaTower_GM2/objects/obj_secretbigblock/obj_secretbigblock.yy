@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_secretbigblock",
   "spriteId": {
-    "name": "sprite1030",
-    "path": "sprites/sprite1030/sprite1030.yy",
+    "name": "spr_secretdestructible",
+    "path": "sprites/spr_secretdestructible/spr_secretdestructible.yy",
   },
   "solid": false,
   "visible": false,

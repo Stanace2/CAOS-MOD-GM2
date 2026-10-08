@@ -1,5 +1,9 @@
 switch (sprite_index)
 {
+	case spr_ratdummy_bump:
+	case spr_ratdummy_inflate:
+		sprite_index = spr_ratdummy_idle;
+		break;
 	case spr_ratblock1_bump:
 		sprite_index = spr_ratblock;
 		break;

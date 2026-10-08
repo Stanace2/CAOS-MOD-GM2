@@ -39,6 +39,13 @@ with (other)
 			{
 				if (sprite_index != spr_dashpadmach)
 				{
+					if (characterID == characters.wm && instance_exists(obj_mango_companion)) {
+						with (obj_mango_companion) {
+							poof = true;
+							instance_destroy()
+						}
+		                brick = 1  
+					}
 					sprite_index = spr_dashpadmach;
 					image_index = 0;
 				}

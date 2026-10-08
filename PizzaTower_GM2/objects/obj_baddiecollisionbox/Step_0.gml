@@ -15,7 +15,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 	{
 		with (obj_player)
 		{
-			var _instakill = (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
+			var _instakill = (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && other.baddieID.object_index != obj_bigcheese && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
 			var _obj_player = id;
 			var _playerindex = (object_index == obj_player1) ? 1 : 2;
 			if (instance_exists(other.baddieID) && y < other.baddieID.y && other.baddieID.stompbuffer <= 0 && attacking == false && !global.kungfu && sprite_index != spr_player_mach2jump && ((state == states.boots && vsp > 0) || state == states.jump || (isgustavo && ratmount_movespeed < 12 && state == states.ratmountjump) || state == states.mach1 || state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)

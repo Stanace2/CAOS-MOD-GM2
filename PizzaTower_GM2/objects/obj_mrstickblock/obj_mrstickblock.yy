@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_mrstickblock",
   "spriteId": {
-    "name": "sprite1029",
-    "path": "sprites/sprite1029/sprite1029.yy",
+    "name": "spr_secretblock_tiny",
+    "path": "sprites/spr_secretblock_tiny/spr_secretblock_tiny.yy",
   },
   "solid": false,
   "visible": true,

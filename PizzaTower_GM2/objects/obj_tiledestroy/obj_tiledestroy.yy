@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "obj_tiledestroy",
   "spriteId": {
-    "name": "sprite10293",
-    "path": "sprites/sprite10293/sprite10293.yy",
+    "name": "spr_tilebreak",
+    "path": "sprites/spr_tilebreak/spr_tilebreak.yy",
   },
   "solid": false,
   "visible": false,

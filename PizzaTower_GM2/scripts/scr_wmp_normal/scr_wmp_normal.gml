@@ -171,7 +171,7 @@ function scr_wmp_normal()
         {  
             steppybuffer = 12  
             if (sprite_index == spr_breakdance)  
-                image_speed = breakdance_speed  
+                image_speed = 0.45
             else  
                 image_speed = 0.35  
             movespeed = Approach(movespeed, 0, 0.5)  

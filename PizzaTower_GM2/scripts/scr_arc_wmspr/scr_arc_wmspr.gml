@@ -15,8 +15,6 @@ function scr_arc_wmspr(){
 		spr_jump, 
 		spr_fall, 
 		spr_land, 
-		spr_facestomp, 
-		spr_freefall, 
 		spr_stompprep, 
 		spr_stomp, 
 		spr_mach, 
@@ -27,6 +25,10 @@ function scr_arc_wmspr(){
 		spr_lookdoor, 
 		spr_walkfront, 
 		spr_downpizzabox, 
-		spr_uppizzabox
+		spr_uppizzabox,
+		spr_parry1,
+		spr_parry2,
+		spr_parry3,
+		spr_dashpadmach
 		]
 }

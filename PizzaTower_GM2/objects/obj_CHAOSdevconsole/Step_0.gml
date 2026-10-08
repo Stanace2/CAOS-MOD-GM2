@@ -22,7 +22,7 @@ if (keyboard_check(vk_anykey) && !keyboard_check(vk_tab) && !keyboard_check(vk_b
 	}
 	if (cursor_pos_async && keyboard_string != "")
 		cursor_pos += 1
-	if (keyboard_string != "" && haslist && !searching) {
+	if (keyboard_string != "" && haslist) {
 		cycling_bank = false;
 		searching = true;
 		if (search_sugges == "" && ds_list_size(search_list) > 0) {
@@ -44,7 +44,7 @@ if (keyboard_check(vk_backspace))
 		if cursor_pos > 1
 			cursor_pos -= 1
 	}
-	if (haslist && !searching) {
+	if (haslist) {
 		cycling_bank = false;
 		searching = true;
 		if (ds_list_size(search_list) > 0) {
@@ -131,19 +131,19 @@ if (searching && haslist && search_list != undefined) {
 			keyboard_key_release(vk_down);
 		}
 	}
-	if (search_cursor != search_cursor_prev)
-		search_sugges = ds_list_find_value(search_list, search_cursor);
-	if search_sugges == undefined 
-		search_sugges = "";
 	//if (!string_starts_with(search_sugges, command) && search_sugges != "")
 		//search_sugges = "";
 }
+if (search_cursor != search_cursor_prev)
+	search_sugges = ds_list_find_value(search_list, search_cursor);
+if (search_sugges == undefined)
+	search_sugges = "";
 if (keyboard_check_pressed(vk_tab) && haslist) {
 	trace("tab");
 	if (search_sugges == "") {
 		cycling_bank = false;
 		searching = true;
-		if (search_sugges == "" && ds_list_size(search_list) > 0) {
+		if ((search_sugges == "") && ds_list_size(search_list) > 0) {
 			search_sugges = ds_list_find_value(search_list, 0);
 			search_cursor = 0;
 		}

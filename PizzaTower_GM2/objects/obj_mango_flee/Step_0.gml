@@ -17,7 +17,7 @@ switch state
         }  
         if (grounded && launchbuffer == 0 && sprite_index == spr_mango_slip_bump)  
             state = mfstates.run 
-        if ((scr_solid((x + sign(hsp)), y) || scr_solid((x + image_xscale), y)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + image_xscale), y, obj_destructibles))))  
+        if ((scr_solid((x + sign(hsp)), y) || scr_solid((x + image_xscale), y) || place_meeting(x + hsp, y, obj_hallway) || place_meeting(x + image_xscale, y, obj_hallway)) && (!(place_meeting((x + sign(hsp)), y, obj_destructibles))) && (!(place_meeting((x + image_xscale), y, obj_destructibles))))  
         {  
             image_xscale *= -1  
             fmod_event_one_shot_3d("event:/sfx/pep/slipbump", x, y)  

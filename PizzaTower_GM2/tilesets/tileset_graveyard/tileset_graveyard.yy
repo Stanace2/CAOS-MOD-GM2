@@ -210,9 +210,19 @@
     "SerialiseFrameCount": 1,
   },
   "macroPageTiles": {
-    "SerialiseWidth": 0,
-    "SerialiseHeight": 0,
-    "TileSerialiseData": [],
+    "TileDataFormat": 1,
+    "SerialiseWidth": 3,
+    "SerialiseHeight": 3,
+    "TileCompressedData": [
+      -4,
+      0,
+      -2,
+      12,
+      3,
+      0,
+      12,
+      12,
+    ],
   },
   "parent": {
     "name": "Unused",

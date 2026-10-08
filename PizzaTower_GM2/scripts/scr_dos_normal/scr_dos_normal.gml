@@ -352,13 +352,6 @@ function scr_dos_normal()
             jumpAnim = 1
         state = states.jump
     }
-    if (input_buffer_shoot > 0)
-    {
-        if shotgunAnim
-            scr_shotgunshoot()
-        else if global.pistol
-            scr_pistolshoot(states.normal)
-    }
     if (input_buffer_slap > 0 && (!key_up) && shotgunAnim == 0 && (!global.pistol))
     {
         input_buffer_slap = 0
@@ -371,7 +364,7 @@ function scr_dos_normal()
         movespeed = 8
         image_index = 0
     }
-    else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && ((!global.pistol) || (!ispeppino)))
+    else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0)
     {
         state = states.punch
         input_buffer_slap = 0
@@ -396,6 +389,13 @@ function scr_dos_normal()
                 }
             }
         }
+    }
+	if (input_buffer_shoot > 0)
+    {
+        if shotgunAnim
+            scr_shotgunshoot()
+        else if global.pistol
+            scr_pistolshoot(states.normal)
     }
     switch character
     {

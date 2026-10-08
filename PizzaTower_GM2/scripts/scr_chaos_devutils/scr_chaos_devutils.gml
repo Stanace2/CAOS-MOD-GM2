@@ -48,6 +48,81 @@ function c_Debugcommand(_id,_func,_params = "",_lists = undefined) constructor {
 function c_Createcommands() {
 	command_list = ds_list_create();
 	
+	DRAWCOLLISIONS = new c_Debugcommand( "drawcollisions", function() 
+	{
+		global.sv_cheats = true;
+		showcollisions = !showcollisions;
+		var collisions = showcollisions;
+		event_perform(ev_other, ev_room_start);
+		
+		if collisions
+		{
+			create_record( concat( "Showing collisions: on." ),"normal" );
+			exit;
+		}
+		else
+		{
+			create_record( concat( "Showing collisions: off." ),"normal" );
+			exit;
+		}
+	} )
+	
+	COMBO = new c_Debugcommand( "combo", function( _amount )
+	{
+		if ( _amount != undefined && _amount != "" )
+		{
+			if ( get_number_string( _amount ) == "" )
+			{
+				create_record( "Error: Wrong parameter type", "error" )
+				exit;
+			}
+			
+			if ( get_number_string( _amount ) < 0 )
+			{
+				create_record( "Error: Parameter must be greater than zero", "error" )
+				exit;
+			}
+			
+			var combo = get_number_string( _amount );
+			
+			global.combo = combo;
+			global.combotime = 60;
+			var combototal = 10 * global.combo + ( sqr( global.combo ) / 4 );
+			global.collect += floor( combototal );
+			global.comboscore += floor( combototal );
+			
+			with ( obj_player )
+			{
+				supercharge = global.combo;
+			}
+			
+			create_record( concat( "Combo set to ",combo ),"normal" );
+		}
+	}, "<amount>" )
+	
+	GAMESPEED = new c_Debugcommand( "gamespeed", function(_frames)
+	{
+		// _frames exists
+		if ( _frames != undefined && _frames != "" )
+		{
+			// check _frames != "" after conversion
+			if ( get_number_string( _frames ) == "" )
+			{
+				create_record( "Error: Wrong parameter type", "error" );
+				exit;
+			}
+			
+			if ( get_number_string( _frames ) <= 0 )
+			{
+				create_record( "Error: Parameter must be greater than zero", "error" );
+				exit;
+			}
+		}
+		var game_speed = get_number_string( _frames );
+		game_set_speed( game_speed, gamespeed_fps )
+		create_record(concat("Gamespeed set to ",game_speed," frames per second"),"normal");
+	},"<frames>" )
+	
 	PANIC = new c_Debugcommand("panic", function(_seconds) {
 		if (_seconds != undefined && _seconds != "") {
 			if get_number_string(_seconds) == "" {
@@ -264,7 +339,7 @@ function c_Createcommands() {
 			create_record("Error: Amount can't be negative or zero","error");
 			exit;
 		}
-		
+
 		if (_obj == undefined || _obj == "" || _obj == "me") {
 			obj_player1.force_hurt = true;
 			with (instance_create_unique(0, 0, obj_hurtmeplenty)) {
@@ -280,7 +355,7 @@ function c_Createcommands() {
 		else if (asset_get_index(_obj) != -1) 
 		{
 			var _victim = asset_get_index(_obj)
-			if (!object_exists(_victim)) {
+			if (!object_exists(_victim)) { 
 				create_record("Error: Given asset is not an object","error");
 				exit;
 			}
@@ -343,6 +418,12 @@ function c_Createcommands() {
 			create_record("Error: No value provided","error");
 			exit;
 		}
+		
+		if (_val == "true")
+			_val = 1;
+		
+		if (_val == "false")
+			_val = 0;
 		
 		if (_obj == "obj_CHAOSdevconsole" || _obj == "obj_debugcontroller") {
 			create_record("Error: GET OUT","error");
@@ -415,6 +496,66 @@ function c_Createcommands() {
 	"<object name>,<variable>,<value>,[delay - miliseconds]");
 	
 	RELOAD = new c_Debugcommand("reload", function() {
+		with (obj_pause) {
+			if (room == Endingroom || room == Creditsroom || room == Johnresurrectionroom)
+			{
+				exit;
+			}
+			pause_unpause_music();
+			stop_music();
+			scr_pause_stop_sounds();
+			instance_destroy(obj_option);
+			instance_destroy(obj_keyconfig);
+			fmod_event_instance_stop(global.snd_bossbeaten, true);
+			fmod_event_instance_stop(pausemusicID, true);
+			obj_music.music = noone;
+			var sl = ds_list_create();
+			var il = ds_list_create();
+			var arr = noone;
+			ds_list_copy(sl, sound_list);
+			ds_list_copy(il, instance_list);
+			hub = false;
+			arr = ["menugroup"];
+			with (obj_player1)
+			{
+				character = "P";
+				ispeppino = true;
+				scr_characterspr();
+			}
+			offload_arr = arr;
+			offload_textures = true;
+			ds_list_add(il, id);
+	
+			obj_player1.targetRoom = Realtitlescreen;
+			obj_player2.targetRoom = Realtitlescreen;
+			room = Realtitlescreen;
+			with (obj_player1)
+			{
+				character = "P";
+				scr_characterspr();
+			}
+			global.leveltosave = noone;
+			global.leveltorestart = noone;
+			scr_playerreset();
+			alarm[0] = 2;
+			obj_player1.state = states.titlescreen;
+			obj_player2.state = states.titlescreen;
+			obj_player1.targetDoor = "A";
+			if (instance_exists(obj_player2))
+			{
+				obj_player2.targetDoor = "A";
+			}
+			global.cowboyhat = false;
+			global.coop = false;
+			
+			scr_pause_activate_objects();
+			instance_destroy(obj_option);
+			instance_destroy(obj_keyconfig);
+			pause = false;
+	
+			ds_list_destroy(sl);
+			ds_list_destroy(il);
+		}
 		game_restart();
 	});
 	
@@ -581,6 +722,101 @@ function c_Createcommands() {
 		if (rm == boss_pizzaface || rm == boss_noise || rm == boss_pepperman || rm == boss_fakepep || rm == boss_vigilante)
 		    global.bossintro = true;
 	});
+	
+	MILK = new c_Debugcommand( "milk", function()
+	{
+		with ( obj_player1 )
+		{
+			// Door states
+			if ( state == states.comingoutdoor || state == states.door )
+			{
+				create_record( "Can't remove transformation during door transition", "normal" );
+				exit;
+			}
+			
+			// State based transfos :P
+			var _transfo = !scr_transformationcheck();
+			var _gus = isgustavo;
+			var _tumble = ( state == states.tumble );
+			var _animatronic = ( state == states.animatronic );
+			var _statetransfo = ( _transfo || _gus || _tumble || _animatronic );
+			
+			// Pepper pizza transfo
+			var _jetpack = ( global.noisejetpack && ispeppino && characterID != characters.noise );
+			var _pepper = ( noisepizzapepper && ( !ispeppino || characterID == characters.noise ) );
+			var _pizzapepper = ( _jetpack || _pepper );
+			
+			if ( !_statetransfo && !_pizzapepper )
+			{
+				create_record( "No transformation active", "normal" );
+				exit;
+			}
+			
+			var _points = 0;
+			
+			if ( _statetransfo )
+			{
+				if ( _transfo || _tumble )
+				{
+					if ( hsp != 0 ) { xscale = sign( hsp ); }
+					movespeed = abs( hsp );
+				}
+				
+				if ( _transfo )
+				{
+					with ( obj_mortprojectile )
+					{
+						create_particle( x, y, particletypes.genericpoofeffect );
+						instance_destroy();
+					}
+					
+					transformationsnd = false;
+					ghostdash = false;
+					ghostpepper = 0;
+					mort = false;
+					boxxed = false;
+				}
+				
+				if ( _gus )
+				{
+					characterID = characters.dos;
+					scr_character_spr_init();
+					isgustavo = false;
+					brick = false;
+				}
+				
+				// Regular dude time
+				state = states.normal;
+				sprite_index = spr_idle;
+				dir = xscale;
+				
+				// Ball ends in a crouch
+				if ( _tumble )
+				{
+					state = states.crouch;
+					sprite_index = spr_crouch;
+				}
+				
+				fmod_event_one_shot( "event:/sfx/pep/pray" );
+			}
+			
+			if ( _pizzapepper )
+			{
+				if ( _jetpack ) { global.noisejetpack = false; }
+				if ( _pepper ) { noisepizzapepper = false; }
+			
+				fmod_event_one_shot_3d("event:/sfx/misc/cow", x, y);
+			}
+			
+			// Effect + points
+			instance_create( x, y, obj_genericpoofeffect );
+			
+			// Messages
+			if ( _statetransfo && _pizzapepper ) { create_record( "Transformation and pepper pizza removed", "normal" ); }
+			else if ( _pizzapepper ) { create_record( "Pepper pizza removed", "normal" ); }
+			else { create_record( "Transformation removed", "normal" ); }
+		}
+	})
 	
 	TRANSFO = new c_Debugcommand("transfo", function(_sufix) {
 		if (_sufix == undefined || _sufix == "") {
@@ -927,6 +1163,20 @@ function c_Createcommands() {
 				instance_create(obj_player1.x,obj_player1.y,obj_treasure)
 				create_record("Given level treasure","normal");
 				break
+			case "weenie_mount":
+				with (obj_player1) {
+					fmod_event_one_shot_3d("event:/sfx/weenie/start", x, y);
+					state = states.rideweenie;
+					movespeed = hsp;
+					sprite_index = spr_rideweenie;
+					xscale = other.image_xscale;
+					dir = xscale;
+					jumpstop = true;
+					if (vsp < 0)
+						vsp = 0;
+					create_transformation_tip(lang_get_value("weenietip"), "weenie");
+				}
+				break
 			case "bomb":
 				with (instance_create(obj_player1.x,obj_player1.y,obj_pizzagoblinbomb)) {
 					with (obj_player1) {
@@ -991,6 +1241,74 @@ function c_Createcommands() {
 	},
 	"<item id>,[parameters]",[0,ID_items]);
 	
+	CHARACTER = new c_Debugcommand( "character", function( _sufix ) 
+	{
+		if ( _sufix == undefined || _sufix == "" ) 
+		{
+			create_record( "Error: No character sufix provided", "error" );
+			exit;
+		}
+		
+		if ( ds_list_find_index( ID_chars, _sufix ) == -1 ) 
+		{
+			create_record( "Error: Character not found", "error" );
+			exit;
+		}
+		
+		var _res = string_split( _sufix,":" )[ 1 ];
+		
+		with ( obj_player1 ) 
+		{
+			if ( PLAYER_LOCK ) 
+			{
+				create_record( "Error: Player is not in a valid state", "error" );
+				exit;
+			}
+			
+			brick = false;
+			
+			switch (_res) 
+			{
+				// Implemented
+				case "dos":
+					characterID = characters.dos;
+					scr_character_spr_init();
+				break;
+				
+				case "wm":
+					characterID = characters.wm;
+					brick = true;
+					scr_character_spr_init();
+				break;
+				
+				case "pep":
+					characterID = characters.pep;
+					scr_character_spr_init();
+				break;
+				
+				case "noise":
+					characterID = characters.noise;
+					scr_character_spr_init();
+				break;
+				
+				// Not implemented yet
+				case "st":
+				case "cezar":
+				case "cleo":
+				case "acexby":
+				case "wuns":
+				case "wendy":
+				case "fdos":
+					create_record( concat( "Error: Character '", _sufix, "' hasn't been implemented yet" ), "error" );
+				exit;
+			}
+			
+			global.sv_cheats = true;
+			create_record( concat( "Character changed to ", _sufix ), "normal" );
+		}
+	},
+	"<character sufix>",[0,ID_chars]);
+	
 	RETRY = new c_Debugcommand("retry", function() {
 		global.sv_cheats = true;
 		instance_create_unique(0,0,obj_static);
@@ -1021,6 +1339,10 @@ function c_Createcommands() {
 	"<global variable name>,<value>")
 	
 	ds_list_add(command_list, 
+		DRAWCOLLISIONS,
+		COMBO,
+		CHARACTER,
+		GAMESPEED,
 		PANIC,
 		NOCLIP,
 		GOD,
@@ -1038,6 +1360,7 @@ function c_Createcommands() {
 		TRANSFO,
 		ZOOMCAMERA,
 		GIVE,
+		MILK,
 		RETRY,
 		GLOBAL
 	)
@@ -1128,6 +1451,18 @@ function create_commandlists() {
 	ID_chars = ds_list_create();
 	ID_items = ds_list_create();
 	
+	var _trchar = [ [1,"dos"],
+					[1,"wm"],
+					[1,"st"],
+					[1,"cezar"],
+					[1,"cleo"],
+					[1,"acexby"],
+					[1,"wuns"],
+					[1,"wendy"],
+					[1,"fdos"],
+					[0,"pep"],
+					[0,"noise"]];
+	
 	var _trlist = [[0,"knight"],
 					[0,"ball"],
 					[0,"fireass"],
@@ -1143,10 +1478,10 @@ function create_commandlists() {
 					[0,"animatronic"],
 					[0,"gusnbrick"]];
 	
-	var _trchar = [[1,"dos"],
-					[1,"wm"],
-					[0,"pep"],
-					[0,"noise"]];
+	//var _trchar = [[1,"dos"],
+	//				[1,"wm"],
+	//				[0,"pep"],
+	//				[0,"noise"]];
 					
 	var _tritems = [[0,"level_key"],
 					[0,"boss_key"],
@@ -1155,6 +1490,7 @@ function create_commandlists() {
 					[0,"pepper_pizza"],
 					[0,"level_treasure"],
 					[0,"bomb"],
+					[0,"weenie_mount"],
 					[0,"points"],
 					[0,"revolver"],
 					[0,"shotgun"]];

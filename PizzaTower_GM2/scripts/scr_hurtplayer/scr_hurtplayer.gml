@@ -368,10 +368,10 @@ function scr_hurtplayer(_player)
 			{
 				with (obj_tv)
 				{
-					var str1 = sprite_get_name(sprite_index);
-					var str2 = string_copy(str1, 0, string_length(str1) - 1);
-					trace(str2);
-					if ((state == states.expression || state == states.whitenoise) && (sprite_index == spr_tv_exprhurt || sprite_index == spr_tv_exprhurtN || sprite_index == spr_tv_hurtG || str2 == "spr_tv_exprhurt" || str2 == "spr_tv_exprhurtN"))
+					//var str1 = sprite_get_name(sprite_index);
+					//var str2 = string_copy(str1, 0, string_length(str1) - 1);
+					//trace(str2);
+					if ((state == states.expression || state == states.whitenoise) && (sprite_index == spr_tv_exprhurt || sprite_index == spr_tv_exprhurtN || sprite_index == spr_tv_hurtG || string_copy(sprite_get_name(sprite_index), 1, 15) == "spr_tv_exprhurt" /*|| str2 == "spr_tv_exprhurt" || str2 == "spr_tv_exprhurtN"*/))
 					{
 						sprite_index = other.ispeppino ? spr_tv_idleN : spr_tvidle;
 						if (other.noisecrusher)

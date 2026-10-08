@@ -173,7 +173,9 @@ function scr_wmp_mach3()
                 else  
                     vsp = -13  
             }  
-            if (fightball == 0 && sprite_index != spr_wm_airspin && sprite_index != spr_wm_katanaboost && sprite_index != spr_wm_katanaboost_loop && sprite_index != spr_wm_katanaboost_recover)  
+			if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach))
+					sprite_index = mach3_spr;
+            if (fightball == 0 && sprite_index != spr_dashpadmach && sprite_index != spr_wm_airspin && sprite_index != spr_wm_katanaboost && sprite_index != spr_wm_katanaboost_loop && sprite_index != spr_wm_katanaboost_recover)  
             {  
                 if (grounded && vsp >= 0)
                     sprite_index = mach3_spr  
@@ -241,7 +243,8 @@ function scr_wmp_mach3()
                     return;  
                 }  
             }  
-            scr_wm_dokatana()  
+			if (sprite_index != spr_dashpadmach)
+            	scr_wm_dokatana()  
             if (input_buffer_shoot > 0 && sprite_index != spr_dashpadmach)  
             {  
                 if shotgunAnim  
@@ -336,7 +339,7 @@ function scr_wmp_mach3()
             other.dashcloudid = id  
         }  
     }  
-    if grounded  
+    if (grounded && sprite_index != spr_dashpadmach)
         scr_wm_doroll()  
     else if key_down  
     {  
@@ -352,9 +355,11 @@ function scr_wmp_mach3()
         fmod_event_instance_play(snd_crouchslide)  
         return;  
     }  
-    scr_wm_doyosh()  
-    scr_wm_dodoublejump()  
-    scr_wm_dobombdive()  
+	if (sprite_index != spr_dashpadmach) {
+	    scr_wm_doyosh()  
+	    scr_wm_dodoublejump()  
+	    scr_wm_dobombdive()  
+	}
     scr_dotaunt()  
     if (!instance_exists(chargeeffectid))  
     {  
