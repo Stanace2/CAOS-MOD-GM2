@@ -30,7 +30,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Unused",
-    "path": "folders/Objects/Unused.yy",
+    "name": "Collision",
+    "path": "folders/Objects/Room Structure/Collision.yy",
   },
 }

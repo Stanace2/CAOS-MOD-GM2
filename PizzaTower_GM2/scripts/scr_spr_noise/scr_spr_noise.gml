@@ -220,6 +220,8 @@ function scr_spr_noise() {
     spr_shotguncrawl = spr_playerN_miniguncrawl
     spr_shotgungoduck = spr_playerN_minigungoduck
 	spr_shotgundrop = spr_minigunfall
+	// - BombPickup
+	spr_pistolintro = spr_playerN_bombget
 	// - Weenie mount
     spr_rideweenie = spr_playerN_weeniemount  
     spr_weenieturn = spr_playerN_weenieturn  

@@ -313,7 +313,7 @@ function scr_dos_mach3() //gml_Script_scr_dos_mach3
                     movespeed = 5
                 image_index = 0
             }
-            else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && sprite_index != spr_dashpadmach && ((!global.pistol) || (!ispeppino)))
+            else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && sprite_index != spr_dashpadmach && (!ispeppino))
             {
                 input_buffer_slap = 0
                 state = states.punch

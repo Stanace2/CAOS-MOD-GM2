@@ -748,10 +748,6 @@ if (!ispeppino || obj_player1.characterID == characters.noise)
 	{
 		global.pistol = true;
 	}
-	else
-	{
-		global.pistol = false;
-	}
 }
 if (global.pistol && characterID != characters.noise && ispeppino && state != states.animation && state != states.grab && state != states.superslam && state != states.actor && state != states.hurt && state != states.bump && state != states.machslide && state != states.Sjumpprep && state != states.Sjump && state != states.tumble && !instance_exists(obj_vigilante_duelintro))
 {

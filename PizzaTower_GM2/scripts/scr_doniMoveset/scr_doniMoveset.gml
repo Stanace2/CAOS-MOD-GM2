@@ -117,7 +117,7 @@ function scr_doniMoveset() //gml_Script_scr_doniMoveset
             vsp = -6
             return;
         }
-        if (input_buffer_slap > 0 && shotgunAnim == 0 && (!global.pistol))
+        if (input_buffer_slap > 0 && shotgunAnim == 0)
         {
             if key_up
             {
@@ -134,7 +134,7 @@ function scr_doniMoveset() //gml_Script_scr_doniMoveset
                 particle_set_scale(states.grabbed, xscale, 1)
                 create_particle(x, y, states.grabbed, 0)
             }
-            else
+            else if !global.pistol
             {
                 input_buffer_slap = 0
                 sprite_index = spr_suplexdash

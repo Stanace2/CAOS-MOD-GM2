@@ -23,7 +23,7 @@ for (var i = 0; i < array_length(lay_arr); i++)
 			layer_x(lay, _cam_x * 0.1);
 			break;
 		case "Backgrounds_1":
-			if (room == tower_entrancehall || room == tower_johngutterhall || room == tower_1)
+			if (room == tower_entrancehall || room == sandbox_1 || room == tower_johngutterhall || room == tower_1)
 			{
 				layer_x(lay, floor(bg_1xoffset + (_cam_x * 0.25)));
 				layer_y(lay, floor(bg_1yoffset + (_cam_y * 0.25)));

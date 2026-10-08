@@ -87,6 +87,7 @@ for (var i = 0; i < 3; i++)
 			case tile_graveyardmine: t = spr_graveyardmine; break;
 			case tile_exit: t = spr_exittile; break;
 			case tile_sandbox1: t = spr_tile_sandbox1; break;
+			case tile_sandbox2: t = spr_tile_sandbox2; break;
 		}
 		tilemap_sprite[i] = t;
 		var _w32 = sprite_get_width(t) / 32;

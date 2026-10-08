@@ -394,7 +394,7 @@ function scr_player_mach2()
 		}
 		image_index = 0;
 	}
-	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && !skateboarding && (!global.pistol || characterID == characters.noise || !ispeppino))
+	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && !skateboarding)
 	{
 		input_buffer_slap = 0;
 		state = states.punch;

@@ -369,7 +369,7 @@ function state_player_jump()
 		state = states.handstandjump;
 		movespeed = 5;
 	}
-	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && (!global.pistol || characterID == characters.noise || !ispeppino))
+	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false)
 	{
 		input_buffer_slap = 0;
 		state = states.punch;

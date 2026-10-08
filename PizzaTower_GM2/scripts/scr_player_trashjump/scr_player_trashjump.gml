@@ -35,7 +35,7 @@ function scr_player_trashjump()
 	}
 	if (grounded && vsp > 0)
 	{
-		if (ispeppino)
+		if (ispeppino && characterID != characters.noise)
 		{
 			create_transformation_tip(lang_get_value("trashrolltip"), "trashroll");
 			if (instance_place(x, y + 1, obj_slope))

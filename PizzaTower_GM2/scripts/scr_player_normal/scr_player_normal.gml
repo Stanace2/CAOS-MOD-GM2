@@ -457,17 +457,6 @@ function state_player_normal()
 		}
 		state = states.jump;
 	}
-	if (input_buffer_shoot > 0)
-	{
-		if (shotgunAnim)
-		{
-			scr_shotgunshoot();
-		}
-		else if (global.pistol)
-		{
-			scr_pistolshoot(states.normal);
-		}
-	}
 	if (input_buffer_slap > 0 && !key_up && shotgunAnim == false && !global.pistol)
 	{
 		input_buffer_slap = 0;
@@ -480,7 +469,7 @@ function state_player_normal()
 		movespeed = 8;
 		image_index = 0;
 	}
-	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false && (!global.pistol || !ispeppino || characterID == characters.noise))
+	else if (input_buffer_slap > 0 && key_up && shotgunAnim == false)
 	{
 		state = states.punch;
 		input_buffer_slap = 0;
@@ -512,6 +501,17 @@ function state_player_normal()
 					image_speed = 0.35;
 				}
 			}
+		}
+	}
+	if (input_buffer_shoot > 0)
+	{
+		if (shotgunAnim)
+		{
+			scr_shotgunshoot();
+		}
+		else if (global.pistol)
+		{
+			scr_pistolshoot(states.normal);
 		}
 	}
 	switch (character)
