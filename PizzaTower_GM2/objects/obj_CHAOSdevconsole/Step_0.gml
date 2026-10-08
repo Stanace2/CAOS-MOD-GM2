@@ -22,7 +22,7 @@ if (keyboard_check(vk_anykey) && !keyboard_check(vk_tab) && !keyboard_check(vk_b
 	}
 	if (cursor_pos_async && keyboard_string != "")
 		cursor_pos += 1
-	if (keyboard_string != "" && haslist && !searching) {
+	if (keyboard_string != "" && haslist) {
 		cycling_bank = false;
 		searching = true;
 		if (search_sugges == "" && ds_list_size(search_list) > 0) {
@@ -44,7 +44,7 @@ if (keyboard_check(vk_backspace))
 		if cursor_pos > 1
 			cursor_pos -= 1
 	}
-	if (haslist && !searching) {
+	if (haslist) {
 		cycling_bank = false;
 		searching = true;
 		if (ds_list_size(search_list) > 0) {

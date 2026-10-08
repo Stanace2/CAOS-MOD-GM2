@@ -14,3 +14,4 @@ if (command == "" && !searching) {
 }
 if (!searching || !display)
 	search_sugges = "";
+event_user(0)

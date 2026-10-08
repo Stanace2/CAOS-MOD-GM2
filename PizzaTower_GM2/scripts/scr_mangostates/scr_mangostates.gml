@@ -11,7 +11,7 @@ function scr_mangostates(){
 				if global.combo >= 50
 	            	wspr = spr_mango_walk_distressed  
 	        }  
-			if ((global.combo >= 25 && global.combo < 50) || instance_exists(obj_pizzafaceboss) || (global.noisejetpack && (ispeppino || noisepizzapepper))) {
+			if ((global.combo >= 25 && global.combo < 50) || instance_exists(obj_pizzafaceboss) || (global.noisejetpack && (playerid.characterID != characters.noise || playerid.noisepizzapepper))) {
 				ispr = spr_mango_idle_anger
 	        	wspr = spr_mango_walk_anger
 			}

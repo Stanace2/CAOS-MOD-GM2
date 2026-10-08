@@ -993,6 +993,20 @@ function c_Createcommands() {
 				instance_create(obj_player1.x,obj_player1.y,obj_treasure)
 				create_record("Given level treasure","normal");
 				break
+			case "weenie_mount":
+				with (obj_player1) {
+					fmod_event_one_shot_3d("event:/sfx/weenie/start", x, y);
+					state = states.rideweenie;
+					movespeed = hsp;
+					sprite_index = spr_rideweenie;
+					xscale = other.image_xscale;
+					dir = xscale;
+					jumpstop = true;
+					if (vsp < 0)
+						vsp = 0;
+					create_transformation_tip(lang_get_value("weenietip"), "weenie");
+				}
+				break
 			case "bomb":
 				with (instance_create(obj_player1.x,obj_player1.y,obj_pizzagoblinbomb)) {
 					with (obj_player1) {
@@ -1221,6 +1235,7 @@ function create_commandlists() {
 					[0,"pepper_pizza"],
 					[0,"level_treasure"],
 					[0,"bomb"],
+					[0,"weenie_mount"],
 					[0,"points"],
 					[0,"revolver"],
 					[0,"shotgun"]];
