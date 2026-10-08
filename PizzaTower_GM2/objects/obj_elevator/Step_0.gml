@@ -41,7 +41,7 @@ switch ( state )
 		if ( !place_meeting( x, y, obj_player ) && floor( image_index ) == 0 )
 		{
 			image_speed = 0;
-			fmod_event_one_shot_3d("event:/sfx/knight/lose", x, y);
+			//fmod_event_one_shot_3d("event:/sfx/knight/lose", x, y);
 		}
 		
 		if ( place_meeting( x, y, obj_player ) )
@@ -86,7 +86,7 @@ switch ( state )
 		
 		if ( elevator_door_frame >= elevator_door_frames )
 		{
-			fmod_event_one_shot_3d("event:/sfx/knight/lose", x, y);
+			//fmod_event_one_shot_3d("event:/sfx/knight/lose", x, y);
 			state = ELEVATOR.OCCUPIED;
 			elevator_door_speed = 0;
 		}
@@ -131,7 +131,7 @@ switch ( state )
 		
 		if ( elevator_door_frame >= 9 )
 		{
-			fmod_event_one_shot_3d("event:/sfx/misc/elevatorstart", x, y);
+			//fmod_event_one_shot_3d("event:/sfx/misc/elevatorstart", x, y);
 			with ( obj_player1 ) { state = states.normal;}
 			with ( obj_player )
 			{
